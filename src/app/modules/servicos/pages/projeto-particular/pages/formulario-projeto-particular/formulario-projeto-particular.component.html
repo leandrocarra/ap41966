@@ -1,0 +1,99 @@
+<h2>Projeto Particular</h2>
+
+<p class="subtitulo subtitulo-projeto mb-5">Informe os dados e as documentações abaixo do seu projeto:</p>
+<p class="bold mb-2">Dados</p>
+
+<form [formGroup]="formProjetoParticular">
+    <div class="row">
+        <mat-form-field *ngIf="formProjetoParticular.value.unidadeConsumidora !== null" class="col-12 col-lg-5" id="unidadeConsumidora" color="primary" appearance="outline">
+            <mat-select name="unidadeConsumidora" formControlName="unidadeConsumidora">
+                <mat-option class="option" *ngFor="let ucs of ucsDisponiveis" [value]="ucs.uc">
+                    {{ucs.uc}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <span *ngIf="formProjetoParticular.value.unidadeConsumidora !== null" class="span-selecionar mb-3 mt-2 col-12 col-lg-5">Caso necessário, selecione outra Unidade Consumidora cadastrada.</span>
+
+        <mat-form-field class="col-12 col-xl-8" id="nomeEmpresa" color="primary" appearance="outline">
+            <mat-label class="input-label">NOME DA EMPRESA</mat-label>
+            <input matInput name="nomeEmpresa" formControlName="nomeEmpresa">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorNomeEmpresa"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-xl-8" id="tecnicoResponsavel" color="primary" appearance="outline">
+            <mat-label class="input-label">TÉCNICO OU ENG. RESPONSÁVEL</mat-label>
+            <input matInput name="tecnicoResponsavel" formControlName="tecnicoResponsavel">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorTecnico"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-xl-8" id="emailContato" color="primary" appearance="outline">
+            <mat-label class="input-label">E-MAIL DE CONTATO</mat-label>
+            <input matInput name="emailContato" formControlName="emailContato" type="email">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorEmail"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-lg-5"id="telefoneContato" color="primary" appearance="outline">
+            <mat-label class="input-label">TELEFONE DE CONTATO</mat-label>
+            <input matInput name="telefone" id="telefone" formControlName="telefone" [mask]="userIdMask" (ngModelChange)="aplicarMaskTel()">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorTelefone"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-xl-8" id="nomeCliente" color="primary" appearance="outline">
+            <mat-label class="input-label">CLIENTE</mat-label>
+            <input matInput name="nomeCliente" formControlName="nomeCliente">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorCliente"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-xl-8" id="municipioProjeto" color="primary" appearance="outline">
+            <mat-label class="input-label">MUNICÍPIO DO PROJETO</mat-label>
+            <input matInput name="municipioProjeto" formControlName="municipioProjeto">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorMunicipio"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-lg-5" id="tipoProjeto" color="primary" appearance="outline">
+            <mat-label class="input-label">TIPO DE PROJETO</mat-label>
+            <mat-select name="tipoProjeto" formControlName="tipoProjeto" (selectionChange)="linkDocumento()">
+                <mat-option class="option" *ngFor="let projeto of tipoProjeto" [value]="projeto">
+                    {{projeto}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="div-link-documento mb-5 mt-5">
+        <p class="header-link-documento ms-1 me-2">LINK DO DOCUMENTO:</p>
+        <p *ngIf="documentoParaDownload" class="pb-2 pt-2 link-documento" (click)="definirDocumento(documentoParaDownload)">{{documentoParaDownload}}.pdf</p>
+    </div>
+
+    <div class="col-12 col-lg-4 pl-0">
+        <app-box-file class="pl-0" [maxSize]="tamanhoMaximoArquivo" [infoDoc]="infoDoc" [formatosAceitos]="formatosParaAnexar"
+        [documentoLabel]="label" (arquivoAnexado)="receberAnexo($event)"></app-box-file>
+
+        <app-attached-file class="col-12 col-lg-3 pl-0" [arquivos]="arrayAnexos" (removerArquivo)="removerAnexo($event);"></app-attached-file>
+    </div>
+
+    <div class="d-flex justify-content-between justify-content-md-start mb-5 mb-md-0">
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-3">
+            <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                (callFunction)="voltar()">
+            </app-neo-button>
+
+            <app-neo-button class="m-0" [classes]="'btn-neoprimary'"
+                [titleText]="' ENVIAR '" (callFunction)="enviar()" [isDisabled]="formProjetoParticular?.invalid">
+            </app-neo-button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,63 @@
+<h2 class="titulo">Confira se o imóvel está pronto para receber a ligação:</h2>
+
+<p class="texto">Para seu imóvel receber a ligação, é necessário que ele tenha um padrão de entrada com livre acesso à
+    caixa de medição para instalarmos o medidor de energia.</p>
+
+<div class="row">
+    <div class="col-12 col-md-6">
+        <input type="image" src="../../../../../../../../assets/assetsLN/images/tabletnovo.svg" data-backdrop="false" data-keyboard="true"
+               data-toggle="modal" data-target="#myModal" id="imgHome" class="mt-5"
+               alt="Saiba mais sobre o padrão de entrada" (click)="openDialog()">
+    </div>
+    <div class="col-12 col-sm-6 col-lg-5 col-xl-5">
+        <h5 class="titulo mb-3">Para saber se seu imóvel já está preparado:</h5>
+        <ul class="texto" align="justify">
+            <li class="mb-3">Consulte o síndico/administrador ou a construtora, para
+                <strong>apartamentos ou salas comerciais.</strong>
+            </li>
+
+            <li class="mb-3">
+                Consulte um eletricista para realizar esse serviço, para
+                <strong>comércios, industrias, residências e atividades rurais.</strong>
+            </li>
+
+            <li class="mb-4">
+                Benefíciários do cadastro único localizados na zona
+                rural poderão solicitar a instalação gratuita do padrão
+                de entrada caso forem elegíveis. <neo-tooltip
+                    [explicacao]="tooltipBeneficiario">
+                </neo-tooltip>
+            </li>
+        </ul>
+        <p class="texto">Quer mais informações técnicas sobre o preparo do
+            imóvel? <a rel="noopener"
+                href="https://www.neoenergiaelektro.com.br/prestadores-de-servico/orientacoes-sobre-o-padrao-de-entrada"
+                target="_blank">Clique aqui.</a></p>
+
+        <h6 class="titulo">O seu imóvel já está preparado para receber a ligação?</h6>
+
+        <mat-radio-group [(ngModel)]="imovelPreparado" (click)="termoLocal()">
+            <div class="row mb-2">
+                <div class="col-3 me-3">
+                    <mat-radio-button [value]="false">
+                        <strong class="texto">NÃO</strong>
+                    </mat-radio-button>
+                </div>
+
+                <div class="col-3">
+                    <mat-radio-button [value]="true">
+                        <strong class="texto">SIM</strong>
+                    </mat-radio-button>
+                </div>
+            </div>
+        </mat-radio-group>
+        <!--==============================================================================-->
+
+        <div>
+            <button type="button" class="btn btn-primary-green" [disabled]="imovelPreparado === undefined"
+                (click)="solicitarLigacao();" title="Iniciar solicitação de ligação nova">
+                SOLICITAR LIGAÇÃO NOVA
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="card-table-indicadores">
+    <h3 class="titulo-indicadores mb-3">Indicadores de Qualidade de Fornecimento</h3>
+    <p class="subtitulo-indicadores mb-3">Duração e frequência das apurações</p>
+
+    <div *ngIf="!mobile" class="d-flex justify-content-between">
+        <div class="p-0 col-3 header-mes-selecionado">{{ mesSelecionado }}</div>
+        <div class="col-9 p-0 row m-0">
+            <div class="col-2 headers">Limite Mensal</div>
+            <div class="col-2 headers">Valor Apurado</div>
+            <div class="col-3 headers">Crédito Apurado <br> (R$)</div>
+            <div class="col-3 headers">Compensado <br> (R$)</div>
+            <div class="col-2 headers">Crédito Restante <br> (R$)</div>
+        </div>
+    </div>
+
+    <div class="linha-tabela" *ngFor="let indicador of indicadores">
+        <div class="col-12 col-md-3 p-0">
+            <div class="title">{{ indicador.titulo }}</div>
+            <div class="description">{{ indicador.descricaoTitulo }}</div>
+            <div class="description">{{ indicador.descricao }}</div>
+        </div>
+
+        <div class="indicador-mobile col-md-9 col-12 p-0 pt-3 pt-md-0 row m-0">
+            <div class="col-12 col-md-2 indicadores">
+                <span><span *ngIf="mobile">Limite Mensal: </span>{{ indicador.limiteMensal }}</span>
+            </div>
+            <div class="col-12 col-md-2 indicadores">
+                <span><span *ngIf="mobile">Valor Apurado: </span>{{ indicador.valorApurado }}</span>
+            </div>
+            <div class="col-12 col-md-3 indicadores">
+                <span><span *ngIf="mobile">Crédito Apurado: </span>{{ indicador.creditoApurado }}</span>
+            </div>
+            <div class="col-12 col-md-3 indicadores">
+                <span><span *ngIf="mobile">Compensado: </span>{{ indicador.compensado }}</span>
+            </div>
+            <div class="col-12 col-md-2 indicadores">
+                <span><span *ngIf="mobile">Crédito Restante: </span>{{ indicador.creditoRestante }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 mb-1 centralizar">
+        <app-neo-button class="me-md-3 m-0" [classes]="'btn-neoprimary'" [titleText]="mensagemBotaoHistoricoCompleto"
+            (callFunction)="redirecionarPagina()">
+        </app-neo-button>
+    </div>
+
+</div>

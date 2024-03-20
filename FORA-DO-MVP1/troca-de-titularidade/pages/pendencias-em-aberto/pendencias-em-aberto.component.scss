@@ -1,0 +1,17 @@
+.custom-w-faturas {
+    max-width: 960px;
+}
+
+.btn-faturas {
+    font-size: 0.875rem;
+    border-radius: 50px;
+    height: 2.75rem;
+    font-weight: normal !important;
+  
+    .content-button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 0px;
+    }
+  }

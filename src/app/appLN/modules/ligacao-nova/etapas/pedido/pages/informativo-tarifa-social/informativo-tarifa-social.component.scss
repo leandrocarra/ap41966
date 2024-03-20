@@ -1,0 +1,47 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.link-estilizado {
+    color: var(--neo-light-green) !important;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.subtitulo-tarifa {
+    color: var(--neo-dark-green);
+    font-weight: bolder;
+}
+
+@media only scren and (max-width: 768px){
+    ::ng-deep .mat-tooltip {
+        position: above !important;
+        color: #3f3f3f !important;
+        background: white;
+        border-radius: 10px !important;
+        -webkit-box-shadow: 0 2px 13px 0 rgba(50, 50, 50, 0.54);
+        -moz-box-shadow: 0 2px 13px 0 rgba(50, 50, 50, 0.54);
+        box-shadow: 0 2px 13px 0 rgba(50, 50, 50, 0.54);
+        width: 80% !important;
+        text-align: justify;
+        max-width: max-content !important;
+        padding: 20px !important;
+        font-size: 14px;
+    }
+
+
+}
+
+@media only screen and (min-width: 769px) {
+    ::ng-deep .mat-tooltip {
+        color: #3f3f3f !important;
+        background: white;
+        border-radius: 10px !important;
+        -webkit-box-shadow: 0 2px 13px 0 rgba(50, 50, 50, 0.54);
+        -moz-box-shadow: 0 2px 13px 0 rgba(50, 50, 50, 0.54);
+        box-shadow: 0 2px 13px 0 rgba(50, 50, 50, 0.54);
+        width: 400px;
+        text-align: justify;
+        max-width: unset !important;
+        padding: 20px !important;
+        font-size: 14px;
+    }
+}

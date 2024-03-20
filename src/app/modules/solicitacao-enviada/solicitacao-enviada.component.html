@@ -1,0 +1,55 @@
+<h2 class="tituloH2" [class]="grupoDoUsuario === 'A' ? 'color-a' : 'color-b'">{{ dados.titulo }}</h2>
+
+<div class="card-solicitacao">
+    <div class="tipo-problema d-flex justify-content-between align-items-center">
+        <h4 class="mb-0 tituloH4">DADOS</h4>
+
+        <div *ngIf="dados.solicitacaoTipo" class="d-flex align-items-center">
+            <mat-icon class="me-1">fiber_manual_record</mat-icon>
+            <span class="servico">{{ dados.solicitacaoTipo }}</span>
+        </div>
+    </div>
+
+    <div class="conteudo-solicitacao">
+        <div class="d-flex justify-content-between my-4">
+            <span class="protocolo-legenda">PROTOCOLO</span>
+            <span class="protocolo-numero">{{ dados.protocolo }}</span>
+        </div>
+
+        <div class="d-flex justify-content-between my-4">
+            <span class="uc-legenda">CÓDIGO DO CLIENTE</span>
+            <span class="uc-dados">{{ dadosUC }}</span>
+        </div>
+
+        <div class="d-flex justify-content-between my-4">
+            <span class="uc-legenda">ENDEREÇO</span>
+            <span class="uc-dados">{{ dadosEnderecoUC }}</span>
+        </div>
+
+        <div class="my-5"></div>
+
+        <div class="d-flex justify-content-between my-4 array-dados" *ngFor="let item of dados.infos">
+            <span *ngIf="item.tituloEsquerda" class="dados-titulo-esquerda">{{ item.tituloEsquerda }}</span>
+            <span *ngIf="item.tituloDireita" class="dados-titulo-direita">{{ item.tituloDireita }}</span>
+            <span *ngIf="!item.tituloEsquerda || !item.tituloDireita" class="dados-legenda">{{ item.label }}</span>
+            <span *ngIf="!item.tituloEsquerda || !item.tituloDireita" class="dados">{{ item.data }}</span>
+        </div>
+    </div>
+
+    <div *ngIf="dados.alerta" class="mt-4">
+        <div class="d-flex align-items-center mt-3">
+            <span class="material-icons-round me-1 {{dados.alertaTituloCor}}">{{ dados.alertaIcone }}</span>
+            <span class="{{ dados.alertaTituloCor }} alerta-titulo">{{ dados.alertaTitulo }}</span>
+        </div>
+
+        <div class="row p-1 {{dados.alertaMensagemCor ?? 'alerta-mensagem'}}">
+            <p class="alerta-mensagem my-0 {{dados.alertaMensagemCor}}" [innerHTML]="dados.alertaMensagem"></p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="dados.botaoFinalizar" class="text-center botao-finalizar mb-4">
+    <app-neo-button [classes]="'btn-neoprimary'" [titleText]="'CONCLUIR'" (callFunction)="finalizarFluxo()"
+        [isDisabled]="false">
+    </app-neo-button>
+</div>

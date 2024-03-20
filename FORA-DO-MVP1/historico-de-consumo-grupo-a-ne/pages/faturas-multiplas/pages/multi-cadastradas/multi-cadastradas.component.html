@@ -1,0 +1,24 @@
+<h2 class="title">Fatura múltipla</h2>
+
+<p class="subtitle">Escolha abaixo a unidade consumidora que deseja consultar:</p>
+
+<div class="row">
+    <div class="col-12 col-md-12 col-lg-9 col-xl-7">
+        <div class="header-accordion">
+            MEUS GRUPOS
+        </div>
+
+        <app-accordion-grupo-fatura [itens]="faturas" (groupEscolhido)="grupoEscolhido($event)"></app-accordion-grupo-fatura>
+
+        <div class="footer-accordion">
+            <span><strong>CRIAR UM GRUPO</strong></span>
+
+            <mat-icon (click)="criarGrupo()" style="cursor:pointer;">add_circle</mat-icon>
+        </div>
+    </div>
+</div>
+
+
+<app-neo-button [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'" [titleText]="'CONFIRMAR'"
+    (callFunction)="confirmar()">
+</app-neo-button>

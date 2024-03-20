@@ -1,0 +1,29 @@
+[
+    {
+        "mesReferencia": "2020-12-01T00:00:00",
+        "dataVencimento": "2021-01-13T00:00:00",
+        "valor": 72.60,
+        "dataInicioPeriodo": "2020-11-18T00:00:00",
+        "dataFimPeriodo": "2020-12-17T00:00:00",
+        "origem": "FAT",
+        "numeroFatura": "20205879661334"
+    },
+    {
+        "mesReferencia": "2021-01-01T00:00:00",
+        "dataVencimento": "2021-02-13T00:00:00",
+        "valor": 0.61,
+        "dataInicioPeriodo": "2020-12-18T00:00:00",
+        "dataFimPeriodo": "2021-01-18T00:00:00",
+        "origem": "FAT",
+        "numeroFatura": "20215953659690"
+    },
+    {
+        "mesReferencia": "2021-03-01T00:00:00",
+        "dataVencimento": "2021-04-13T00:00:00",
+        "valor": 52.74,
+        "dataInicioPeriodo": "2021-02-17T00:00:00",
+        "dataFimPeriodo": "2021-03-17T00:00:00",
+        "origem": "FAT",
+        "numeroFatura": "20216078477809"
+    }
+]

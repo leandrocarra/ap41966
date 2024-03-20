@@ -1,0 +1,23 @@
+<div class="box-content">
+    <span class="mt-1 material-icons-outlined icon-description" [class.color-primary]="grupoTensao === 'A'"
+        [class.color-secondary]="grupoTensao === 'B'">
+        description
+    </span>
+
+    <div class="mt-4 mt-lg-2">
+        <h4 class="title-alert w-100">Como prefere fazer o pagamento?</h4>
+        <mat-radio-group class="box-opcoes-pagamento mt-3" [(ngModel)]="pagamento" aria-labelledby="Escolher opções de pagamento">
+            <div class="col-12 p-0 pe-md-5 ps-md-5 d-flex flex-column">
+                <mat-radio-button *ngFor="let pagamento of opcoesPagamento" [value]="pagamento" class="radio-option-dark-gray">{{pagamento}}</mat-radio-button>
+            </div>
+        </mat-radio-group>
+    </div>
+
+    <div class="box-buttons mt-2">
+        <app-neo-button [classes]="grupoTensao === 'A'
+    ?'btn-neodarkgreen pe-5 ps-5 mt-2' :'btn-neoprimary pe-5 ps-5 mt-2'" [isDisabled]="!pagamento"  [titleText]="'CONTINUAR'" (callFunction)='continuar()'>
+        </app-neo-button>
+        <p class="col-5 mt-4 mb-3 btn-cancelar" (click)="cancelar()">Cancelar</p>
+    </div>
+
+</div>

@@ -1,0 +1,56 @@
+#card-selecao {
+
+    .disabled{
+        pointer-events: none ;
+        .icone-acesso-rapido{
+            filter: invert(42%);
+        }
+    }
+
+    .cardPerfil {
+        height: 140px;
+        background: var(--neo-white) 0% 0% no-repeat padding-box;
+        box-shadow: 0px 0px 16px #6061701F;
+        opacity: 1;
+        text-align: start;
+        padding: 1rem;
+    }
+
+    .btn:hover {
+        background: var(--neo-light-green) 0% 0% no-repeat padding-box;
+        .icone-acesso-rapido{
+            display: none;
+        }
+
+        p{
+            color: var(--neo-white);
+        }
+
+        span{
+            color: var(--neo-white);
+            display: block;
+            height: 200px;
+            opacity: 100%;
+            text-transform: none !important;
+            transition: opacity 0.5s;
+            font-size: small;
+        }
+    }
+
+    .btn .icone-acesso-rapido{
+        padding-top: 0.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .btn p{
+        font-weight: 600;
+        color: var(--neo-dark-gray);
+        text-transform: none !important;
+        margin: 0;
+        vertical-align: bottom;
+    }
+
+    .btn span{
+        opacity: 0%;
+    }
+}

@@ -1,0 +1,18 @@
+<div class="list-attachements col-12 col-xl-6 col-lg-7 col-md-10 p-0">
+    <div class="files col-9 text-wrap">
+        <div class="row">
+            <div class="file col-3 d-flex" *ngFor="let file of myFiles; let i = index" (click)="remove(i)">
+                <mat-icon class="d-inline">image</mat-icon>
+                <div class="overflow-hidden flex-wrap">
+                    <p class="mb-0 d-inline text-nowrap">{{file.name}}</p>
+                </div>
+                <mat-icon class="clear">clear</mat-icon>
+            </div>
+        </div>
+    </div>
+    
+    <div class="attach-btn text-nowrap" (click)="fileLoader.click()">
+        <input type="file" style="display: none;" #fileLoader name="anexar" (change)="add($event)" multiple accept=".png, .jpg, .jpeg, .pdf">
+        <mat-icon>attach_file</mat-icon><span>anexar</span>
+    </div>
+</div>

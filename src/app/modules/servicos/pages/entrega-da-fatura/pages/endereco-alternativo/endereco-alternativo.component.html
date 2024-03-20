@@ -1,0 +1,70 @@
+<h2>Entrega da Fatura</h2>
+<p class="subtitulo mb-5">
+    Escolha onde gostaria de receber sua fatura:
+</p>
+
+<h6 class="subtitulo-h6 m-0">DADOS DO ENDEREÇO ALTERNATIVO</h6>
+
+<form [formGroup]="enderecoAlternativoForm" class="row">
+    <div class="mt-3 col-12 col-md-12 col-lg-10 col-xl-8">
+        <div class="row align-items-center">
+            <mat-form-field class="col-12 col-sm-3 col-md-4" appearance="outline" color="primary">
+                <mat-label>CEP</mat-label>
+                <input matInput formControlName="cep" type="text" mask="00000-000" id="cep">
+            </mat-form-field>
+            <app-cep class="px-3 px-md-0"></app-cep>
+        </div>
+
+        <div class="row mb-3">
+
+            <mat-form-field class="col-12 col-sm-7" appearance="outline" color="primary">
+                <mat-label>{{ textoLogradouro }}</mat-label>
+                <input matInput formControlName="logradouro" id="logradouro" type="text">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 col-sm-2" appearance="outline" color="primary">
+                <mat-label>NÚMERO</mat-label>
+                <input matInput formControlName="numero" id="numero" type="text" onlyNumber>
+            </mat-form-field>
+
+            <mat-form-field class="col-12 col-sm-4" appearance="outline" color="primary">
+                <mat-label>COMPLEMENTO</mat-label>
+                <input matInput formControlName="complemento" id="complemento" type="text">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 col-sm-5" appearance="outline" color="primary">
+                <mat-label>BAIRRO</mat-label>
+                <input matInput formControlName="bairro" id="bairro" type="text">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 col-sm-6" appearance="outline" color="primary">
+                <mat-label>CIDADE</mat-label>
+                <input matInput formControlName="cidade" id="cidade" type="text">
+            </mat-form-field>
+
+            <mat-form-field class="col-12 col-sm-3" appearance="outline" color="primary">
+                <mat-label>ESTADO</mat-label>
+                <mat-select focus name="estado" id="estado" formControlName="estado" id="estado" required>
+                    <mat-option *ngFor="let estado of estados" [value]="estado.sigla">
+                        {{ estado.sigla }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div *ngIf="enderecoAlternativoForm.invalid && enderecoAlternativoForm.touched && enderecoAlternativoForm.dirty"
+                class="col-12 container-atencao">
+                <img src="assets/images/icons/atencao.svg" alt="Imagem chamando atenção" class="img-atencao">
+                <p class="msg-atencao my-auto">Por favor, preencha todos os campos corretamente.</p>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="d-flex justify-content-between justify-content-md-start mt-2">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="'CONTINUAR'" [isDisabled]="enderecoAlternativoForm.invalid" (callFunction)="continuar()">
+    </app-neo-button>
+</div>

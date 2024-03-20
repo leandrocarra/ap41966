@@ -1,0 +1,24 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.item-table {
+    color: var(--neo-light-green);
+    font-weight: bolder !important;
+    font-size: 14px;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: var(--neo-light-green);
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: var(--neo-light-green);
+}
+
+.mat-checkbox .mat-accent .ng-valid .mat-checkbox-checked .ng-dirty .ng-touched {
+    border-color: var(--neo-light-green);
+}
+
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}

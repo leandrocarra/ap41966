@@ -1,0 +1,17 @@
+<h2>Suas Solicitações</h2>
+
+<p class="subtitulo mt-3 mb-4">Confira todas as solicitações realizadas para a sua unidade consumidora.</p>
+
+<app-header-filter 
+(eventOutput)="eventFilter($event)" 
+(eventClear)="eventClear($event)" 
+[itens]="itens" 
+[pageSize]="pageSize">
+</app-header-filter>
+
+<app-accordion-solicitacoes [itens]="ativarDados" [solicitacoes]="itens"></app-accordion-solicitacoes>
+
+<div class="pagination-width" *ngIf="itens?.length > 5">
+    <app-pagination [ativarDados]="ativarDados" [pageSize]="pageSize" [collections]="itens" [grupo]="user.group"
+    (eventPagination)="eventPagination($event)" #pagination></app-pagination>
+</div>

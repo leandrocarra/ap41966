@@ -1,0 +1,44 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.texto-p {
+    color: #828282;
+    font-size: 15px;
+    margin-top: 22px;
+}
+
+.trocarBotao {
+    background-color: var(--neo-light-green) !important;
+    color: white !important;
+}
+
+.btn-data-vencimento .btn-outline-secondary:hover{
+    background-color: transparent;
+    color: var(--neo-light-green);
+    border-color: var(--neo-light-green);
+}
+
+.btn-data-vencimento .btn-outline-secondary:focus{
+    background-color: var(--neo-light-green);
+    color: white;
+    border-color: var(--neo-light-green);
+    box-shadow:none;
+}
+
+.form-area{
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px #dedede;
+    padding:10px;
+}
+
+.texto {
+    color: #828282;
+    font-size: 15px;
+}
+
+.img-fatura {
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+}

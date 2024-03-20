@@ -1,0 +1,33 @@
+#uc-infos {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    max-height: inherit;
+    height: inherit;
+    overflow: hidden;
+    padding: 0.625rem;
+    width: 100%;
+
+    .titulo-uc {
+        color: var(--neo-dark-gray-2);
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .endereco-uc {
+        color: #959393;
+        max-height: 100%;
+        overflow: hidden;
+        font-size: 0.875rem;
+    }
+
+    .mat-neo {
+        &--meus-imoveis {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            max-height: 100%;
+        }
+    }
+}
+

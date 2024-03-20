@@ -1,0 +1,25 @@
+<div *ngIf="grupos.length > 0">
+
+    <mat-accordion *ngFor="let grupo of grupos; let i = index" class="acess-cp">
+        <div class="sem-informacao" *ngIf="!grupo.vinculos?.length">
+            <h5>{{grupo.nomeGrupo}}</h5>
+            <app-tooltip *ngIf="grupo.tooltipMsg !== ''" class="color-green d-flex align-items-center" [explicacao]="grupo.tooltipMsg"></app-tooltip>
+        </div>
+
+        <mat-expansion-panel *ngIf="grupo.vinculos?.length">
+            <mat-expansion-panel-header class="box-shadow-cards">
+                <div class="expansion-header justify-content-md-between">
+                    <h5>{{grupo.nomeGrupo}}</h5>
+                    <app-tooltip *ngIf="grupo.tooltipMsg !== ''" class="color-green d-flex align-items-center"
+                        [explicacao]="grupo.tooltipMsg"></app-tooltip>
+                </div>
+            </mat-expansion-panel-header>
+
+            <div class="accordion-content" *ngFor="let cadastro of grupo.vinculos; let last = last; let j = index">
+                <app-conjuge-block [dadosUsuarioFilho]="cadastro" [mostrarTodosDados]="true"
+                    (executarAcao)="validarAcao(cadastro, i, j)"></app-conjuge-block>
+                <hr *ngIf="grupo.vinculos?.length > 1 && last === false">
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

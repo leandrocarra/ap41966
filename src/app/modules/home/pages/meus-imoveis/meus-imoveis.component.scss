@@ -1,0 +1,237 @@
+$filter-height: 2.188rem;
+
+.sombra {
+    box-shadow: 0 2px 4px var(--box-shadow);
+}
+
+.hover {
+    &:hover {
+        background-color: var(--neo-moss-green-100);
+        box-shadow: 0 0 0 2px var(--neo-light-green); // Para transition.
+    }
+}
+
+.transition {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.campo-pesquisar {
+    min-width: 15rem;
+
+    .mat-form-field-suffix {
+        position: absolute;
+        right: 5px;
+        transform: translateY(12.5%);
+        cursor: pointer;
+        color: var(--neo-dark-gray);
+    }
+}
+
+.spinning {
+    animation: spin 1s infinite linear;
+    transform-origin: 50% 54%;
+    color: var(--neo-light-gray);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.pesquisar::placeholder {
+    font-size: 1rem !important;
+}
+
+.form-field-filters, .form-field-search {
+    @extend .sombra;
+    height: $filter-height;
+    background: var(--neo-white) 0 0 no-repeat padding-box;
+    border-radius: 50px;
+}
+
+.vertical-divider {
+    height: 1.625rem;
+    margin-bottom: 0.3rem;
+}
+
+.btn-solicitar-ligacao {
+    @extend .sombra;
+    @extend .hover;
+    @extend .transition;
+    width: 100%;
+    height: calc($filter-height*2);
+    background: var(--neo-moss-green-100);
+    border-radius: 8px;
+    color: var(--neo-dark-green);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.34px;
+}
+
+.btn-solicitar-ligacao:hover {
+    color: var(--neo-dark-green);
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: list-item;
+}
+
+
+.box-imoveis {
+    @extend .sombra;
+    @extend .hover;
+    @extend .transition;
+    height: auto;
+    cursor: pointer;
+    background-color: var(--neo-moss-green-100);
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 24px;
+    border-radius: 5px;
+}
+
+.btn-status-imovel {
+    width: 100%;
+    max-width: 180px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    border-radius: 50px;
+    color: var(--neo-white) !important;
+}
+
+.status {
+    display: flex;
+    justify-content: center;
+}
+
+.unidade-consumidora-title {
+    color: var(--neo-light-green);
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: .34px;
+    text-transform: uppercase;
+}
+
+.unidade-consumidora-value {
+    color: var(--neo-dark-gray);
+    text-align: left;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 25px;
+    letter-spacing: .5px;
+}
+
+.endereco {
+    text-align: left;
+    display: flex;
+    font-size: 16px;
+    line-height: 25px;
+    letter-spacing: .32px;
+    color: var(--neo-dark-gray)
+}
+
+.ligado, .ligada {
+    background-color: var(--neo-light-green) !important;
+    color: var(--neo-white) !important;
+}
+
+.coletiva {
+    background-color: var(--neo-dark-blue) !important;
+    color: var(--neo-white) !important;
+}
+
+.ligando {
+    // TODO: Substituir pelo marrom neo
+    background-color: var(--neo-dark-gray);
+}
+
+.desligado, .desligada {
+    background-color: var(--neo-yellow) !important;
+    color: var(--neo-white) !important;
+}
+
+.cortado, .cortada, .suspensa, .corte {
+    background-color: var(--neo-pure-red) !important;
+    color: var(--neo-white) !important;
+}
+
+.filter {
+    text-align: right;
+    font-size: 14px;
+    line-height: 25px;
+    letter-spacing: 0.28px;
+    color: var(--neo-dark-green);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+#meus-imoveis {
+    button.filter {
+        padding: 0.5rem 0.875rem;
+        border-radius: 50px;
+        height: $filter-height;
+    }
+
+    mat-paginator {
+        background-color: var(--background-color);
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-infix {
+        padding-top: 0 !important;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+        background-color: transparent !important;
+        color: transparent !important;
+    }
+
+    .mat-select-arrow {
+        margin: 11px 4px;
+    }
+
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .form-field-filters, .btn-solicitar-ligacao, .campo-pesquisar {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .btn-solicitar-ligacao {
+        width: 258px;
+    }
+}
+

@@ -1,0 +1,39 @@
+<div *ngIf="!descadastrando">
+    <h2>Fatura em Braile</h2>
+
+    <p class="subtitulo mt-3 mb-3">Suas informações referente ao recebimento das faturas em braile:</p>
+
+    <app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+    <div>
+        <app-fatura-braile-component [tipoServicoBraile]="'Serviço cadastrado.'"></app-fatura-braile-component>
+    </div>
+
+    <div class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-md-3 me-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar(0)">
+        </app-neo-button>
+
+        <app-neo-button [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="mobile === true ? 'DESCADASTRAR' : 'DESCADASTRAR FATURA EM BRAILE'" (callFunction)="descadastrar(0)">
+    </app-neo-button>
+    </div>
+</div>
+
+<div *ngIf="descadastrando">
+    <h2>Tem certeza que deseja descadastrar a fatura em braile?</h2>
+
+    <p class="col-12 col-lg-10 ps-0 subtitulo mt-3 mb-3">
+        Ao descadastrar esse serviço não receberá mais a fatura em braile em seu endereço de imóvel.
+    </p>
+
+    <div class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-md-3 me-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'" [titleText]="'SIM, QUERO DESCADASTRAR'"
+            (callFunction)="descadastrar(1)">
+        </app-neo-button>
+
+        <app-neo-button [classes]="'btn-neo-outline-secondary'" [titleText]="'CANCELAR'"
+            (callFunction)="cancelar()">
+        </app-neo-button>
+    </div>
+</div>

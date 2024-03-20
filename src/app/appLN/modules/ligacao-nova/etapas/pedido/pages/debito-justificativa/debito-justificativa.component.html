@@ -1,0 +1,37 @@
+<h4 *ngIf="etapaServiceJustificativa == 'debitoPago'" class="titulo">Para analisar sua situação precisamos do
+    comprovante de pagamento!</h4>
+
+<h4 *ngIf="etapaServiceJustificativa == 'naoReconhecoDebito'" class="titulo">Para analisar sua situação precisamos do
+    comprovante de endereço!</h4>
+
+<div *ngIf="!mobile" class="row alert alert-secondary mt-2 ms-0 info-doc" role="alert">
+    Você pode carregar o documento com foto no formato .PDF, .JPG, .JPEG ou .PNG!
+</div>
+<div *ngIf="mobile" class="row alert alert-secondary mt-2 info-doc" role="alert">
+    Você pode tirar uma foto ou carregar o documento. Se optar pelo carregamento, o documento deve estar no formato
+    .PDF, .JPG, .JPEG ou .PNG!
+</div>
+
+<div>
+    <div class="col-12 col-xl-4 col-md-6 ps-0">
+        <app-box-file
+        [documentoLabel]="documento.toUpperCase()"
+        [docName]="documento"
+        (arquivoAnexado)="recebeAnexos($event)">
+    </app-box-file>
+    <app-attached-file [arquivoAnexado]=anexos[documento] (arquivoRemovido)=remove($event)>
+    </app-attached-file>
+    </div>
+</div>
+
+
+<div class="d-flex justify-content-between justify-content-md-end mt-5 mb-5 pe-3 ps-3">
+    <div class="pe-3">
+        <button type="button" class="btn btn-outline-secondary mx-auto" title="voltar"
+            (click)="voltar()">VOLTAR</button>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary-green" title="Avançar"
+            (click)="continuar()">CONTINUAR</button>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="width-agencia mt-padrao" id="card-acesso-segunda-via">
+    <mat-card class="py-5">
+        <div class="p-4">
+            <h2><strong>2ª Via de Pagamento</strong></h2>
+
+            <p class="texto"><strong>Nos informe a unidade consumidora</strong></p>
+
+            <form [formGroup]="formUC" class="row">
+                <mat-form-field class="col-12" appearance="outline" color="accent">
+                    <mat-label>UNIDADE CONSUMIDORA</mat-label>
+                    <input matInput formControlName="uc" type="text" id="uc" maxlength="12">
+                    <mat-error>
+                        <app-custom-mat-error [mensagem]="msgAvisoUC"></app-custom-mat-error>
+                    </mat-error>
+                </mat-form-field>
+            </form>
+
+            <div class="col-12 p-0 mt-3">
+                <button class="btn-rounded col-12" color="accent" type="button" mat-flat-button aria-label="nomeBtn"
+                    [disabled]="formUC.invalid" (click)="acessarFaturas()">
+                    ACESSAR FATURAS
+                </button>
+                <button class="mt-3 btn-rounded col-12" color="accent" type="button" mat-flat-button
+                    aria-label="Todas as unidades consumidoras" (click)="acessarUCs()">
+                    {{ mobile ? 'UNIDADES CONSUMIDORAS' : 'TODAS AS UNIDADES CONSUMIDORAS' }}
+                </button>
+                <button class="mt-3 btn-rounded col-12 text-light-gray" type="button" mat-stroked-button
+                    aria-label="Voltar" (click)="voltar()">
+                    VOLTAR
+                </button>
+            </div>
+
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,16 @@
+.alerta-agencia-virtual {
+    min-height: 5.5rem;
+    display: flex;
+    img {
+        width: 1.75rem;
+    }
+    h6 {
+        padding: 0;
+        margin: 0 0 0.188rem 0;
+    }
+    span {
+        font-size: 0.875rem;
+        color: var(--header-text);
+        font-weight: 400;
+    }
+}

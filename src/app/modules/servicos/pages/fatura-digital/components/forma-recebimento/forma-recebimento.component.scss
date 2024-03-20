@@ -1,0 +1,22 @@
+.configuracao-input-forma-recebimento {
+    border-bottom: 2px solid var(--neo-light-gray);
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-fatura {
+    background-color: var(--background-color);
+    outline: none;
+    color: black !important;
+    border: none;
+    width: 100%;
+    font-weight: 400;
+}
+
+.alterar-email {
+    right: 0;
+    top: 0%;
+    color: var(--neo-light-blue);
+    cursor: pointer;
+}

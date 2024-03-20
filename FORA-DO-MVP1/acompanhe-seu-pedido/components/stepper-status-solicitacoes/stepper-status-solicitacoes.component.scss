@@ -1,0 +1,100 @@
+.bloquear-clique {
+    pointer-events: none;
+}
+
+.custom-stepper {
+    margin-top: 1rem;
+
+    .step-header {
+        display: flex;
+    }
+
+    .step-title {
+        display: flex;
+        vertical-align: middle;
+    }
+
+    .step-date {
+        color: var(--neo-dark-gray);
+    }
+
+    mat-icon {
+        font-size: 24px;
+        margin-right: 0.5rem;
+    }
+
+    .step-line {
+        border-left: 1px solid lightslategray;
+        min-height: 40px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+
+    .custom-etapa-stepper:last-child {
+        .step-line {
+            border-left: none;
+            min-height: none;
+            margin-left: 10px;
+        }
+    }
+}
+
+
+.centralizar-icon {
+    align-items: center;
+    display: flex;
+}
+
+.texto-motivo-rejeitada {
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.gray-next{
+    font-size: 16px;
+    color: gray;
+}
+
+.btn-whatsapp-blue {
+    font-size: 0.875rem;
+    font-weight: 500;
+    min-height: 2.75rem;
+    white-space:nowrap;
+    border-radius: 3.125rem;
+    background-color: var(--neo-white);
+    letter-spacing: 0.024rem;
+    line-height: 1.188rem;
+    text-transform: uppercase;
+    color: var(--neo-light-blue);
+    border: 1px solid;
+    border-color: var(--neo-light-blue);
+}
+
+.btn-whatsapp-blue a {
+    color: var(--neo-light-blue) !important;
+    text-decoration: none !important;
+}
+
+.espacamento-data {
+    margin: 31px;
+}
+
+.concluida, .realizada, .true {
+    font-size: 16px;
+    color: var(--neo-light-green);
+}
+
+.em.andamento {
+    font-size: 16px;
+    color: var(--neo-light-blue);
+}
+
+.cancelada, .rejeitada, .finalizada {
+    font-size: 16px;
+    color: var(--neo-pure-red);
+}
+
+.false {
+    font-size: 16px;
+    color: var(--neo-dark-gray)
+}

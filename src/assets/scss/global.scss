@@ -1,0 +1,1069 @@
+$assets-images-path: '^assets/images/';
+
+//line-height
+$lineHeight25: 1.563rem;
+
+
+
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/** Breadcrumb **/
+.xng-breadcrumb-list {
+    margin-bottom: 16px !important;
+}
+
+.xng-breadcrumb-link {
+    text-decoration: none !important;
+    font-size: 12px;
+    color: var(--neo-dark-gray) !important;
+}
+
+.xng-breadcrumb-link:hover {
+    font-weight: normal;
+}
+
+.xng-breadcrumb-trail.ng-star-inserted {
+    text-decoration: underline;
+    text-decoration-color: var(--neo-dark-green);
+    text-underline-offset: 4px;
+    font-size: 12px;
+    margin: 0;
+}
+
+/** buttons **/
+
+//botao primary azul
+.btn-primary-p-green {
+    width: 45px;
+    border-color: #f8fafb !important;
+    color: var(--neo-white) !important;
+    background-color: var(--neo-dark-green) !important;
+}
+
+.btn-primary-p-green:hover:enabled,
+.btn-primary-p-green:hover:enabled {
+    outline: transparent;
+    box-shadow: none !important;
+    opacity: 0.8;
+    color: var(--neo-white);
+}
+
+.btn-margin-top-32 {
+    margin-top: 2rem;
+}
+
+.neo-link {
+    color: var(--neo-dark-gray) !important;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+.neo-link:hover {
+    opacity: 0.8;
+    color: var(--neo-dark-gray) !important;
+}
+
+.text-end {
+    text-align: end;
+}
+
+::placeholder {
+    font-size: 12px;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: var(--neo-dark-green) !important;
+}
+
+.not-according-criteria {
+    color: var(--neo-pure-red);
+    font-size: 0.8rem;
+    // margin-bottom: 20px;
+}
+
+// botao cinza
+.btn-primary-grey {
+    border-color: #f8fafb !important;
+    color: #778ca2 !important;
+    background-color: #f8fafb !important;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.btn-primary-grey:hover,
+.btn-primary-grey:hover {
+    outline: transparent;
+    box-shadow: none !important;
+    color: #778ca2 !important;
+}
+
+.btn-primary-grey:hover {
+    background-color: #dcdcdc !important;
+}
+
+.text-green,
+.text-green:hover {
+    color: var(--neo-light-green) !important;
+}
+
+//botao borda verde
+.btn-outline-success {
+    color: black !important;
+    border: 1.5px solid var(--neo-light-green) !important;
+    box-shadow: none !important;
+}
+
+.btn-outline-success:hover {
+    outline: transparent;
+    box-shadow: none !important;
+    color: var(--neo-white) !important;
+    border: 1.5px solid var(--neo-light-green) !important;
+    background-color: var(--neo-light-green) !important;
+}
+
+//botao desabilitado
+.btn-primary.disabled {
+    color: #fff !important;
+}
+
+.btn-primary.disabled:hover {
+    background-color: #778ca2 !important;
+    color: #fff !important;
+}
+
+/** end buttons **/
+
+/** radio button **/
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: var(--neo-light-green);
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: var(--neo-light-green);
+}
+
+/** radio button **/
+
+/* ==========================================================================
+make sure browsers use the pointer cursor for anchors, even with no href
+========================================================================== */
+a:hover {
+    cursor: pointer;
+}
+
+.hand,
+[Neosortby] {
+    cursor: pointer;
+}
+
+.fundo-login {
+    height: 100vh;
+    //background-image: url("../images/BG.png");
+    background-position-y: center;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+/* ==========================================================================
+Custom alerts for notification
+========================================================================== */
+.alerts {
+    .alert {
+        text-overflow: ellipsis;
+
+        pre {
+            background: none;
+            border: none;
+            font: inherit;
+            color: inherit;
+            padding: 0;
+            margin: 0;
+        }
+
+        .popover pre {
+            font-size: 10px;
+        }
+    }
+
+    .toast {
+        position: fixed;
+        width: 100%;
+
+        &.left {
+            left: 5px;
+        }
+
+        &.right {
+            right: 5px;
+        }
+
+        &.top {
+            top: 55px;
+        }
+
+        &.bottom {
+            bottom: 55px;
+        }
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .alerts .toast {
+        width: 50%;
+    }
+}
+
+$md-checkbox-margin: 16px 0;
+$md-checkbox-checked-color: rgb(17, 159, 218);
+$md-checkbox-border-color: rgba(0, 0, 0, 0.54);
+$md-checkbox-border-color-disabled: rgba(0, 0, 0, 0.26);
+$md-checkbox-checked-color-disabled: rgba(0, 0, 0, 0.26);
+
+$md-checkbox-size: 20px;
+$md-checkbox-padding: 4px;
+
+$md-checkmark-width: 2px;
+$md-checkmark-color: #fff;
+
+.md-checkbox {
+    position: relative;
+    margin: $md-checkbox-margin;
+    text-align: left;
+    padding-top: 21px;
+
+    &.md-checkbox-inline {
+        display: inline-block;
+    }
+
+    label {
+        cursor: pointer;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 23px;
+        }
+
+        &:before {
+            // box
+            width: $md-checkbox-size;
+            height: $md-checkbox-size;
+            background: #fff;
+            border: 2px solid $md-checkbox-border-color;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+    }
+
+    input[type="checkbox"] {
+        outline: 0;
+        margin-right: $md-checkbox-size - 10px;
+
+        &:checked {
+            + label:before {
+                background: $md-checkbox-checked-color;
+                border: none;
+            }
+
+            + label:after {
+                $md-checkmark-size: $md-checkbox-size - 2 * $md-checkbox-padding;
+
+                transform: rotate(-45deg);
+
+                top: 28px;
+                left: $md-checkbox-padding;
+                width: $md-checkmark-size;
+                height: calc($md-checkmark-size / 2);
+
+                border: $md-checkmark-width solid $md-checkmark-color;
+                border-top-style: none;
+                border-right-style: none;
+            }
+        }
+
+        &:focus {
+            + label:before {
+                outline: rgb(17, 159, 218) auto 5px;
+            }
+        }
+
+        &:disabled {
+            + label:before {
+                border-color: $md-checkbox-border-color-disabled;
+            }
+
+            &:checked {
+                + label:before {
+                    background: $md-checkbox-checked-color-disabled;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+Custom style for sweet alert
+========================================================================== */
+.swal2-container.swal2-center.swal2-shown {
+    z-index: 999999;
+}
+
+.inactive-link,
+h2.inactive-link {
+    pointer-events: none;
+    cursor: default;
+    font-weight: 300;
+    color: inherit;
+}
+
+.swal2-icon.swal2-success {
+    border-color: var(--neo-light-green) !important;
+}
+
+.swal2-icon.swal2-success [class^="swal2-success-line"] {
+    display: block;
+    position: absolute;
+    height: 0.3125em;
+    border-radius: 0.125em;
+    /*background-color: var(--defaultGreen) !important;*/
+    /*background-color: var(--alertGreen) !important;*/
+    z-index: 2;
+}
+
+.swal2-icon.swal2-error {
+    // border-color: rgba(207, 17, 55, 0.87);
+    border-color: #fe4d97;
+}
+
+.swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+    display: block;
+    position: absolute;
+    top: 2.3125em;
+    width: 2.9375em;
+    height: 0.3125em;
+    border-radius: 0.125em;
+    background-color: var(--neo-pure-red);
+}
+
+.swal2-styled.swal2-confirm,
+.swal2-styled.swal2-cancel {
+    border-radius: 26px !important;
+}
+
+.btn-fechar-outline-green :focus :hover {
+    display: inline-block;
+    background-color: transparent !important;
+    outline: var(--neo-light-green) !important;
+    color: var(--neo-light-green) !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
+}
+
+.btn-fechar-outline-green {
+    display: inline-block;
+    background-color: transparent !important;
+    outline: var(--neo-light-green) !important;
+    color: var(--neo-light-green) !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
+}
+
+.input-swal-nvda {
+    box-shadow: 0 0 0 0;
+    border: 0 none !important;
+    outline: 0;
+    background: none;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+
+    &:focus {
+        box-shadow: 0 0 0 0;
+        border: 0 none !important;
+        outline: 0;
+    }
+}
+
+// Word Wrapping
+@mixin word-wrap() {
+    -ms-word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+.word-wrap {
+    @include word-wrap;
+}
+
+.breakLine {
+    margin-bottom: 20px;
+}
+
+.cancelMarginCheckbox {
+    margin-top: -20px;
+}
+
+/* jhipster-needle-scss-add-main JHipster will add new css style */
+.modal-content {
+    height: 100% !important;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+.remover-espaco-top {
+    padding-top: 0 !important;
+    margin-top: -16px !important;
+}
+
+.heightFixedWithScroll {
+    height: 150px !important;
+    overflow-y: scroll;
+}
+
+.separator-shadow {
+    height: 50px;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 20px -15px rgba(0, 0, 0, 0.15);
+}
+
+.h-center {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.codigo-template {
+    letter-spacing: 18px !important;
+}
+
+.mat-step-header .mat-step-icon-state-edit {
+    background-color: #529bd1;
+}
+
+.mat-step-header .mat-step-icon-selected {
+    background-color: #f4980d;
+}
+
+.mat-step-header .mat-step-icon-state-done {
+    background-color: #69922e;
+}
+
+.swal2-container {
+    z-index: 99999999999;
+}
+
+.mat-horizontal-stepper-header {
+    pointer-events: none !important;
+}
+
+.mat-horizontal-stepper-header-container {
+    padding-right: 15px !important;
+    overflow: visible !important;
+    width: 60% !important;
+    margin: 0 auto 0 auto !important;
+}
+
+.mat-dialog-container {
+    padding: 0 !important;
+}
+
+.fill-remaining-space {
+    /* This fills the remaining space, by using flexbox.
+         Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+}
+
+button.close fa-icon {
+    color: var(--neo-dark-blue);
+}
+
+.menuItem {
+    display: inline-block;
+    padding: 0;
+    outline: none;
+}
+
+.menuItem > button,
+.submenu > button,
+.userSubmenu > button {
+    width: 100%;
+    outline: none;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #b1adad;
+    min-width: 120px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.submenu > button,
+.userSubmenu > button {
+    display: block;
+}
+
+button.active + .submenu,
+.active + .userSubmenu {
+    display: block !important;
+}
+
+.userSubmenu {
+    display: none;
+    position: absolute;
+    background-color: #f5f5f5;
+    min-width: 120px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 100%;
+    border-radius: 2px;
+}
+
+.userSubmenu > button > span {
+    color: black !important;
+    font-size: 0.7em !important;
+}
+
+.checkbox-nice {
+    position: relative;
+    padding-left: 15px;
+}
+
+.checkbox-nice input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.checkbox-nice label {
+    padding-top: 3px;
+    margin-top: -15px;
+    margin-left: -5px;
+}
+
+.checkbox-nice.checkbox-inline > label {
+    margin-left: 12px;
+}
+
+.checkbox-nice label:before {
+    cursor: pointer !important;
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 1px;
+    top: 2px;
+    background: var(--neo-white);
+    content: "";
+    border: 1px solid #1428a0;
+    border-radius: 3px;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.checkbox-nice label:after {
+    cursor: pointer !important;
+    opacity: 0;
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 7px;
+    background: transparent;
+    top: 7px;
+    left: 6px;
+    border: 3px solid #1428a0;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.checkbox-nice label:hover::after {
+    opacity: 0.3;
+}
+
+.checkbox-nice input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+}
+
+.ngx-pagination {
+    padding-left: 0 !important;
+}
+
+.btn-danger-p {
+    background: rgba(220, 53, 69, 0.6);
+    border: 1px rgba(220, 53, 69, 0.5);
+    color: var(--neo-white);
+}
+
+.btn-danger-p:hover {
+    background: rgba(220, 53, 69, 1);
+    border: 1px rgba(220, 53, 69, 1);
+    color: var(--neo-white);
+}
+
+::ng-deep .mat-dialog-actions {
+    margin: 0;
+}
+
+.log-message {
+    position: absolute;
+    right: 10px;
+}
+
+.swal-wide {
+    width: 90% !important;
+}
+
+.swal2-content {
+    font-size: medium !important;
+}
+
+.padding-right-zero {
+    padding-right: 0;
+}
+
+.padding-left-zero {
+    padding-left: 0;
+}
+
+.padding-zero {
+    padding: 0;
+}
+
+.mat-tooltip {
+    font-size: 15px !important;
+    white-space: pre-line;
+}
+
+/* Header menu */
+.submenu-servicos {
+    background-color: var(--neo-dark-green);
+    color: var(--neo-white);
+    border-radius: 0 !important;
+}
+
+.bkg-light-green {
+    background-color: var(--neo-light-green);
+}
+
+.submenu-servicos .mat-menu-content button.mat-menu-item {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    font-size: 14px !important;
+    outline: 0;
+    background: var(--neo-dark-green);
+}
+
+/* ChatBot */
+.chatbot-call.mat-menu-panel {
+    max-width: 350px !important;
+    margin-bottom: 10px;
+}
+
+.group-a-text-darkgreen {
+    color: var(--neo-dark-green);
+}
+
+.group-b-text-lightgreen {
+    color: var(--neo-light-green);
+}
+
+.group-a-bkg-darkgreen {
+    background-color: var(--neo-dark-green);
+    color: var(--neo-white);
+}
+
+.group-a-bkg-lightgreen {
+    color: var(--neo-light-green);
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 22px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--neo-light-green);
+    border-radius: 100%;
+    background: #fff;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--neo-light-green);
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    border-radius: 100%;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label {
+    position: relative;
+    padding-left: 22px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--neo-light-green);
+    border-radius: 100%;
+    background: #fff;
+}
+
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--neo-light-green);
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    border-radius: 100%;
+    transition: all 0.2s ease;
+}
+
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    height: 68px;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 10px !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-flex {
+    height: 52px !important;
+}
+
+//* CLASSES PADRONIZADAS E CONFERIDAS *//
+
+.icone-equipamento {
+    background-repeat: no-repeat;
+    background-position: center;
+    height: inherit;
+    width: inherit;
+}
+
+.green-circle {
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    background-color: var(--neo-light-green);
+    border-radius: 50%;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.white-circle {
+    background-color: var(--neo-white);
+}
+
+.ar-condicionado {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}ar_condicionado.svg');
+}
+
+.ar-condicionado-verde {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}ar_condicionado_verde.svg');
+}
+
+.aquecedor {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}aquecedor.svg');
+
+}
+
+.aquecedor-verde {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}aquecedor_verde.svg');
+
+}
+
+.forno {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}forno.svg');
+
+}
+
+.forno-verde {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}forno_verde.svg');
+
+}
+
+.raiox {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}raiox.svg');
+    height: 37px;
+
+}
+
+.raiox-verde {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}raiox_verde.svg');
+    height: 37px;
+
+}
+
+.solda {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}solda.svg');
+
+}
+
+.solda-verde {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}solda_verde.svg');
+
+}
+
+.resistencia {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}resistencia.svg');
+
+}
+
+.resistencia-verde {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}resistencia_verde.svg');
+
+}
+
+.chuveiro {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}chuveiro.svg');
+}
+
+.chuveiro-verde {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}chuveiro_verde.svg');
+}
+
+.motor {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}motor.svg');
+}
+
+.motor-verde {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}motor_verde.svg');
+}
+
+.outros {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}mais.svg');
+}
+
+.outros-verde {
+    @extend .icone-equipamento;
+    background-image: url('#{$assets-images-path}mais_verde.svg');
+}
+
+.background-group-b {
+    background-color: var(--neo-light-green) !important;
+}
+
+.mat-calendar-body-selected {
+    background-color: var(--neo-dark-green);
+}
+
+.custom-h2-tooltip {
+    letter-spacing: 0.07rem;
+    line-height: 2.165rem;
+
+}
+
+.texto {
+    color: var(--neo-dark-gray);
+    font-size: 1rem;
+}
+
+.subtitulo {
+    color: var(--neo-dark-gray);
+    font-weight: bolder;
+}
+
+.subtitulo-h6 {
+    color: var(--neo-dark-gray);
+    text-transform: uppercase;
+}
+
+.conf-text-input-mat-error {
+    font-size: 0.875rem;
+}
+
+.img-atencao {
+    width: 1.125rem;
+    margin-right: 5px;
+}
+
+.format-info-radio-btn {
+    color: var(--neo-dark-gray);
+    letter-spacing: 0.024rem;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.mat-checkbox-inner-container-no-side-margin {
+    padding: 12px !important;
+}
+
+.mat-checkbox-inner-container {
+    height: 1.5rem !important;
+    width: 1.5rem !important;
+}
+
+
+.check-group-a {
+    cursor: default;
+
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: var(--neo-dark-green);
+    }
+
+    .mat-checkbox-frame {
+        border-color: var(--neo-dark-green) !important;
+    }
+}
+
+
+.check-group-b {
+    cursor: default;
+
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: var(--neo-light-green);
+    }
+
+    .mat-checkbox-frame {
+        border-color: var(--neo-light-green) !important;
+    }
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.btn-confirm-alert {
+    border-color: var(--neo-light-green);
+    color: var(--neo-white);
+    background-color: var(--neo-light-green);
+    margin: 5px;
+    border-radius: 26px;
+}
+
+.btn-confirm-alert:disabled {
+    background-color: var(--neo-dark-gray);
+    border-color: var(--neo-white);
+}
+
+::ng-deep {
+    .mat-radio-label {
+        white-space: normal !important;
+        word-wrap: break-word !important;
+    }
+}
+
+
+.form-area {
+    background-color: var(--neo-white);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px #dedede;
+    padding: 25px;
+}

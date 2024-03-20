@@ -1,0 +1,56 @@
+<h2 class="h-two">Confirme as informações da solicitação</h2>
+
+<p class="subtitulo mt-3 mb-3">
+    Para concluir a solicitação, confirme as informações abaixo:
+</p>
+
+<app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+<div class="col-12 col-xl-6 col-lg-7 col-md-10 dados-cadastrados p-0 mt-3">
+    <div class="items font-bold-gray">
+        <div class="item-dado-cadastrado d-flex">
+            <span>Prazo</span>
+            <span>{{(dados.dadosTaxa.tempo) + " "}}{{ dados.dadosTaxa.unidadeTempo}}</span>
+        </div>
+        <div class="item-dado-cadastrado d-flex">
+            <span>Taxa de serviço</span>
+            <div class="d-flex">
+                <span>{{dados.dadosTaxa.taxa | currency: "BRL"}}</span>
+            </div>
+        </div>
+        <div class="item-dado-cadastrado  d-flex">
+            <span>Número de telefone</span>
+            <div class="info-btn-edit d-flex">
+                <span>{{mascaraDeTelefone}}</span>
+                <span><a (click)="voltar()">Alterar</a></span>
+            </div>
+        </div>
+        <div class="item-dado-cadastrado  d-flex">
+            <span class="font-bold-gray">Ponto de referência</span>
+            <div class="info-btn-edit d-flex">
+                <span class="font-bold-gray">{{dados.referencia}}</span>
+                <span><a (click)="voltar()">Alterar</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="possuiDebitos" class="mt-3">
+    <app-anexar-comprovante (arquivosAnexados)="arquivosAnexados($event)"></app-anexar-comprovante>
+</div>
+
+<div class="alerta-debito d-flex col-12 col-xl-6 col-lg-7 col-md-10 p-0 mt-4">
+    <span class="material-icons-round me-2">warning_amber</span>
+    A Taxa de Religação será cobrada na próxima fatura e em caso de deslocamento improdutivo será cobrada a taxa de
+    visitação.
+</div>
+
+<div class="d-flex flex-wrap justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-md-3 m-0" [classes]="grupoTensao === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="'CONFIRMAR'" (callFunction)="continuar()" [isDisabled]="!validarAnexos">
+    </app-neo-button>
+</div>

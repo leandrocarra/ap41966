@@ -1,0 +1,76 @@
+.info_input {
+  color: var(--neo-dark-gray);
+  font-weight: bolder;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.input-tipo-fatura {
+    background-color: var(--background-color);
+    outline: none;
+    color: black !important;
+    border: none;
+    border-bottom: 2px solid var(--neo-light-gray) !important;
+    width: 100%;
+}
+
+.tipo-email {
+    font-size: 1rem;
+    color: var(--neo-dark-gray);
+}
+
+.alterar-entrega {
+    position: absolute;
+    right: 0;
+    top: 0%;
+    color: var(--neo-light-blue);
+    cursor: pointer;
+    padding-right: 1.25rem;
+}
+
+.option[aria-selected="true"] {
+  color: var(--neo-dark-green) !important;
+  font-weight: bolder;
+}
+
+.mat-option:hover:not(.mat-option-disabled) {
+  background-color: var(--neo-light-green) !important;
+  color: var(--neo-white);
+  font-weight: bolder;
+}
+
+:host ::ng-deep .mat-datepicker-toggle-default-icon {
+  fill: var(--neo-dark-gray);
+}
+
+.configuracao-input {
+  border-bottom: 2px solid var(--neo-light-gray);
+  margin-top: 16px;
+}
+
+.input-fatura {
+  background-color: var(--background-color);
+  outline: none;
+  color: black !important;
+  border: none;
+  width: 100%;
+  font-weight: 400;
+}
+
+.alterar-email {
+  position: absolute;
+  right: 0;
+  top: 0%;
+  color: var(--neo-light-blue);
+  cursor: pointer;
+}
+
+.mat-input-element:disabled {
+  font-size: 14px;
+  color: var(--neo-dark-gray);
+}
+
+.mat-input-element {
+  font-size: 14px;
+  color: black;
+}

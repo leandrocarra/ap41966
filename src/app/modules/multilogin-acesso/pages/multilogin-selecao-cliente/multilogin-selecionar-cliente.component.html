@@ -1,0 +1,41 @@
+<div class="width-agencia mt-padrao" id="selecionar-cliente">
+
+    <h2 class="titulo">Selecione o cliente</h2>
+    <p class="color-dark-gray">
+        Escolha abaixo a o cliente que deseja consultar:
+    </p>
+
+    <div class="row-search">
+        <div class="d-flex justify-content-start col-md-6 align-items-end p-0">
+
+            <!-- Input CPF ou CNPJ-->
+            <div class="col-10 p-0 d-flex">
+                <mat-form-field appearance="outline" class="form-field-search">
+                    <input class="pesquisar" matInput type="text" placeholder="Insira um CPF ou CNPJ" [(ngModel)]="campoPesquisar"
+                    (ngModelChange)="limparFiltro()">
+                </mat-form-field>
+
+                <!-- Botão pesquisar-->
+                <div class="d-flex align-items-center mt-0">
+                    <button type="button" class="botao-pesquisar mt-1" mat-button aria-label="Pesquisar"
+                    (click)="filtrarArray(campoPesquisar)">
+                        <mat-icon>search</mat-icon>
+                        Pesquisar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Card dados-do-cliente-->
+    <app-dados-clientes [dadosClientes]="dadoClientesFiltrados" (cliente)="clienteSelecionado($event)"></app-dados-clientes>
+
+    <!-- Botão voltar-->
+    <div class="row gy-4 justify-content-between justify-content-md-start mt-3">
+        <app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+    </div>
+
+</div>

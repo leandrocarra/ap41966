@@ -1,0 +1,17 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.box-equipamentos-adicionados {
+    background-color: #ffffff;
+    min-height: 90px;
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+	margin: 1rem 0;
+	-webkit-box-shadow: 0px 1px 5px -1px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow: 0px 1px 5px -1px rgba(50, 50, 50, 0.3);
+	box-shadow: 0px 1px 5px -1px rgba(50, 50, 50, 0.3);
+}

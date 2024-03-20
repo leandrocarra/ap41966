@@ -1,0 +1,26 @@
+<div class="box-economia-energia">
+	<div class="alert">
+		<mat-icon><span class="material-icons-round">warning_amber</span></mat-icon>
+		<span class="text-alert">{{ alertaConsumo.titulo }}</span>
+	</div>
+
+	<div class="d-flex alert-baixo-consumo">
+		<mat-icon class="icon {{ alertaConsumo.classeIcone }}" *ngIf="!mobile">{{ alertaConsumo.icone }}
+		</mat-icon>
+
+		<div>
+			<div class="{{ alertaConsumo.classeTexto }} text mb-2 d-flex">
+				<mat-icon class="{{ alertaConsumo.classeIcone }} icon d-inline p-0 col-2" *ngIf="mobile">{{
+					alertaConsumo.icone }}</mat-icon>
+				<p class="d-inline p-0 col-10 mb-0 text-msg">{{ alertaConsumo.mensagem }}</p>
+			</div>
+
+			<span class="text-dicas d-block text-justify">Confira nossas dicas para economizar com a energia
+				elétrica na nossa página no <a href="{{ youtubeURL }}" target="_blank" rel="noopener">YouTube</a> e
+				o <a a href="{{ paginaInstitucionalUrl }}" target="_blank" rel="noopener">uso consciente na nossa página
+					institucional</a>.
+			</span>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,52 @@
+<h2>Precisamos saber qual o imóvel deseja trocar de titularidade.</h2>
+<div id="black-and-white-input-1">
+    <form [formGroup]="informarTrocaFormGroup">
+        <h6 class="subtitulo-h6 mt-3">
+            SELECIONE A FORMA DE IDENTIFICAR O IMÓVEL:
+        </h6>
+
+        <mat-radio-group class="col-12" formControlName="optionSelected" (change)="onChange()">
+            <div>
+                <mat-radio-button id="uc" name="Unidade consumidora" value="uc" class="format-info-radio-btn"
+                    (change)="changeTipoInput($event)">
+                    Unidade consumidora
+                </mat-radio-button>
+
+                <mat-radio-button id="medidor" name="Número do medidor" value="medidor"
+                    class="format-info-radio-btn ms-md-3" (change)="changeTipoInput($event)">
+                    Número do medidor
+                </mat-radio-button>
+            </div>
+        </mat-radio-group>
+
+        <div *ngIf="tipoInput">
+            <div class="col-12 col-md-7 col-xl-5 col-lg-5 p-0">
+                <mat-form-field appearance="outline" class="col-12 pb-0 ps-0" [hideRequiredMarker]="true">
+                    <mat-label class="centralizar-label">{{tipoInput.label}}</mat-label>
+                    <input matInput type="text" name="inputValue" id="inputValue" formControlName="inputValue"
+                        [maxlength]="maxLength" [minlength]="minLength" required />
+                    <mat-error>
+                        <div class="row">
+                            <span class="material-icons-round ps-0 pe-1">
+                                warning_amber
+                            </span>
+                            <div class="row ps-3 mt-1 conf-text-input-mat-error">
+                                {{tipoInput.labelInvalido}} inválida
+                            </div>
+                        </div>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'CONTINUAR'"
+            (callFunction)="continuar()" [isDisabled]="informarTrocaFormGroup.invalid">
+        </app-neo-button>
+    </div>
+</div>

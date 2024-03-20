@@ -1,0 +1,15 @@
+{
+    "class": "ar-condicionado",
+    "nome": "",
+    "equipamento": "AR-CONDICIONADO",
+    "potencia": 900,
+    "quantidade": 1,
+    "potenciaReal": "7500BTU",
+    "objeto": {
+        "codigoAparelho": "1",
+        "codigoSubTipoAparelho": "25",
+        "codigoTipoAparelho": "1",
+        "descricaoSubTipoAparelho": "AR CONDICIONADO 7.500 BTU",
+        "quantidadeAparelho": 1
+    }
+}

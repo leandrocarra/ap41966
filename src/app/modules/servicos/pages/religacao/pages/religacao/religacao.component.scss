@@ -1,0 +1,18 @@
+.color-neo-dark-gray {
+    color: var(--neo-dark-gray);
+    font-weight: bolder;
+
+    span {
+        color: var(--neo-pure-red);
+    }
+}
+
+.alerta-religacao {
+    color: var(--neo-pure-red);
+    font-weight: bolder;
+}
+
+.religacao-warning {
+    color: var(--neo-pure-red);
+    font-weight: 500;
+}

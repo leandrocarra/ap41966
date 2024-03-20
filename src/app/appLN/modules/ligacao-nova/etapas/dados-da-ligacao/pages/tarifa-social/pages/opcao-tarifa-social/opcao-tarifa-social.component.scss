@@ -1,0 +1,12 @@
+.tituloProgramaSocial{
+    color: var(--neo-light-green);
+    font-size: medium;
+}
+
+#form-beneficio {
+    mat-radio-button {
+        .mat-radio-label {
+            white-space: normal !important;
+        }
+    }
+}

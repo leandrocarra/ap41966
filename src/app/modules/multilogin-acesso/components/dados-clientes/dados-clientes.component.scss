@@ -1,0 +1,47 @@
+.unidade-consumidora-value {
+	color: var(--neo-dark-gray);
+	text-align: left;
+	font-weight: 900;
+	font-size: 25px;
+	line-height: 25px;
+	letter-spacing: .5px;
+}
+
+.endereco {
+	text-align: left;
+	display: flex;
+	font-size: 16px;
+	line-height: 25px;
+	letter-spacing: .32px;
+	color: var(--neo-dark-gray);
+}
+
+.sombra {
+	box-shadow: 0px 2px 4px var(--box-shadow);
+}
+
+.hover {
+	&:hover {
+		background-color: var(--neo-on-hover);
+		box-shadow: 0px 0px 0px 2px var(--neo-light-green); // Para transition.
+	}
+}
+
+.transition {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.box-clientes {
+	@extend .sombra;
+	@extend .hover;
+	@extend .transition;
+	height: auto;
+	background-color: var(--neo-white);
+	margin-top: 16px;
+	padding: 24px;
+	border-radius: 5px;
+}

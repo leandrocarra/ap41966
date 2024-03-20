@@ -1,0 +1,106 @@
+.border-dark-green {
+    border-bottom: 0.313rem solid var(--neo-dark-green);
+}
+
+.header-padrao {
+    .mat-toolbar {
+        background-color: transparent;
+        color: var(--neo-white);
+    }
+
+    .flag-icon {
+        color: var(--neo-white) !important;
+
+    }
+
+    .first-header-row {
+        background: var(--neo-light-green) !important;
+    }
+
+    .second-header-row {
+        @extend .border-dark-green;
+    }
+}
+
+.icone-header{
+    width: auto !important;
+}
+
+.header-grupo-A {
+    .flag-icon {
+        color: var(--neo-white) !important;
+    }
+
+    .first-header-row {
+        background-color: var(--neo-dark-green) !important;
+    }
+
+    .second-header-row {
+        border-bottom: 0.313rem solid var(--neo-light-green);
+    }
+}
+
+.header-representante-legal {
+    .first-header-row {
+        background: linear-gradient(90deg,
+                var(--neo-dark-blue) 0%,
+                var(--neo-dark-green) 100%);
+    }
+
+    .second-header-row {
+        @extend .border-dark-green;
+    }
+}
+
+.header-conjuge,
+.header-perfil-de-acesso {
+    .first-header-row {
+        background: linear-gradient(90deg,
+                var(--neo-dark-blue) 0%,
+                var(--neo-dark-green) 100%);
+    }
+
+    .flag-icon {
+        color: var(--neo-white) !important;
+    }
+
+    .second-header-row {
+        @extend .border-dark-green;
+    }
+}
+
+.header-imobiliaria,
+.header-corretor,
+.header-padronista {
+    .first-header-row {
+        background: linear-gradient(90deg,
+                var(--neo-dark-green) 0%,
+                var(--neo-dark-blue) 100%);
+    }
+
+    .flag-icon {
+        color: var(--neo-white) !important;
+
+    }
+
+    .second-header-row {
+        @extend .border-dark-green;
+    }
+}
+
+.header-credenciado,
+.header-atendente-credenciado {
+    .first-header-row {
+        background: linear-gradient(90deg,
+                var(--neo-dark-green) 0%,
+                var(--neo-dark-blue) 100%);
+    }
+
+    .flag-icon {
+        color: var(--neo-white) !important;
+    }
+
+    .second-header-row {
+        @extend .border-dark-green;
+    }
+}

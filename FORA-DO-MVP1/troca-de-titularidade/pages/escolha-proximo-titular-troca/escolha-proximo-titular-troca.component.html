@@ -1,0 +1,29 @@
+<h2>Troca da titularidade</h2>
+<p class="subtitulo">Antes de iniciar o processo, precisamos saber para quem será a troca de titularidade.</p>
+
+<h6 class="subtitulo-h6">QUEM SERÁ O NOVO TITULAR DO IMÓVEL?</h6>
+
+<mat-radio-group class="col-12" [(ngModel)]="optionSelected">
+    <div class="d-flex flex-wrap">
+        <mat-radio-button id="euMesmo" name="euMesmo" value="euMesmo" class="format-info-radio-btn">
+            Eu mesmo
+        </mat-radio-button>
+    </div>
+
+    <div class="d-flex flex-wrap p-0 mt-3">
+        <mat-radio-button id="outro" name="outro" value="outro" class="format-info-radio-btn">
+            Outro (terceiro)
+        </mat-radio-button>
+    </div>
+
+</mat-radio-group>
+
+<div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="buttonContinuar"
+        (callFunction)="solicitarTrocaTitularidade()" [isDisabled]="!optionSelected">
+    </app-neo-button>
+</div>

@@ -1,0 +1,23 @@
+<div class="margem-personalizada">
+    <div *ngFor="let arquivo of arquivos; let i = index">
+        <div *ngIf="arquivo !== null" class="file-info">
+            <div class="d-flex">
+                <div class="attached-file-box">
+                    <span class="icon material-icons-outlined">{{icones[arquivo.fileExtension]}}</span>
+                </div>
+                <div>
+                    <p class="texto m-0">
+                        {{ arquivo.fileName.substring(0, 8) + '...'}}{{ arquivo.fileExtension }}
+                        <br /> {{ arquivo.fileSize | formatBytes }}
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="close" (click)="remove(i)">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

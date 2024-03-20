@@ -1,0 +1,126 @@
+<div id="meus-imoveis" class="width-agencia mt-padrao">
+    <div *ngIf="this.meusImoveis.ucs.length > 0">
+
+        <!-- Título e subtítulo -->
+        <header>
+            <h2 class="titulo">Minhas Unidades Consumidoras</h2>
+            <p class="color-dark-gray">
+                Escolha abaixo a unidade consumidora que deseja consultar:
+            </p>
+        </header>
+
+        <!-- Barra de botões e filtros -->
+        <section class="row gy-4 align-items-end justify-content-between mb-3">
+            <div class="align-items-center col-auto">
+                <div class="row gy-4">
+                    <!-- Campo de pesquisa -->
+                    <div class="col-12 col-sm-auto d-flex align-items-center">
+                        <mat-form-field appearance="outline" class="campo-pesquisar form-field-search">
+                            <input matInput type="text" class="pesquisar" [(ngModel)]="campoPesquisar"
+                                   placeholder="Insira um Código do Cliente..." [disabled]="!podePesquisar"
+                                   (keyup.enter)="aoApertarEnter(campoPesquisar)">
+                            <!-- Ícones fechar e carregando -->
+                            <div matSuffix>
+                                <mat-icon *ngIf="podePesquisar && campoPesquisar" (click)="limparCampoDePesquisa()">
+                                    close
+                                </mat-icon>
+                                <mat-icon class="spinning" *ngIf="!podePesquisar">refresh</mat-icon>
+                            </div>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Botão de pesquisa -->
+                    <div class="col-12 col-sm-auto d-flex align-items-center">
+                        <button type="button" class="filter" mat-button aria-label="Pesquisar"
+                                (click)="pesquisarUCsPorInput(campoPesquisar)">
+                            Pesquisar
+                            <mat-icon>search</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <mat-divider *ngIf="!mobile" class="col-auto p-0 vertical-divider" vertical></mat-divider>
+
+            <!-- Botão de filtro -->
+            <div class="col-12 col-sm-auto d-flex align-items-center">
+                <div class="row align-items-center">
+                    <span *ngIf="!mobile" class="col-auto filter">Filtrar Por:</span>
+                    <div class="col-12 col-sm-auto d-flex align-items-center">
+                        <mat-form-field appearance="outline" class="form-field-filters">
+                            <mat-select placeholder="Filtrar" [(ngModel)]="filtroPorStatus"
+                                        (ngModelChange)="filtrarUCsPorStatus(filtroPorStatus)">
+                                <mat-option *ngFor="let filtro of statusPossiveis"
+                                            [value]="filtro">{{ filtro | titlecase }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- Limpar filtro -->
+                    <div class="col-auto">
+                        <button type="button" class="filter" mat-button aria-label="Limpar filtros"
+                                (click)="limparFiltros()">
+                            Limpar filtros
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão solicitar ligação nova -->
+            <div class="col-12 col-sm-auto d-flex align-items-center">
+                <button class="btn btn-solicitar-ligacao order-1 order-md-2" id="ligacaoNova"
+                        (click)="solicitarLigacaoNova()">
+                    <mat-icon svgIcon="light" class="me-2"></mat-icon>
+                    SOLICITAR LIGAÇÃO NOVA
+                </button>
+            </div>
+        </section>
+
+        <!-- Lista de imóveis -->
+        <section *ngIf="listaDeUCsFiltradas.length > 0">
+            <ul>
+                <li *ngFor="let imovel of listaDeUCsExibidas"
+                    class="row justify-content-center justify-content-md-evenly gx-0 box-imoveis"
+                    (click)="redirecionarParaHome(imovel)">
+                    <div class="col-auto">
+                        <h6 class="unidade-consumidora-title">Código do Cliente</h6>
+                        <div class="unidade-consumidora-value">{{ imovel.uc }}</div>
+                    </div>
+                    <div class="col-12 col-md-5">
+                        <div *ngIf="imovel.local.endereco" class="endereco">
+                            {{ imovel.local.endereco }} - {{ imovel.local.municipio}} - {{ imovel.local.uf }}
+                            , {{ imovel.local.cep }}
+                        </div>
+                    </div>
+                    <span [ngClass]="imovel.status | lowercase" class="col-auto btn-status-imovel">{{ imovel.status }}</span>
+                </li>
+            </ul>
+
+            <!-- Botões de navagação -->
+            <div *ngIf="podeExibirPaginacao" class="mt-3">
+                <app-pagination [ativarDados]="listaDeUCsExibidas"
+                                [pageSize]="numeroDeResultadosExibidos" [collections]="todasAsUCsOrdenadas"
+                                [grupo]="grupo"
+                                (eventPagination)="eventPagination($event)"></app-pagination>
+            </div>
+
+            <!-- Botão voltar-->
+            <div class="d-flex justify-content-between justify-content-md-start mt-3">
+                <app-neo-button class="me-md-3 m-0"
+                                [classes]="pesquisarCliente ? 'btn-neoprimary' : 'btn-neo-outline-secondary'"
+                                [titleText]="pesquisarCliente ? 'PESQUISAR CLIENTE NOVAMENTE' : 'VOLTAR'"
+                                (callFunction)="voltar()">
+                </app-neo-button>
+            </div>
+        </section>
+
+        <section *ngIf="listaDeUCsFiltradas.length === 0">
+            <p class="mt-5 text-center">Não foram encontradas unidades consumidoras com o termo pesquisado.</p>
+        </section>
+
+        <section *ngIf="this.meusImoveis.ucs.length === 0">
+            <app-nao-possui-imovel></app-nao-possui-imovel>
+        </section>
+    </div>
+</div>

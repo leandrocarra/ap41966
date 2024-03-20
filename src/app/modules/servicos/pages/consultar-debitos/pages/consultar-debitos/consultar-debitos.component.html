@@ -1,0 +1,29 @@
+<h2>Consultar débitos e emitir 2ª via de faturas</h2>
+<p class="subtitulo mt-3 mb-3">
+	Consulte as suas contas ou solicite uma 2ª via para realizar o pagamento.
+</p>
+
+<card-alerta *ngIf="card !== undefined" [card]="card"></card-alerta>
+
+<div class="row mt-4">
+	<div class="col-12 col-lg-6">
+		<app-card-ultima-fatura></app-card-ultima-fatura>
+	</div>
+	<div class="col-12 col-lg-6 mt-lg-0 mt-3">
+		<app-personalize-fatura></app-personalize-fatura>
+	</div>
+</div>
+
+<div class="mb-4 mt-4">
+	<app-filters [labelTitle]="'LISTA DE FATURAS'" [itens]="faturas" [pageSize]="pageSize" [tipoFiltro]="'periodo'"
+		(eventOutput)="eventFilter($event)" (eventClear)="eventClear($event)" (eventSelectAll)="eventSelectAll($event)"
+		(eventOutputFiltered)="eventOutputFiltered($event)" (eventDownloadAll)="baixarFaturas()">
+	</app-filters>
+</div>
+
+<app-accordion #accordion></app-accordion>
+
+<div class="col-11 box-paginator">
+	<app-pagination #pagination *ngIf="exibirPaginacao" [ativarDados]="faturasExibidas" [pageSize]="pageSize"
+		[collections]="faturas" [grupo]="grupoDoUsuario" (eventPagination)="eventPagination($event)"></app-pagination>
+</div>

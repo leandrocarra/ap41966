@@ -1,0 +1,33 @@
+h2 {
+    letter-spacing: 0.56px;
+    line-height: 35px;
+    font-weight: bold;
+    color: var(--neo-dark-green);
+}
+
+.text-telas-informativos {
+    font-weight: 400;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    color: var(--neo-dark-gray);
+}
+
+.btn-whatsapp-blue {
+    font-size: 14px;
+    font-weight: 500;
+    height: 44px;
+    white-space: nowrap;
+    border-radius: 50px;
+    background-color: var(--neo-white);
+    letter-spacing: 0.38px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: var(--neo-light-blue);
+    border: 1px solid;
+    border-color: var(--neo-light-blue);
+}
+
+.btn-whatsapp-blue a {
+    color: var(--neo-light-blue) !important;
+    text-decoration: none !important;
+}

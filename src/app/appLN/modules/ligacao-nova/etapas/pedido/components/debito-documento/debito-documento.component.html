@@ -1,0 +1,54 @@
+<div *ngIf="faturasVencidas?.length">
+    <h5 class="titulo"><strong>Débito vinculado ao {{ tipoDoDocumento }}</strong></h5>
+
+    <div class="table-container">
+        <table class="table">
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th class="col-auto">
+                        <mat-checkbox [checked]="selectAll" (click)="onSelectAll($event)"></mat-checkbox>
+                    </th>
+
+                    <th class="col-auto">
+                        <h6 class="item-table">CONTRATO</h6>
+                    </th>
+
+                    <th class="col-auto">
+                        <h6 class="item-table">MÊS DE REFERÊNCIA</h6>
+                    </th>
+
+                    <th class="col-auto">
+                        <h6 class="item-table">DATA DE VENCIMENTO</h6>
+                    </th>
+
+                    <th class="col-auto">
+                        <h6 class="item-table">VALOR</h6>
+                    </th>
+
+                    <th class="col-auto">
+                        <h6 class="item-table">ATRASO</h6>
+                    </th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let vencida of faturasVencidas">
+                    <td>
+                        <div>
+                            <mat-checkbox [checked]="selectItem" [(ngModel)]="vencida.selectItem"
+                                (click)="faturasSelecionadas(vencida)">
+                            </mat-checkbox>
+                        </div>
+                    </td>
+
+                    <td class="texto">{{vencida?.uc}}</td>
+                    <td class="texto">{{formatarData(vencida?.dataVencimento)}}</td>
+                    <td class="texto">{{getDate(vencida?.dataVencimento) | date:'dd/MM/yyyy'}}</td>
+                    <td class="texto">{{vencida?.valorEmissao | currency:'BRL'}}</td>
+                    <td class="texto">{{diasDeAtraso(getDate(vencida?.dataVencimento))}} dias</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

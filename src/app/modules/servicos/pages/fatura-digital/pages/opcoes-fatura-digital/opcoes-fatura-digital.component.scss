@@ -1,0 +1,31 @@
+.radio-button-email {
+    color: var(--neo-dark-gray);
+}
+
+.separator {
+    border-bottom: 1px solid var(--neo-light-gray);
+}
+
+.email {
+    margin-top: 16px;
+    margin-bottom: 3px;
+    color: var(--neo-dark-gray-2);
+}
+
+.tipo-email {
+    font-size: 1rem;
+    color: var(--neo-dark-gray);
+}
+
+.radio-button {
+    display: flex;
+    flex-wrap: wrap !important;
+}
+
+
+::ng-deep {
+    .mat-radio-label {
+      white-space: normal !important;
+      word-wrap: break-word !important;
+    }
+  }

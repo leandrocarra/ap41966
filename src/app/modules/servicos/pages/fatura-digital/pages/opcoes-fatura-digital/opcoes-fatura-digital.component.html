@@ -1,0 +1,33 @@
+<h2>Fatura Digital</h2>
+
+<p *ngIf='tipoRecebimento !== "TipoRecebimento.whatsapp"' class="subtitulo mt-3 mb-3">
+	Para receber suas faturas por e-mail, selecione um e-mail de recebimento:
+</p>
+
+<p *ngIf='tipoRecebimento === "TipoRecebimento.whatsapp"' class="subtitulo mt-3 mb-3">
+	Para receber suas faturas digitalmente, selecione uma opção de recebimento:
+</p>
+
+<div class="col-12 col-md-10 col-xl-6 col-lg-7 ps-0">
+	<mat-radio-group aria-labelledby="Selecionar um e-mail para receber a fatura digital" [(ngModel)]="canalDeEnvio">
+
+		<mat-radio-button class="ps-0 radio-button col-12 separator"
+			*ngFor="let opcao of dadosFaturaDigital.opcoesDeEnvio" [value]="opcao.label">
+			<div>
+				<p  *ngIf="opcao.label === 'WhatsApp'" class="email">{{ opcao.valor | mask: '(00) 0 0000-0000' }}</p>
+				<p  *ngIf="opcao.label !== 'WhatsApp'" class="email">{{ opcao.valor }}</p>
+				<p class="tipo-email">{{ opcao.label }}</p>
+			</div>
+		</mat-radio-button>
+	</mat-radio-group>
+</div>
+
+<div class="d-flex justify-content-between justify-content-md-start mt-5">
+	<app-neo-button class="me-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+		(callFunction)="voltar()">
+	</app-neo-button>
+
+	<app-neo-button class="me-3" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+		[titleText]="'CONTINUAR'" [isDisabled]="canalDeEnvio === '' " (callFunction)="continuar()">
+	</app-neo-button>
+</div>

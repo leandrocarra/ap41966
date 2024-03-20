@@ -1,0 +1,25 @@
+<div id="dialog-baixar-segunda-via" class="box-content">
+    <span class="material-icons-outlined icon-description" [class.color-primary]="grupoDoUsuario === 'A'"
+        [class.color-secondary]="grupoDoUsuario === 'B'">description</span>
+    <h4 class="col-md-8 col-12 title-alert">Por qual motivo você deseja emitir 2ª via da fatura?</h4>
+
+    <form [formGroup]="motivoFormGroup">
+        <div class="mt-4 mt-lg-2 d-flex flex-wrap justify-content-center">
+            <mat-radio-group formControlName="motivoSolicitacao">
+                <div *ngFor="let motivo of motivos" class="col-12 p-0 pe-md-5 ps-md-5 d-flex flex-nowrap">
+                    <mat-radio-button [value]="motivo" [name]="motivo"
+                        class="radio-option-dark-gray radio-button-debito text-left">{{ motivo.descricao | titlecase }}
+                    </mat-radio-button>
+                </div>
+            </mat-radio-group>
+        </div>
+    </form>
+
+    <div class="box-buttons mt-2">
+        <app-neo-button [classes]="grupoDoUsuario === 'A'
+        ?'btn-neodarkgreen pe-5 ps-5 mt-2' :'btn-neoprimary pe-5 ps-5 mt-2'" [titleText]="opcaoFatura === 'visualizar' ? 'VISUALIZAR' : 'BAIXAR'"
+            (callFunction)="verificarQuantidadeDeFaturas()" [isDisabled]="!motivoFormGroup.valid">
+        </app-neo-button>
+        <p class="col-5 mt-4 mb-3 btn-cancelar" (click)="cancelar()">Cancelar</p>
+    </div>
+</div>

@@ -1,0 +1,80 @@
+{
+    "PNG": {
+        "isTrusted": true,
+        "target": {
+            "files": {
+                "0": {
+                    "lastModified": "2021-04-28T09:46:28.000Z",
+                    "name": "nome-cpf-t1.png",
+                    "size": 449007,
+                    "type": "image/png"
+                }
+            }
+        }
+    },
+    "PDF": {
+        "isTrusted": true,
+        "target": {
+            "files": {
+                "0": {
+                    "lastModified": "2021-04-28T09:46:28.000Z",
+                    "name": "nome-cpf-t1.png",
+                    "size": 449007,
+                    "type": "application/pdf"
+                }
+            }
+        }
+    },
+    "JPG": {
+        "isTrusted": true,
+        "target": {
+            "files": {
+                "0": {
+                    "lastModified": "2021-04-28T09:46:28.000Z",
+                    "name": "nome-cpf-t1.png",
+                    "size": 449007,
+                    "type": "image/jpg"
+                }
+            }
+        }
+    },
+    "JPEG": {
+        "isTrusted": true,
+        "target": {
+            "files": {
+                "0": {
+                    "lastModified": "2021-04-28T09:46:28.000Z",
+                    "name": "nome-cpf-t1.png",
+                    "size": 449007,
+                    "type": "image/jpeg"
+                }
+            }
+        }
+    },
+    "INVALIDO": {
+        "isTrusted": true,
+        "target": {
+            "files": {
+                "0": {
+                    "lastModified": "2021-04-28T09:46:28.000Z",
+                    "name": "nome-cpf-t1.png",
+                    "size": 449007,
+                    "type": "INVALIDO"
+                }
+            }
+        }
+    },
+    "DOC_MAIOR_2MB": {
+        "isTrusted": true,
+        "target": {
+            "files": {
+                "0": {
+                    "lastModified": "2021-04-28T09:46:28.000Z",
+                    "name": "nome-cpf-t1.png",
+                    "size": 257000,
+                    "type": "INVALIDO"
+                }
+            }
+        }
+    }
+}

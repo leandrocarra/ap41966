@@ -1,0 +1,23 @@
+<h2>{{ textoTitulo }}</h2>
+<p class="subtitulo mt-3 mb-4">{{ textoSubtitulo }}</p>
+
+<div>
+    <mat-radio-group aria-labelledby="textoSubtitulo" class="radio-group-energia"
+                     [(ngModel)]="descricaoProblema">
+        <div class="col-12 p-0" *ngFor="let problema of problemasIluminacao">
+            <mat-radio-button class="color-dark-gray radio-button-energia mb-4" [value]="problema.key">
+                {{ problema.value }}
+            </mat-radio-button>
+        </div>
+    </mat-radio-group>
+</div>
+
+<div class="d-flex justify-content-between justify-content-md-start mt-3">
+    <app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                    (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-md-3 m-0" [classes]="grupoTensao === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                    [isDisabled]="!descricaoProblema" [titleText]="'CONTINUAR'" (callFunction)="continuar()">
+    </app-neo-button>
+</div>

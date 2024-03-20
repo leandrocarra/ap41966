@@ -1,0 +1,25 @@
+.isActive {
+    p {
+        color: var(--neo-pure-red);
+    }
+    img {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: 0.75rem;
+    }
+    div {
+        display: none;
+    }
+    &--cpf {
+        display: flex !important;
+    }
+    &--conjuge {
+        flex-direction: row !important;
+        align-items: center;
+        display: flex !important;
+        flex: 0 0 75%;
+        p {
+            font-size: 0.8125rem;
+        }
+    }
+}

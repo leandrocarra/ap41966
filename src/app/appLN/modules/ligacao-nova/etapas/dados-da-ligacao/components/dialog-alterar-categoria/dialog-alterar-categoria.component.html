@@ -1,0 +1,25 @@
+<div class="card">
+    <div style="color: white; background-color: #00A443;" class="d-flex justify-content-between card-header col-12">
+        <label class="col-11"><strong>Consulte os requisitos para alterar a sua categoria</strong></label>
+        <button type="button" class="close-light" data-dismiss="card" title="Fechar" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="card-body">
+        Estou ciente da cobrança do preço da diferença do medidor nos termos do artigo 73, §2° da Resolução Normativa n° 414/2010, o qual
+        define que por solicitação do consumidor, a distribuidora pode atender a unidade consumidora em tensão secundária de distribuição
+        com ligação bifásica ou trifásica, ainda que não apresente carga instalada suficiente para tanto, desde que o interessado se
+        responsabilize pelo pagamento da diferença de preço do medidor, pelos demais materiais e equipamentos de medição a serem instalados
+        e eventuais custos de adaptação da rede.
+        <div class="my-3">Para qual categoria você gostaria de alterar?</div>
+        <div class="row ps-3 justify-content-center justify-content-md-start" *ngIf="data.categoria === 'MONOFÁSICA'">
+            <button class="btn btn-outline-secondary col-lg-3 col-md-3 col-12 mb-3 me-2" (click)="alterarCategoria('BIFÁSICA')">BIFÁSICO</button>
+            <button class="btn btn-outline-secondary col-lg-3 col-md-3 col-12 mb-3 me-2" (click)="alterarCategoria('TRIFÁSICA')">TRIFÁSICO</button>
+            <button class="btn btn-outline-secondary col-lg-3 col-md-3 col-12 mb-3 me-2" (click)="close()">NÃO QUERO ALTERAR</button>
+        </div>
+        <div class="row ps-3 justify-content-center justify-content-md-start" *ngIf="data.categoria === 'BIFÁSICA'">
+            <button class="btn btn-outline-secondary col-lg-3 col-md-3 col-12 mb-3 me-2" (click)="alterarCategoria('TRIFÁSICA')">TRIFÁSICO</button>
+            <button class="btn btn-outline-secondary col-lg-3 col-md-3 col-12 mb-3 me-2" (click)="close()">NÃO QUERO ALTERAR</button>
+        </div>
+    </div>
+</div>

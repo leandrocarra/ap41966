@@ -1,0 +1,53 @@
+h2 {
+    font-weight: 400;
+    text-align: center;
+}
+
+.a {
+    color: var(--neo-dark-green);
+}
+
+.b {
+    color: var(--neo-light-green);
+}
+
+.dados-problema {
+    max-width: 578px;
+    margin: 22px auto;
+    background-color: var(--neo-white);
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.tipo-problema {
+    h3 {
+        font-size: 20px;
+        color: var(--neo-dark-green);
+        font-weight: bold;
+    }
+    :nth-child(2) {
+        align-self: center;
+    }
+}
+
+.detalhamento-problema {
+    border: 1px solid var(--neo-white-500);
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+
+.protocolo-style {
+    font-weight: bold;
+    :nth-child(1) {
+        color: var(--neo-dark-gray);
+    }
+    :nth-child(2) {
+        color: var(--neo-dark-gray-2);
+    }
+}
+
+.title {
+    color: var(--header-text);
+    font-weight: 500;
+    opacity: 0.5;
+}

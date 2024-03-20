@@ -1,0 +1,18 @@
+.listagem-faturas-header {
+    padding: 8px 0 0 38px;
+    background-color: var(--neo-light-green);
+    color: var(--neo-white);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 55px;
+}
+
+.texto-informativo {
+    color:  var(--neo-dark-gray-2);
+    font-size: 1rem;
+}

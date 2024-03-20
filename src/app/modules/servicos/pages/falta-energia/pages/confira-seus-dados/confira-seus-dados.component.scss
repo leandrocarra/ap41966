@@ -1,0 +1,72 @@
+.subtitulo {
+    font-weight: 500;
+    color: var(--neo-dark-gray);
+}
+
+// .dados-uc {
+//     max-width: 550px;
+//     color: var(--neo-light-gray);
+//     border: 1px solid var(--neo-light-gray);
+//     border-radius: 4px;
+//     margin-bottom: 30px;
+//     backgroundvar(--neo-white)
+//     .codigo-uc,
+//     .endereco-uc {
+//         padding: 10px 15px;
+//         justify-content: space-between;
+//         font-weight: bold;
+//         :nth-child(1) {
+//             margin-right: 20px;
+//         }
+//         :nth-child(2) {
+//             color: var(--neo-dark-gray-2);
+//             text-align: right;
+//         }
+//     }
+
+//     .codigo-uc {
+//         border-bottom: 1px solid var(--neo-light-gray);
+//     }
+// }
+
+.dados-cadastrados {
+    .item-dado-cadastrado {
+        border-bottom: 1px solid var(--neo-white-500);
+        padding: 10px 0;
+    }
+
+    .item-dado-cadastrado {
+        justify-content: space-between;
+        text-align: right;
+        font-weight: 400;
+        color: var(--neo-dark-gray-2);
+        .info-btn-edit {
+            flex-direction: column;
+            div a {
+                text-decoration: none !important;
+                color: var(--neo-light-blue) !important;
+            }
+        }
+    }
+}
+
+.dados-ocorrencia {
+    word-break: break-word;
+    padding-left: 1rem;
+}
+
+.tipo-solicitacao {
+    border-top: 1px solid var(--neo-white-500);
+}
+
+.item-titulo {
+    color: var(--neo-dark-gray);
+    width: 40%;
+    text-align: left;
+}
+
+.item-titulo-local{
+    color: var(--neo-dark-gray);
+    width: 20%;
+    text-align:left;
+}

@@ -1,0 +1,66 @@
+{
+    "dataVencimento": "28",
+    "faturaDigital": "Não",
+    "emailRecebimento": "JEANHENRIQUE.SOUZA@BR.EY.COM",
+    "ondeReceber": "NO IMÓVEL",
+    "receberNoImovel": {
+        "endereco": {
+            "anexos": {
+                "Comprovante de Endereço": [],
+                "Licença Ambiental": []
+            },
+            "anexosDebitos": {
+                "Comprovante de Endereço": [],
+                "Comprovante de Pagamento": []
+            },
+            "apartamento": false,
+            "areaAmbiental": "NÃO",
+            "bairro": "JD BOM SUCESSO",
+            "cep": "13500000",
+            "cepEncontrado": true,
+            "cepUnico": false,
+            "cidade": "RIO CLARO",
+            "codigoBairro": "00310010",
+            "codigoLocalidade": "0031",
+            "codigoLogradouro": "063364",
+            "complemento": "",
+            "endereco": "DO TREVO SP 127 E 310",
+            "estado": "SP",
+            "latitude": "",
+            "longitude": "",
+            "numero": "123456",
+            "pontoReferencia": "",
+            "ruaProjetada": false,
+            "ruaSemCep": false,
+            "codigoLocalização": "",
+            "tipoLogradouro": "ACS",
+            "trecho": "0003",
+            "uc": "",
+            "zonaRural": false,
+            "tipoLocalizacao": ""
+        }
+    },
+    "receberEnderecoAlternativo": {
+        "endereco": {
+            "cep": "",
+            "cidade": "",
+            "endereco": "",
+            "numero": "",
+            "complemento": "",
+            "bairro": "",
+            "estado": ""
+        }
+    },
+    "receberCaixaPostal": {
+        "caixaPostal": "",
+        "cidade": "",
+        "estado": "",
+        "cep": ""
+    },
+    "dadosBancarios": {
+        "debitoAutomatico": "",
+        "banco": "",
+        "agencia": "",
+        "conta": ""
+    }
+}

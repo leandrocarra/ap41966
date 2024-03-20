@@ -1,0 +1,20 @@
+<h2>{{ fluxo === 'simulacao' ? 'Simular Autoleitura' : 'Autoleitura'}}</h2>
+
+<p class="subtitulo mt-3 mb-4">Confira os dados da unidade consumidora e código do medidor para realizar a Autoleitura:</p>
+
+<!-- DADOS DA UC -->
+<app-dados-imovel-ligacao [codigoMedidor]="medidor"></app-dados-imovel-ligacao>
+
+<!-- CARDS PARA ANEXAR FOTOS -->
+<h6 class="mt-4 color-dark-gray mt-3">ANEXAR FOTO DOS REGISTRADORES CONFORME O TIPO</h6>
+<div class="row mt-2">
+    <div class="col-12 col-md-6 col-lg-4 my-3" *ngFor="let leitura of leiturasDestePeriodo; let i = index">
+        <app-box-file [maxSize]="tamanhoMaximoArquivo" [formatosAceitos]="formatosParaAnexar" [documentoLabel]="leitura.anexo.label" [docName]="leitura.anexo.docName" (arquivoAnexado)="receberAnexo($event, i)"></app-box-file>
+        <app-attached-file [arquivos]="leitura.arquivos" (removerArquivo)="removerAnexo(i ,$event);"></app-attached-file>
+    </div>
+</div>
+
+<div class="row gy-4 justify-content-between justify-content-md-start mt-3">
+    <app-neo-button class="col-auto" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'" (callFunction)="voltar()"></app-neo-button>
+    <app-neo-button class="col-auto" [classes]="'btn-neoprimary'" [titleText]="'CONFIRMAR ANEXOS'" (callFunction)="confirmarEnvio()"></app-neo-button>
+</div>

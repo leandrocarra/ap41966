@@ -1,0 +1,23 @@
+<mat-card class="alerta-agencia-virtual mat-neoenergia mt-3 mb-3" (click)="mobile ? direcionar() : false" *ngIf="showAlert">
+	<div class="d-flex align-items-center w-100 justify-content-between">
+		<div class="d-flex w-100 align-items-center">
+			<img class="me-4 ms-3" src="assets/images/icons/{{ card.icone_esquerda }}" alt="Alerta" />
+			<div>
+				<h6 class="d-block bold {{ card.estilo }}">{{ card.titulo }}</h6>
+				<span class="d-block descricao">{{ card.descricao }}</span>
+			</div>
+		</div>
+		<div class="d-flex ">
+			<button class="btn-rounded" *ngIf="!mobile" color="accent" type="button" mat-flat-button
+				(click)="direcionar()">
+				{{ card.nomeBtn }}
+			</button>
+			<button *ngIf="card.icone_fechar" title="Fechar" type="button" mat-icon-button
+				(click)="close();" alt="Fechar">
+				<mat-icon>
+					close
+				</mat-icon>
+			</button>
+		</div>
+	</div>
+</mat-card>

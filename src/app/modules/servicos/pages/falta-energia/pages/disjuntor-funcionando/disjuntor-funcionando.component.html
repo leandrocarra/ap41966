@@ -1,0 +1,31 @@
+<h2>{{ textoTitulo }}</h2>
+
+<p class="subtitulo mt-3 mb-3">{{ textoSubtitulo }}</p>
+
+<div>
+  <mat-radio-group aria-labelledby=textoSubtitulo [(ngModel)]="problemaEscolhido">
+    <div class="col-12 p-0" *ngFor="let opcao of opcoes">
+      <mat-radio-button class="color-dark-gray radio-button-energia mb-4" [value]="opcao.key">
+        {{ opcao.value }}
+      </mat-radio-button>
+    </div>
+  </mat-radio-group>
+</div>
+
+<div class="row mb-4" *ngIf="apresentaAlerta()">
+  <div class="col-xs-10 col-lg-7 col-md-9 flex pe-xs-4 warning">
+    <img class="img-atencao" src="assets/images/icons/atencao.svg" alt="imagem com símbolo de atenção"/>
+    <span class="ps-3">{{ mensagemAviso }}<br *ngIf="!mobile" />
+    </span>
+  </div>
+</div>
+
+<div class="d-flex justify-content-between justify-content-md-start mt-3">
+  <app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+    (callFunction)="voltar()">
+  </app-neo-button>
+
+  <app-neo-button class="me-md-3 m-0" [classes]="grupoTensao === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+    [isDisabled]="!problemaEscolhido" [titleText]="'CONTINUAR'" (callFunction)="continuar()">
+  </app-neo-button>
+</div>

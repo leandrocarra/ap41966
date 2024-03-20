@@ -1,0 +1,43 @@
+.area video{
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+	background-color: var(--neo-on-hover);
+}
+
+.area {
+	padding: 1.5rem;
+}
+
+.btn-group-a {
+	border: 1.5px solid var(--neo-dark-green);
+	background: var(--neo-white);
+	width: 100%;
+}
+
+.btn-group-a:hover {
+	width: 100%;
+	border: 1.5px solid var(--neo-dark-green);
+	border-radius: 0.25rem;
+	background: var(--neo-dark-green);
+	.material-icons {
+		color: var(--neo-white);
+	}
+}
+
+.btn-group-b {
+	width: 100%;
+	border: 1.5px solid var(--neo-light-green);
+	border-radius: 0.25rem;
+	background: var(--neo-white);
+}
+
+.btn-group-b:hover {
+	width: 100%;
+	border: 1.5px solid var(--neo-light-green);
+	border-radius: 0.25rem;
+	background: var(--neo-light-green);
+	.material-icons {
+		color: var(--neo-white);
+	}
+}

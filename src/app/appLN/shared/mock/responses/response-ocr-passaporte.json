@@ -1,0 +1,194 @@
+{
+    "VALIDO-1": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "tipo_passaporte",
+                        "value": "P",
+                        "score": 0.69
+                    },
+                    {
+                        "name": "pais_emissor",
+                        "value": "BRA",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "numero_passaporte",
+                        "value": "YE140110",
+                        "score": 0.44
+                    },
+                    {
+                        "name": "sobrenome",
+                        "value": "FLAVIA",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "nome",
+                        "value": "MARIA FLAVIA",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "nacionalidade",
+                        "value": "BRASILEIRO",
+                        "score": 0.93
+                    },
+                    {
+                        "name": "data_nascimento",
+                        "value": "1976-05-03",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "sexo",
+                        "value": "M",
+                        "score": 0.03
+                    },
+                    {
+                        "name": "naturalidade",
+                        "value": "SÃO PAULO, SP",
+                        "score": 0.24
+                    },
+                    {
+                        "name": "data_expedicao",
+                        "value": "2020-10-20",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "autoridade_emissor",
+                        "value": "NOVA YORK CG",
+                        "score": 0.61
+                    },
+                    {
+                        "name": "data_validade",
+                        "value": "2030-10-19",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "codigo_mrtd",
+                        "value": "P<BRAMODERNO << JOAO<RICARDO <<<<<<<<<<<<<<<<<< YE 140110<7BRA7605035M3010194 <<<<<<<<<<<<<< 08",
+                        "score": 0.74
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.66,
+                "docType": "documento_identificacao",
+                "pageIndex": 1,
+                "tags": [
+                    "documento_identificacao",
+                    "br-passaporte-1"
+                ]
+            }
+        ],
+        "queryId": "VNQHPCWFFECQCZXEOJHUX",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "VALIDO-2": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "tipo_passaporte",
+                        "value": "P",
+                        "score": 0.69
+                    },
+                    {
+                        "name": "pais_emissor",
+                        "value": "BRA",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "numero_passaporte",
+                        "value": "YE140110",
+                        "score": 0.44
+                    },
+                    {
+                        "name": "sobrenome",
+                        "value": "FLAVIA",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "nome",
+                        "value": "MARIA FLAVIA",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "nacionalidade",
+                        "value": "BRASILEIRO",
+                        "score": 0.93
+                    },
+                    {
+                        "name": "data_nascimento",
+                        "value": "1976-05-03",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "sexo",
+                        "value": "M",
+                        "score": 0.03
+                    },
+                    {
+                        "name": "naturalidade",
+                        "value": "SÃO PAULO, SP",
+                        "score": 0.24
+                    },
+                    {
+                        "name": "data_expedicao",
+                        "value": "2020-10-20",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "autoridade_emissor",
+                        "value": "NOVA YORK CG",
+                        "score": 0.61
+                    },
+                    {
+                        "name": "data_validade",
+                        "value": "2030-10-19",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "codigo_mrtd",
+                        "value": "P<BRAMODERNO << JOAO<RICARDO <<<<<<<<<<<<<<<<<< YE 140110<7BRA7605035M3010194 <<<<<<<<<<<<<< 08",
+                        "score": 0.74
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.66,
+                "docType": "documento_identificacao",
+                "pageIndex": 1,
+                "tags": [
+                    "documento_identificacao",
+                    "br-passaporte-2"
+                ]
+            }
+        ],
+        "queryId": "VNQHPCWFFECQCZXEOJHUX",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "NULO": {
+        "result": [
+            {
+                "fields": null,
+                "deskewImage": "",
+                "docQualityScore": 0.66,
+                "docType": "documento_identificacao",
+                "pageIndex": 1,
+                "tags": [
+                    "documento_identificacao",
+                    "br-passaporte-2"
+                ]
+            }
+        ],
+        "queryId": "VNQHPCWFFECQCZXEOJHUX",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

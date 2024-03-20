@@ -1,0 +1,194 @@
+@import "header-cores-perfis.scss";
+
+#tarja-qa {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 999;
+    font-weight: 500;
+    font-size: 10px;
+    background-color: var(--neo-pure-red);
+    color: var(--neo-white);
+    padding: 0.3rem;
+    border-radius: 0 10px 10px 0;
+}
+
+#menu-sidenav {
+    color: var(--neo-white);
+}
+
+#header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    .btn-login {
+        font-size: 1rem;
+        color: var(--neo-white);
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    .btn-header {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .transition {
+        -webkit-transition: all 0.7s ease-in-out;
+        -moz-transition: all 0.7s ease-in-out;
+        -ms-transition: all 0.7s ease-in-out;
+        -o-transition: all 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
+    }
+
+    #navbar {
+        background-color: var(--neo-white);
+        @extend .transition;
+    }
+
+    .first-header-row {
+        transition: background-color 0.5s ease;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        // Se o tamanho do header for alterado, atualizar o calculo do drawer content
+        height: 4rem;
+    }
+
+    #nome-usuario {
+        color: var(--neo-white);
+    }
+
+    .second-header-row {
+        display: flex;
+        background-color: var(--neo-white) !important;
+        // Se o tamanho do header for alterado, atualizar o calculo do drawer content
+        height: 3.8rem;
+    }
+
+    .rotate-up {
+        @extend .transition;
+        transform: rotate(180deg);
+    }
+
+    .rotate-down {
+        @extend .transition;
+        transform: rotate(0deg);
+    }
+
+    .header-logo {
+        height: 3.9rem;
+    }
+
+    .titulo-subconjunto {
+        font-size: 1.25rem;
+        margin: 1.5rem 0;
+        color: var(--neo-dark-gray);
+    }
+
+    .opcoes-desktop {
+        box-shadow: 0px 2px 4px #00000029;
+    }
+
+    .opcoes-detalhadas {
+        display: flex;
+        flex-wrap: wrap;
+        height: fit-content;
+        padding-bottom: 1.5rem;
+    }
+
+    .open-menu {
+        height: fit-content;
+        visibility: visible;
+        opacity: 1;
+        transition: visibility 0.5s, opacity 0.5s ease-out;
+        background-color: var(--neo-white);
+    }
+
+    .close-menu {
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .servico-subconjunto {
+        color: var(--neo-light-green) !important;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    .servico-subconjunto-mobile {
+        font-weight: 500;
+        color: var(--neo-dark-green) !important;
+        text-decoration: underline;
+    }
+
+    .servico-subconjunto:hover {
+        @extend .transition;
+        color: var(--neo-dark-green) !important;
+        text-decoration: none;
+    }
+
+    .mat-drawer-inner-container {
+        width: 250px !important;
+        height: fit-content !important;
+    }
+
+    .mat-drawer:not(.mat-drawer-side) {
+        height: fit-content !important;
+    }
+
+    .header-vertical-divider {
+        border: 1px solid var(--neo-white);
+        opacity: 0.5;
+        height: 2rem;
+    }
+
+    #icone-indicador-perfil {
+        color: var(--neo-white);
+        font-weight: 300;
+        font-size: 0.8125rem;
+        letter-spacing: 0.75px;
+        line-height: 1rem;
+    }
+
+    @media only screen and (max-width: 575px) {
+        #icone-indicador-perfil {
+            font-size: 0.7rem;
+        }
+    }
+}
+
+.mat-drawer-content {
+    // Se o tamanho do header for alterado, atualizar os valores a seguir
+    min-height: calc(100vh - 7.8rem) !important;
+    height: fit-content !important;
+    overflow: unset !important;
+}
+
+.mat-menu-panel {
+    max-width: fit-content !important;
+}
+
+@media only screen and (max-width: 1023px) {
+    .mat-drawer-content {
+        // Se o tamanho do header for alterado, atualizar os valores a seguir
+        min-height: calc(100vh - 4rem) !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #tarja-qa {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    .bandeira {
+        margin: 0.5rem;
+    }
+}

@@ -1,0 +1,94 @@
+<div class="col-12 col-md-6 col-lg-3 p-0">
+    <form [formGroup]="passwordFormGroup">
+        <mat-form-field appearance="outline" class="col-12 ps-0 pe-0 pe-md-0">
+            <mat-label>SENHA</mat-label>
+            <input class="input-field" matInput [type]="hide ? 'password' : 'text'" name="password" id="password"
+            [(ngModel)]="password" (ngModelChange)="equalsOldPassword()" formControlName="password" minlength="8"
+            maxlength="50" required>
+            <mat-icon matSuffix class="visibillity-eye" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}
+            </mat-icon>
+        </mat-form-field>
+
+        <br>
+
+        <mat-form-field id="confirmacao" appearance="outline" class="col-12 ps-0 pe-0 pe-md-0">
+            <mat-label>CONFIRME SUA SENHA</mat-label>
+            <input class="input-field" matInput [type]="hideConfirmPassword ? 'password' : 'text'" name="password"
+            id="password2" [(ngModel)]="confirmPassword" formControlName="confirmPassword" blockPaste
+            [errorStateMatcher]="matcher" (ngModelChange)="equalsOldPassword()" minlength="8" maxlength="50" required>
+            <mat-icon matSuffix class="visibillity-eye" (click)="hideConfirmPassword = !hideConfirmPassword">
+            {{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </mat-form-field>
+    </form>
+</div>
+
+<div class="margin-btn" *ngIf="passwordFormGroup.hasError('notSame')">
+    <app-custom-mat-error [mensagem]="senhasNaoConferem" class="not-according-criteria"></app-custom-mat-error>
+</div>
+
+<!-- ################################# -->
+<!-- PARTE EXIBIÇÃO VALIDAÇÃO DA SENHA -->
+<!-- ################################# -->
+
+<div id="validador-de-senha" [class]="passwordFormGroup.hasError('notSame') ? 'mt-3' : 'mt-1'">
+
+    <!-- Mínimo de 8 caracteres -->
+    <div class="d-flex">
+        <div minlength="8" [ngClass]="minCaracteres() ? 'not-according-criteria' : 'according-criteria'">
+            <mat-icon  *ngIf="password">{{minCaracteres() ? 'close':'check' }}</mat-icon>
+        </div>
+        <div class="before-validations mt-1">
+            Mínimo de 8 caracteres
+        </div>
+    </div>
+
+    <!-- Não sequencial (ex: 1, 2, 3, 4...) -->
+    <div class="d-flex">
+        <div [ngClass]="hasSequenceRepeat() ? 'not-according-criteria' : 'according-criteria'">
+            <mat-icon  *ngIf="password">{{hasSequenceRepeat() ? 'close' : 'check' }} </mat-icon>
+        </div>
+        <div class="before-validations mt-1">
+            Não sequencial (ex: 1, 2, 3, 4...)
+        </div>
+    </div>
+
+    <!-- Não ter partes do seu CPF -->
+    <div class="d-flex">
+        <div [ngClass]="hasCpfCnpjPart() ? 'not-according-criteria' : 'according-criteria'">
+            <mat-icon  *ngIf="password">{{hasCpfCnpjPart() ? 'close' : 'check' }}</mat-icon>
+        </div>
+        <div class="before-validations mt-1">
+            Não ter partes do seu CPF
+        </div>
+    </div>
+
+    <!-- Sem partes repetidas (ex: 1, 2, 1, 2, 1, 2) -->
+    <div class="d-flex">
+        <div [ngClass]="hasRepeatParts() ? 'not-according-criteria' : 'according-criteria'">
+            <mat-icon *ngIf="password"  >{{hasRepeatParts() ? 'close' : 'check' }}</mat-icon>
+        </div>
+        <div class="before-validations mt-1">
+            Sem partes repetidas (ex: 1, 2, 1, 2, 1, 2)
+        </div>
+    </div>
+
+    <!-- Caracteres especiais permitidos (!, #, @, ~, ^) -->
+    <div class="d-flex">
+        <div [ngClass]="allowedSpecialCharacters() ? 'according-criteria' : 'not-according-criteria'">
+        <mat-icon *ngIf="password">{{allowedSpecialCharacters() ? 'check' : 'close' }}</mat-icon>
+        </div>
+        <div class="before-validations mt-1">
+            Caracteres especiais permitidos (!, #, @, ~, ^)
+        </div>
+    </div>
+
+    <!-- Senha igual à anterior -->
+    <div *ngIf="compararComSenhaAntiga" class="d-flex">
+        <div [ngClass]="equalsOldPassword() ? 'not-according-criteria' :'according-criteria'">
+            <mat-icon *ngIf="password">{{equalsOldPassword() ? 'close' : 'check' }}</mat-icon>
+        </div>
+        <div class="before-validations mt-1">
+        Ser diferente da senha anterior
+        </div>
+    </div>
+</div>

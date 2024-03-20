@@ -1,0 +1,59 @@
+<form [formGroup]="formDadosCNPJ" id="topoCNPJ" class="formArea mt-3">
+    <h6 class="subtitulo">Dados da Empresa</h6><br />
+    <div id="black-and-white-input-1" class="row">
+        <div class="form-neo col-md-3 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>CNPJ</mat-label>
+                <input matInput type="text" name="cnpj" id="cnpj" formControlName="cnpj" mask="00.000.000/0000-00"
+                    maxlength="18" readonly onlyNumber required />
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-6 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>RAZÃO SOCIAL</mat-label>
+                <input matInput type="text" name="razaoSocial" id="razaoSocial" formControlName="razaoSocial"
+                    maxlength="255" upperCase readonly required>
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-3 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>ATIVIDADE FISCAL</mat-label>
+                <input matInput type="text" name="atividadeFiscal" id="atividadeFiscal"
+                    formControlName="atividadeFiscal" maxlength="255" onlyNumber readonly required>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div id="black-and-white-input-1" class="row">
+        <div class="form-neo col-md-6 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>CLASSE PRINCIPAL DE ATIVIDADE</mat-label>
+                <input *ngIf="possuiClasse" matInput type="text" name="classePrincipal" id="classePrincipal"
+                    formControlName="classePrincipal" maxlength="255" specialCharacters upperCase readonly required>
+                <input *ngIf="!possuiClasse" matInput type="text" name="classePrincipal" id="classePrincipal"
+                    formControlName="classePrincipal" maxlength="255" specialCharacters upperCase required
+                    (ngModelChange)="validarForms()">
+                <a id="link-classe" class="link-classe" (click)="editarClassePrincipal()">EDITAR</a>
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-3 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>INSCRIÇÃO MUNICIPAL</mat-label>
+                <input matInput type="text" name="inscricaoMunicipal" id="inscricaoMunicipal"
+                    formControlName="inscricaoMunicipal" maxlength="255" (ngModelChange)="validarForms()" required
+                    upperCase>
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-3 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>INSCRIÇÃO ESTADUAL</mat-label>
+                <input matInput type="text" name="inscricaoEstadual" id="inscricaoEstadual"
+                    formControlName="inscricaoEstadual" (ngModelChange)="validarForms()" upperCase maxlength="255">
+            </mat-form-field>
+        </div>
+    </div>
+</form>

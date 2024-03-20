@@ -1,0 +1,20 @@
+<div class="row col-12">
+    <div class="col-md-7 col-12">
+        <h4 tabindex="0" class="titulo" [class.text-center]="mobile">
+            Agora que temos seus dados, precisamos de algumas informações sobre o seu imóvel para configurar sua
+            ligação. Vamos lá?</h4>
+
+        <div class="d-flex justify-content-between justify-content-md-start mt-5">
+            <div class="me-3">
+                <button type="button" class="btn btn-outline-secondary" title="voltar"
+                    (click)="voltar()">VOLTAR</button>
+            </div>
+
+            <button type="button" class="btn btn-primary-green" title="Avançar" (click)="continuar()">CONTINUAR</button>
+
+        </div>
+    </div>
+    <div class="col-md-5 d-none d-md-none d-lg-block">
+        <img src="../../../../../../../../assets/assetsLN/images/dados_ligacao.svg" alt="homem fazendo anotações">
+    </div>
+</div>

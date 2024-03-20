@@ -1,0 +1,21 @@
+<h2>Data de Vencimento da Fatura</h2>
+
+<p class="subtitulo mt-3 mb-3">Suas informações referente a data de vencimento das faturas:</p>
+
+<app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+<h6 class="subtitulo-h6 mt-3 mb-3">a data de vencimento da fatura para este imóvel é:</h6>
+
+<div class="data-certa vcol-12 col-xl-6 col-lg-7 col-md-10">
+    <span>Dia {{dataCerta}}</span>
+</div>
+
+<div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'NÃO QUERO'"
+        (callFunction)="declinarDataCerta()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="cadDataCertaButton">
+        (callFunction)="cadDataCerta()">
+    </app-neo-button>
+</div>

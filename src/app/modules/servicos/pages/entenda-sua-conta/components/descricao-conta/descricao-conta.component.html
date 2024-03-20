@@ -1,0 +1,26 @@
+<div class="col-12 background-white">
+    <div *ngFor="let infosConta of informacoesConta; let last = last">
+        <div class="titulo-dado-fatura mb-3">{{ infosConta.titulo }}</div>
+        <div *ngFor="let conteudos of infosConta.conteudo">
+
+            <div class="box-info-conta">
+
+                    <mat-icon>
+                        <span class="material-icons-outlined {{ conteudos.statusCor }}">
+                        {{ conteudos.icone }}
+                        </span>
+                    </mat-icon>
+
+
+                <div class="">
+                    <p [class.subtitulo-dado-fatura]="conteudos.subtitulo.length === 27"
+                        [class.subtitulo-fatura]="conteudos.subtitulo.length !== 27" class="m-0">{{ conteudos.subtitulo
+                        }}</p>
+                    <p class="descricao-dado-fatura">{{ conteudos.descricao }}</p>
+                </div>
+            </div>
+
+        </div>
+        <mat-divider *ngIf="!last" class="mat-dividir"></mat-divider>
+    </div>
+</div>

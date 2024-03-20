@@ -1,0 +1,61 @@
+<p class="subtitulo mt-5 mt-md-0 mb-0">Nos conte mais sobre você! Preencha abaixo os dados da empresa.</p>
+
+<h6 class="bold color-dark-gray my-4">DADOS DA EMPRESA</h6>
+
+<form id="form-empresa-cadastro" [formGroup]="formEmpresa">
+
+    <div class="row">
+        <mat-form-field class="col-12 col-md-6 col-lg-4" color="primary" appearance="outline">
+            <mat-label>RAZÃO SOCIAL</mat-label>
+            <input matInput type="text" name="razaoSocial" formControlName="razaoSocial">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorRazaoSocial"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-md-6 col-lg-5" color="primary" appearance="outline">
+            <mat-label>NOME FANTASIA</mat-label>
+            <input matInput type="text" name="nomeFantasia" formControlName="nomeFantasia">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorNomeFantasia"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field class="col-12 col-md-6 col-lg-4" color="primary" appearance="outline">
+            <mat-label>ATIVIDADE FISCAL</mat-label>
+            <input matInput type="text" name="atividadeFiscal" formControlName="atividadeFiscal">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorAtividadeFiscal"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-md-6 col-lg-3" color="primary" appearance="outline">
+            <mat-label>INSCRIÇÃO</mat-label>
+            <mat-select placeholder="Inscrição" name="inscricao" formControlName="inscricao">
+                <mat-option class="option" *ngFor="let opcao of tipoDeInscricao" [value]="opcao">{{ opcao }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-md-6 col-lg-3" color="primary" appearance="outline">
+            <mat-label>NÚMERO DA INSCRIÇÃO</mat-label>
+            <input matInput type="text" name="numeroDaInscricao" formControlName="numeroDaInscricao">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorNumeroDaInscricao"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="d-flex justify-content-between justify-content-md-start mb-5 mb-md-0">
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-3">
+            <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                (callFunction)="voltar()">
+            </app-neo-button>
+
+            <app-neo-button class="me-3 m-0" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                [titleText]="'CONTINUAR'" (callFunction)="continuar()" [isDisabled]="formEmpresa.invalid">
+            </app-neo-button>
+        </div>
+    </div>
+</form>

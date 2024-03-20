@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: AGENCIA_NAME_VIP
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "20m"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      more_set_headers "server: hide";
+      more_set_headers "X-Content-Type-Options: nosniff";
+      more_set_headers "X-Frame-Options: DENY";
+      more_set_headers "X-Xss-Protection: 1";
+spec:
+  tls:
+  - hosts:
+    - AGENCIA_VIP
+    secretName: neo-ingress-tls-2022
+  rules:
+  - host: AGENCIA_VIP
+    http:
+      paths:
+      - backend:
+          serviceName: AGENCIA_SERVICE_NAME
+          servicePort: 8080

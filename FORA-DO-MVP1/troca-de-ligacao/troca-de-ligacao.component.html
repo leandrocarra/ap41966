@@ -1,0 +1,74 @@
+
+    <h4>Deseja Trocar o Tipo da Ligação?</h4>
+
+    <mat-radio-group [(ngModel)]="trocarLigacao">
+        <mat-radio-button *ngFor="let option of opcoes" class="me-3 mt-3" [value]="option">{{option}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <div *ngIf="trocarLigacao === 'SIM'">
+
+        <h4 class="me-3 mt-3">O imóvel possui Documento de Responsabilidade Técnica com carga atualizada (ART/ TRT)?
+        </h4>
+        <p>Caso não saiba responder, consulte o sindico ou a construtora para obter essa informação.</p>
+
+        <mat-radio-group [(ngModel)]="possuiART">
+            <mat-radio-button *ngFor="let option of opcoesART" class="me-3 mt-3" [value]="option">{{option}}
+            </mat-radio-button>
+        </mat-radio-group>
+
+        <div *ngIf="possuiART === 'SIM'">
+            <h4 class="me-3 mt-3">Qual é o Tipo de Ligação?</h4>
+            <p>Caso não saiba responder, consulte o sindico ou a construtora para obter essa informação.</p>
+
+            <mat-radio-group [(ngModel)]="categoria">
+                <mat-radio-button *ngFor="let categoria of categorias" class="me-3 mt-3" [value]="categoria">
+                    <div class="d-flex align-items-center col-12 col-md-4">
+                        {{categoria}}
+                        <app-tooltip [explicacao]="toolTipsCategoria[categoria].textoTooltip"></app-tooltip>
+                    </div>
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <div class="mt-3">
+                <p>Para agilizarmos sua solicitação, vamos precisar que nos envie o documento de responsabilidade técnica</p>
+                <app-box-file class="me-md-3 mt-5" [documentoLabel]="'DOCUMENTO DE RESPONSABILIDADE TÉCNICA'"
+                    (arquivoAnexado)="recebeAnexos($event)" (arquivoRemovido)="removeAnexo($event)">
+                </app-box-file>
+            </div>
+
+        </div>
+
+        <div *ngIf="possuiART === 'NÃO SEI' || possuiART === 'NÃO'">
+            <h4 class="me-3 mt-3">O imóvel possui equipamentos com cargas especiais?</h4>
+            <p>Os equipamentos com cargas especiais são considerados: equipamentos de solda, motores, bomba de
+                piscina e aquecedor de água (boiler).</p>
+
+            <mat-radio-group [(ngModel)]="possuiCargasEspeciais">
+                <mat-radio-button *ngFor="let option of opcoesART" class="me-3 mt-3" [value]="option">{{option}}
+                </mat-radio-button>
+            </mat-radio-group>
+
+            <div *ngIf="possuiCargasEspeciais === 'NÃO SEI' || possuiCargasEspeciais === 'NÃO'">
+                <h4 class="me-3 mt-3">O imóvel possui equipamentos 220V?</h4>
+                <mat-radio-group [(ngModel)]="possui220">
+                    <mat-radio-button *ngFor="let option of opcoesART" class="me-3 mt-3" [value]="option">{{option}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="d-flex mt-5 justify-content-between justify-content-md-start">
+        <app-neo-button class="me-md-3 m-0"  [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button [classes]="userService.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [isDisabled]="validacao()" [titleText]="'CONTINUAR'"
+            (callFunction)='continuar()'>
+        </app-neo-button>
+    </div>
+
+

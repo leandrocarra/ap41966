@@ -1,0 +1,24 @@
+
+.box-paginator {
+  margin: 25px 0 200px;
+  width: 91%;
+  background-color: var(--background-color);
+}
+
+.box-componente-accordion {
+  margin-top: 20px;
+}
+
+.box-component-filter {
+  margin-top: 36px;
+}
+
+#tela-historico-consumo {
+  mat-divider {
+    position: sticky;
+  }
+}
+
+#tela-historico-consumo {
+  padding: 2rem;
+}

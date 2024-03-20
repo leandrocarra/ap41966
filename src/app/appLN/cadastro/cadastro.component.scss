@@ -1,0 +1,21 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.enviar-codigo {
+  color: var(--neo-dark-green);
+	font-weight: 700;
+  font-size: 1rem;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.cadastro-card {
+    width: 150vh;
+    background-color: var(--neo-white);
+    border-radius: .5vh;
+}

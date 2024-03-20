@@ -1,0 +1,194 @@
+{
+    "VALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "numero_autorizacao",
+                        "value": "00000000",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "data_validade",
+                        "value": "11/07/2031",
+                        "score": 0.96
+                    },
+                    {
+                        "name": "razao_social/nome_interessado",
+                        "value": "MARIA FLAVIA",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "cpf/cnpj_interessado",
+                        "value": "33991294000110",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "razao_social/nome_proprietario",
+                        "value": "MARIA FLAVIA",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "cpf/cnpj_proprietario",
+                        "value": "33991294000110",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "logradouro",
+                        "value": "DO TREVO SP 127 E 310",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "numero",
+                        "value": "4",
+                        "score": 0.71
+                    },
+                    {
+                        "name": "complemento",
+                        "value": "",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "bairro",
+                        "value": "JD BOM SUCESSO",
+                        "score": 0.93
+                    },
+                    {
+                        "name": "cep",
+                        "value": "13500000",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "municipio_1",
+                        "value": "RIO CLARO",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "municipio_2",
+                        "value": "",
+                        "score": 0
+                    },
+                    {
+                        "name": "tipo_imovel",
+                        "value": "RURAL",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "motivacao_justificativa",
+                        "value": "EXTENSÃO DE REDE PARA ATENDIMENTO AO PROJETO PI-00293288 PARA INTERLIGAÇÃO DO SITEMA ELÉTRICO ENTRA OS MUNICÍPIOS DE RIBEIRA E ITAOCA, ENQUADRADA COMO OBRA DE UTILIDADE PÚBLICA DE ACORDO COM A LEI 12.651/2012. ASV EMITIDA PELO VRA SEM A INCLUSÃO DE CAR DA PROPRIEDADE, VISTO QUE NÃO HÁ PREVISÃO LEGAL COM ESTA OBRIGATORIEDADE, CONFORME DELIBERAÇÃO CONSEMA NORMATIVA 01/2016, ART. 2º, INCISO VIII.",
+                        "score": 0.83
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.78,
+                "docType": "certidao",
+                "pageIndex": 1,
+                "tags": [
+                    "certidao",
+                    "br-la-mod2"
+                ]
+            }
+        ],
+        "queryId": "GBMOHQXTCXXDEBZYQIDFB",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "INVALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "numero_autorizacao",
+                        "value": "00000000",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "data_validade",
+                        "value": "10/02/2016",
+                        "score": 0.96
+                    },
+                    {
+                        "name": "razao_social/nome_interessado",
+                        "value": "ELEKTRO REDES S.A",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "cpf/cnpj_interessado",
+                        "value": "11223344559978",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "razao_social/nome_proprietario",
+                        "value": "MUNICIPIO SPRINGFIELD",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "cpf/cnpj_proprietario",
+                        "value": "11223344559978",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "logradouro",
+                        "value": "RUA FELIZ",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "numero",
+                        "value": "0",
+                        "score": 0.71
+                    },
+                    {
+                        "name": "complemento",
+                        "value": "",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "bairro",
+                        "value": "11223344559978",
+                        "score": 0.93
+                    },
+                    {
+                        "name": "cep",
+                        "value": "18381112",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "municipio_1",
+                        "value": "SPRINGFIELD",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "municipio_2",
+                        "value": "",
+                        "score": 0
+                    },
+                    {
+                        "name": "tipo_imovel",
+                        "value": "RURAL",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "motivacao_justificativa",
+                        "value": "EXTENSÃO DE REDE PARA ATENDIMENTO AO PROJETO PI-00293288 PARA INTERLIGAÇÃO DO SITEMA ELÉTRICO ENTRA OS MUNICÍPIOS DE RIBEIRA E ITAOCA, ENQUADRADA COMO OBRA DE UTILIDADE PÚBLICA DE ACORDO COM A LEI 12.651/2012. ASV EMITIDA PELO VRA SEM A INCLUSÃO DE CAR DA PROPRIEDADE, VISTO QUE NÃO HÁ PREVISÃO LEGAL COM ESTA OBRIGATORIEDADE, CONFORME DELIBERAÇÃO CONSEMA NORMATIVA 01/2016, ART. 2º, INCISO VIII.",
+                        "score": 0.83
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.78,
+                "docType": "certidao",
+                "pageIndex": 1,
+                "tags": [
+                    "certidao",
+                    "br-la-mod2"
+                ]
+            }
+        ],
+        "queryId": "GBMOHQXTCXXDEBZYQIDFB",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

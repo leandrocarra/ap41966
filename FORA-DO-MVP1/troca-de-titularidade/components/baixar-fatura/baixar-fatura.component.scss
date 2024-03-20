@@ -1,0 +1,35 @@
+.box-baixar-faturas {
+    margin: auto;
+    text-align: center;
+    max-width: 578px;
+    padding: 20px;
+}
+
+.titulo {
+    font-size: 24px;
+    color: var(--header-text);
+    font-weight: 500;
+}
+
+.codigo-barras {
+    padding: 10px 20px;
+    color: #FFF;
+    border-radius: 4px;
+    margin: auto;
+    background-color: var(--neo-light-green);
+    word-break: break-word;
+}
+
+.copiar-codigo {
+    color: var(--neo-dark-blue);
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 20px auto 10px auto;
+}
+
+.btn-baixar {
+    color: #FFF;
+    margin: 5px;
+    border-radius: 26px;
+}

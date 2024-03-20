@@ -1,0 +1,15 @@
+{
+    "combo": "1",
+    "nome": "RESIDENCIAL II",
+    "categoria": "BIFÁSICA",
+    "potencia": 18000,
+    "equipamentos": [
+        {
+            "codigoAparelho": "1",
+            "codigoSubTipoAparelho": "40",
+            "codigoTipoAparelho": "1",
+            "descricaoSubTipoAparelho": "CARGA PADRÃO BIFASICA",
+            "quantidadeAparelho": "1"
+        }
+    ]
+}

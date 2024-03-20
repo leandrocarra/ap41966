@@ -1,0 +1,84 @@
+<h5 class="titulo">Gostaria de aderir à fatura digital?</h5>
+
+<p *ngIf="dadosPagamento.faturaDigital == 'Sim'" class="mb-3 texto-p">Enviaremos a fatura apenas para o seu e-mail.</p>
+
+<div class="row btn-data-vencimento">
+    <div class="col-xl-1 col-lg-1 col-md-2 col-3 me-3">
+        <button type="button" class="btn btn-outline-secondary"
+            [class.trocarBotao]="dadosPagamento.faturaDigital == 'Sim'" title="sim"
+            (click)="setReceberEmail('Sim')">SIM</button>
+    </div>
+
+    <div class="col-xl-1 col-md-1 col-6">
+        <button type="button" class="btn btn-outline-secondary"
+            [class.trocarBotao]="dadosPagamento.faturaDigital == 'Não'" title="nao"
+            (click)="setReceberEmail('Não')">NÃO</button>
+    </div>
+</div>
+
+<div *ngIf="dadosPagamento.faturaDigital == 'Sim'">
+    <form [formGroup]="formEmailFaturaDigital">
+        <div class="row ps-0 col-xl-5 col-md-6 pe-0 m-0 col-12 mt-4" id="black-and-white-input-1">
+            <mat-form-field appearance="outline" class="col-12 p-0">
+                <mat-label>E-MAIL</mat-label>
+                <input matInput type="text" name="email" id="email" formControlName="email"
+                    (ngModelChange)="changeEmail();" upperCase />
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="dadosPagamento.faturaDigital == 'Não'">
+
+    <div class="subtitulo p-1" *ngIf="mobile">
+        <label class="mt-4">Escolha por onde gostaria de receber a fatura.</label>
+    </div>
+
+    <div class="row m-0 mt-3 form-area col-12">
+        <div id="black-and-white-input-1">
+            <mat-form-field appearance="outline" class="pt-3 col-sm-12 col-md-4">
+                <mat-label>POR ONDE GOSTARIA DE RECEBER?</mat-label>
+                <mat-select required name="ondeReceber" id="ondeReceber" [(ngModel)]="dadosPagamento.ondeReceber"
+                    (ngModelChange)="receberDados(false)">
+                    <mat-option [value]="ondeReceber" *ngFor="let ondeReceber of formaRecebimentosArray">
+                        {{ondeReceber}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-xl-7 col-12 p-2 texto"
+            *ngIf="dadosPagamento.ondeReceber == 'EM UM IMÓVEL ALTERNATIVO' || dadosPagamento.ondeReceber == 'CAIXA POSTAL'">
+            <span>Para receber em um imóvel alternativo será cobrada uma tarifa adicional de R${{ tarifaAdicional }}
+                na fatura!</span>
+        </div>
+    </div>
+
+    <div *ngIf="dadosPagamento.ondeReceber == 'NO IMÓVEL'">
+        <neo-recebimento-imovel (enviarDados)="receberDados($event)"></neo-recebimento-imovel>
+    </div>
+
+    <div *ngIf="dadosPagamento.ondeReceber == 'EM UM IMÓVEL ALTERNATIVO'">
+        <neo-recebimento-alternativo (enviarDados)="receberDados($event)"></neo-recebimento-alternativo>
+    </div>
+
+    <div *ngIf="dadosPagamento.ondeReceber == 'CAIXA POSTAL'">
+        <neo-recebimento-caixa-postal (enviarDados)="receberDados($event)"></neo-recebimento-caixa-postal>
+    </div>
+
+</div>
+
+<div class="d-flex justify-content-between justify-content-md-start mt-5 mb-5">
+    <div class="pe-3">
+        <button type="button" class="btn btn-outline-secondary" title="Voltar" (click)="voltar()">VOLTAR</button>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary-green" title="Avançar" [disabled]="!habilitarAvancar"
+            (click)="avancar()">CONTINUAR</button>
+    </div>
+
+    <div *ngIf="!mobile" class="col-8 img-fatura">
+        <img *ngIf="dadosPagamento.faturaDigital == 'Sim'" src="../../../../../../../../assets/assetsLN/images/e-mail.svg" alt="Fatura Digital"
+             height="70%">
+    </div>
+</div>

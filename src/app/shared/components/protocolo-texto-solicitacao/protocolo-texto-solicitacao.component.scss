@@ -1,0 +1,103 @@
+.card-protocolo {
+    max-width: 578px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--neo-white);
+    border-radius: 6px;
+}
+
+
+.titulo-protocolo-solicitacao {
+    font-weight: bold;
+    color: var(--neo-dark-gray);
+    text-align: center;
+}
+
+
+.texto-protocolo-solicitacao {
+    text-align: center;
+    font-size: 18px;
+}
+
+
+//Button area
+.btn-neoprimary{
+    border: none;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    height: 2.75rem;
+    border-radius: 3.125rem;
+    letter-spacing: 0.024rem;
+    line-height: 1.188rem;
+    border-color: #f8fafb !important;
+    color: var(--neo-white) !important;
+    background-color: var(--neo-light-green);
+}
+
+.btn-neoprimary:focus{
+    outline: none;
+}
+
+.btn-neoprimary:hover:enabled,
+.btn-neoprimary:hover:enabled{
+    outline: transparent;
+    box-shadow: none !important;
+    opacity: 0.8;
+    color: var(--neo-white);
+}
+
+.btn-neoprimary:disabled{
+    background-color: var(--neo-white-400) !important;
+    border-color: var(--neo-white-400) !important;
+    color: var(--header-text) !important;
+}
+
+.btn-neo-outline-secondary {
+    font-size: 0.875rem;
+    height: 2.75rem;
+    border: 1px solid var(--neo-dark-gray)_;
+    border-radius: 3.125rem;
+    letter-spacing: 0.024rem;
+    line-height: 1.188rem;
+    color: var(--neo-dark-gray)_;
+    display: inline-block;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-neo-outline-secondary:hover:enabled {
+    outline: transparent;
+    color: #fff;
+    background-color: var(--neo-dark-gray)_;
+    border-color: var(--neo-dark-gray)_;
+    text-decoration: none;
+}
+
+.btn-neodarkgreen {
+    @extend .btn-neoprimary;
+    background-color: var(--neo-dark-green);
+}
+
+.btn-neoblue {
+    @extend .btn-neoprimary;
+    background-color: var(--neo-dark-blue);
+}
+
+button {
+    outline: none;
+}
+
+
+
+
+
+//Fim button area

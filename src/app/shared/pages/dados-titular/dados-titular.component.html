@@ -1,0 +1,17 @@
+<div>
+<!--    <app-dados-empresa *ngIf="!isCPF" [dados]=user?.infoEmpresa (formEmpresaValidado)=formEmpresaValidado($event)>-->
+<!--    </app-dados-empresa>-->
+
+    <app-dados-solicitante [dados]=user.infos (formSolicitanteValidado)=formSolicitanteValidado($event)>
+    </app-dados-solicitante>
+
+    <div class="mt-5">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]=" 'VOLTAR' "
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' :
+        'btn-neoprimary'" [titleText]="'CONTINUAR'" [isDisabled]="isDisabled()" (callFunction)="continuar()">
+        </app-neo-button>
+    </div>
+</div>

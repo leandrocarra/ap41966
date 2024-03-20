@@ -1,0 +1,39 @@
+<div id="card-pix" [class.w-100]="mobile">
+
+    <div id="card-dados-pix" [class.background-group-b]="grupoTensao === 'B'"
+        [class.background-group-a]="grupoTensao === 'A'">
+        <h5 class="bold text-white titulo-card">{{ definirTitulo() }}</h5>
+    </div>
+
+    <div class="backgorund-dados-pix p-3">
+
+        <p class="subtitulo">
+            Se preferir, acesse o internet banking e cole o código PIX no campo indicado no site.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center m-3">
+
+            <img class="contorno contorno-qrcode m-1" alt="Falha ao carregar o QR-CODE do PIX" [src]="qrcodePix">
+
+            <div class="m-1">
+                <div class="m-2 container-dados align-items-baseline">
+                    <span class="titulo">VALOR DA CONTA</span>
+                    <span class="valor">{{ valorFatura(dadosFatura.fatura.valorEmissao) }}</span>
+                </div>
+                <div class="m-2 container-dados align-items-baseline">
+                    <span class="titulo">VENCIMENTO</span>
+                    <span class="valor">{{ dadosFatura.fatura.dataVencimento | date: 'dd/MM/yyyy' }}</span>
+                </div>
+            </div>
+
+            <div class="m-1 col-md-6 container-dados">
+                <p class="contorno chave-aleatoria">{{ chaveAleatoriaPix }}</p>
+                <app-neo-button class="me-md-3 m-0"
+                    [classes]="grupoTensao === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                    [titleText]="'COPIAR CÓDIGO PIX'" (callFunction)="copiarBarraCode()">
+                </app-neo-button>
+            </div>
+        </div>
+    </div>
+
+</div>

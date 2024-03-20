@@ -1,0 +1,261 @@
+.titulo2 {
+    color: var(--neo-light-green);
+    font-weight: bolder !important;
+}
+
+.matRowHomologacao{
+    padding: 0;
+}
+
+.nav-list {
+    width: 220px;
+}
+
+.nav-color-checked {
+    background-color: var(--neo-dark-green);
+    cursor: default !important;
+}
+
+.sidenav-container {
+    background-color: var(--neo-white);
+    height: 100%;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    cursor: default !important;
+    overflow-y: auto;
+}
+
+.sidenav {
+    width: 120px;
+    cursor: default !important;
+}
+
+mat-sidenav {
+    background: #00A443 !important;
+    cursor: default !important;
+}
+
+.events-none {
+    pointer-events: none;
+}
+
+.mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    cursor: default !important;
+}
+
+.navBarMobile {
+    background-color: var(--neo-light-green);
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+    height: 90px;
+}
+
+.toolbar-neo{
+    background: #00A443 !important;
+    cursor: default !important;
+}
+
+mat-toolbar {
+    // background: #FFFFFF; /////////////
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+mat-list-item {
+    color: #FFFFFF !important;
+    align-items: center !important;
+    font-size:11px !important;
+    height: 48px !important;
+    padding: 0 5 0 5;
+    cursor: default !important;
+}
+
+mat-nav-list {
+
+
+    padding-top: 0; /////////////
+
+
+
+    color: #FFFFFF !important;
+    cursor: default !important;
+}
+
+p {
+    margin-top: -1px !important;
+    margin-bottom: initial !important;
+}
+
+fa-icon {
+    margin-right: .5em ;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 0;
+}
+
+.mat-toolbar.opened {
+    min-width: 80px !important;
+    max-width: 80px !important;
+    text-align: center !important;
+}
+
+.mat-sidenav-container {
+    padding-top: 0;
+}
+
+.logo-mini {
+    width: 2em !important;
+}
+
+mat-list a {
+    color: white !important;
+    padding-top: 0;
+    font-weight: normal
+}
+
+.checkMenu{
+    height:20px;
+    // display:none;
+}
+
+.current-page {
+    background-color: var(--neo-dark-green);
+    cursor: default !important;
+}
+
+.current-page:hover {
+    background-color: var(--neo-dark-green);
+    cursor: default !important;
+}
+
+.mat-list-item:hover {
+    cursor: default !important;
+}
+
+// ===========Botão logout================
+.imgLogout{
+    height: 17px;
+    margin-bottom: 5px;
+}
+
+.texto-logout{
+    text-transform: none !important;
+    color: #828282;
+}
+
+.btn-light{
+    background-color:#ffffff !important;
+    border-color:#ffffff !important;
+}
+
+.btn-light:hover{
+    background-color:#f8f9fa !important;
+    border-color:#f8f9fa !important;
+}
+
+.logo-big {
+    width: 6.5em !important;
+    // margin-left: 45%;
+    // margin-right: 50%;
+}
+
+.userName {
+    color: var(--neo-light-green) !important;
+}
+
+.userNameBranco {
+    color: white !important;
+    font-size: 17px;
+}
+
+
+// CSS DA BARRA DE PROGRESO MOBILE
+.barraProgressoMobile{
+    // background-color: var(--neo-light-green; ////////////
+    margin-top: 10px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+    height: 70px;
+}
+
+#fundoBranco {
+    background-color: white !important;
+    // border-radius: 25px 25px 0px 0px; ////////////
+    width: 100%;
+    height: 90px;
+
+}
+
+.numeroRota {
+    font-size: 1.5em;
+}
+
+
+#nomeRotaMobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+    :host ::ng-deep .mat-list-item-content{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0 !important;
+    }
+
+    mat-nav-list {
+        padding-top: 8px; /////////////
+    }
+}
+
+.circulo {
+    display: inline-block !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    color: var(--neo-light-green) !important;
+    background-color: white;
+    border: 1px solid var(--neo-light-green) !important;
+    border-radius: 50% !important;
+    width: 25px !important;
+    height: 25px !important;
+
+}
+
+.circuloAtual{
+    background-color: var(--neo-dark-green) !important;
+    color: white !important;
+    width: 35px !important;
+    height: 35px !important;
+}
+
+.circuloChecked{
+    background-color: var(--neo-light-green) !important;
+    color: white !important;
+}
+
+.alinharNavMobile{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#content-ligacao-nova {
+    height: fit-content !important;
+    min-height: unset!important;
+}

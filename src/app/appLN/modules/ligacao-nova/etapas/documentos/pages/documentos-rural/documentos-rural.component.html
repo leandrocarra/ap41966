@@ -1,0 +1,28 @@
+<h2 class="titulo mb-5">Para começar, precisamos que nos envie um documento com foto!</h2>
+
+<div *ngIf="!mobile" class="alert alert-secondary mt-2 info-doc" role="alert">
+    Você pode carregar o documento oficial com foto no formato .PDF, .JPG, .JPEG ou .PNG!
+</div>
+<div *ngIf="mobile" class="alert alert-secondary mt-2 info-doc" role="alert">
+    Você pode tirar uma foto ou carregar o documento oficial. Se optar pelo carregamento, o documento deve estar no
+    formato .PDF, .JPG, .JPEG ou .PNG!
+</div>
+
+<div class="row">
+    <div class="col-12 col-xl-4 col-md-6 mt-3" *ngFor="let docNecessario of docsNecessarios; let i = index">
+        <app-box-file [documentoLabel]="docNecessario.label" [docName]="docNecessario.docName"
+            (arquivoAnexado)="recebeAnexos($event, docNecessario)"></app-box-file>
+        <app-attached-file [arquivoAnexado]=dados.rural.anexos[docNecessario.docName].arquivos
+            (arquivoRemovido)="remove($event, docNecessario.docName)"></app-attached-file>
+    </div>
+</div>
+
+
+<div class="row d-flex justify-content-between justify-content-md-end mt-5">
+    <div class="col-auto">
+        <button (click)="voltar()" class="btn btn-outline-secondary" title="Voltar">VOLTAR</button>
+    </div>
+    <div class="col-auto">
+        <button (click)="continuar()" class="btn btn-primary-green" title="Continuar">CONTINUAR</button>
+    </div>
+</div>

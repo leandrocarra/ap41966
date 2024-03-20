@@ -1,0 +1,27 @@
+<p class="subtitulo mt-5 mt-md-0 mb-0">Você receberá um código para ativação do seu cadastro através do e-mail enviado para:</p>
+<p class="subtitulo mt-1">{{ emailDoCodigo }}.</p>
+<p class="subtitulo mt-3">Orientamos que verifique também sua caixa de spam e lixeira.</p>
+
+<h6  class="bold color-dark-gray my-4">CÓDIGO DE ATIVAÇÃO</h6>
+
+<form id="form-identificacao-cadastro" [formGroup]="formValidarCadastro">
+    <div class="row">
+        <mat-form-field class="col-12 col-md-6 col-lg-4" id="documento" color="primary" appearance="outline">
+            <mat-label>DIGITE O CÓDIGO RECEBIDO POR E-MAIL</mat-label>
+            <input matInput type="text" formControlName="codigoValidator" onlyNumber>
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorCodigo"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="d-flex justify-content-between justify-content-md-start mb-5 mb-md-0">
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-3">
+            <app-neo-button class="me-3 m-0" [classes]="'btn-neoblue'" [titleText]="podeReenviarCodigo ? 'REENVIAR CÓDIGO' : 'REENVIO DE CÓDIGO EM 00:' + (contador >= 10 ? contador : '0' + contador)" [isDisabled]="podeReenviarCodigo === false" (callFunction)="gerarCodigoValido();">
+            </app-neo-button>
+
+            <app-neo-button class="me-3 m-0" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'" [titleText]="'CONTINUAR'" (callFunction)="continuar()" [isDisabled]="formValidarCadastro.value.codigoValidator.dirty === false">
+            </app-neo-button>
+        </div>
+    </div>
+</form>

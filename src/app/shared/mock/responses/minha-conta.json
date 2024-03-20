@@ -1,0 +1,26 @@
+{
+    "19935193861": {
+        "nomeTitular": "YURI",
+        "emailAcesso": "yuriteste@neoenergia.com.br",
+        "dtUltimaAtualizacao": "2022-10-07T14:14:41.993-03:00",
+        "usuarioAcesso": "YURI PEREIRA",
+        "razaoSocial": null,
+        "documento": 18672507487,
+        "tipoDocumentoSecundario": "RG",
+        "documentoSecundario": 22456653332,
+        "dtNascimento": "1954-05-30T03:00:00.000Z",
+        "emailCadastro": "yuriteste@neoenergia.com.br",
+        "celular": 19996881124,
+        "telefone": 1555252544,
+        "retorno": {
+            "numero": 200,
+            "mensagem": "OK"
+        }
+    },
+    "USUARIO_NAO_ENCONTRADO": {
+        "retorno": {
+            "mensagem": "Usuario não encontrado!",
+            "numero": 404
+        }
+    }
+}

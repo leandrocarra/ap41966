@@ -1,0 +1,151 @@
+<header id="header" #header>
+    <div *ngIf="qa" id="tarja-qa">
+        QA
+        <br>
+        {{'v' + version}}
+    </div>
+    <nav id="navbar" class="{{ headerClass }}">
+        <!-- Primeira linha -->
+        <div class="first-header-row">
+            <div class="width-agencia">
+                <div class="row justify-content-between align-items-center">
+                    <div class="col-auto">
+                        <div class="row align-items-center">
+                            <button class="d-lg-none d-block col-auto" mat-icon-button (click)="sidenav.toggle()">
+                                <mat-icon id="menu-sidenav">menu</mat-icon>
+                            </button>
+                            <img class="header-logo col-auto p-0" [src]="logo" alt="Distribuidora de Energia">
+                            <span *ngIf="indicadorPerfil !== ''" class="col-auto p-0 header-vertical-divider"></span>
+                            <img *ngIf="icone" [src]="icone" alt="icone do tipo de perfil solicitado" class="icone-header ms-2"/>
+                            <div class="col-auto" id="icone-indicador-perfil" [innerHTML]="indicadorPerfil"></div>
+                        </div>
+                    </div>
+
+                    <div *ngIf="nomeUsuario" class="col-auto d-flex align-items-center">
+                        <button type="button" mat-icon-button aria-label="Bandeira Tarifária">
+                            <mat-icon color="primary" [matMenuTriggerFor]="bandeiraTarifaria" class="flag-icon">
+                                <span class="material-icons-outlined">outlined_flag</span>
+                            </mat-icon>
+                        </button>
+
+                        <button class="d-none d-lg-flex align-items-center" type="button" mat-button color="primary"
+                                [matMenuTriggerFor]="infosUsuario" aria-label="Exibir informações do usuário.">
+                            <span id="nome-usuario" class="fonte-1">Olá, {{ nomeUsuario | titlecase }}</span>
+                        </button>
+                    </div>
+
+                    <button *ngIf="!nomeUsuario" class="btn-login col-auto" type="button" mat-button color="primary"
+                            (click)="login();">
+                        Login
+                        <mat-icon>arrow_forward</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda linha -->
+        <div class="d-none d-lg-flex second-header-row">
+            <div class="width-agencia">
+                <div class="row align-items-center">
+                    <button class="col-auto btn-header" type="button" mat-button color="primary" (click)="paginaInicial()">
+                        <strong>Página Inicial</strong>
+                    </button>
+
+                    <button class="col-auto btn-header" type="button" mat-button color="primary"
+                            *ngFor="let item of opcoesMenu.opcoes; let i = index" (click)="openOption(item, i);">
+                        <strong>{{ item.nome }}</strong>
+                        <mat-icon>
+                            <span id="menu-status-{{i}}" class="material-icons-outlined rotate-down">expand_more</span>
+                        </mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu de opções desktop -->
+        <div class="opcoes-desktop" [class.open-menu]="menuAberto" [class.close-menu]="!menuAberto">
+            <div class="width-agencia">
+                <div class="row opcoes-detalhadas">
+                    <ul class="col-auto" *ngFor="let subconjunto of conjuntoSelecionado.subConjunto"
+                        [class.open-menu]="menuAberto" [class.close-menu]="!menuAberto">
+                        <h6 class="titulo-subconjunto" [class.open-menu]="menuAberto" [class.close-menu]="!menuAberto">
+                            {{subconjunto.nome}}
+                        </h6>
+
+                        <li class="servico-subconjunto" *ngFor="let item of subconjunto.item" [class.open-menu]="menuAberto"
+                            [class.close-menu]="!menuAberto">
+                            <a [class.disabled]="item.disabled" (click)="escolherServico(item)"
+                               aria-label="{{item.nome}}">{{item.nome}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Menu Mobile -->
+<mat-sidenav-container class="custom-sidenav-content">
+    <mat-sidenav #sidenav>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header class="ps-2" *ngIf="nomeUsuario">
+                <mat-panel-title>
+                    <strong class="d-flex align-items-center color-primary">
+                        <mat-icon class="me-2">account_circle</mat-icon> Olá, {{ nomeUsuario | titlecase}}
+                    </strong>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <app-infos-usuario></app-infos-usuario>
+        </mat-expansion-panel>
+
+        <!-- <mat-list>
+            <mat-list-item class="color-primary bold" type="button" (click)="paginaInicial();">
+
+            </mat-list-item>
+        </mat-list> -->
+        <button class="d-flex align-items-center w-100 mt-3" type="button" mat-button color="primary" (click)="paginaInicial()">
+            <mat-icon>home</mat-icon> <strong>Página Inicial</strong>
+        </button>
+
+        <mat-list class="mb-3" *ngFor="let item of opcoesMenu.opcoes; let i = index">
+            <mat-list-item>
+                <strong class="color-primary bold">{{item.nome | titlecase}}</strong>
+            </mat-list-item>
+
+            <mat-expansion-panel *ngFor="let subconjunto of item.subConjunto; let i = index" class="lista-itens">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>{{subconjunto.nome | titlecase}}</mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-nav-list>
+                    <mat-list-item class="servico-subconjunto-mobile" *ngFor="let subItem of subconjunto.item">
+                        <a [class.disabled]="subItem.disabled" (click)="escolherServico(subItem)"
+                           aria-label="{{subItem.nome}}">{{subItem.nome}}</a>
+                    </mat-list-item>
+                </mat-nav-list>
+            </mat-expansion-panel>
+        </mat-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="custom-sidenav-content">
+        <div [class.width-agencia]="!rotaLigacaoNova" class="espaco-footer">
+        <ng-content></ng-content>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- Menu Usuário -->
+<mat-menu class="custom-info-menu" #infosUsuario="matMenu" hidden>
+    <app-infos-usuario></app-infos-usuario>
+</mat-menu>
+
+<!-- Menu de bandeira tarifária -->
+<mat-menu class="custom-info-menu bandeira" #bandeiraTarifaria="matMenu" hidden>
+    <app-bandeira-tarifaria></app-bandeira-tarifaria>
+</mat-menu>
+
+<!-- Menu de notificações -->
+<mat-menu class="custom-info-menu" #notificationInfo="matMenu" xPosition="before" hidden>
+    <app-notificacoes-header></app-notificacoes-header>
+</mat-menu>
+

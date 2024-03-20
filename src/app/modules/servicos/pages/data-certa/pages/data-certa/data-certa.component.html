@@ -1,0 +1,19 @@
+<h2>{{ titlePage }}</h2>
+
+<div class="my-4">
+    <app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+</div>
+
+<h6 class="subtitulo-h6 mt-3 mb-3 width-agencia">data de vencimento da fatura para esta unidade consumidora:</h6>
+
+<div class="data-certa col-12 col-xl-6 col-lg-7 col-md-10">
+    <span>{{ obterDataDeVencimento() }}</span>
+</div>
+
+<div class="row gy-4 justify-content-between justify-content-md-start mt-3">
+    <app-neo-button class="col-auto" [classes]="'btn-neo-outline-secondary'" [titleText]="voltarBtn" (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="col-auto" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'" [titleText]="'alterar data de vencimento'" (callFunction)="alterarData()">
+    </app-neo-button>
+</div>

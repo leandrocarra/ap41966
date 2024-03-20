@@ -1,0 +1,81 @@
+.box-economia-energia {
+    height: 100%;
+    border: 1px solid var(--neo-dark-gray);
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+}
+
+.text-msg {
+    font-size: 1.125rem;
+}
+
+.alert {
+    color: var(--neo-dark-gray);
+    margin-bottom: 0px;
+}
+
+.text-alert {
+    vertical-align: super;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 2.188rem;
+    margin-right: 0.5rem;
+}
+
+.icon-green {
+    color: var(--neo-light-green);
+}
+
+.icon-red {
+    color: var(--neo-pure-red);
+}
+
+.text {
+    font-weight: 700;
+}
+
+.text-green {
+    color: var(--neo-light-green) !important;
+}
+
+.text-red {
+    color: var(--neo-pure-red) !important;
+}
+
+.text-dicas {
+    text-align: left;
+    color: var(--neo-dark-gray-2);
+    padding: 0px;
+    font-weight: 400
+}
+
+a {
+    color: var(--neo-dark-gray-2);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.alert-baixo-consumo {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    padding: 0.75rem 1.25rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .alert-baixo-consumo {
+        padding: 0.75rem 0px;
+        padding-top: 0px;
+    }
+}

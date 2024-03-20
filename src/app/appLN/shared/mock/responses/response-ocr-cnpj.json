@@ -1,0 +1,151 @@
+{
+  "VALIDO": {
+    "result": [
+      {
+          "fields": [
+              {
+                  "name": "nome_empresarial",
+                  "value": "INDUSTRIA, COMERCIO, IMPORTACAO E EXPORTACAO",
+                  "score": 0.82
+              },
+              {
+                  "name": "codigo_atividade_economica",
+                  "value": "1351100",
+                  "score": 0.82
+              },
+              {
+                  "name": "descricao_atividade_economica",
+                  "value": "COMPRA E VENDA DE IMÓVEIS PRÓPRIOS 68.10-2-02 - ALUGUEL DE IMÓVEIS PRÓPRIOS",
+                  "score": 0.54
+              },
+              {
+                  "name": "situacao_cadastral",
+                  "value": "ATIVA",
+                  "score": 0.82
+              },
+              {
+                  "name": "data_cadastral",
+                  "value": "03/11/2005",
+                  "score": 0.82
+              },
+              {
+                  "name": "numero",
+                  "value": "33991294000110",
+                  "score": 0.82
+              }
+          ],
+          "deskewImage": "",
+          "docQualityScore": 0.77,
+          "docType": "formulario",
+          "pageIndex": 1,
+          "tags": [
+              "formulario",
+              "br-cadastro-cnpj-1"
+          ]
+      }
+  ],
+  "queryId": "RUEKDQNKCFWYLIJPLBKKX",
+  "status": {
+      "code": 200,
+      "message": "Ok"
+  }
+  },
+  "INVALIDO": {
+    "result": [
+      {
+          "fields": [
+              {
+                  "name": "nome_empresarial",
+                  "value": "INDUSTRIA, COMERCIO, IMPORTACAO E EXPORTACAO",
+                  "score": 0.82
+              },
+              {
+                  "name": "codigo_atividade_economica",
+                  "value": "1351100",
+                  "score": 0.82
+              },
+              {
+                  "name": "descricao_atividade_economica",
+                  "value": "COMPRA E VENDA DE IMÓVEIS PRÓPRIOS 68.10-2-02 - ALUGUEL DE IMÓVEIS PRÓPRIOS",
+                  "score": 0.54
+              },
+              {
+                  "name": "situacao_cadastral",
+                  "value": "ATIVA",
+                  "score": 0.82
+              },
+              {
+                  "name": "data_cadastral",
+                  "value": "03/11/2005",
+                  "score": 0.82
+              },
+              {
+                  "name": "numero",
+                  "value": "9999999999",
+                  "score": 0.82
+              }
+          ],
+          "deskewImage": "",
+          "docQualityScore": 0.77,
+          "docType": "formulario",
+          "pageIndex": 1,
+          "tags": [
+              "formulario",
+              "br-cadastro-cnpj-1"
+          ]
+      }
+  ],
+  "queryId": "RUEKDQNKCFWYLIJPLBKKX",
+  "status": {
+      "code": 200,
+      "message": "Ok"
+  }
+  },
+  "SEM_TAG": {
+    "result": [
+      {
+          "fields": [
+              {
+                  "name": "nome_empresarial",
+                  "value": "INDUSTRIA, COMERCIO, IMPORTACAO E EXPORTACAO",
+                  "score": 0.82
+              },
+              {
+                  "name": "codigo_atividade_economica",
+                  "value": "1351100",
+                  "score": 0.82
+              },
+              {
+                  "name": "descricao_atividade_economica",
+                  "value": "COMPRA E VENDA DE IMÓVEIS PRÓPRIOS 68.10-2-02 - ALUGUEL DE IMÓVEIS PRÓPRIOS",
+                  "score": 0.54
+              },
+              {
+                  "name": "situacao_cadastral",
+                  "value": "ATIVA",
+                  "score": 0.82
+              },
+              {
+                  "name": "data_cadastral",
+                  "value": "03/11/2005",
+                  "score": 0.82
+              },
+              {
+                  "name": "numero",
+                  "value": "24191764000170",
+                  "score": 0.82
+              }
+          ],
+          "deskewImage": "",
+          "docQualityScore": 0.77,
+          "docType": "formulario",
+          "pageIndex": 1
+      }
+  ],
+  "queryId": "RUEKDQNKCFWYLIJPLBKKX",
+  "status": {
+      "code": 200,
+      "message": "Ok"
+  }
+  }
+}

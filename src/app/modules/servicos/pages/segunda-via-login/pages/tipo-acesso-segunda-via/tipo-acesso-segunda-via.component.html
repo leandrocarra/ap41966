@@ -1,0 +1,70 @@
+<div class="width-agencia mt-padrao" id="card-acesso-segunda-via">
+    <mat-card class="py-5">
+        <div class="p-4">
+            <h2><strong>2ª Via de Pagamento</strong></h2>
+
+            <p class="texto"><strong>Nos informe o tipo de acesso que será realizado</strong></p>
+
+            <form [formGroup]="formTipoAcesso" class="row">
+                <mat-radio-group class="col-12 my-2 row" formControlName="tipoDocumento"
+                    aria-label="Selecione o seu tipo de acesso" (change)="updateForm($event)">
+                    <mat-radio-button class="col-12 col-md-6" value="CPF">Pessoa Física</mat-radio-button>
+                    <mat-radio-button class="col-12 col-md-6" value="CNPJ">Pessoa Jurídica</mat-radio-button>
+                </mat-radio-group>
+
+                <div *ngIf="formTipoAcesso.value.tipoDocumento !== ''">
+                    <mat-form-field class="col-12" appearance="outline" color="accent">
+                        <mat-label>{{ formTipoAcesso.value.tipoDocumento !== "" ? formTipoAcesso.value.tipoDocumento
+                            :
+                            'CPF ou CNPJ' }}</mat-label>
+                        <input matInput formControlName="documento" type="text" id="documento"
+                            [mask]="documentoMask" (ngModelChange)="verificarErroDocumento()">
+                        <mat-error *ngIf="verificarErroDocumento()">
+                            <app-custom-mat-error [mensagem]="msgAvisoDocumento"></app-custom-mat-error>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="col-12" *ngIf="formTipoAcesso.value.tipoDocumento !== 'CPF'"
+                        appearance="outline" color="accent">
+                        <mat-label>CÓDIGO DO CLIENTE</mat-label>
+                        <input matInput formControlName="uc" type="text" id="uc" [mask]="parametroMask"
+                            (ngModelChange)="verificarErroUC()">
+                        <mat-error *ngIf="verificarErroUC()">
+                            <app-custom-mat-error [mensagem]="msgAvisoParametro"></app-custom-mat-error>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field *ngIf="formTipoAcesso.value.tipoDocumento === 'CPF'" class="col-12"
+                        appearance="outline" color="accent">
+                        <mat-label>DATA DE NASCIMENTO</mat-label>
+                        <input matInput formControlName="parametro" type="text" id="parametro" maxLength="10"
+                            (ngModelChange)="verificarErroParametro()" mask="00/00/0000">
+                        <input matInput formControlName="datepicker" type="text" id="datepicker"
+                            class="hidden-datepicker-input" [matDatepicker]="picker"
+                            (ngModelChange)="preencherInputComDatepicker()">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                        <mat-error *ngIf="verificarErroParametro()">
+                            <app-custom-mat-error [mensagem]="msgAvisoParametro"></app-custom-mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-error *ngIf="errorMessage" class="col-12"> 
+                        <app-custom-mat-error [mensagem]="errorMessage"></app-custom-mat-error>
+                    </mat-error>
+                </div>
+            </form>
+
+            <div class="col-12 p-0 mt-3">
+                <button class="btn-rounded col-12" color="accent" type="button" mat-flat-button aria-label="nomeBtn"
+                    [disabled]="formTipoAcesso.invalid" (click)="continuar()">
+                    CONTINUAR
+                </button>
+                <button class="mt-3 btn-rounded col-12 text-light-gray" type="button" mat-stroked-button
+                    aria-label="Voltar" (click)="voltar()">
+                    VOLTAR
+                </button>
+            </div>
+
+        </div>
+    </mat-card>
+</div>

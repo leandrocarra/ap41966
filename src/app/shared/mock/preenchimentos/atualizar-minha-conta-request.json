@@ -1,0 +1,79 @@
+{
+    "INPUT": {
+        "canalSolicitante": "AGP",
+        "userName": "CELPE/18672507487",
+        "documento": "18672507487",
+        "termosUso": true,
+        "emailCadastro": "yuriteste@neoenergia.com.br",
+        "telefone": 1555252544,
+        "celular": 19996881124,
+        "usuarioAcesso": "YURI PEREIRA",
+        "emailAcesso": "yuriteste@neoenergia.com.br"
+    },
+    "RESPONSE": {
+        "retorno": {
+            "numero": 202,
+            "mensagem": "O perfil do usuário foi atualizado com sucesso."
+        }
+    },
+    "400": {
+        "headers": {
+            "normalizedNames": {},
+            "lazyUpdate": null
+        },
+        "status": 400,
+        "statusText": "Bad Request",
+        "url": "http://localhost:4200/api/minha-conta/1.0.0/atualizar-senha",
+        "ok": false,
+        "name": "HttpErrorResponse",
+        "message": "Http failure response for http://localhost:4200/api/minha-conta/1.0.0/atualizar-senha: 400 Bad Request",
+        "error": {
+            "retorno": {
+                "mensagem": "Usuario não encontrado!",
+                "numero": 400
+            }
+        }
+    },
+    "401": {
+        "retorno": {
+            "mensagem": "Usuario não encontrado!",
+            "numero": 401
+        }
+    },
+    "402": {
+        "retorno": {
+            "mensagem": "Usuario não encontrado!",
+            "numero": 402
+        }
+    },
+    "403": {
+        "retorno": {
+            "mensagem": "Usuario não encontrado!",
+            "numero": 403
+        }
+    },
+    "404": {
+        "headers": {
+            "normalizedNames": {},
+            "lazyUpdate": null
+        },
+        "status": 404,
+        "statusText": "Bad Request",
+        "url": "http://localhost:4200/api/minha-conta/1.0.0/atualizar-senha",
+        "ok": false,
+        "name": "HttpErrorResponse",
+        "message": "Http failure response for http://localhost:4200/api/minha-conta/1.0.0/atualizar-senha: 404 Bad Request",
+        "error": {
+            "retorno": {
+                "mensagem": "Usuario não encontrado!",
+                "numero": 404
+            }
+        }
+    },
+    "ERRO_DEFAULT": {
+        "retorno": {
+            "mensagem": "Usuario não encontrado!",
+            "numero": 409
+        }
+    }
+}

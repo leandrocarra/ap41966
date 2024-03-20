@@ -1,0 +1,177 @@
+.background-group-a {
+  background-color: var(--neo-dark-green) !important;
+}
+
+.background-group-b {
+  background-color: var(--neo-light-green) !important;
+}
+
+.color-group-a {
+  color: var(--neo-dark-green) !important;
+}
+
+.color-green-sage-100, .color-group-b {
+  color: var(--neo-light-green) !important;
+}
+
+.btn-custom {
+  height: 55px;
+  width: 134px;
+  font-size: 14px;
+  outline: none;
+  color: var(--neo-white);
+  border-radius: 50px;
+  padding: 0 20px;
+  text-transform: uppercase;
+  .content-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 6px;
+  }
+}
+
+.formatter-button {
+  width: 100% !important;
+  margin: 6px 6px 6px 0;
+  font-size: 14px;
+  height: 44px;
+  border-radius: 50px;
+  letter-spacing: 0.38px;
+  line-height: 19px;
+}
+
+.btn-custom-icon-xs {
+  @extend .btn-custom;
+  width: 150px;
+}
+
+.btn-custom-icon-sm {
+  @extend .btn-custom;
+  width: 180px;
+}
+
+.btn-custom-icon-lg {
+  @extend .btn-custom;
+  width: 190px;
+}
+
+.btn-radius-8 {
+  padding: 15px;
+  font-size: 0.875rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: normal !important;
+}
+
+.btn-imoveis {
+  height: 40px;
+  width: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.875rem;
+}
+
+.btn-default {
+  text-transform: uppercase;
+  font-size: 14px;
+  border-radius: 50px;
+  width: 140px;
+  height: 48px;
+  font-weight: normal !important;
+}
+
+.color-green {
+  color: var(--color-green-300);
+}
+
+.box-shadow-cards {
+  box-shadow: var(--shadow);
+}
+
+.t-color-black-100 {
+  color: var(--neo-dark-gray-2);
+}
+
+.t-color-green-sage-100 {
+  color: var(--neo-light-green);
+}
+
+.t-color-light-blue-100 {
+  color: var(--neo-light-blue);
+}
+
+.t-color-blue-royal-100 {
+  color: var(--neo-dark-blue);
+}
+
+.t-color-red-200 {
+  color: var(--neo-pure-red);
+}
+
+.t-color-dark-silver-100 {
+  color: var(--neo-light-gray);
+}
+.t-color-dark-silver-200 {
+  color: var(--neo-dark-gray);
+}
+
+.t-color-green-400 {
+  color: var(--neo-dark-green);
+}
+
+.fs-14 {
+  font-size: 0.875rem;
+}
+
+.fs-16 {
+  font-size: 1rem;
+}
+
+.fs-25 {
+  font-size: 1.563rem;
+}
+
+.fs-48 {
+  font-size: 3rem;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.c-pointer {
+  cursor: pointer;
+}
+
+.card-radius-10 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--neo-white);
+  padding: 16px !important;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.title-card {
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--neo-dark-green);
+}
+
+.h-two {
+  color: var(--neo-dark-green);
+  font-weight: 700;
+}

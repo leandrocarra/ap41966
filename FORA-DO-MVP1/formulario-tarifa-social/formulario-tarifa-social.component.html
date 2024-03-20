@@ -1,0 +1,79 @@
+<div *ngIf="zonaRural">
+    <h4 class="titulo mb-4">Deseja solicitar a instalação do kit de Energia? (mediante aprovação após vistoria)</h4>
+    <mat-radio-group [(ngModel)]="solicitarKit" (change)="valorEscolhidoKit()">
+        <div class="d-flex">
+            <mat-radio-button class="texto me-4" value=false> NÃO </mat-radio-button>
+            <mat-radio-button class="texto" value=true> SIM </mat-radio-button>
+        </div>
+    </mat-radio-group>
+</div>
+
+<h2 class="titulo mt-4 mb-4">Passo 2: Quem é o beneficiário titular cadastrado no programa social?</h2>
+
+
+<mat-radio-group [(ngModel)]="titular" (change)="alterarTitular()">
+
+    <div class=" texto">
+        <mat-radio-button class="col-12 " [value]=true>
+            Eu sou o beneficiário titular cadastrado no programa social.
+        </mat-radio-button>
+
+        <mat-radio-button class="col-12 " [value]=false>
+            O beneficiário titular cadastrado no programa social é membro da minha família.
+        </mat-radio-button>
+    </div>
+</mat-radio-group>
+
+
+
+<!--
+<div class="form-area mt-3 ">
+
+    <app-dados-tecnicos-tarifa-social [beneficio]=beneficio [changeTitular]="titular" [disabledForm]="disabledForm"
+        (formDadosBeneficioValidado)="formDadosBeneficioValidado($event)">
+    </app-dados-tecnicos-tarifa-social>
+
+    <app-beneficiario-tarifa-social *ngIf="!titular" [changeTitular]="titular" [disabledForm]="disabledForm"
+        (formTitularTarifaSocialValidado)="formTitularTarifaSocialValidado($event)"></app-beneficiario-tarifa-social>
+
+</div> -->
+
+<div class="form-area-dados mt-3 mb-3 pt-3">
+    <app-dados-beneficio [beneficio]="beneficio" [changeTitular]="titular" [disabledForm]="disabledForm"
+        (formDadosBeneficioValidado)="formDadosBeneficioValidado($event)"></app-dados-beneficio>
+    <app-titular-tarifa-social *ngIf="!titular" [changeTitular]="titular" [disabledForm]="disabledForm"
+        (formTitularTarifaSocialValidado)="formTitularTarifaSocialValidado($event)"></app-titular-tarifa-social>
+    <!-- <div class="pe-3" *ngIf="disabledForm">
+        <button type="button" class="btn btn-outline-secondary" title="editarDados" (click)="editarDados()">EDITAR
+            DADOS</button>
+    </div> -->
+</div>
+
+
+
+<!-- informativo doc -->
+<div class="texto " >
+    <div *ngIf="beneficio != 'BENEFÍCIO DE PRESTAÇÃO CONTINUADA'" class="alert alert-secondary mt-2 info-doc"
+        role="alert">
+        Agora precisamos de alguns documentos. Você pode solicitar o comprovante de inscrição no Cadastro Único online
+        <a class="ms-1 " (click)="redirecionamento('CADUnico')">clique aqui</a>.
+    </div>
+
+    <div *ngIf="beneficio == 'BENEFÍCIO DE PRESTAÇÃO CONTINUADA'" class="alert alert-secondary mt-2 info-doc"
+        role="alert">
+        Agora precisamos de alguns documentos. Você pode solicitar a Declaração do Benefício do INSS online
+        <a class="ms-1" (click)="redirecionamento('INSS')">clique aqui</a>.
+    </div>
+</div>
+
+
+<!-- Botoes -->
+<div class="mt-5">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]=" 'VOLTAR' "
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' :
+    'btn-neoprimary'" [titleText]="'CONTINUAR'" [isDisabled]="isDisabled()" (callFunction)="continuar()">
+    </app-neo-button>
+</div>

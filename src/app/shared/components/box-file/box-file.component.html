@@ -1,0 +1,40 @@
+<div class="col-file mb-3">
+    <div class="label-anexo">
+        <img src="assets/images/pasta_upload.svg" alt="Upload" height="60%" class="ps-2 pe-2 pasta-img">
+        <div class="texto pe-2">
+            {{documentoLabel | uppercase }}
+        </div>
+        <div *ngIf="infoDoc !== null" class="posicao-tooltip">
+            <app-tooltip class="color-green d-flex" [explicacao]=infoDoc></app-tooltip>
+        </div>
+    </div>
+
+    <!-- Botão carregar desktop -->
+    <button *ngIf="!mobile" type="button" (click)="fileLoader.click();" class="btn-carregar btn-text">
+        <input class="d-none" type="file" #fileLoader name="carregarArquivo" (change)="add($event)" [accept]="formatosAceitos ?? '.png, .jpg, .jpeg, .pdf'"
+            id="carregarArquivo"/>
+        <div class="icon-carregar"></div>
+        <span class="btn-text">CARREGAR</span>
+    </button>
+    <!-- Fim botão carregar desktop -->
+
+    <!--  Botão carregar mobile  -->
+    <div class="d-flex flex-wrap justify-content-center">
+        <div class="col-6 p-0">
+            <button *ngIf="mobile" type="button" (click)="fileLoader.click();" class="me-1 btn-carregar btn-text">
+                <input type="file" #fileLoader name="carregarArquivo" (change)="add($event)"
+                    accept=".png, .jpg, .jpeg, .pdf" id="carregarArquivo" class="d-none" />
+                <div class="icon-carregar"></div>
+                <span class="btn-text">CARREGAR</span>
+            </button>
+        </div>
+
+        <div class="col-6 p-0">
+            <button *ngIf="mobile" type="button" (click)="openDialog()" class="btn-tirarfoto">
+                <div class="icon-tirarfoto"></div>
+                <span class="btn-text">TIRAR FOTO</span>
+            </button>
+        </div>
+    </div>
+    <!--  Fim botão carregar mobile  -->
+</div>

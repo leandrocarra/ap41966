@@ -1,0 +1,410 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "neoenergia-web": {
+            "root": "",
+            "sourceRoot": "src",
+            "projectType": "application",
+            "prefix": "app",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/neoenergia-web",
+                        "index": "src/index.html",
+                        "main": "src/main.ts",
+                        "polyfills": "src/polyfills.ts",
+                        "tsConfig": "src/tsconfig.app.json",
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ],
+                        "allowedCommonJsDependencies": [
+                            "chart.js",
+                            "jwt-decode",
+                            "url"
+                        ],
+                        "styles": [
+                            "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                            "node_modules/material-icons/iconfont/outlined.scss",
+                            "node_modules/material-icons/iconfont/round.scss",
+                            "node_modules/material-design-icons/iconfont/material-icons.css",
+                            "src/assets/scss/global.scss",
+                            "src/assets/scss/neo-styles/neo-styles.scss",
+                            "src/styles.scss",
+                            "src/assets/scss/default.scss",
+                            "src/assets/scss/angular-material/custom-theme.scss"
+                        ],
+                        "scripts": [],
+                        "vendorChunk": true,
+                        "extractLicenses": false,
+                        "buildOptimizer": false,
+                        "sourceMap": true,
+                        "optimization": false,
+                        "namedChunks": true
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": false,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "8mb",
+                                    "maximumError": "15mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "150kb"
+                                }
+                            ]
+                        },
+                        "prd": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prd.ts"
+                                }
+                            ],
+                            "optimization": false,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "8mb",
+                                    "maximumError": "15mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb"
+                                }
+                            ]
+                        },
+                        "elektro-qa": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment-elektro.qa.ts"
+                                }
+                            ],
+                            "index": {
+                                "input": "src/index-distribuidoras/index-elektro.qa.html",
+                                "output": "index.html"
+                            },
+                            "optimization": false,
+                            "sourceMap": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "8mb",
+                                    "maximumError": "15mb"
+                                }
+                            ]
+                        },
+                        "elektro-prod": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment-elektro.prod.ts"
+                                }
+                            ],
+                            "index": {
+                                "input": "src/index-distribuidoras/index-elektro.prod.html",
+                                "output": "index.html"
+                            },
+                            "optimization": false,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "8mb",
+                                    "maximumError": "15mb"
+                                }
+                            ]
+                        },
+                        "coelba-prod": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment-coelba.prod.ts"
+                                }
+                            ],
+                            "index": {
+                                "input": "src/index-distribuidoras/index-coelba.prod.html",
+                                "output": "index.html"
+                            },
+                            "optimization": false,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "8mb",
+                                    "maximumError": "15mb"
+                                }
+                            ]
+                        },
+                        "coelba-qa": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment-coelba.qa.ts"
+                                }
+                            ],
+                            "index": {
+                                "input": "src/index-distribuidoras/index-coelba.qa.html",
+                                "output": "index.html"
+                            },
+                            "optimization": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "sourceMap": true,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "8mb",
+                                    "maximumError": "15mb"
+                                }
+                            ]
+                        },
+                        "celpe-prod": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment-celpe.prod.ts"
+                                }
+                            ],
+                            "index": {
+                                "input": "src/index-distribuidoras/index-pernambuco.prod.html",
+                                "output": "index.html"
+                            },
+                            "optimization": false,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "8mb",
+                                    "maximumError": "15mb"
+                                }
+                            ]
+                        },
+                        "celpe-qa": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment-celpe.qa.ts"
+                                }
+                            ],
+                            "index": {
+                                "input": "src/index-distribuidoras/index-pernambuco.qa.html",
+                                "output": "index.html"
+                            },
+                            "optimization": false,
+                            "sourceMap": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "8mb",
+                                    "maximumError": "15mb"
+                                }
+                            ]
+                        },
+                        "cosern-prod": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment-cosern.prod.ts"
+                                }
+                            ],
+                            "index": {
+                                "input": "src/index-distribuidoras/index-cosern.prod.html",
+                                "output": "index.html"
+                            },
+                            "optimization": false,
+                            "outputHashing": "all",
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "8mb",
+                                    "maximumError": "15mb"
+                                }
+                            ]
+                        },
+                        "cosern-qa": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment-cosern.qa.ts"
+                                }
+                            ],
+                            "index": {
+                                "input": "src/index-distribuidoras/index-cosern.qa.html",
+                                "output": "index.html"
+                            },
+                            "optimization": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "sourceMap": true,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "8mb",
+                                    "maximumError": "15mb"
+                                }
+                            ]
+                        }
+                    },
+                    "defaultConfiguration": "elektro-qa"
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {},
+                    "configurations": {
+                        "coelba-qa": {
+                            "browserTarget": "neoenergia-web:build:coelba-qa",
+                            "proxyConfig": "proxy-wso2-ne.conf.js"
+                        },
+                        "coelba-prod": {
+                            "browserTarget": "neoenergia-web:build:coelba-prod",
+                            "proxyConfig": "proxy-wso2-ne.conf.js"
+                        },
+                        "cosern-qa": {
+                            "browserTarget": "neoenergia-web:build:cosern-qa",
+                            "proxyConfig": "proxy-wso2-ne.conf.js"
+                        },
+                        "cosern-prod": {
+                            "browserTarget": "neoenergia-web:build:cosern-prod",
+                            "proxyConfig": "proxy-wso2-ne.conf.js"
+                        },
+                        "celpe-qa": {
+                            "browserTarget": "neoenergia-web:build:celpe-qa",
+                            "proxyConfig": "proxy-wso2-ne.conf.js"
+                        },
+                        "celpe-prod": {
+                            "browserTarget": "neoenergia-web:build:celpe-prod",
+                            "proxyConfig": "proxy-wso2-ne.conf.js"
+                        },
+                        "elektro-qa": {
+                            "browserTarget": "neoenergia-web:build:elektro-qa",
+                            "proxyConfig": "proxy-wso2-se.conf.js"
+                        },
+                        "elektro-production": {
+                            "browserTarget": "neoenergia-web:build:elektro-prod",
+                            "proxyConfig": "proxy-wso2-se.conf.js"
+                        },
+                        "production": {
+                            "browserTarget": "neoenergia-web:build:production"
+                        },
+                        "uat": {
+                            "browserTarget": "neoenergia-web:build:uat"
+                        },
+                        "prd": {
+                            "browserTarget": "neoenergia-web:build:prd"
+                        },
+                        "development": {
+                            "browserTarget": "neoenergia-web:build:development"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "neoenergia-web:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "src/test.ts",
+                        "polyfills": "src/polyfills.ts",
+                        "tsConfig": "src/tsconfig.spec.json",
+                        "karmaConfig": "src/karma.conf.js",
+                        "styles": [
+                            "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                            "node_modules/material-icons/iconfont/outlined.scss",
+                            "node_modules/material-icons/iconfont/round.scss",
+                            "src/assets/scss/global.scss",
+                            "src/styles.scss",
+                            "src/assets/scss/default.scss",
+                            "src/assets/scss/angular-material/custom-theme.scss"
+                        ],
+                        "scripts": [],
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "src/**/*.ts",
+                            "src/**/*.html"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "neoenergia-web",
+    "cli": {
+        "analytics": false,
+        "defaultCollection": "@angular-eslint/schematics"
+    }
+}

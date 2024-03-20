@@ -1,0 +1,48 @@
+<div class="box-content" id="dialog-enviar-email">
+    <span class="mt-1 material-icons-outlined icon-description" [class.color-primary]="grupoDoUsuario === 'A'"
+        [class.color-secondary]="grupoDoUsuario === 'B'">
+        description
+    </span>
+
+    <h4 class="title-alert">A fatura será enviada para o e-mail de contato cadastrado!</h4>
+
+    <p class="mb-4">{{emailCadastrado}}</p>
+
+    <form [formGroup]="emailFormGroup">
+        <p>Deseja enviar para outro e-mail?</p>
+        <mat-form-field appearance="outline" class="col-lg-8 col-12 mb-3">
+            <mat-label>Digite um endereço de e-mail</mat-label>
+            <input matInput type="text" name="email" id="email" formControlName="email"
+                alt="Digite um endereço de e-mail" />
+            <mat-error>
+                <div class="d-flex align-items-center alinhar-erro">
+                    <mat-icon class="svg-icon" svgIcon="warning-outline"></mat-icon>
+                    <div class="row ps-4 mt-1">
+                        Este e-mail não é válido! Por favor, tente novamente.
+                    </div>
+                </div>
+            </mat-error>
+        </mat-form-field>
+
+        <div class="mt-4 mt-lg-2 d-flex flex-wrap justify-content-center">
+            <h4 class="title-alert w-100">Por qual motivo fez a solicitação?</h4>
+            <mat-radio-group formControlName="motivoSolicitacao">
+                <div *ngFor="let motivo of motivos" class="col-12 p-0 pe-md-5 ps-md-5 d-flex flex-nowrap">
+                    <mat-radio-button [value]="motivo" [name]="motivo" [alt]="motivo"
+                        class="radio-option-dark-gray radio-button-debito text-left">{{ motivo.descricao | titlecase
+                        }}
+                    </mat-radio-button>
+                </div>
+            </mat-radio-group>
+        </div>
+    </form>
+
+
+    <div class="box-buttons mt-2">
+        <app-neo-button [classes]="grupoDoUsuario === 'A'
+        ?'btn-neodarkgreen pe-5 ps-5 mt-2' :'btn-neoprimary pe-5 ps-5 mt-2'" [titleText]="'ENVIAR'"
+            (callFunction)="cadastrarEmail()" [isDisabled]="!emailFormGroup.valid || emailFormGroup.value.email.length === 0">
+        </app-neo-button>
+        <p class="col-5 mt-4 mb-3 btn-cancelar" (click)="cancelar()">Cancelar</p>
+    </div>
+</div>

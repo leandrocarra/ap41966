@@ -1,0 +1,100 @@
+.filtro-faturas {
+    .faturas-atrasadas {
+        .alerta-atrasadas {
+            margin: 2.5rem 0 0 0;
+            color: var(--neo-pure-red);
+
+            span {
+                margin-right: 0.5rem;
+            }
+
+            p {
+                font-weight: 500;
+            }
+        }
+
+        .qtd-valor {
+            span {
+                color: var(--neo-pure-red);
+            }
+        }
+    }
+
+    .fatura-infos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        margin: auto auto auto 1.5rem;
+        max-width: 90%;
+    }
+
+    .fatura {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 0.75rem;
+        padding: 1.25rem 2.375rem;
+        background-color: #60617020;
+        box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+        border-radius: 8px;
+        text-align: right;
+
+        span {
+            display: block;
+        }
+    }
+
+    .titulo {
+        color: var(--neo-dark-green);
+        font-size: 0.875rem;
+        font-weight: bold;
+    }
+
+    .valor {
+        text-align: center;
+        color: var(--neo-dark-gray);
+    }
+
+    .status-fatura {
+        text-align: center;
+        color: var(--neo-pure-red);
+    }
+
+    .dica {
+        span {
+            font-weight: 500;
+        }
+    }
+
+
+    .check-group-a {
+
+        .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+        .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+            background-color: var(--neo-dark-green);
+        }
+    }
+
+    .check-group-b {
+        @extend .check-group-a;
+
+        .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+        .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+            background-color: var(--neo-light-green);
+        }
+    }
+
+    .checkframe-group-a {
+        .mat-checkbox-frame {
+            border-color: var(--neo-dark-green) !important;
+        }
+    }
+
+    .checkframe-group-b {
+        .mat-checkbox-frame {
+            border-color: var(--neo-light-green) !important;
+        }
+    }
+
+}

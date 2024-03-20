@@ -1,0 +1,90 @@
+h6 {
+    color: var(--neo-light-green);
+    letter-spacing: 0.035rem;
+    line-height: 2.188rem;
+    font-weight: bold;
+}
+
+.align-perfil-img{
+    margin-left: 30px;
+    padding-bottom: 25px;
+    max-width: 125px;
+    height: auto;
+}
+
+.align-perfil{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.align-button-perfil{
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 768px){
+   .align-button-perfil{
+       justify-content: space-between;
+   }
+}
+
+.img-perfil{
+    width: 120px;
+}
+
+.titulo{
+    color: var(--neo-light-green);
+}
+
+.card-perfil{
+    display: grid;
+    border: solid 2px var(--neo-light-green);
+    background-color: #fff;
+    border-radius: 5px;
+    min-height: 270px;
+    /* justify-items: center; */
+    align-items: center;
+}
+
+.card-perfil:active{
+    border: solid 2px var(--neo-dark-green);
+    background-color: #fff;
+    cursor: pointer;
+    h6 {
+        color: var(--neo-dark-green);
+    }
+
+}
+
+.card-perfil-select{
+    display: grid;
+    border: solid 2px var(--neo-dark-green);
+    background-color: #fff;
+    cursor: pointer;
+    color: var(--neo-dark-green);
+    border-radius: 5px;
+    min-height: 270px;
+    align-items: center;
+    h6 {
+        color: var(--neo-dark-green);
+    }
+}
+
+.card-perfil-disable{
+    display: grid;
+    background-color: var(--neo-white-500);
+    border-radius: 5px;
+    min-height: 270px;
+    pointer-events: none;
+    align-items: center;
+    h6 {
+        color: #000;
+    }
+}
+
+.card-descricao{
+    font-size: x-small;
+    padding: 0 25px;
+    text-align: center;
+}

@@ -1,0 +1,17 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.lista-classes {
+    font-size: 17px;
+}
+
+@media only screen and (max-width: 375px) {
+    .lista-classes {
+        padding-left: 0px;
+        font-size: 11px;
+    }
+}
+@media only screen and (min-width: 425px) {
+    .lista-classes {
+        font-size: 11px;
+    }
+}

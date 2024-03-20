@@ -1,0 +1,53 @@
+<div class="card card-uc">
+    <div class="card-header d-flex" style="background-color:#00A443;">
+        <label class="label-strong-neo mat-radio-label" style="color:#fff;">Localizamos os seguintes imóveis. Selecione o seu:</label>
+        <button type="button" (click)="close()" class="close-light" data-dismiss="modal">&times;</button>
+    </div>
+
+    <div class="card-body">
+        <nav class="mb-3 d-flex align-items-center">
+            <mat-icon>search</mat-icon>
+            <input class="form-control" type="text" name="uc" placeholder="DIGITE O COMPLEMENTO" [(ngModel)]="ucFilter" (ngModelChange)="searchUc()">
+        </nav>
+
+        <div class="col-xl-12 p-0 mb-4">
+            <table class="col-12 p-0">
+                <caption>Dados do imóvel</caption>
+                <thead>
+                    <tr>
+                        <th id="table-column-title"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ucOptions of activePageUc">
+                        <td>
+                            <button *ngIf="mobile" type="button" class="p-2 btn-uc text-left col-12" (click)="escolhaUc(ucOptions)"
+                            style="white-space: normal; ">
+                                {{dadosImovel.endereco}}, {{dadosImovel.numero}} - {{dadosImovel.bairro}}
+                                <br />Complemento: {{ucOptions.complemento}}
+                                <br />Código do imóvel: {{ucOptions.uc}}
+
+                            </button>
+
+                            <button *ngIf="!mobile" type="button" class="col-12 btn-uc text-left" (click)="escolhaUc(ucOptions)">
+                                {{dadosImovel.endereco}}, {{dadosImovel.numero}} - {{dadosImovel.bairro}} Complemento: {{ucOptions.complemento}} - Código do imóvel: {{ucOptions.uc}}
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+
+            <div class="col-6" [class.col-12]="mobile">
+                <button type="button" class="btn btn-outline-secondary p-2 col-12" [class.p-2]="mobile" [class.col-12]="mobile" (click)="setNaoEncontrei()">
+                    NÃO ENCONTREI MEU IMÓVEL
+                </button>
+            </div>
+            <div class="col-6" [class.col-12]="mobile">
+                <mat-paginator [length]="ucs.length" [pageSize]="pageSize" (page)="onPageChanged($event)"></mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>

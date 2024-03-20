@@ -1,0 +1,9 @@
+<div class="row" id="card-selecao">
+    <div class="col-md-3 mt-3 mb-lg-0" *ngFor="let card of cardsPerfis; let i = index" [class.disabled]="card.disabled">
+        <button class="cardPerfil btn w-100" type="button" (click)="navigateTo(card.titulo);">
+            <img class="icone-acesso-rapido" [src]="card.img" alt="{{ card.titulo }}" />
+            <p class="titulo" [innerHTML]="card.titulo" [ngStyle]="{'color': card.corTitulo}"></p>
+            <span [innerHTML]="card.descricao"></span>
+        </button>
+    </div>
+</div>

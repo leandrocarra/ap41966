@@ -1,0 +1,66 @@
+<h4 class="titulo mb-3">
+    Agora que você optou pela tarifa social, precisamos de
+    algumas informações adicionais.
+</h4>
+
+<div class="texto">Passo 1: Escolha do programa social em que você ou algum familiar esteja
+    cadastrado.</div>
+<div class="texto">Passo 2: Identificação do titular ou do familiar cadastrado no programa social e
+    apresentação dos documentos.</div>
+
+<h4 class="titulo mb-4 mt-4">Passo 1: Em qual programa social a sua família está cadastrada?</h4>
+<form [formGroup]="formTarifaSocial" (submit)="continuar()">
+    <mat-radio-group formControlName="tarifa">
+        <mat-radio-button id="programaSocialGoverno" name="programaSocialGoverno" [value]="'PROGRAMA SOCIAL GOVERNO'">
+            <div class="ms-3">
+                <strong class="titulo-programa-social">Programa
+                    Social do Governo: </strong>
+                <span>
+                    Famílias no Cadastro Único para Programas Sociais do Governo Federal com renda
+                    familiar mensal por pessoa menor ou igual a meio salário mínimo nacional.
+                </span>
+            </div>
+        </mat-radio-button>
+
+        <mat-radio-button class="mt-3 mb-3" id="assistenciaMedicaDomiciliar" name="assistenciaMedicaDomiciliar"
+            [value]="'ASSISTENCIA MEDICA DOMICILIAR'">
+            <div class="ms-3">
+                <strong class="titulo-programa-social">Assistência Médica Domiciliar: </strong>
+                <span>
+                    Famílias no Cadastro Único da Prefeitura, com renda familiar mensal de até três
+                    salários mínimos, que tenha alguém com doença ou patologia que precise do uso continuado de
+                    aparelhos ou
+                    equipamentos elétricos.
+                </span>
+            </div>
+        </mat-radio-button>
+
+        <mat-radio-button id="beneficioPrestacaoContinuada" name="beneficioPrestacaoContinuada"
+            [value]="'BENEFICIO PRESTACAO CONTINUADA'">
+            <div class="ms-3">
+                <strong class="titulo-programa-social">Benefício de Prestação Continuada:</strong>
+                <span>
+                    Famílias com idoso ou deficiente que receba o Benefício de Prestação Continuada
+                    da Assistência Social - BPC (Lei LOAS).
+                </span>
+            </div>
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <div class="d-flex mt-5 justify-content-between justify-content-md-start">
+        <app-neo-button class="me-0 me-md-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'" (callFunction)="voltar()">
+        </app-neo-button>
+        <app-neo-button [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'" [titleText]="'CONTINUAR'"
+            (callFunction)='continuar()' [isDisabled]="formTarifaSocial.invalid">
+        </app-neo-button>
+    </div>
+    <!-- <div class="my-1 me-2">
+            <app-neo-button [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'" (callFunction)="voltar()">
+            </app-neo-button>
+        </div>
+        <div class="my-1">
+            <app-neo-button [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                [titleText]="'CONTINUAR'" (callFunction)='continuar()' [isDisabled]="formTarifaSocial.invalid">
+            </app-neo-button>
+        </div> -->
+</form>

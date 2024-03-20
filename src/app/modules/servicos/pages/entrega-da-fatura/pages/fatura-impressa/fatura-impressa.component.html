@@ -1,0 +1,25 @@
+<div id="fatura-impressa">
+    <h2>Entrega da Fatura</h2>
+    <p class="subtitulo mt-3 mb-3">
+        Escolha onde gostaria de receber sua fatura:
+    </p>
+    <form [formGroup]="formFaturaImpressa">
+        <mat-radio-group formControlName="ondeReceberFatura" required>
+            <div class="col-12 p-0 mt-3" *ngFor="let opcao of opcoesFaturaImpressa">
+                <mat-radio-button class="format-info-radio-btn" [value]="opcao">
+                    {{ opcao }}
+                </mat-radio-button>
+            </div>
+        </mat-radio-group>
+    </form>
+
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="'CONTINUAR'" [isDisabled]='formFaturaImpressa.invalid' (callFunction)="continuar()">
+        </app-neo-button>
+    </div>
+</div>

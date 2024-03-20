@@ -1,0 +1,16 @@
+.title-protocolo {
+    text-transform: uppercase;
+    color: var(--header-text);
+    font-weight: 500;
+    font-size: 0.875rem;
+    bottom: 140px;
+    margin-top: -25px;
+    display: flex;
+}
+
+@media only screen and (max-width: 385px) {
+    .title-protocolo {
+        margin-top: -50px;
+    }
+}
+

@@ -1,0 +1,57 @@
+<div>
+	<h2>{{ textoTitulo }}</h2>
+
+	<p class="subtitulo mt-3 mb-2">{{ textoSubtitulo }}</p>
+	<span>
+		<span class="dica forte">{{ textoLegendaDica }}</span>
+		<span class="dica">{{ textoDica }}</span>
+	</span>
+	<p class="dica forte">{{ textoExemplo }}</p>
+
+	<h6 class="forte titulo-inputs mt-4 mb-4">{{ textoTituloInputs }}</h6>
+
+	<form [formGroup]="dadosContato">
+		<div id="black-and-white-input-1" class="col-12 col-md-8 col-lg-6 col-xl-5 p-0">
+			<mat-form-field appearance="outline" class="col-12 p-0 m-0 mb-1" hideRequiredMarker>
+				<mat-label>NÚMERO DE CELULAR</mat-label>
+				<input matInput type="text" id="telefone" formControlName="celular" [mask]="'(00) 0 0000-0000'" required
+					minlength="11" maxlength="16" />
+				<mat-error>
+					<div class="d-flex align-items-start mt-1">
+						<img class="img-atencao" src="assets/images/icons/atencao.svg"
+							alt="imagem com símbolo de atenção" />
+						<div class="ps-1 conf-text-input-mat-error">
+							<p *ngIf="!mobile">Este número não é válido! Por favor, tente novamente.</p>
+							<p *ngIf="mobile">Número inválido.</p>
+						</div>
+					</div>
+				</mat-error>
+			</mat-form-field>
+
+			<mat-form-field appearance="outline" class="col-12 p-0 mt-3" hideRequiredMarker>
+				<mat-label>PONTO DE REFERÊNCIA</mat-label>
+				<input matInput type="text" id="pontoDeReferencia" formControlName="referencia"
+					[maxlength]="calculaMaxLength()" required required />
+                <mat-error>
+                    <div class="d-flex align-items-start mt-1">
+                        <img class="img-atencao" src="assets/images/icons/atencao.svg"
+                            alt="imagem com símbolo de atenção" />
+                        <div class="ps-1 conf-text-input-mat-error">
+                            <p>Você precisa fornecer mais detalhes.</p>
+                        </div>
+                    </div>
+                </mat-error>
+			</mat-form-field>
+		</div>
+	</form>
+
+	<div class="d-flex justify-content-between justify-content-md-start mt-4">
+		<app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+			(callFunction)="voltar()">
+		</app-neo-button>
+
+		<app-neo-button class="me-md-3 m-0" [classes]="groupColor === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+			[isDisabled]="dadosContato.invalid" [titleText]="'CONTINUAR'" (callFunction)="continuar()">
+		</app-neo-button>
+	</div>
+</div>

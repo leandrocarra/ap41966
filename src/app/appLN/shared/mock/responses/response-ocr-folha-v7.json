@@ -1,0 +1,37 @@
+{
+    "result": [
+        {
+            "fields": [
+                {
+                    "name": "responsavel_familiar",
+                    "value": "111111111",
+                    "score": 0.91
+                },
+                {
+                    "name": "data_nascimento",
+                    "value": "111111111",
+                    "score": 0.91
+                },
+                {
+                    "name": "cod_familiar",
+                    "value": "111111111",
+                    "score": 0.91
+                },
+                {
+                    "name": "nis",
+                    "value": "111111111",
+                    "score": 0.91
+                },
+                {
+                    "name": "local",
+                    "value": "111111111",
+                    "score": 0.91
+                }
+            ],
+            "tags": [
+                "br-cadastro-unico-1",
+                "br-cadastro-unico-1"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,117 @@
+<div class="classes-ng-deep-encapsuladas width-agencia mt-padrao">
+    <div class="row">
+        <div class="col-12 top-content-acesso-compartilhado">
+            <xng-breadcrumb></xng-breadcrumb>
+            <h2 class="titulo">Compartilhar Acesso</h2>
+            <p>
+                Forneça abaixo as informações do tipo de acesso que deseja conceder.
+            </p>
+        </div>
+        <div class="col-lg-7">
+            <div class="container-padding">
+                <div class="content-acesso-compartilhado">
+
+                    <div class="header-acesso">
+                        <div class="row">
+                            <div class="col-12 col-lg-6 pad-h">
+                                <h4 class="ps-4">Adicionar</h4>
+                            </div>
+                            <div class="col-12 col-lg-6 ps-4 pad-h">
+                                <mat-form-field appearance="filled" id="filtro-perfis"
+                                    class="form-field-filters custom-filtro-perfis">
+
+                                    <mat-select placeholder="Selecione o tipo de perfil*" [(ngModel)]="perfilEscolhido"
+                                        (ngModelChange)="definirPerfil(perfilEscolhido);">
+                                        <mat-option *ngFor="let perfil of perfis"
+                                            [value]="perfil">{{perfil}}</mat-option>
+                                    </mat-select>
+
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-pesquisar-acesso p-0 my-3">
+                        <form [formGroup]="formIdentificacao">
+
+                            <div class="d-flex flex-wrap justify-content-between">
+                                <mat-form-field appearance="outline" class="col-12 col-lg-6 col-md-8 mb-2">
+                                    <mat-label>Insira um número de CPF ou CNPJ</mat-label>
+                                    <input matInput type="search" name="documento"
+                                        placeholder="Insira um número de CPF ou CNPJ" formControlName="documento"
+                                        onlyNumber [mask]="userIdMask" (ngModelChange)="aplicarMaskCpfCnpj()">
+                                </mat-form-field>
+
+                                <div class="col-12 col-lg-2 col-md-2 d-flex justify-content-lg-end justify-content-start">
+                                    <app-neo-button class="d-inline-flex"
+                                        [classes]="grupoTensao === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                                        [isDisabled]="formIdentificacao.invalid || perfilEscolhido === ''"
+                                        [titleText]="'PESQUISAR'" (callFunction)="pesquisar()">
+                                    </app-neo-button>
+                                </div>
+                            </div>
+
+                            <div *ngIf="pesquisaConcluida">
+                                <hr>
+                                <app-conjuge-block [desabilitarBtn]="desabilitarBtnAcao()"
+                                    [dadosUsuarioFilho]="dadosUsuarioFilho" [mostrarTodosDados]="false"
+                                    (executarAcao)="validarAcao($event)"></app-conjuge-block>
+
+                                <!-- Anexo: Representante Legal -->
+                                <div *ngIf="exibirAnexo" class="col-12 col-lg-6 pt-4 pe-0 ps-0">
+                                    <app-box-file [maxSize]="tamanhoMaximoArquivo" [infoDoc]="docInfo"
+                                        [formatosAceitos]="formatosParaAnexar" [documentoLabel]="dadosBoxAnexo.label"
+                                        (arquivoAnexado)="receberAnexo($event)"></app-box-file>
+                                    <app-attached-file [arquivos]="arrayAnexos"
+                                        (removerArquivo)="removerAnexo($event);"></app-attached-file>
+                                </div>
+
+
+                                <!-- CheckBox Padronista(NE) / Projetista (SE) -->
+                                <div
+                                    class="d-flex mat-checkbox-inner-container-no-side-marginmat-checkbox-inner-container-no-side-margin">
+                                    <div [ngClass]="exibirTermo ? 'd-flex':'d-none'">
+                                        <mat-checkbox formControlName="checkTermoPadronista"
+                                            class="text-wrap mt-4"></mat-checkbox>
+                                        <div class="texto-declaracao">
+                                            Declaro que autorizo o profissional padronista selecionado para que
+                                            possa solicitar, em meu nome, pedidos de Ligação Nova ou Troca de
+                                            Padrão.
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="meusGrupos.length > 0" class="container-padding cont-padding">
+                <div class="content-acesso-compartilhado">
+                    <div class="header-acesso">
+                        <div class="row">
+                            <div class="col-12 pad-h">
+                                <h4 class="ps-4">Meus grupos</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <app-meus-grupos [grupos]="meusGrupos" (removerUsuario)="removerUsuario($event)"></app-meus-grupos>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="d-flex justify-content-between justify-content-md-start mt-5">
+	<app-neo-button class="me-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+		(callFunction)="voltar()">
+	</app-neo-button>
+
+	<app-neo-button class="me-3" [classes]="grupoTensao === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+		[titleText]="'SALVAR'" (callFunction)="salvar()">
+	</app-neo-button>
+</div>

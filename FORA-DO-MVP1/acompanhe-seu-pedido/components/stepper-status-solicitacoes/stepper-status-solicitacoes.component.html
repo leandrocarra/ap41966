@@ -1,0 +1,32 @@
+<mat-card>
+    <div class="centralizar-icon">
+        <span class="material-icons-outlined me-3 {{solicitacao.detalhes.acompanhamentoDetalhado!.statusFluxo | lowercase}}">
+            <!-- {{iconesObj[solicitacao.detalhes.acompanhamentoDetalhado?.statusFluxo] | lowercase}} -->
+        </span>
+        <span class="subtitulo">ACOMPANHAMENTO DETALHADO</span>
+    </div>
+
+    <div class="custom-stepper">
+        <div *ngFor="let etapa of solicitacao.etapas" class="custom-etapa-stepper">
+            <div class="d-flex">
+                <div  class="d-block">
+                    <mat-icon ngClass="{{etapa.done | lowercase}}">
+                        {{iconesDetalhes[etapa.done]}}
+                    </mat-icon>
+
+                    <div class="step-line"></div>
+                </div>
+                <div >
+                    <span ngClass="{{etapa.done | lowercase}} step-title">
+                        <p class="m-0">{{etapa.status}}</p>
+                    </span>
+
+                    <span class="step-date">
+                        {{solicitacao.detalhes.acompanhamentoDetalhado.dataFluxo + ' às ' +
+                        solicitacao.detalhes.acompanhamentoDetalhado.horaFluxo}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>

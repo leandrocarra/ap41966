@@ -1,0 +1,20 @@
+.titulo-solicitante{
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--neo-dark-green)
+}
+
+.option[aria-selected="true"] {
+    color: var(--neo-dark-green) !important;
+    font-weight: bolder;
+}
+  
+.mat-option:hover:not(.mat-option-disabled) {
+    background-color: var(--neo-light-green) !important;
+    color: var(--neo-white);
+    font-weight: bolder;
+}
+
+::ng-deep .mat-datepicker-toggle-default-icon {
+    fill: var(--neo-dark-gray) !important;
+}

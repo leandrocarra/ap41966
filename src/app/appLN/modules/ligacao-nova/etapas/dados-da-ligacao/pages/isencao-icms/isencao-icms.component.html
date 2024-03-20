@@ -1,0 +1,35 @@
+<h4 class="titulo mb-3">Confira se você pode solicitar a isenção de ICMS</h4>
+
+<div class="row">
+    <form class="col-7" [formGroup]="isencaoForm" (submit)="continuar();">
+        <p class="texto">
+            Se você é um produtor rural do Estado de São Paulo, possui inscrição
+            junto à SEFAZ/SP e a sua inscrição estadual constar nossa base mensal
+            enviada pela Secretaria da Fazenda de São Paulo, você tem direito à
+            isenção do ICMS na sua conta de energia elétrica.
+            <br /><br />
+            Para consultar o cadastro do contribuinte de ICMS - CADESP no portal da secretaria da fazenda,
+            <a rel="noopener"
+                href="https://www.cadesp.fazenda.sp.gov.br/(S(toezihhg5kzllbkpr5ifariw))/Pages/Cadastro/Consultas/ConsultaPublica/ConsultaPublica.aspx"
+                target="_blank" class="infoCADESP">clique aqui</a>.
+            <br /><br />
+            Não se esqueça! É seu dever manter o seu cadastro atualizado e nos informar
+            sobre qualquer alteração na titularidade da unidade consumidora, inclusive se a
+            atividade de produtor rural deixar de ser exercida.
+        </p>
+
+        <mat-radio-group formControlName="desejaIsencaoICMS">
+            <mat-radio-button class="mt-2 me-5 mb-2" [value]="true"><strong class="texto">TENHO INTERESSE</strong></mat-radio-button>
+            <mat-radio-button class="mt-2 me-4 mb-2" [value]="false"><strong class="texto" >NÃO TENHO INTERESSE</strong></mat-radio-button>
+        </mat-radio-group>
+
+        <div class="d-flex justify-content-between justify-content-md-start mt-5 mb-5">
+            <button class="btn btn-outline-secondary me-2" type="button" (click)="voltar();">VOLTAR</button>
+            <button class="btn btn-primary-green" type="submit" [disabled]="isencaoForm.invalid">CONTINUAR</button>
+        </div>
+    </form>
+
+    <div class="col-lg-5 col-xl-5" *ngIf="!mobile">
+        <img src="../../../../../../../../assets/assetsLN/images/icms.svg" class="img-vaquinha" alt="">
+    </div>
+</div>

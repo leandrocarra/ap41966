@@ -1,0 +1,19 @@
+#form-preencher-codigo {
+    .digito {
+        text-align: center;
+    }
+
+    .mat-form-field-infix {
+        text-align: center;
+    }
+
+    mat-form-field {
+        min-width: 40px;
+    }
+}
+
+#error {
+    .conf-text-input-mat-error {
+        color: var(--neo-pure-red);
+    }
+}

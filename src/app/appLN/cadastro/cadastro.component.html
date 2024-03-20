@@ -1,0 +1,85 @@
+<div class="container-fluid fundo-login">
+	<div class="logo-inicio"></div>
+	<mat-card class="cadastro-card mx-auto col-12 col-xl-8">
+
+		<mat-card-content>
+			<h2 class="text-center titulo mt-3">Cadastrar</h2> <br />
+			<h2 class="text-center environment" *ngIf="isHomologacao">HOMOLOGAÇÃO</h2>
+			<mat-radio-group class="col-12 d-flex justify-content-center flex-wrap row" [(ngModel)]="tipoPessoa"
+				*ngIf="tipoPessoa == null || tipoPessoa == undefined">
+				<div class="d-flex flex-nowrap">
+					<mat-radio-button id="formPessoaFisica" name="formPessoaFisica" value="pessoaFisica"><strong
+							class="texto me-3">Pessoa Física</strong></mat-radio-button>
+				</div>
+				<div class="d-flex flex-nowrap">
+					<mat-radio-button id="formPessoaJuridica" name="formPessoaJuridica" value="pessoaJuridica"><strong
+							class="texto">Pessoal Jurídica</strong></mat-radio-button>
+				</div>
+			</mat-radio-group>
+		</mat-card-content>
+
+
+		<div class="col-11 col-xl-11 mx-auto" *ngIf="tipoPessoa != null || tipoPessoa != undefined">
+
+			<form [formGroup]="formCadastroDados" class="row">
+				<div class="form-neo col-12 col-xl-6 mt-4">
+					<label *ngIf="tipoPessoa === 'pessoaFisica'" class="subtitulo">Nome Completo</label>
+					<label *ngIf="tipoPessoa === 'pessoaJuridica'" class="subtitulo">Razão Social</label>
+					<input type="text" class="input-bottom-border form-control form-control-lg" id="username" name="username"
+						placeholder="Digite seu nome" formControlName="username" required withoutNumber>
+				</div>
+
+				<div class="form-neo col-12 col-xl-6 mt-4">
+					<label *ngIf="tipoPessoa === 'pessoaFisica'" class="subtitulo">CPF</label>
+					<label *ngIf="tipoPessoa === 'pessoaJuridica'" class="subtitulo">CNPJ</label>
+					<input type="text" class="input-bottom-border form-control form-control-lg" id="documento" name="documento" formControlName="documento" required onlyNumber
+					[placeholder]="tipoPessoa === 'pessoaJuridica' ? '44.444.444/4444-44' : '444.444.444-44'"
+					[mask]="tipoPessoa === 'pessoaJuridica' ? '00.000.000/0000-00' : '000.000.000-00'">
+				</div>
+
+				<div class="form-neo col-12 col-xl-6 mt-4">
+					<label class="subtitulo">Email</label>
+					<input type="text" class="input-bottom-border form-control form-control-lg" id="email" name="email"
+						placeholder="Digite o seu e-mail" formControlName="email" required>
+				</div>
+
+				<div class="form-neo col-12 col-xl-6 mt-4">
+					<label class="subtitulo">Celular</label>
+					<input type="text" class="input-bottom-border form-control form-control-lg" id="celular" name="celular"
+						placeholder="(00) 90000-0000" mask="(00) 00000-0000" maxlength="15" formControlName="celular" required onlyNumber>
+				</div>
+
+				<neo-validar-senhas class="form-neo col-12 col-xl-12 mt-4" [nomeLabel]="'Senha'" [isRecuperarSenha]="false" (output)="getPassword($event)">
+				</neo-validar-senhas>
+			</form>
+
+			<div class="row">
+				<div class="form-neo col-12 col-xl-10 mt-4">
+					<label class="enviar-codigo">Como você deseja receber o código de confirmação?</label>
+
+					<mat-radio-group aria-label="Como você deseja receber o código de confirmação?"
+						name="tipoConfirmacao" class="ms-2" [(ngModel)]="usuarioDAO.tipoEnviado">
+						<mat-radio-button id="tipoConfirmacao1" name="tipoConfirmacao1" value="2" class="me-3">SMS
+						</mat-radio-button>
+						<mat-radio-button id="tipoConfirmacao2" name="tipoConfirmacao2" value="1">E-mail
+						</mat-radio-button>
+					</mat-radio-group>
+				</div>
+			</div>
+
+			<mat-checkbox class="mt-4 teste texto" [(ngModel)]="usuarioDAO.receberInfos">
+				Aceito receber informações da Elektro por e-mail ou SMS.</mat-checkbox>
+
+			<div class="row mt-4">
+				<div class="form-neo mx-auto col-11 col-xl-5 mb-4">
+					<button type="button" class="btn btn-primary-grey btn-lg btn-block" title="Cancelar"
+						(click)="cancelar()">CANCELAR</button>
+				</div>
+				<div class="form-neo mx-auto col-11 col-xl-5">
+					<button type="submit" class="btn btn-primary-green btn-lg btn-block" title="Cadastrar" [disabled]="formCadastroDados.invalid || (this.usuarioDAO.password === undefined ||  this.usuarioDAO.password === '')"
+						(click)="cadastrar()">CADASTRAR</button>
+				</div>
+			</div>
+		</div>
+	</mat-card>
+</div>

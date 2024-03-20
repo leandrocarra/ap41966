@@ -1,0 +1,39 @@
+<h2>Agora precisamos verificar a sua identidade</h2>
+<p class="subtitulo mt-3 mb-3"> Para seguir com seu pedido de troca de titularidade, nos envie um documento com foto e
+    uma
+    selfie</p>
+
+<h6 class="subtitulo-h6 mt-4">DICAS PARA UMA BOA SELFIE</h6>
+
+<div class="ps-0 col-md-12 d-flex justify-content-between">
+    <div class="ps-0">
+        <div class="mt-3 ps-0">
+            <img src="assets/images/sol.svg" alt="Ambiente iluminado" class="me-2">
+            <h6 class="d-inline texto text-left"> Procure um lugar com boa iluminação.</h6>
+        </div>
+
+        <div class="lista">
+            <img src="assets/images/oculos.svg" alt="Não usar acessorios" class="me-2">
+            <h6 class="d-inline texto text-left"> Não utilize óculos ou acessórios.</h6>
+        </div>
+
+        <div class="lista">
+            <img src="assets/images/rosto_livre.svg" alt="Rosto livre para selfie" class="me-2">
+            <h6 class="d-inline texto text-left">Tire o cabelo do rosto, e deixei o rosto livre. </h6>
+        </div>
+
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-5">
+            <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                (callFunction)="voltar()">
+            </app-neo-button>
+
+            <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'CONCLUIR'"
+                (callFunction)="concluir()">
+            </app-neo-button>
+        </div>
+    </div>
+
+    <div class="space d-none d-md-none d-lg-block ">
+        <img src="assets/images/selfie.svg" alt="Garota tirando selfie" class="imgSelfie">
+    </div>
+</div>

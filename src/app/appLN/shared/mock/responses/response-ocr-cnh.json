@@ -1,0 +1,230 @@
+{
+    "COMPLETO": {
+        "result": [
+            {
+                "tables": null,
+                "fields": [
+                    {
+                        "name": "nome",
+                        "value": "ROBERTO SILVA",
+                        "score": 0.94
+                    },
+                    {
+                        "name": "doc",
+                        "value": "doc . identidade / org . emissor / uf\n312412521 sspsp\n",
+                        "score": 0.94
+                    },
+                    {
+                        "name": "rg",
+                        "value": "356486321",
+                        "score": 0.94
+                    },
+                    {
+                        "name": "cpf",
+                        "value": "15648963201",
+                        "score": 0.93
+                    },
+                    {
+                        "name": "data_nascimento",
+                        "value": "10/05/1979",
+                        "score": 0.88
+                    },
+                    {
+                        "name": "filiacao",
+                        "value": "REBERT DA SILVA SUELEN FARIAS",
+                        "score": 0.97
+                    },
+                    {
+                        "name": "nome_pai",
+                        "value": "REBERT DA SILVA",
+                        "score": 0.97
+                    },
+                    {
+                        "name": "nome_mae",
+                        "value": "SUELEN FARIAS",
+                        "score": 0.97
+                    },
+                    {
+                        "name": "cat_hab",
+                        "value": "AB",
+                        "score": 0.89
+                    },
+                    {
+                        "name": "registro",
+                        "value": "186575234501",
+                        "score": 0.95
+                    },
+                    {
+                        "name": "data_validade",
+                        "value": "14/01/2025",
+                        "score": 0.78
+                    },
+                    {
+                        "name": "data_primeira_habilitacao",
+                        "value": "12/02/2000",
+                        "score": 0.93
+                    },
+                    {
+                        "name": "numero_espelho_frente",
+                        "value": "19874586320",
+                        "score": 0.91
+                    },
+                    {
+                        "name": "observacoes",
+                        "value": "observacoes\na\near\none\non\non\n",
+                        "score": 0.9
+                    },
+                    {
+                        "name": "orgao_emissor",
+                        "value": "Órgão de Trânsito",
+                        "score": 0.94
+                    },
+                    {
+                        "name": "data_emissao",
+                        "value": "04/08/2001",
+                        "score": 0.9
+                    },
+                    {
+                        "name": "codigo_seguranca",
+                        "value": "568745632010",
+                        "score": 0.9
+                    },
+                    {
+                        "name": "renach",
+                        "value": "SP458687563",
+                        "score": 0.9
+                    },
+                    {
+                        "name": "numero_espelho_verso",
+                        "value": "15687632014",
+                        "score": 0.9
+                    },
+                    {
+                        "name": "local_uf",
+                        "value": "SP",
+                        "score": 0.86
+                    },
+                    {
+                        "name": "estado_emissor",
+                        "value": "SP",
+                        "score": 0.6
+                    },
+                    {
+                        "name": "local_cidade",
+                        "value": null,
+                        "score": 0
+                    }
+                ],
+                "deskewImage": "",
+                "docQuality": "bom",
+                "docQualityScore": 0.96,
+                "docType": "cnh",
+                "pageIndex": 1,
+                "tags": [
+                    "cnh"
+                ]
+            }
+        ],
+        "queryId": "9UR37tQi9kaHchVge83QH",
+        "elapsedMilliseconds": 4420,
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "FRENTE": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "cat_hab",
+                        "value": "AB",
+                        "score": 0.6
+                    },
+                    {
+                        "name": "cpf",
+                        "value": "96700905044",
+                        "score": 0.96
+                    },
+                    {
+                        "name": "rg",
+                        "value": "356486321",
+                        "score": 0.78
+                    },
+                    {
+                        "name": "data_nascimento",
+                        "value": "10/05/1979",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "orgao_emissor",
+                        "value": "SSP/SP",
+                        "score": 0.96
+                    },
+                    {
+                        "name": "nome",
+                        "value": "MARIA FLAVIA",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "nome_mae",
+                        "value": "SUELEN FARIAS",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "nome_pai",
+                        "value": "REBERT DA SILVA",
+                        "score": 0.99
+                    },
+                    {
+                        "name": "registro",
+                        "value": "186575234501",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "data_validade",
+                        "value": "14/01/2025",
+                        "score": 0.74
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.83,
+                "docType": "cnh",
+                "pageIndex": 1,
+                "tags": [
+                    "cnh"
+                ]
+            }
+        ],
+        "queryId": "HHCVMGPXDKLZZMWTZHSDU",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "VERSO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "cnh_verso",
+                        "value": "SIM",
+                        "score": 0.81
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.81,
+                "docType": "cnh_verso",
+                "pageIndex": 1,
+                "tags": [
+                    "cnh_verso"
+                ]
+            }
+        ],
+        "queryId": "UJCPTCGRSRTIVLPZYHMZI",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

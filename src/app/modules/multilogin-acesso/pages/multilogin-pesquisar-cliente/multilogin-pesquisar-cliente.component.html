@@ -1,0 +1,43 @@
+<div class="width-agencia mt-padrao" id="card-pesquisar-cliente">
+    <mat-card>
+        <h2><strong>Pesquisar Cliente</strong></h2>
+
+
+        <p class="texto"><strong>Nos informe o tipo de identificação:</strong></p>
+
+        <form [formGroup]="formTipoAcesso" class="row">
+            <div class="col-12">
+                <mat-radio-group class="row mb-3" formControlName="tipoDocumento" aria-label="Numero de identificação"
+                    (change)="atualizarValidadores($event)">
+                    <mat-radio-button class="col-12 col-md-6" value="CPF/CNPJ">CPF/CNPJ</mat-radio-button>
+                    <mat-radio-button class="col-12 col-md-6" value="CONTA CONTRATO">Conta Contrato</mat-radio-button>
+                </mat-radio-group>
+
+                <mat-form-field class="col-12" appearance="outline" color="accent"
+                    *ngIf="formTipoAcesso.value.tipoDocumento">
+                    <mat-label>{{ formTipoAcesso.value.tipoDocumento === "CPF/CNPJ" ? 'CPF ou CNPJ' : 'Conta Contrato'
+                        }}</mat-label>
+                    <input matInput formControlName="documento" type="text" id="documento" [mask]="documentoMask"
+                        (ngModelChange)="applyMask(formTipoAcesso.value.documento, formTipoAcesso.value.tipoDocumento);verificarError()">
+                    <mat-error *ngIf="verificarError()">
+                        <app-custom-mat-error [mensagem]="mensagemErro"></app-custom-mat-error>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+            <!-- Botões -->
+            <div class="col-12 ">
+                <app-neo-button class="me-3 m-0" [classes]="'btn-primary-p-light-green w-100 mb-4'"
+                    [titleText]="'CONTINUAR'" [isDisabled]="formTipoAcesso.invalid" (callFunction)="pesquisar()">
+                </app-neo-button>
+
+                <app-neo-button class="mt-4 me-3 m-0" [classes]="'btn-neo-outline-secondary w-100'"
+                    [titleText]="'VOLTAR'" (callFunction)="voltar()">
+                </app-neo-button>
+
+            </div>
+        </form>
+
+    </mat-card>
+
+</div>

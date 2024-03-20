@@ -1,0 +1,83 @@
+.descricao-composicao-fatura {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item-composicao {
+    display: inline-block;
+    margin: 0.5rem 0 0.5rem 0;
+    width: calc(100% * (1/2) - 10px - 1px);
+}
+
+.div-titulo {
+    align-items: center;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.descricao-titulo {
+    color: var(--neo-dark-gray) !important;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.descricao-item {
+    display: none;
+    text-align: justify;
+    margin-top: 0.875rem;
+}
+
+.perdas {
+    background-color: #E3850D;
+    @extend .dot;
+}
+
+.geração.de.energia {
+    background-color: #26BF64;
+    @extend .dot;
+}
+
+.tributos {
+    background-color: #FFB536;
+    @extend .dot;
+}
+
+.encargos {
+    background-color: #B0A9A3;
+    @extend .dot;
+}
+
+.transmissão {
+    background-color: #0792E5;
+    @extend .dot;
+}
+
+.demais.itens {
+    background-color: #3CC2FF;
+    @extend .dot;
+
+    .div-titulo {
+        margin-left: 0.75rem;
+    }
+
+    ;
+}
+
+.serviços.de.distribuição {
+    background-color: #008C39;
+    @extend .dot;
+}
+
+@media only screen and (max-width: 576px) {
+    .item-composicao {
+        width: 47%;
+    }
+}

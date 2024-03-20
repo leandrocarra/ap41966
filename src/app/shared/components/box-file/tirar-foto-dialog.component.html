@@ -1,0 +1,18 @@
+<div class="area">
+    <video width="640" height="480" autoplay id="webCamera"></video>
+
+    <button type="button" (click)="takeSnapShot()" [class.btn-group-a]="user.group === 'A'"
+        [class.btn-group-b]="user.group === 'B'">
+        <span class="material-icons mt-1">photo_camera</span>
+    </button>
+
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-3">
+        <app-neo-button [classes]="'btn-neo-outline-secondary'" [titleText]="'CANCELAR'" (callFunction)="close()">
+        </app-neo-button>
+
+        <app-neo-button [classes]="'btn-neoprimary'" [titleText]="'CONFIRMAR'" (callFunction)="confirm()"
+            [isDisabled]="!flConfirm">
+        </app-neo-button>
+    </div>
+
+</div>

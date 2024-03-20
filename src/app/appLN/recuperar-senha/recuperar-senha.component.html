@@ -1,0 +1,88 @@
+<div *ngIf="!enviaToken">
+  <div class="container-fluid fundo-login">
+    <div class="logo-inicio"></div>
+
+    <mat-card class="mx-auto col-10 col-xl-4">
+      <mat-card-content class="col-12">
+        <h2 class="text-center titulo">Recuperar Senha</h2>
+        <h2 class="text-center environment" *ngIf="isHomologacao">HOMOLOGAÇÃO</h2>
+        <form [formGroup]="formRecuperarSenha" class="" role="form" aria-label="formulario" ngNativeValidate
+          (ngSubmit)="enviarLinkSenha()">
+
+          <div class="form-neo mx-auto col-12 col-xl-10">
+            <label class="label-strong-neo" for="username">CPF/CNPJ</label>
+            <input type="text" class="input-bottom-border form-control form-control-lg" id="username" name="username"
+              formControlName="documento" placeholder="Digite seu CPF ou CNPJ" maxlength="18" required onlyNumber mask
+              cpfCnpjMask>
+          </div>
+
+          <div class="form-neo mx-auto col-12 col-xl-10 mt-4">
+            <label class="label-strong-neo" for="email">E-mail</label>
+            <input type="text" class="input-bottom-border form-control form-control-lg" id="email" name="email"
+              formControlName="email" placeholder="Digite seu e-mail" required minlength="10">
+          </div>
+
+          <div class="form-neo text-center col-12 mt-4">
+            <p class="texto">Como você deseja receber o código de confirmação?</p><br />
+            <mat-radio-group class="offset-xl-2" for="tipoConfirmacao" name="tipoConfirmacao"
+              formControlName="tipoEnvioToken">
+              <mat-radio-button class="col-xl-5 col-7" name="tipoConfirmacao2" value="1">E-mail</mat-radio-button>
+              <mat-radio-button class="col-4" name="tipoConfirmacao1" value="2">SMS</mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+          <div class="row mt-3 justify-content-center">
+            <div class="mb-4 col-11 col-xl-4">
+              <button type="button" (click)="voltar()" class="btn btn-primary-grey btn-lg btn-block"
+                title="Voltar">VOLTAR</button>
+            </div>
+            <div class="col-11 col-xl-4">
+              <button type="submit" class="btn btn-primary-green btn-lg btn-block" title="Enviar"
+                [disabled]="formRecuperarSenha.invalid">ENVIAR</button>
+            </div>
+          </div>
+
+          <div class="text-center mt-3 col-12 col-xl-10">
+            <p class="texto">Não tem uma conta? <a class="text-link" routerLink="/cadastro">Registre-se aqui</a></p>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<div *ngIf="enviaToken">
+  <div class="container-fluid fundo-login">
+    <div class="logo-inicio"></div>
+
+    <mat-card class="mx-auto col-10 col-xl-4">
+      <mat-card-content class="col-12">
+        <h2 class="text-center titulo">Recuperar Senha</h2>
+
+        <form class="form-group col-12" role="form" aria-label="formulario" ngNativeValidate (ngSubmit)="validaToken()">
+
+          <div class="mx-auto col-12 col-xl-10 p-0">
+            <label class="label-strong-neo">Token</label>
+            <input type="text" class="input-bottom-border form-control form-control-lg" [(ngModel)]="token" name="token"
+              placeholder="Digite o Token" upperCase required maxlength="8">
+          </div>
+
+          <neo-validar-senhas class="col-12 col-xl-12" [nomeLabel]="'Senha'" [isRecuperarSenha]="true"
+            (output)="getPassword($event)">
+          </neo-validar-senhas>
+
+          <div class="row mt-3 justify-content-center">
+            <div class="mb-4 col-11 col-xl-6">
+              <button type="button" (click)="voltar()" class="btn btn-primary-grey btn-lg btn-block"
+                title="Voltar">VOLTAR</button>
+            </div>
+            <div class="col-11 col-xl-6">
+              <button type="submit" class="btn btn-primary-green btn-lg btn-block" title="Confirmar">CONFIRMAR</button>
+            </div>
+          </div>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.textoSeloMobile{
+    font-size: 12px;
+    color: #e25f30;
+}
+
+.melhorOpcao{
+    width: 100px;
+    height: 54px;
+    padding: 0;
+}
+
+.melhorOpcaoMobile{
+    width: 35px;
+    height: 20px;
+    margin-left: -5px;
+}
+
+.texto {
+    .mat-radio-label {
+        white-space: normal !important;
+    }
+}

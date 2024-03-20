@@ -1,0 +1,55 @@
+<mat-accordion *ngFor="let item of itens; let i = index" class="mt-3">
+    <mat-expansion-panel (opened)="mostrarDadosPorPagina(i, item.ucs)" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header class="box-shadow-cards" collapsedHeight="*" expandedHeight="*">
+            <div class="expansion-header justify-content-md-between">
+
+                <div *ngIf="itens.length > 1" class="col-2 col-md-1 p-0 align-items-center mt-0">
+                    <div class="p-0 justify-content-center d-flex align-items-center">
+                        <mat-radio-group [(ngModel)]="grupoSelecionado">
+                            <mat-radio-button style="vertical-align:sub;" class="p-0" [value]="item.grupo"
+                                (click)="grupoEscolhido(item)"></mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+
+                <div class="row m-0 d-flex justify-content-between align-items-center col-10 col-md-11 p-0">
+                    <div class="group-color col-12 col-md-2 col-lg-2 p-0 m-0">
+                        <span><strong>GRUPO {{item.grupo}}</strong></span>
+                    </div>
+    
+                    <div class="col-12 col-md-3 p-0">
+                        <span class="title-accordion"><strong>E-mail</strong></span>
+                        <span class="d-block t-color-dark-silver-200">{{item.email}}</span>
+                    </div>
+    
+                    <div class="col-6 col-md-3 p-0">
+                        <span class="title-accordion"><strong>DATA VENCIMENTO</strong></span>
+                        <span class="d-block t-color-dark-silver-200">{{item.vencimento}}</span>
+                    </div>
+    
+                    <div class="col-12 col-md-2 p-0">
+                        <a (click)="editar()">EDITAR</a>
+                    </div>
+                </div>
+
+            </div>
+        </mat-expansion-panel-header>
+
+        <div *ngFor="let unidade of ativarDados[i]" class="accordion-content">
+            <div class="col-12 col-md-4">
+                <strong>CNPJ: {{ unidade.cnpj }}</strong>
+            </div>
+            <div class="col-12 col-md-4">
+                UC: {{unidade.uc}}
+            </div>
+            <div class="col-12 col-md-4">
+                {{ unidade.endereco + ' ' + unidade.cep }}
+            </div>
+        </div>
+
+        <div *ngIf="item.ucs.length > 3" class="mt-3">
+            <app-pagination [ativarDados]="ativarDados[i]" [pageSize]="pageSize" [collections]="item.ucs" [grupo]="'A'"
+                (eventPagination)="eventPagination($event, i)" #pagination></app-pagination>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

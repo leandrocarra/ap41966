@@ -1,0 +1,32 @@
+<section class="col-12 col-sm-10 col-lg-7 col-xl-6 container-dados-imovel">
+    <div class="row px-3 m-text">
+        <div class="col-12 col-sm-6 t-legenda">CÓDIGO DO CLIENTE</div>
+        <div class="col-12 col-sm-6 t-uc">{{ userUC }}</div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="row px-3 m-text">
+        <div class="col-12 col-sm-3 t-legenda">ENDEREÇO</div>
+        <div class="col-12 col-sm-9 t-endereco" [innerHTML]="userEndereco"></div>
+    </div>
+
+    <div id="autoleitura" *ngIf="codigoMedidor">
+        <hr class="divider">
+
+        <div class="row g-0 px-3 m-text">
+            <div class="col-12 col-sm-6 t-legenda">ENTREGA DA FATURA</div>
+            <div class="p-0 col-12 col-sm-6 t-endereco d-flex justify-content-sm-end">
+                <a href="#/home/servicos/fatura-digital">{{ tipoEntregaFatura }}</a>
+                <mat-icon>expand_more</mat-icon>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="row px-3 m-text">
+            <div class="col-12 col-sm-6 t-legenda">CÓDIGO DO MEDIDOR</div>
+            <div class="col-12 col-sm-6 t-endereco">{{ codigoMedidor }}</div>
+        </div>
+    </div>
+</section>

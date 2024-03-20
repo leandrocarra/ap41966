@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: agelektro
+  name: agelektro
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2        # how many pods we can add at a time
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: agelektro
+  template:
+    metadata:
+      labels:
+        app: agelektro
+    spec:
+      containers:
+        - name: agelektro
+          #image: default-route-openshift-image-registry.apps.ocpa.nlsopns40258a.iberdrola.local/agenciavirtual/ag-elektro:BUILD_ID
+          image: image-registry.openshift-image-registry.svc:5000/agenciavirtual/ag-elektro:BUILD_ID
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "1200Mi"
+              cpu: .10
+            limits:
+              memory: "2500Mi"
+              cpu: .50
+          ports:
+          - containerPort: 8080
+            protocol: TCP
+      dnsConfig:
+        options:
+          - name: ndots
+            value: '1'
+      #hostAliases:
+       # - ip: 10.186.129.200
+       #   hostnames:
+       #     - wso2gwhml.neoenergia.net

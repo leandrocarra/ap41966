@@ -1,0 +1,56 @@
+{
+    "VALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "rne",
+                        "value": "V565371-S",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "nome",
+                        "value": "MACHADO DE ASSIS",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "nacionalidade",
+                        "value": "PORTUGUESA",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "data_nascimento",
+                        "value": "21/07/1839",
+                        "score": 0.95
+                    },
+                    {
+                        "name": "data_expedicao",
+                        "value": "03/10/2013",
+                        "score": 0.95
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.87,
+                "docType": "documento_identificacao",
+                "pageIndex": 1,
+                "tags": [
+                    "documento_identificacao",
+                    "br-rne-1"
+                ]
+            }
+        ],
+        "queryId": "SDJLTDMNTFFYDGELVNFZF",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "SEM_RESULT": {
+        "result": [],
+        "queryId": "SDJLTDMNTFFYDGELVNFZF",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

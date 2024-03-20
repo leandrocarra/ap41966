@@ -1,0 +1,97 @@
+<div class="col-12 col-xl-6 col-lg-7 col-md-10 p-0">
+
+    <h2>Troca de titularidade</h2>
+
+    <p class="subtitulo mt-3 mb-3">
+        Pode nos contar mais sobre você? Preencha abaixo os seus dados pessoais.
+    </p>
+
+    <form [formGroup]="dadosPessoaisFormGroup">
+
+        <h6 class="subtitulo-h6 mt-4 mb-3">DADOS PESSOAIS</h6>
+
+        <div id="black-and-white-input-1" class="d-md-flex">
+            <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 col-md-7 pb-0 ps-0">
+                <mat-label>NOME COMPLETO</mat-label>
+                <input matInput type="text" name="nomeCompleto" id="nomeCompleto" formControlName="nomeCompleto"
+                    required />
+            </mat-form-field>
+
+            <p class="col-12 col-md-5">É necessário preencher os dados como está escrito no seu documento.</p>
+        </div>
+
+        <div id="black-and-white-input-2">
+            <mat-form-field appearance="outline" class="date-picker-color mb-1 col-12 col-lg-4 pb-0 ps-0"
+                [hideRequiredMarker]="true">
+                <mat-label>DATA DE NASCIMENTO</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dataNascimento" style="cursor: pointer"
+                    (focus)="picker?.open()" readonly required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 col-lg-4 pb-0 ps-0">
+                <mat-label>CELULAR</mat-label>
+                <input matInput type="text" name="celular" id="celular" formControlName="celular" (keyup)="getCelMask()"
+                [mask]="mascaraCelular" required />
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 col-lg-4 pb-0 ps-0">
+                <mat-label>TELEFONE</mat-label>
+                <input matInput type="text" name="telefone" id="telefone" formControlName="telefone" (keyup)="getTelMask()"
+                    [mask]="mascaraTelefone" required />
+            </mat-form-field>
+        </div>
+
+        <div id="black-and-white-input-3">
+            <mat-form-field appearance="outline" class="col-12 col-lg-6 pb-0 ps-0">
+                <mat-label>SELECIONE O DOCUMENTO</mat-label>
+                <mat-select formControlName="tipoDocumento">
+                    <mat-option [value]="tipoDocumento" *ngFor="let tipoDocumento of tiposDocumentos">
+                        {{tipoDocumento}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div id="black-and-white-input-4" *ngIf="dadosPessoaisFormGroup.value.tipoDocumento">
+
+            <mat-form-field appearance="outline" class="mb-1 col-12 col-lg-4 pb-0 ps-0">
+                <mat-label>NÚMERO DO DOCUMENTO</mat-label>
+                <input matInput type="text" name="documento" id="documento" formControlName="documento" required />
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline" class="mb-1 col-12 col-lg-4 pb-0 ps-0" [hideRequiredMarker]="true">
+                <mat-label>ORGÃO EMISSOR</mat-label>
+                <mat-select formControlName="orgaoEmissor">
+                    <mat-option [value]="orgaoEmissor" *ngFor="let orgaoEmissor of orgaosEmissores">
+                        {{orgaoEmissor.key}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline" class="mb-1 col-12 col-lg-4 pb-0 ps-0" [hideRequiredMarker]="true">
+                <mat-label>ESTADO</mat-label>
+                <mat-select formControlName="estado">
+                    <mat-option [value]="estado" *ngFor="let estado of estados">
+                        {{estado.key}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+
+    </form>
+
+    <div class="row gy-4 justify-content-between justify-content-md-start mt-3">
+        <app-neo-button class="col-auto" [classes]="'btn-neo-outline-secondary'" [titleText]="'voltar'"
+            (callFunction)="voltar()"></app-neo-button>
+
+        <app-neo-button class="col-auto" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'" [titleText]="'continuar'"
+            (callFunction)="continuar()" [isDisabled]="dadosPessoaisFormGroup.invalid"></app-neo-button>
+    </div>
+</div>

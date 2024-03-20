@@ -1,0 +1,224 @@
+{
+    "VALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "estado/uf",
+                        "value": "SÃO PAULO",
+                        "score": 0.37
+                    },
+                    {
+                        "name": "numero_autorizacao",
+                        "value": "0000000000 / 2021",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "nome_do_detentor",
+                        "value": "ELEKTRO REDES SA",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "cpf/cnpj_do_detentor",
+                        "value": "33991294000110",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "nome_do_empreendimento",
+                        "value": "0000000000",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "endereco_empreendimento",
+                        "value": "FAZENDA SÃO LORENÇO RIO VERMELHO FAZENDA SÃO LOURENÇO",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "cep_empreendimento",
+                        "value": "13500000",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "municipio_empreendimento",
+                        "value": "RIO CLARO",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "denominacao_propriedade",
+                        "value": "MARIA FLAVIA",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "endereco_propriedade",
+                        "value": "DO TREVO SP 127 E 310",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "cep_propriedade",
+                        "value": "13500000",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "municipio_propriedade",
+                        "value": "RIO CLARO",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "atividade/finalidade_pedido",
+                        "value": "CONSTRUÇÃO E MANUTENÇÃO PEQUENAS REDES ELÉTRICAS, GASODUTOS E OLEODUTOS. CONSTRUÇÃO E MANUTENÇÃO DE REDES ELÉTRICAS, GASODUTOS E OLEODUTOS",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "descricao_atividade/finalidade_pedido",
+                        "value": "AUTORIZAÇÃO AMBIENTAL (INTERVENÇÃO EM APP ) PARA REALIZAÇÃO DAS OBRAS DE IMPLANTAÇÃO DE SISTEMA ELÉTRICO NO ÂMBITO DO PROGRAMA DE UNIVERSALIZAÇÃO DA EMPRESA DE ENERGIA ELEKTRO, DENOMINADO PU00348650 A SE LOCALIZAR NA FAZENDA SÃO LORENÇO, BAIRRO RIO VERMELHO EP 13500000 NO MUNICÍPIO DE RIO CLARO/SP.",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "classificacao_area_protegida",
+                        "value": "ÁREA DE PROTEÇÃO AMBIENTAL",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "zona/unidade_ambiental",
+                        "value": "CETESB/CMR - AGÊNCIA AMBIENTAL DE REGISTRO",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "prazo",
+                        "value": "26/03/2034",
+                        "score": 0.96
+                    },
+                    {
+                        "name": "data_de_emissao_do_certificado",
+                        "value": "17/07/2021",
+                        "score": 0.96
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.82,
+                "docType": "certidao",
+                "pageIndex": 1,
+                "tags": [
+                    "certidao",
+                    "br-la-mod1"
+                ]
+            }
+        ],
+        "queryId": "WHZNVTWVKCNPMSHRGJHLM",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "INVALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "estado/uf",
+                        "value": "SÃO PAULO",
+                        "score": 0.37
+                    },
+                    {
+                        "name": "numero_autorizacao",
+                        "value": "0000000000 / 2021",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "nome_do_detentor",
+                        "value": "ELEKTRO REDES SA",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "cpf/cnpj_do_detentor",
+                        "value": "11223344887719",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "nome_do_empreendimento",
+                        "value": "0000000000",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "endereco_empreendimento",
+                        "value": "FAZENDA DE HOGWARTS",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "cep_empreendimento",
+                        "value": "11955111",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "municipio_empreendimento",
+                        "value": "SPRINGFIELD",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "denominacao_propriedade",
+                        "value": "FAZENDA SÃO LOURENÇO",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "endereco_propriedade",
+                        "value": "RODOVIA REGIS BITTENCOURT, KM 560 + 500 M, PISTA NORTE SENTIDO SP, À MARGEM DA RODOVIA. RIO VERMELHO",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "cep_propriedade",
+                        "value": "11955000",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "municipio_propriedade",
+                        "value": "SPRINGFIELD",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "atividade/finalidade_pedido",
+                        "value": "CONSTRUÇÃO E MANUTENÇÃO PEQUENAS REDES ELÉTRICAS, GASODUTOS E OLEODUTOS. CONSTRUÇÃO E MANUTENÇÃO DE REDES ELÉTRICAS, GASODUTOS E OLEODUTOS",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "descricao_atividade/finalidade_pedido",
+                        "value": "AUTORIZAÇÃO AMBIENTAL (INTERVENÇÃO EM APP ) PARA REALIZAÇÃO DAS OBRAS DE IMPLANTAÇÃO DE SISTEMA ELÉTRICO NO ÂMBITO DO PROGRAMA DE UNIVERSALIZAÇÃO DA EMPRESA DE ENERGIA ELEKTRO, DENOMINADO PU00348650 A SE LOCALIZAR NA FAZENDA SÃO LORENÇO, BAIRRO RIO VERMELHO EP 11955-000 NO MUNICÍPIO DE BARRA DO TURVO/SP.", 
+                        "score": 0.83
+                    },
+                    {
+                        "name": "classificacao_area_protegida",
+                        "value": "ÁREA DE PROTEÇÃO AMBIENTAL",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "zona/unidade_ambiental",
+                        "value": "CETESB/CMR - AGÊNCIA AMBIENTAL DE REGISTRO",
+                        "score": 0.83
+                    },
+                    {
+                        "name": "prazo",
+                        "value": "06/02/2025",
+                        "score": 0.96
+                    },
+                    {
+                        "name": "data_de_emissao_do_certificado",
+                        "value": "26/03/2020",
+                        "score": 0.96
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.82,
+                "docType": "certidao",
+                "pageIndex": 1,
+                "tags": [
+                    "certidao",
+                    "br-la-mod1"
+                ]
+            }
+        ],
+        "queryId": "WHZNVTWVKCNPMSHRGJHLM",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

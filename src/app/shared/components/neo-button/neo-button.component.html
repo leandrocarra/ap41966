@@ -1,0 +1,7 @@
+<button
+ type="button"
+ class="{{classes}}"
+ title="{{titleText | titlecase}}"
+ [disabled]="isDisabled"
+ (click)="callEvent()"
+ ><div class="pe-2 ps-2" [innerHTML]="innerContent"></div></button>

@@ -1,0 +1,224 @@
+
+:host{
+  canvas{
+    height: 357px !important;
+    width: 100% !important;
+  }
+}
+
+.align-right {
+  text-align: right;
+}
+
+mat-card {
+  margin-bottom: 10px;
+  background-color: var(--neo-white);
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.text-graph {
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  color: var(--neo-dark-gray) !important;
+  font-size: 0.875rem;
+}
+
+.titulo {
+  color: black;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: left !important;
+}
+
+.sub-text-graph {
+  justify-content: flex-end;
+  color: var(--neo-dark-gray) !important;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+
+.height{
+  height: 240px;
+}
+
+.mt-7 {
+  margin-top: 7px !important;
+}
+
+#chartjs-tooltip {
+  line-height: normal;
+  opacity: 1;
+  padding: .3em;
+  pointer-events: none;
+  position: fixed;
+  text-align: center;
+  transform: translate(-50%, 0);
+  transition: all .1s ease;
+}
+
+//customizacao do componente toggle do historico de consumo
+:host ::ng-deep {
+  .toggle-history {
+    .mat-slide-toggle {
+      .mat-slide-toggle-bar {
+        z-index: 0;
+        height: 32px !important;
+        width: 109px !important;
+        border-radius: 50px !important;
+        box-shadow: 0px 2px 4px rgb(96 97 112 / 32%) !important;
+        background-color: var(--neo-white);
+        color: var(--neo-white);
+        display: flex;
+        align-items: center;
+        &::before,
+        &::after {
+          position: absolute;
+          z-index: 2;
+          font-size: 10px;
+        }
+        &::before {
+          left: 10px;
+          content: "em %";
+        }
+        &::after {
+          right: 14px;
+          content: "em R$";
+          color: var(--neo-dark-gray);
+        }
+      }
+
+      .mat-slide-toggle-thumb-container {
+        top: 0px;
+      }
+
+      .mat-slide-toggle-thumb {
+        border-radius: 50px;
+        height: 32px;
+        width: 55px;
+        box-shadow: none;
+        top: 0px;
+        left: 0;
+        background-color: var(--neo-light-green);
+      }
+      &.mat-checked {
+        .mat-slide-toggle-thumb-container {
+          transform: translate3d(55px, 0, 0);
+        }
+        .mat-slide-toggle-bar {
+          &::after {
+            color: var(--neo-white);
+          }
+          &::before {
+            color: var(--neo-dark-gray);
+          }
+        }
+      }
+      &.big-client {
+        .mat-slide-toggle-thumb {
+          background-color: var(--neo-dark-green);
+        }
+      }
+    }
+  }
+  .mat-slide-toggle .mat-ripple-element {
+    top: calc(50% - 10px) !important;
+    left: calc(50% - 30px) !important;
+    height: 32px !important;
+    width: 55px !important;
+  }
+  .mat-slide-toggle.mat-checked .mat-ripple-element {
+    background-color: var(--neo-white)00;
+  }
+  .mat-slide-toggle:not(.mat-checked) .mat-ripple-element {
+    background-color: var(--neo-white)00;
+  }
+  .mat-card .mat-focus-indicator {
+    color: var(--header-text) !important;
+  }
+  .mat-slide-toggle {
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+}
+
+.custom-canvas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.background-white {
+  height: 100%;
+  background-color: var(--neo-white);
+  margin-top: 16px;
+  padding: 24px;
+  border-radius: 5px;
+  min-width: 260px;
+  box-shadow: none;
+}
+
+.dot {
+  height: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.descricao-titulo {
+  color: var(--neo-dark-gray) !important;
+  text-transform: capitalize !important;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.descricao-item {
+  display: block;
+  text-align: justify;
+  margin-top: 0.875rem;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.perdas {
+  background-color: #E3850D;
+  @extend .dot;
+}
+
+.energia {
+  background-color: #26BF64;
+  @extend .dot;
+}
+
+.tributos {
+  background-color: #FFB536;
+  @extend .dot;
+}
+
+.encargos {
+  background-color: #B0A9A3;
+  @extend .dot;
+}
+
+.transmissão {
+  background-color: #0792E5;
+  @extend .dot;
+}
+
+.demais.itens {
+  background-color: #3CC2FF;
+  @extend .dot;
+}
+
+.serviços.de.distribuição {
+  background-color: #008C39;
+  @extend .dot;
+}

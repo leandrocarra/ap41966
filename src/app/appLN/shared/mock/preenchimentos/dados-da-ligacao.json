@@ -1,0 +1,127 @@
+{
+    "documentoComFotoTarifaSocialValidado": false,
+    "dadosDaLigacao": {
+        "salaComercial": false,
+        "dimensionamentoDeRede": {
+            "possuiART": "NÃO",
+            "possuiCargasEspeciais": "NÃO",
+            "possui220": "SIM"
+        },
+        "art": [],
+        "combo": {
+            "combo": "3",
+            "nome": "RESIDENCIAL IV",
+            "categoria": "TRIFÁSICA",
+            "potencia": 25000,
+            "equipamentos": [
+                {
+                    "codigoAparelho": "5",
+                    "codigoSubTipoAparelho": "151",
+                    "codigoTipoAparelho": "5",
+                    "descricaoSubTipoAparelho": "APARELHO SOM 25000 WATTS",
+                    "quantidadeAparelho": "1"
+                }
+            ]
+        },
+        "categoria": "TRIFÁSICA",
+        "distanciaPoste": "sim",
+        "questionarioRural": {
+            "desmembrado": "",
+            "propriedade": {
+                "casa": false,
+                "cerca": false,
+                "muro": false,
+                "barracao": false,
+                "poco": false,
+                "nenhum": false
+            },
+            "proxPropriedade": {
+                "corrego": false,
+                "acude": false,
+                "rodovia": false,
+                "ferrovia": false,
+                "nenhum": false
+            }
+        },
+        "desejaIsencaoICMS": null,
+        "tarifa": "CONVENCIONAL",
+        "checarDocumentoART": false,
+        "tarifaSocial": {
+            "dadosTitularTarifaSocial": {
+                "tipo": "",
+                "identificacao": "",
+                "codigoFamiliar": "",
+                "nomeCompleto": "",
+                "dtNascimento": "",
+                "cpf": "",
+                "rg": ""
+            },
+            "dadosBeneficio": {
+                "nis": "",
+                "codigoFamiliar": "",
+                "nb": "",
+                "cidade": ""
+            },
+            "beneficio": "",
+            "titular": null,
+            "tarifaSocialValidada": true,
+            "anexos": {
+                "Folha V7": {
+                    "arquivos": [],
+                    "tentativas": 0,
+                    "maxTentativas": 0,
+                    "maxAnexos": 1
+                },
+                "Ass Medica": {
+                    "arquivos": [],
+                    "tentativas": 0,
+                    "maxTentativas": 0,
+                    "maxAnexos": 1
+                },
+                "Carta INSS": {
+                    "arquivos": [],
+                    "tentativas": 0,
+                    "maxTentativas": 0,
+                    "maxAnexos": 1
+                },
+                "Doc Oficial": {
+                    "frente": false,
+                    "verso": false,
+                    "frenteVerso": false,
+                    "arquivos": [],
+                    "tentativas": 0,
+                    "maxAnexos": 2,
+                    "docsSuficientes": false
+                }
+            }
+        }
+    },
+    "anexos": {
+        "art": [],
+        "cadesp": [],
+        "documentoFoto": [],
+        "comprovanteEndereco": [],
+        "licencaAmbiental": [],
+        "comprovanteDePosse": [],
+        "comprovanteDePagamento": [],
+        "comprovanteEnderecoDebitos": [],
+        "cnpj": [],
+        "contratoSocialCCCMEI": [],
+        "compTrabalhadorRural": [],
+        "compAtividadeRural": [],
+        "outorga": []
+    },
+    "tentativasArt": 0,
+    "equipamentos": [
+        {
+            "codigoAparelho": "5",
+            "codigoSubTipoAparelho": "151",
+            "codigoTipoAparelho": "5",
+            "descricaoSubTipoAparelho": "APARELHO SOM 25000 WATTS",
+            "quantidadeAparelho": "1"
+        }
+    ],
+    "equipamentosCalculadora": [],
+    "tipoDimensionamento": "COMBO",
+    "potencia": 25000
+}

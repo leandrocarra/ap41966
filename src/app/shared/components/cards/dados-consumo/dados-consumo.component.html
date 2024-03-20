@@ -1,0 +1,19 @@
+<mat-card>
+  <div class="separator">
+    <p [class]="verificaTipoCard(valor.consumo)">
+      {{ valor.consumo }}
+    </p>
+    <div class="d-flex">
+      <span [class]="verificaTipoClock(valor.consumo)">schedule</span>
+      <div class="ps-3">
+        <div class="date-title">{{ valor.mesAno }}</div>
+        <div class="subtitle">
+          {{ valor.valor }} kWh ({{ valor.porcentagem }}%)
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="media">
+    <span class="media-font-size">{{ valor.mediaDiaria }} kWh - média diária</span>
+  </div>
+</mat-card>

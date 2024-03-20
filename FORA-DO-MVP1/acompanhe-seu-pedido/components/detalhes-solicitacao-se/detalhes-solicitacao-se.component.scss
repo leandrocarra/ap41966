@@ -1,0 +1,65 @@
+.status-detalhado-solicitacao {
+    h4,
+    h6 {
+        color: var(--neo-dark-green);
+        font-weight: bold;
+    }
+
+    h5 {
+        color: var(--neo-dark-gray);
+    }
+
+    .infos-solicitacao {
+        display: flex;
+        flex-wrap: wrap;
+
+        div {
+            width: 50%;
+        }
+    }
+
+    .info-title {
+        display: block;
+        color: var(--neo-dark-gray);
+    }
+
+    .info-desc {
+        display: block;
+        margin-bottom: 0.875rem;
+        font-weight: bolder;
+        color: var(--neo-dark-gray);
+    }
+
+    .info-desc-protocolo {
+        display: block;
+        font-size: 1rem;
+        color: var(--neo-dark-green);
+        font-weight: bolder;
+    }
+
+    .concluida, .realizada {
+        font-size: 16px;
+        color: var(--neo-light-green);
+    }
+
+    .em.andamento {
+        font-size: 16px;
+        color: var(--neo-light-blue);
+    }
+
+    .rejeitada {
+        font-size: 16px;
+        color: var(--neo-pure-red);
+    }
+
+    .cancelada {
+        font-size: 16px;
+        color: var(--neo-pure-red);
+    }
+
+    .text-link,
+    .text-link:hover {
+        color: var(--neo-dark-blue) !important;
+        font-weight: normal;
+    }
+}

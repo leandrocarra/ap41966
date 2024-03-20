@@ -1,0 +1,16 @@
+<h2>Agora você pode receber sua fatura digital!</h2>
+
+<p class="col-12 col-lg-10 ps-0 text-telas-informativos">
+    Com o serviço de fatura digital, agora você pode receber a sua fatura por e-mail, sendo muito mais rápido,
+    prático e sustentável. Cadastre-se agora mesmo!
+</p>
+
+<div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'"
+        [titleText]="mobile ? 'FATURA IMPRESSA' : textoFaturaImpressa" (callFunction)="faturaImpressa()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="mobile ? 'FATURA DIGITAL' : textoFaturaDigital" (callFunction)="faturaDigital()">
+    </app-neo-button>
+</div>

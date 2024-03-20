@@ -1,0 +1,30 @@
+.titulo2 {
+    color: var(--neo-light-green);
+    font-weight: bolder !important;
+}
+
+.texto2 {
+    font-size: 0.75rem;
+}
+
+.relogios {
+    text-align: center;
+    font-size: 0.813rem;
+}
+
+.imgMedidor {
+    max-width: 50%;
+    max-height: 31.25rem;
+    right: -1rem;
+    position: absolute;
+}
+
+.btn-voltar {
+    margin-left: 0.25rem !important;
+}
+
+@media only screen and (min-width: 1023px) {
+    .imgMedidor {
+        display: none;
+    }
+}

@@ -1,0 +1,56 @@
+.radio-option-dark-gray {
+  color: var(--neo-dark-gray);
+}
+
+// .m-divider {
+//   margin-top: 26px;
+//   padding-left: 0px;
+// }
+
+.t-onde-falta-energia {
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 12px;
+  margin-bottom: 0px;
+}
+
+.radio-button-energia {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+// .container-button {
+//   margin-top: 22px;
+//   padding-left: 0px;
+//   margin-bottom: 10%;
+// }
+
+// .mb-18 {
+//   margin-bottom: 18px;
+// }
+
+// .space-between-btn {
+//   padding-right: 1.5rem;
+// }
+
+// .btn-primary-p-light-green:disabled {
+//   background-color: var(--neo-white-400) !important;
+//   border-color: var(--neo-white-400) !important;
+//   color: var(--neo-dark-gray) !important;
+// }
+
+// .btn-outline-secondary:disabled {
+//   background-color: var(--neo-white-400) !important;
+//   border-color: var(--neo-white-400) !important;
+//   color: var(--neo-dark-gray) !important;
+// }
+
+::ng-deep {
+  .mat-radio-label {
+    white-space: pre-line !important;
+  }
+}
+
+:host ::ng-deep mat-radio-button {
+  padding-left: 0px !important;
+}

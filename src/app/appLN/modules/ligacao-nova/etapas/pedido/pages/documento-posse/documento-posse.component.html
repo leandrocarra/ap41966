@@ -1,0 +1,62 @@
+<div class="col-12 tela-posse">
+    <div class="col-lg-6 col-xl-6 col-md-12 col-12 mb-4 mt-5 p-0">
+        <h5 class="titulo mb-4">Para aderir ao Atendimento sem Ônus, precisamos de um documento que comprove a posse
+            do imóvel</h5>
+
+        <p class="texto">
+            O seu CEP se enquadra no Atendimento sem Ônus, o que contempla a possibilidade do atendimento gratuito,
+            se necessário, do serviço de extensão de rede, instalação ou substituição de transformador.
+        </p>
+
+        <p class="texto">
+            O Atendimento sem Ônus também inclui a instalação do padrão de entrada aos clientes cadastrados com a
+            tarifa social em categoria monofásica ou bifásica. <neo-tooltip [explicacao]="'\n Para solicitar a instalação gratuita do padrão de  entrada você deve se enquadrar nos seguintes requisitos:
+
+        Pertencer a uma família inscrita no Cadastro Único, com data da última atualização cadastral não superior a 2 anos e renda familiar mensal de até 3 salários mínimos.
+
+        Estar localizado em uma área rural e possuir uma ligação configurada como monofásica ou bifásica.'">
+            </neo-tooltip>
+        </p>
+
+        <p class="texto">
+            Para aderir, será obrigatório apresentar documento, com data, que comprove a propriedade ou posse do
+            imóvel. Confira a lista de documentos aceitos <a (click)="infoDocumentosPosseImovel()">aqui.</a>
+        </p>
+
+        <p class="texto">
+            Após análise do documento e visita ao local, será validado ou não o enquadramento no programa de
+            Atendimento sem Ônus.
+        </p>
+
+        <div class="row mt-2 mb-2">
+            <mat-radio-group class="col-12" [(ngModel)]="dadosPosseImovel">
+                <mat-radio-button class="p-0 me-3" value="tenhoDocumento" (click)="docPosse('tenhoDocumento')">
+                    <strong class="texto">TENHO DOCUMENTO</strong>
+                </mat-radio-button>
+                <mat-radio-button class="p-0 me-3" value="naoTenhoDocumento" (click)="docPosse('naoTenhoDocumento')">
+                    <strong class="texto">NÃO TENHO DOCUMENTO</strong>
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </div>
+
+    <div class="col-12 col-xl-4 col-md-6" *ngIf="dadosPosseImovel === 'tenhoDocumento'">
+        <app-box-file [documentoLabel]="docNecessario.label" [docName]="docNecessario.docName"
+            (arquivoAnexado)="anexar($event)">
+        </app-box-file>
+        <app-attached-file [arquivoAnexado]="anexo[docNecessario.docName].arquivos" (arquivoRemovido)="remove($event, docNecessario)">
+        </app-attached-file>
+    </div>
+
+    <div class="d-flex justify-content-md-end justify-content-between mb-5 mt-3">
+        <div class="me-3">
+            <button type="button" class="btn btn-outline-secondary" title="voltar"
+                (click)="voltar()">VOLTAR</button>
+        </div>
+        <div>
+            <button id="initPedido" [disabled]="isDisabled()" type="button"
+                class="btn btn-primary-green" title="Avançar" (click)="avancar();">INICIAR
+                PEDIDO</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.link-classe {
+    font-size: 0.625rem;
+    white-space: nowrap;
+    color: var(--neo-light-green) !important;
+    font-family: 'Rubik', sans-serif !important;
+    text-decoration: underline;
+    text-align: end;
+    display: none;
+}

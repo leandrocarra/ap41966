@@ -1,0 +1,25 @@
+<div class="col-md-12 d-flex justify-content-between">
+    <img src="assets/images/fatura_digital.svg" alt="Fatura digital" class="d-none d-md-none d-lg-block">
+    <div class="ms-0 ms-md-4 mt-md-5">
+        <h2>Deseja trocar a titularidade?</h2>
+        <p class="subtitulo mt-3 p-0 text-telas-informativos">
+            Para solicitar a troca de titularidade para uma terceira pessoa, vamos precisar que tenha em mãos:
+        </p>
+        <p class="subtitulo mt-3 p-0 text-telas-informativos">
+            Seu Documento com Foto (RG, CNH ou Passaporte) <br />
+            Documento com Foto do Novo Titular Pessoa (RG, CNH, ou Passaporte) <br />
+            Número do CPF do Novo Titular Procuração ou Documento que comprove a posse do imóvel no nome da
+            terceira pessoa e que garanta poderes para efetuar a troca de titularidade pelo solicitante.
+        </p>
+
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+            <app-neo-button class=" me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                (callFunction)="voltar()">
+            </app-neo-button>
+
+            <app-neo-button class="me-3 m-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                [titleText]="'CONTINUAR'" (callFunction)="continuar()">
+            </app-neo-button>
+        </div>
+    </div>
+</div>

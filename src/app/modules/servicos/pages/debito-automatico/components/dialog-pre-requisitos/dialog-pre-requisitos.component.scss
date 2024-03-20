@@ -1,0 +1,63 @@
+.dialog-aviso-debito-automatico {
+  padding: 0.5rem;
+}
+
+
+.termo-declaracao{
+  font-size: 0.875rem;
+}
+
+.text-wrap{
+  transform: scale(0.8);
+}
+
+.titulo {
+  padding: 1.5rem;
+  margin-top: 1.25rem;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+}
+
+.lista-pre-requisitos {
+  counter-reset: item;
+  margin-left: 0;
+  padding-left: 0;
+  max-height: 30vh;
+  overflow-y: scroll;
+}
+
+.margem-termo {
+  margin-top: 1.5rem;
+}
+
+.item-lista {
+  display: block;
+  margin-bottom: 1em;
+  margin-left: 2em;
+  font-weight: 400;
+}
+
+.item-lista::before {
+  display: inline-block;
+  content: counter(item) " )";
+  counter-increment: item;
+  width: 1.5em;
+  margin-left: -1.5em;
+  font-weight: 400;
+}
+
+.item-lista-verde-claro::before {
+    color: var(--neo-light-green);
+}
+
+.item-lista-verde-escuro::before {
+    color: var(--neo-dark-green);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 425px) {
+  .container {
+    padding: 0.5em 0.5em 3em 1em;
+  }
+}

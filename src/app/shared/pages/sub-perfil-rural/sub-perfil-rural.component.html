@@ -1,0 +1,52 @@
+<h2 class="titulo mb-4">Selecione a atividade que será desenvolvida na sua propriedade:</h2>
+
+<div class="row">
+    <form [formGroup]="formSubPerfilRural" (submit)="continuar()">
+
+        <mat-radio-group formControlName="rural">
+            <div class="d-flex flex-wrap">
+                <ul class="p-0">
+                    <li *ngFor="let tipo of tiposLadoEsquerdo" class="d-flex me-1 ">
+                        <mat-radio-button class="cor-label-documento texto" [value]="tipo.label"
+                            [disabled]="tipo.disabled">
+                            {{tipo.label}}
+                        </mat-radio-button>
+
+                        <app-tooltip class="mt-1"[explicacao]="tipo.textoTooltip"></app-tooltip>
+                    </li>
+                </ul>
+
+                <ul  class="ps-0 ps-md-3">
+                    <li *ngFor="let tipo of tiposLadoDireito" class=" d-flex me-1">
+                        <mat-radio-button class="cor-label-documento texto" [value]="tipo.label"
+                            [disabled]="tipo.disabled">
+                            {{tipo.label}}
+                        </mat-radio-button>
+
+                        <app-tooltip class="mt-1" [explicacao]="tipo.textoTooltip"></app-tooltip>
+                    </li>
+                </ul>
+
+            </div>
+        </mat-radio-group>
+        <div class="d-flex mt-5 justify-content-between justify-content-md-start">
+
+            <app-neo-button class="me-0 me-md-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                (callFunction)="voltar()">
+            </app-neo-button>
+
+            <app-neo-button [classes]="userService.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                [titleText]="'CONTINUAR'" (callFunction)='continuar()' [isDisabled]="formSubPerfilRural.invalid">
+            </app-neo-button>
+
+        </div>
+
+    </form>
+
+    <div *ngIf="!mobile" class="imagem-atividade-rural " >
+        <img src="assets/images/atividade_agropecuaria.svg" alt="Imagem Atividade rural">
+
+    </div>
+</div>
+
+

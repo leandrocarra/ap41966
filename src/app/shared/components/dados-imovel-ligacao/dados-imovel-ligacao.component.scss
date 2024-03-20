@@ -1,0 +1,62 @@
+.container-dados-imovel {
+    border: solid 1px var(--neo-dark-gray);
+    border-radius: 6px;
+    background-color: var(--neo-white);
+    padding-top: 10px;
+}
+
+.divider {
+    border-color: var(--neo-dark-gray);
+}
+
+.m-text {
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+.t-legenda {
+    color: var(--neo-dark-gray);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.t-uc {
+    text-align: end;
+    font-weight: 500;
+}
+
+.t-endereco {
+    text-align: end;
+    font-weight: 500;
+
+    span {
+        white-space: nowrap;
+    }
+}
+
+#autoleitura {
+    mat-icon {
+        transform: rotate(270deg);
+        color: var(--neo-dark-gray);
+    }
+
+    a, a:hover {
+        text-align: right;
+        text-decoration: none;
+        color: var(-lightBlueText);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .t-uc {
+        text-align: start;
+        font-weight: 500;
+    }
+
+    .t-endereco {
+        text-align: start;
+        font-weight: 500;
+    }
+
+}

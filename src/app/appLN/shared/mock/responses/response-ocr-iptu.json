@@ -1,0 +1,84 @@
+{
+    "VALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "inscricao_cadastral",
+                        "value": "11111111111",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "notificacao_lancamento",
+                        "value": "2030",
+                        "score": 0.93
+                    },
+                    {
+                        "name": "proprietario/contribuinte",
+                        "value": "MARIA FLAVIA",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "endereco_do_imovel",
+                        "value": "DO TREVO SP 127 E 310 JD BOM SUCESSO 4 RIO CLARO 13500000",
+                        "score": 0.95
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.88,
+                "docType": "declaracao",
+                "pageIndex": 1,
+                "tags": [
+                    "declaracao",
+                    "br-imposto-predial e-territorial-urbano-1"
+                ]
+            }
+        ],
+        "queryId": "NRGJGIWYGCGOZSDGWWDSV",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "INVALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "inscricao_cadastral",
+                        "value": "11111111111",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "notificacao_lancamento",
+                        "value": "2010",
+                        "score": 0.93
+                    },
+                    {
+                        "name": "proprietario/contribuinte",
+                        "value": "SIRIUS BLACK",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "endereco_do_imovel",
+                        "value": "RUA MARILIA DOS SANTOS 000 RIO GRANDE  SP 01",
+                        "score": 0.95
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.88,
+                "docType": "declaracao",
+                "pageIndex": 1,
+                "tags": [
+                    "declaracao",
+                    "br-imposto-predial e-territorial-urbano-1"
+                ]
+            }
+        ],
+        "queryId": "NRGJGIWYGCGOZSDGWWDSV",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

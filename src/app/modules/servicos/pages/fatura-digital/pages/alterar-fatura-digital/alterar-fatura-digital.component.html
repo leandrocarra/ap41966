@@ -1,0 +1,35 @@
+<h2>Fatura Digital</h2>
+
+<div *ngIf="!fluxo.includes('WhatsApp')">
+    <p class="subtitulo mt-3 mb-2">{{ msgTitulo }}</p>
+    <div *ngIf="fluxoSE">
+		<span class="dica forte">Dica: </span>
+		<span class="dica">Para adicionar múltiplos e-mails, basta utilizar ponto-e-vírgula como separador.</span>
+	</div>
+    <span *ngIf="fluxoSE" class="dica forte">Ex: email01@email;email02@email</span>
+</div>
+
+<div *ngIf="fluxo.includes('WhatsApp')">
+    <p class="subtitulo mt-3 mb-2">Para receber suas faturas via WhatsApp, forneça um número de celular para recebimento:</p>
+    <span>
+		<span class="dica forte">Dica: </span>
+		<span class="dica">Inserir no formato DDD + número do celular</span>
+	</span>
+	<p class="dica forte">Ex: (19) 99999-9999</p>
+</div>
+
+<div class="col-12 col-md-10 col-xl-6 col-lg-7 ps-0 mt-4">
+    <app-dados-email *ngIf='fluxo.includes("WhatsApp")=== false' (emailDigitado)="emailDigitado($event)"></app-dados-email>
+    <app-dados-whatsapp *ngIf='fluxo.includes("WhatsApp")' (whatsappDigitado)="whatsappDigitado($event)"></app-dados-whatsapp>
+</div>
+
+<div class="d-flex justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="me-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+    [titleText]="'CONTINUAR'" [isDisabled]="!habilitarBtn"
+    (callFunction)="continuar()">
+    </app-neo-button>
+</div>

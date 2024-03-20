@@ -1,0 +1,15 @@
+<div class="box-baixar-faturas">
+    <div class="titulo mb-2">Não esqueça de baixar sua fatura</div>
+
+    <p class="p-0">Verificamos que a data de fechamento foi no dia (13/04), você terá uma fatura
+        proporcional no valor de R$ 15
+        referente aos dias de uso de energia do imóvel.</p>
+
+    <div class="mt-3">
+        <app-neo-button [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'" [titleText]="'BAIXAR'"
+            (callFunction)="baixar()">
+        </app-neo-button>
+        <p class="p-0 mt-3 codigo-barras">{{codigoBarras}}</p>
+        <p class="copiar-codigo" (click)="copiarCodigoBarras()">Copiar código</p>
+    </div>
+</div>

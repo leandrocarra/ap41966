@@ -1,0 +1,41 @@
+.titulo2 {
+    color: var(--neo-light-green);
+    font-weight: bolder !important;
+}
+
+.texto2 {
+    font-size: 0.75rem;
+}
+
+.relogios {
+    text-align: center;
+    font-size: 0.813rem;
+}
+
+.imgTarifaSocial {
+    width: 33%;
+    height: 30%;
+    margin-top: 5rem;
+}
+
+.imgMedidor {
+    max-width: 50%;
+    max-height: 31.25rem;
+    right: -6.45rem;
+    position: absolute;
+}
+
+.btn-voltar {
+    margin-left: 0.25rem !important;
+}
+
+.estilizacao-link {
+    color: #a4ba09;
+    text-decoration: none;
+}
+
+@media only screen and (min-width: 1281) {
+    .imgMedidor {
+        right: -6.438rem;
+    }
+}

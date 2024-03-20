@@ -1,0 +1,12 @@
+::ng-deep .mat-datepicker-toggle-default-icon {
+    fill: var(--neo-dark-gray) !important;
+  }
+
+#formDadosPessoais {
+  .mat-form-field-invalid {
+    .mat-form-field-label {
+      color: var(--neo-pure-red) !important;
+    }
+
+  }
+}

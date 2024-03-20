@@ -1,0 +1,35 @@
+.configuracao-input {
+    ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+      padding-bottom: 0 !important;
+    }
+}
+
+.configuracao-input-primario {
+  border-bottom: 2px solid var(--neo-light-gray);
+  margin-top: 16px;
+}
+
+.input-fatura {
+    background-color: var(--background-color);
+    outline: none;
+    color: black !important;
+    border: none;
+    border-bottom: 2px solid var(--neo-light-gray) !important;
+    width: 100%;
+}
+
+.input-fatura-primario {
+  background-color: var(--background-color);
+  outline: none;
+  color: black !important;
+  border: none;
+  width: 100%;
+  font-weight: 400;
+}
+
+:host
+  ::ng-deep
+  .mat-form-field-appearance-legacy.mat-form-field-disabled
+  .mat-form-field-underline {
+  background-image: none !important;
+}

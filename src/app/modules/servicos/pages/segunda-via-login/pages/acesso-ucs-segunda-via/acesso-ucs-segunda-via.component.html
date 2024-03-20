@@ -1,0 +1,13 @@
+<div class="width-agencia mt-padrao">
+    <h2>Selecione a unidade consumidora</h2>
+    <p class="subtitulo mt-3 mb-3">
+        Escolha abaixo a unidade consumidora que deseja consultar:
+    </p>
+
+    <app-unidade-consumidora [listaDeImoveis]="listaDeUCs" (ucSegundaViaLogin)="aoSelecionarUC($event)"></app-unidade-consumidora>
+
+    <div class="mt-2">
+        <app-neo-button [classes]="'btn-neoprimary'" [titleText]="'VOLTAR'" (callFunction)="voltar()">
+        </app-neo-button>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<h2>Aqui você pode acompanhar o consumo de energia</h2>
+
+<p class="subtitulo mt-3 mb-3">
+	Por meio deste serviço, você pode acompanhar o histórico de consumo dos
+	últimos meses do seu imóvel.
+</p>
+
+<iframe title="Histórico de Consumo - Grandes Clientes" *ngIf="showIframe" class="iframe" [src]="iframeURL" frameborder="0"></iframe>
+
+<div class="box-component-filter">
+	<app-filters [labelTitle]="'HISTÓRICO DE CONSUMO'" [itens]="itens" [pageSize]="pageSize"
+		(eventOutput)="eventFilter($event)" (eventClear)="eventClear($event)" (eventSelectAll)="eventSelectAll($event)">
+	</app-filters>
+</div>
+
+<div class="box-componente-accordion">
+	<app-accordion></app-accordion>
+</div>
+
+<div class="col-11 box-paginator">
+	<app-pagination [ativarDados]="ativarDados" [pageSize]="pageSize" [collections]="itens" [grupo]="user.group"
+		(eventPagination)="eventPagination($event)" #pagination>
+	</app-pagination>
+</div>

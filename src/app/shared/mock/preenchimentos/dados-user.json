@@ -1,0 +1,48 @@
+{
+    "PF": {
+        "at_hash": "FTF3Yi1JobeuSOKkq0a6Rg",
+        "sub": "ELEKTRO/19935193861",
+        "telefone": "2198717583",
+        "amr": [
+            "password"
+        ],
+        "iss": "https://cmpwso2amhml.iberdrola.local:443/oauth2/token",
+        "documento": "19935193861",
+        "nome": "ADRIANA ANDRADE",
+        "regiao": "SE",
+        "docSecundario": "000000000",
+        "aud": "rPbTVrmFXvlo65beQbYqTB167ioa",
+        "nbf": 1663950677,
+        "azp": "rPbTVrmFXvlo65beQbYqTB167ioa",
+        "distribuidora": "ELEKTRO",
+        "celular": "21987175883",
+        "canalDigital": "AGE",
+        "exp": 1663954277,
+        "dataNascimento": "03/12/1971",
+        "iat": 1663950677,
+        "tipoEnvio": "1"
+    },
+    "PJ": {
+        "at_hash": "FTF3Yi1JobeuSOKkq0a6Rg",
+        "sub": "ELEKTRO/19935193861",
+        "telefone": "2198717583",
+        "amr": [
+            "password"
+        ],
+        "iss": "https://cmpwso2amhml.iberdrola.local:443/oauth2/token",
+        "documento": "45774064000188",
+        "nome": "ADRIANA ANDRADE",
+        "regiao": "SE",
+        "docSecundario": "000000000",
+        "aud": "rPbTVrmFXvlo65beQbYqTB167ioa",
+        "nbf": 1663950677,
+        "azp": "rPbTVrmFXvlo65beQbYqTB167ioa",
+        "distribuidora": "ELEKTRO",
+        "celular": "21987175883",
+        "canalDigital": "AGE",
+        "exp": 1663954277,
+        "dataNascimento": "03/12/1971",
+        "iat": 1663950677,
+        "tipoEnvio": "1"
+    }
+}

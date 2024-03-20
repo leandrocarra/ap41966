@@ -1,0 +1,61 @@
+
+
+<form [formGroup]="formDadosEmpresa" class="form-area mt3">
+    <h4 class="titulo-empresa">Dados da empresa</h4>
+
+    <div class="col-12 p-0 row ">
+
+        <mat-form-field appearance="outline" class="col-12 col-md-6 col-lg-3" id="black-and-white-input-1">
+            <mat-label>CNPJ</mat-label>
+            <input matInput type="text" name="cnpj" id="cnpj" formControlName="cnpj" required />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-12 col-md-6 col-lg-3" id="black-and-white-input-2">
+            <mat-label>RAZÃO SOCIAL</mat-label>
+            <input matInput type="text" name="razaoSocial" id="razaoSocial" formControlName="razaoSocial" required />
+        </mat-form-field>
+
+
+        <div class="d-flex col-12 col-lg-6 p-0 align-items-lg-center">
+            <mat-radio-group class="col-12">
+                <mat-radio-button class="col-12 col-md-6" >Inscrição Estadual</mat-radio-button>
+    
+                <mat-radio-button class="col-12 col-md-6" value="inscricao Municipal">Inscrição Municipal</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+    </div>
+
+    <div class="col-12 p-0 row">
+        <div>
+            <mat-form-field appearance="outline" class=" mt-3 col-12 col-md-4">
+                <mat-label>NOME FANTASIA</mat-label>
+                <input matInput type="text" name="nomeFantasia" id="nomeFantasia" formControlName="nomeFantasia"
+                    required />
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline" class="col-12 col-md-4">
+                <mat-label>ATIVIDADE FISCAL</mat-label>
+                <input matInput type="text" name="atividadeFiscal" id="atividadeFiscal"
+                    formControlName="atividadeFiscal" required />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="col-12 col-md-4">
+                <mat-label></mat-label>
+                <input matInput type="" name="" id="" formControlName="" required />
+            </mat-form-field>
+
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+</form>

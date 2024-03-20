@@ -1,0 +1,223 @@
+{
+    "NE":{
+        "codigo": "000000469084",
+        "instalacao": "0002885382",
+        "medidor": "X11576",
+        "fase": null,
+        "local": {
+            "endereco": "PC JOSE INACIO 15",
+            "bairro": "CENTRO-JUAZEIRO",
+            "codLocalidade": 100000010317,
+            "localidade": "JUAZEIRO",
+            "codMunicipio": 100000006151,
+            "municipio": "JUAZEIRO",
+            "cep": "48924-999",
+            "localizacao": {
+                "sigla": "URBANO",
+                "codigo": "UR",
+                "descricao": "ZONA URBANA"
+            },
+            "uf": "BA",
+            "tipoLogradouro": "PC",
+            "nomeLogradouro": "PC JOSE INACIO",
+            "numero": 15,
+            "complementoEndereco": null
+        },
+        "situacao": {
+            "codigo": "LG",
+            "descricao": "LIGADA",
+            "dataSituacaoUC": null
+        },
+        "dataLigacao": 20090130,
+        "cliente": {
+            "codigo": 1000052489,
+            "nome": "CELIA RIBEIRO BRANDAO",
+            "dataAtualizacao": 20151130,
+            "documento": {
+                "tipo": {
+                    "codigo": "CPF",
+                    "descricao": "CADASTRO DE PESSOA FISICA"
+                },
+                "numero": 28976045572
+            },
+            "segundoDocumento": {
+                "uf": "BA",
+                "orgaoExpedidor": {
+                    "codigo": "SSP",
+                    "descricao": "Carteira identidade"
+                },
+                "tipo": {
+                    "codigo": "Z_RG",
+                    "descricao": "Carteira identidade"
+                },
+                "numero": "0192807854"
+            },
+            "contato": {
+                "email": null,
+                "celular": {
+                    "ddd": null,
+                    "numero": null
+                },
+                "telefone": {
+                    "ddd": null,
+                    "numero": 7436117830
+                }
+            },
+            "dataNascimento": 19280411
+        },
+        "servicos": {
+            "baixaRenda": null,
+            "faturaEmail": null,
+            "dataCerta": null,
+            "debitoAutomatico": null,
+            "faturaBraile": null,
+            "entregaAlternativa": null,
+            "debitosVencidos": null,
+            "listaCorte": true
+        },
+        "características": {
+            "grandeCliente": null,
+            "irrigacao": null,
+            "vip7": null,
+            "espelho": null
+        },
+        "mini_micro": null,
+        "utd": "00000051-JUAZEIRO",
+        "carga": 1000
+    },
+
+    "SE":{
+        "codigo": 27662608,
+        "medidor": "M11927582",
+        "fase": "MONOFASICO",
+        "local": {
+            "endereco": "JOSE J DE CARVALHO, 299-",
+            "bairro": "NOVA PACAEMBU",
+            "codLocalidade": "0672",
+            "localidade": "PACAEMBU",
+            "codMunicipio": "00353490",
+            "municipio": "PACAEMBU",
+            "cep": 17860000,
+            "localizacao": {
+                "sigla": "URBANO",
+                "codigo": "UB",
+                "descricao": "ZONA URBANA"
+            },
+            "uf": "SP",
+            "tipoLogradouro": "R",
+            "nomeLogradouro": "JOSE J DE CARVALHO",
+            "numero": 299,
+            "complementoEndereco": ""
+        },
+        "situacao": {
+            "codigo": "LG",
+            "descricao": "LIGADA",
+            "dataSituacaoUC": "12/07/2005"
+        },
+        "dataLigacao": "23/08/2002",
+        "faturamento": {
+            "classePrincipal": {
+                "principal": {
+                    "codigo": "01",
+                    "descricao": "RESIDENCIAL"
+                },
+                "classificacaoConsumo": {
+                    "codigo": 9101,
+                    "descricao": "RESIDENCIAL NORMAL"
+                }
+            },
+            "grupoFaturamento": {
+                "grupo": {
+                    "codigo": "B",
+                    "descricao": "BAIXA TENSAO",
+                    "subGrupo": {
+                        "codigo": 1,
+                        "descricao": "RESIDENCIAL BX TENSAO"
+                    }
+                },
+                "grupoOriginal": {
+                    "codigo": "B",
+                    "descricao": "BAIXA TENSAO",
+                    "subGrupo": {
+                        "codigo": 1,
+                        "descricao": "RESIDENCIAL BX TENSAO"
+                    }
+                },
+                "tipoTarifa": {
+                    "codigo": "01",
+                    "descricao": "CONVENCIONAL"
+                }
+            }
+        },
+        "cliente": {
+            "codigo": 34315507,
+            "nome": "JULIO CESAR DE OLIVEIRA",
+            "dataAtualizacao": "29/01/2018",
+            "documento": {
+                "tipo": {
+                    "codigo": "CPF",
+                    "descricao": "CADASTRO PESSOA FISICA"
+                },
+                "numero": 22759820866
+            },
+            "segundoDocumento": {
+                "uf": "SP",
+                "orgaoExpedidor": {
+                    "codigo": "SSP",
+                    "descricao": "SECRETARIA DE SEGURANCA PUBLICA"
+                },
+                "tipo": {
+                    "codigo": "RG",
+                    "descricao": "SECRETARIA DE SEGURANCA"
+                },
+                "numero": 454257910
+            },
+            "contato": {
+                "email": "",
+                "celular": {
+                    "ddd": 18,
+                    "numero": 996925415
+                },
+                "telefone": {
+                    "ddd": 18,
+                    "numero": 35286048
+                }
+            },
+            "dataNascimento": "14/10/1982"
+        },
+        "servicos": {
+            "baixaRenda": "N",
+            "faturaEmail": "N",
+            "dataCerta": "S",
+            "debitoAutomatico": "S",
+            "cadesp": "N",
+            "faturaBraile": "N",
+            "entregaAlternativa": "N",
+            "debitosVencidos": "S",
+            "reavisoCorte": "S",
+            "listaCorte": true,
+            "medidorTelemedicao": "N",
+            "vip": "N"
+        },
+        "características": {
+            "grandeCliente": "N",
+            "irrigacao": "N",
+            "vip7": "N",
+            "medicaoInteligente": "N",
+            "espelho": "N",
+            "iluminacao": "S"
+        },
+        "uc": "",
+        "instalação": "",
+        "listaMedidores": [],
+        "retorno": {
+            "tipo": "string",
+            "id": "string",
+            "numero": 1,
+            "e_resultado": "string",
+            "mensagem": "string"
+        }
+    
+    }
+}
+

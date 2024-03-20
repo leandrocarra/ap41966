@@ -1,0 +1,51 @@
+<h2>Entrega da Fatura</h2>
+<p class="subtitulo mb-5">Escolha onde gostaria de receber sua fatura:</p>
+
+<h6 class="subtitulo-h6 m-0">DADOS DA CAIXA POSTAL</h6>
+
+<form [formGroup]="formCEP" class="row">
+  <div class="mt-3 col-12 col-md-12 col-lg-10 col-xl-8">
+    <div class="row align-items-center">
+      <mat-form-field appearance="outline" class="col-12 col-sm-3 col-md-4" color="primary">
+        <mat-label>CEP</mat-label>
+        <input matInput type="text" id="cep" formControlName="cep" mask="00000-000" />
+      </mat-form-field>
+      <app-cep class="px-3 px-md-0"></app-cep>
+    </div>
+
+    <div class="row mb-3">
+      <mat-form-field appearance="outline" color="primary" class="col-12 col-sm-9">
+        <mat-label>CAIXA POSTAL</mat-label>
+        <input matInput type="text" id="caixaPostal" formControlName="caixaPostal" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="primary" class="col-12 col-sm-6">
+        <mat-label>CIDADE</mat-label>
+        <input matInput type="text" id="cidade" formControlName="cidade" required />
+      </mat-form-field>
+      <mat-form-field appearance="outline" color="primary" class="col-12 col-sm-3">
+        <mat-label>ESTADO</mat-label>
+        <mat-select focus name="estado" id="estado" formControlName="estado" id="estado" required>
+          <mat-option *ngFor="let estado of estados" [value]="estado.sigla">
+            {{ estado.sigla }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div *ngIf="formCEP.invalid && formCEP.touched && formCEP.dirty" class="col-12 container-atencao">
+        <img src="assets/images/icons/atencao.svg" alt="Imagem chamando atenção" class="img-atencao">
+        <p class="msg-atencao my-auto">Por favor, preencha todos os campos corretamente.</p>
+      </div>
+
+    </div>
+  </div>
+</form>
+<div class="d-flex justify-content-between justify-content-md-start mt-2">
+  <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+    (callFunction)="voltar()">
+  </app-neo-button>
+
+  <app-neo-button class="me-3 m-0" [classes]="
+      grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'
+    " [titleText]="'CONTINUAR'" [isDisabled]="formCEP.invalid" (callFunction)="continuar()">
+  </app-neo-button>
+</div>

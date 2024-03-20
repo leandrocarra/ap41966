@@ -1,0 +1,65 @@
+h2 {
+    letter-spacing: 0.56px;
+    line-height: 35px;
+    font-weight: bold;
+    color: var(--neo-dark-green);
+}
+
+.not-according-criteria {
+    color: var(--neo-pure-red);
+    font-size: 0.8rem;
+    margin-bottom: 0px !important;
+}
+
+.radio-button-fatura {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.radio-option-dark-gray {
+    color: var(--neo-dark-gray);
+}
+
+.text-telas-informativos {
+    font-weight: 400;
+    margin-top: 1.25rem;
+    font-size: 1.25rem;
+}
+
+.a {
+    color: var(--neo-dark-green);
+}
+
+.b {
+    color: var(--neo-light-green);
+}
+
+:host
+::ng-deep
+.mat-radio-label-content {
+    padding-left: 15px;
+
+}
+
+:host
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent
+  .mat-radio-ripple
+  .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: var(--neo-light-green) !important;
+}
+
+:host
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: var(--neo-light-green) !important;
+}
+
+:host ::ng-deep .mat-radio-outer-circle {
+    border-color: var(--neo-light-green) !important;
+  }
+
+.mat-radio-button {
+    padding-left: 10px;
+}

@@ -1,0 +1,29 @@
+.light-green {
+    color: var(--neo-light-green);
+}
+
+.dark-green {
+    color: var(--neo-dark-green);
+}
+
+.caixa-qrcode{
+    word-break: break-all;
+    margin: auto;
+    background-color: var(--neo-white);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid var(--neo-light-green);
+}
+
+.botao-fechar {
+    border: 1px solid var(--neo-light-gray);
+    border-radius: 25px;
+    height: 40px;
+    width: 120px;
+    background-color: var(--neo-white);
+}
+
+.qrcode-pix {
+    height: 200px;
+    width: 200px;
+}

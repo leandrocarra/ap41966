@@ -1,0 +1,84 @@
+
+
+<form [formGroup]="formDadosSolicitante" id="black-and-white-input-1" class="form-area mt-3"  >
+    <h4 class="titulo-solicitante">Dados do solicitante:</h4>
+
+    <div class="row">
+        <mat-form-field appearance="outline" class="col-12 col-md-6">
+            <mat-label>NOME COMPLETO</mat-label>
+            <input matInput type="text" name="nome" id="nome" formControlName="nomeCompleto" (ngModelChange)="validarForms()" required/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-12 col-md-3">
+            <mat-label>DATA DE NASCIMENTO</mat-label>
+            <input matInput [matDatepicker]="picker" name="dataNascimento" id="dataNascimento" formControlName="dataNascimento" (focus)="picker?.open()" (ngModelChange)="validarForms()" required />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-12 col-md-3">
+            <mat-label>GÊNERO</mat-label>
+
+            <mat-select formControlName="genero" (ngModelChange)="validarForms()">
+                <mat-option [value]="genero.key" *ngFor="let genero of genero " >
+                   {{ genero.key }}
+                </mat-option>
+           </mat-select>
+
+        
+        </mat-form-field>
+
+    </div>
+
+    <div class="row">
+        <mat-form-field appearance="outline" class="col-12 col-md-3">
+            <mat-label>RG</mat-label>
+            <input matInput type="text" name="docSecundario" id="docSecundario" formControlName="rg" required (ngModelChange)="validarForms()" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-12 col-md-3">
+            <mat-label>ORGÃO EMISSOR</mat-label>
+            <input matInput type="text" name="orgaoEmissor" id="orgaoEmissor" formControlName="orgaoEmissor" required (ngModelChange)="validarForms()" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-12 col-md-3" [hideRequiredMarker]="true">
+            <mat-label>ESTADO</mat-label>
+            <mat-select formControlName="estado" (ngModelChange)="validarForms()">
+             <mat-option [value]="estado.key" *ngFor="let estado of estados" >
+                {{ estado.key }}
+             </mat-option>
+        </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-12 col-md-3">
+            <mat-label>CPF</mat-label>
+            <input matInput type="text" name="cpf" id="documento" formControlName="cpf" 
+             (keyup)="getCpfCnpjMask()" [mask]="mascaraCpfCnpj" required (ngModelChange)="validarForms()" />
+            
+        
+            </mat-form-field>
+
+    </div>
+
+    <div class="row">
+
+        <mat-form-field appearance="outline" class="col-12 col-md-6">
+            <mat-label>EMAIL</mat-label>
+            <input matInput type="text" name="email" id="email" formControlName="email" required (ngModelChange)="validarForms()" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-12 col-md-3 ">
+            <mat-label>TELEFONE</mat-label>
+            <input matInput type="text" name="telefone" id="telefone" formControlName="telefone" (keyup)="getTelMask()" 
+        [mask]="mascaraTelefone" required (ngModelChange)="validarForms()" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-12 col-md-3">
+            <mat-label>CELULAR</mat-label>
+            <input matInput type="text" name="celular" id="celular" formControlName="celular" (keyup)="getCelMask()" [mask]="mascaraCelular" required (ngModelChange)="validarForms()"/> 
+        </mat-form-field>
+
+    </div>
+
+</form>

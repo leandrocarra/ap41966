@@ -1,0 +1,13 @@
+<div class="card-header bkg-color-alert-header">
+    <h5 mat-dialog-title class="label-strong-neo mat-radio-label col-10 my-auto font-color-alert-header">Atenção!</h5>
+</div>
+<div mat-dialog-content class="card-body me-3 ms-3">
+    <p><strong>Ainda não é possível alterar a data de vencimento. A última alteração da data de vencimento foi em {{dataAlteracao}}, somente após 12 meses poderá realizar nova alteração.</strong></p>
+    <div mat-dialog-actions class="d-flex flex-row justify-content-end">
+        <app-neo-button
+            [classes]="'btn-neoprimary'"
+            [titleText]="'continuar'"
+            (click)="onContinuar()"
+        ></app-neo-button>
+    </div>
+</div>

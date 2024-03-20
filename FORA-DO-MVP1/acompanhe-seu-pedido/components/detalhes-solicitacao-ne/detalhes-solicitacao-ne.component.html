@@ -1,0 +1,33 @@
+<div class="status-detalhado-solicitacao-ne">
+	<h4 class="mb-2"><strong>{{solicitacao.detalhes.descricaoNota}}</strong></h4>
+	<h6 class="mb-3"><strong>{{solicitacao.detalhes.tipologiaAtendimento | uppercase}}</strong></h6>
+
+	<div class="infos-solicitacao">
+		<div>
+			<h5 class="mb-3"><strong>INFORMAÇÕES</strong></h5>
+			<h6 class="info-title">SOLICITANTE</h6>
+			<span class="info-desc">{{solicitacao.detalhes.informacoes.solicitante | uppercase}}</span>
+			
+			<h6 class="info-title">{{ solicitacao.detalhes.informacoes.conclusaoDesejada ? "CONCLUSÃO DESEJADA" :
+				"PRAZO"}}</h6>
+			<span class="info-desc">{{ solicitacao.detalhes.informacoes.conclusaoDesejada }}</span>
+			
+			<h6 class="info-title">ÚLTIMA ATUALIZAÇÃO</h6>
+			<span class="info-desc">{{solicitacao.detalhes.informacoes.ultimaAtualizacao | uppercase}}</span>
+		</div>
+
+		<div>
+			<h5 class="info-title">PROTOCOLO PRINCIPAL</h5>
+			<!-- RETIRAR ESSA LINHA APÓS INTEGRAÇÃO -->
+			<span class="info-desc-protocolo"
+				[class.m-0]="solicitacao.situacao === 'Realizada'">{{solicitacao.detalhes.numProtocolo}}</span>
+			<span class="d-block">{{solicitacao.detalhes.protocoloFilho.filho}}</span>
+			<a (click)="openProtocolDialog(solicitacao.detalhes.numProtocolo)" class="text-link">Ver mais...</a>
+		</div>
+
+		<div class="w-100 mt-3">
+			<h6 class="info-title">ENDEREÇO DO IMÓVEL</h6>
+			<span class="info-desc">{{solicitacao.detalhes.informacoes.enderecoImovel | uppercase}}</span>
+		</div>
+	</div>
+</div>

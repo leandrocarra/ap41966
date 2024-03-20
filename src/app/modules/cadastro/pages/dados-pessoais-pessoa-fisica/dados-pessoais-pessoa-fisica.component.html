@@ -1,0 +1,62 @@
+<p class="subtitulo mt-3 mt-5 mt-md-0">Nos conte mais sobre você! Preencha abaixo os seus dados pessoais.</p>
+
+<h6 class="bold color-dark-gray my-4">DADOS PESSOAIS</h6>
+
+<form [formGroup]="formDadosPessoaisPessoaFisica">
+
+    <div class="row">
+        <mat-form-field class="col-12 col-md-6 col-lg-3" id="nome" color="primary" appearance="outline">
+            <mat-label>NOME</mat-label>
+            <input matInput name="nome" formControlName="nome" >
+            <mat-error class="erro-input-cadastro">
+                <app-custom-mat-error [mensagem]="matErrorObrigatorio"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-md-6 col-lg-3" id="sobrenome" color="primary" appearance="outline">
+            <mat-label>SOBRENOME</mat-label>
+            <input matInput name="sobrenome" formControlName="sobrenome">
+            <mat-error class="erro-input-cadastro">
+                <app-custom-mat-error [mensagem]="matErrorObrigatorio"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-md-6 col-lg-3" id="usuarioAcesso" color="primary" appearance="outline">
+            <mat-label>COMO GOSTARIA DE SER CHAMADO</mat-label>
+            <input matInput name="usuarioAcesso" formControlName="usuarioAcesso">
+            <mat-error class="erro-input-cadastro">
+                <app-custom-mat-error [mensagem]="matErrorObrigatorio" ></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field class="col-12 col-md-6 col-lg-3" id="celular" color="primary" appearance="outline">
+            <mat-label>CELULAR</mat-label>
+            <input matInput type="text" name="celular" formControlName="celular" [mask]="'(00) 0 0000-0000'" (keyup)="getCelMask()" onlyNumbers>
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorCelular"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-md-6 col-lg-3" id="telefone" color="primary" appearance="outline">
+            <mat-label>TELEFONE</mat-label>
+            <input matInput type="text" name="telefone" formControlName="telefone" [mask]="'(00) 0000-0000'" (keyup)="getTelMask()" onlyNumbers>
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorTelefone"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="d-flex justify-content-between justify-content-md-start mb-5 mb-md-0">
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-3">
+            <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                (callFunction)="voltar();">
+            </app-neo-button>
+
+            <app-neo-button class="me-3 m-0" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                [titleText]="'CONTINUAR'" (callFunction)="continuar()" [isDisabled]="formDadosPessoaisPessoaFisica.invalid">
+            </app-neo-button>
+        </div>
+    </div>
+</form>

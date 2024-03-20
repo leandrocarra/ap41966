@@ -1,0 +1,20 @@
+.titulo{
+    color: var(--neo-dark-green);
+    font-weight: 500;
+}
+
+.titulo-programa-social{
+    color: var(--neo-light-green);
+    font-size: medium;
+    font-weight: bold;
+}
+
+::ng-deep {
+
+    .mat-radio-label {
+
+      white-space: pre-line !important;
+
+    }
+
+  }

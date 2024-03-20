@@ -1,0 +1,18 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500&display=swap&');
+
+.endereco {
+    font-size: 17px;
+}
+
+@media only screen and (max-width: 375px) {
+    .endereco{
+        padding-left: 0px;
+        font-size: 11px;
+    }
+}
+@media only screen and (min-width: 425px) {
+    .endereco{
+        font-size: 11px;
+    }
+}

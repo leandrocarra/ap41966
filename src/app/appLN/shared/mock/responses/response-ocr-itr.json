@@ -1,0 +1,214 @@
+{
+  "VALIDO": {
+    "result": [
+      {
+        "fields": [
+          {
+            "name": "ano_exercicio",
+            "value": "2018",
+            "score": 0.95
+          },
+          {
+            "name": "num_nirf",
+            "value": "11461160",
+            "score": 0.82
+          },
+          {
+            "name": "area_total_imovel",
+            "value": "26,3 HA",
+            "score": 0.82
+          },
+          {
+            "name": "nome_imovel_rural",
+            "value": "FAZENDA CANTA GALO",
+            "score": 0.82
+          },
+          {
+            "name": "endereco_imovel_rural",
+            "value": "ESTRADA BA 172, KM 04",
+            "score": 0.82
+          },
+          {
+            "name": "municipio_imovel_rural",
+            "value": "RIO CLARO",
+            "score": 0.82
+          },
+          {
+            "name": "uf_imovel_rural",
+            "value": "BA",
+            "score": 0.95
+          },
+          {
+            "name": "cep_imovel_rural",
+            "value": "13500000",
+            "score": 0.82
+          },
+          {
+            "name": "nome_contribuinte",
+            "value": "Maria Flavia",
+            "score": 0.82
+          },
+          {
+            "name": "cpf_contribuinte",
+            "value": "96700905044",
+            "score": 0.82
+          },
+          {
+            "name": "endereco_contribuinte",
+            "value": "FAZENDA CANTA GALO",
+            "score": 0.82
+          },
+          {
+            "name": "numero_contribuinte",
+            "value": "",
+            "score": 0
+          },
+          {
+            "name": "complemento_contribuinte",
+            "value": "CASA",
+            "score": 0.82
+          },
+          {
+            "name": "bairro_contribuinte",
+            "value": "ZONA RURAL",
+            "score": 0.82
+          },
+          {
+            "name": "municipio_contribuinte",
+            "value": "SAO FELIX DO CORIBE",
+            "score": 0.02
+          },
+          {
+            "name": "uf_contribuinte",
+            "value": "BA",
+            "score": 0.95
+          },
+          {
+            "name": "cep_contribuinte",
+            "value": "47665000",
+            "score": 0.82
+          }
+        ],
+        "deskewImage": "",
+        "docQualityScore": 0.7,
+        "docType": "declaracao",
+        "pageIndex": 1,
+        "tags": [
+          "declaracao",
+          "br-imposto-propriedade-rural-2"
+        ]
+      }
+    ],
+    "queryId": "FUWGSMLYVHPQMDWCQMBYU",
+    "status": {
+      "code": 200,
+      "message": "Ok"
+    }
+  },
+  "INVALIDO": {
+    "result": [
+      {
+        "fields": [
+          {
+            "name": "ano_exercicio",
+            "value": "2018",
+            "score": 0.95
+          },
+          {
+            "name": "num_nirf",
+            "value": "11461160",
+            "score": 0.82
+          },
+          {
+            "name": "area_total_imovel",
+            "value": "26,3 HA",
+            "score": 0.82
+          },
+          {
+            "name": "nome_imovel_rural",
+            "value": "FAZENDA CANTA GALO",
+            "score": 0.82
+          },
+          {
+            "name": "endereco_imovel_rural",
+            "value": "ESTRADA BA 172, KM 04",
+            "score": 0.82
+          },
+          {
+            "name": "municipio_imovel_rural",
+            "value": "RIO CLARO",
+            "score": 0.02
+          },
+          {
+            "name": "uf_imovel_rural",
+            "value": "BA",
+            "score": 0.95
+          },
+          {
+            "name": "cep_imovel_rural",
+            "value": "13500000",
+            "score": 0.82
+          },
+          {
+            "name": "nome_contribuinte",
+            "value": "Maria Flavia",
+            "score": 0.82
+          },
+          {
+            "name": "cpf_contribuinte",
+            "value": "96700905044",
+            "score": 0.82
+          },
+          {
+            "name": "endereco_contribuinte",
+            "value": "FAZENDA CANTA GALO",
+            "score": 0.82
+          },
+          {
+            "name": "numero_contribuinte",
+            "value": "",
+            "score": 0
+          },
+          {
+            "name": "complemento_contribuinte",
+            "value": "CASA",
+            "score": 0.82
+          },
+          {
+            "name": "bairro_contribuinte",
+            "value": "ZONA RURAL",
+            "score": 0.82
+          },
+          {
+            "name": "municipio_contribuinte",
+            "value": "SAO FELIX DO CORIBE",
+            "score": 0.02
+          },
+          {
+            "name": "uf_contribuinte",
+            "value": "BA",
+            "score": 0.95
+          },
+          {
+            "name": "cep_contribuinte",
+            "value": "47665000",
+            "score": 0.82
+          }
+        ],
+        "deskewImage": "",
+        "docQualityScore": 0.7,
+        "docType": "declaracao",
+        "pageIndex": 1,
+        "tags": [
+          "declaracao",
+          "INVALIDO-br-imposto-propriedade-rural-2"
+        ]
+      }
+    ],
+    "queryId": "FUWGSMLYVHPQMDWCQMBYU",
+    "status": {
+      "code": 200,
+      "message": "Ok"
+    }
+  }
+}

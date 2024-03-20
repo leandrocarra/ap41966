@@ -1,0 +1,19 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.trocarBotao {
+    background-color: var(--neo-light-green) !important;
+    color: white !important;
+}
+
+.btn-data-vencimento .btn-outline-secondary:hover{
+    background-color: transparent;
+    color: var(--neo-light-green);
+    border-color: var(--neo-light-green);
+}
+
+.btn-data-vencimento .btn-outline-secondary:focus{
+    background-color: var(--neo-light-green);
+    color: white;
+    border-color: var(--neo-light-green);
+    box-shadow:none;
+}

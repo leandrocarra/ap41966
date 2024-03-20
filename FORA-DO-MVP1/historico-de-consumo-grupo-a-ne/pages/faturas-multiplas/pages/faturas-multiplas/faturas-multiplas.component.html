@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<div class="background-gray contain">
+    <div class="content-space">
+        <app-spinner class="h-100 block" *ngIf="loading.loading" [mensagem]="loading.textLabel"></app-spinner>
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<app-footer></app-footer>
+<app-chatbot></app-chatbot>

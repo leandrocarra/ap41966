@@ -1,0 +1,104 @@
+{
+    "VALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "data_nascimento",
+                        "value": "05/06/2015",
+                        "score": 0.73
+                    },
+                    {
+                        "name": "filiacao",
+                        "value": "ROBERTO CARLOS E MARIA RI",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "nome",
+                        "value": "MARIA FLAVIA",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "documento",
+                        "value": "1111",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "naturalidade_cidade",
+                        "value": "RIO CLARO",
+                        "score": 0.94
+                    },
+                    {
+                        "name": "naturalidade_uf",
+                        "value": "SP",
+                        "score": 0.94
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.84,
+                "docType": "documento_identificacao",
+                "pageIndex": 1,
+                "tags": [
+                    "documento_identificacao",
+                    "br-cartrural-1"
+                ]
+            }
+        ],
+        "queryId": "OTPQDOGGJJAFKOIBRJJHD",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "INVALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "data_nascimento",
+                        "value": "05/06/1998",
+                        "score": 0.73
+                    },
+                    {
+                        "name": "filiacao",
+                        "value": "HARRY JOSE DE POTTER E LUNA WEASLEY",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "nome",
+                        "value": "VICTOR MALFOY",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "documento",
+                        "value": "1111",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "naturalidade_cidade",
+                        "value": "SÃO PAULO",
+                        "score": 0.94
+                    },
+                    {
+                        "name": "naturalidade_uf",
+                        "value": "SP",
+                        "score": 0.94
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.84,
+                "docType": "documento_identificacao",
+                "pageIndex": 1,
+                "tags": [
+                    "documento_identificacao",
+                    "INVALIDO-br-cartrural-1"
+                ]
+            }
+        ],
+        "queryId": "OTPQDOGGJJAFKOIBRJJHD",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

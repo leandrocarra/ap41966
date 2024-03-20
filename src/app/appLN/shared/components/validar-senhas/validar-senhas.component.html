@@ -1,0 +1,61 @@
+<!-- Layout cadastro -->
+<div [formGroup]="formSenha" class="row" *ngIf="!isRecuperarSenha">
+  <div class="form-neo col-12 col-xl-6" style="position: relative;">
+    <label class="subtitulo" for="senha">{{nomeLabel}}</label>
+    <input [type]="hideSenha ? 'password' : 'text'" class="input-bottom-border form-control form-control-lg" id="senha"
+      name="senha" formControlName="senha" placeholder="Digite sua senha" required maxlength="30" (ngModelChange)="checkAll()">
+    <mat-icon matSuffix class="visibillity-eye" (click)="hideSenha = !hideSenha">{{hideSenha ? 'visibility_off' :
+      'visibility'}}</mat-icon>
+  </div>
+
+  <div class="form-neo col-12 col-xl-6" style="position: relative;">
+    <label class="subtitulo" for="confirmarSenha">Confirmar {{nomeLabel}}</label>
+    <input [type]="hideConfirmarSenha ? 'password' : 'text'" class="input-bottom-border form-control form-control-lg"
+      id="confirmarSenha" name="confirmarSenha" formControlName="confirmarSenha" placeholder="Confirme sua senha"
+      required maxlength="30" (ngModelChange)="checkAll()">
+    <mat-icon matSuffix class="visibillity-eye" (click)="hideConfirmarSenha = !hideConfirmarSenha">{{hideConfirmarSenha
+      ? 'visibility_off' : 'visibility'}}</mat-icon>
+  </div>
+
+</div>
+
+<!-- Layout Recuperar senha -->
+<div [formGroup]="formSenha" class="row" *ngIf="isRecuperarSenha">
+  <div class="form-neo mx-auto col-12 col-xl-10">
+    <label class="label-strong-neo" for="senha">{{nomeLabel}}</label>
+    <input type="password" class="input-bottom-border form-control form-control-lg" id="senha" name="senha"
+      formControlName="senha" (ngModelChange)="checkAll()" placeholder="Digite sua senha" required maxlength="30">
+  </div>
+
+  <div class="form-neo mx-auto col-12 col-xl-10">
+    <label class="label-strong-neo" for="confirmarSenha">Confirmar {{nomeLabel}}</label>
+    <input type="password" class="input-bottom-border form-control form-control-lg" id="confirmarSenha"
+      name="confirmarSenha" formControlName="confirmarSenha" (ngModelChange)="checkAll()"
+      placeholder="Confirme sua senha" required maxlength="30">
+  </div>
+</div>
+
+<div class="criticas" [class.ms-4]="isRecuperarSenha && !mobile">
+
+  <div [ngClass]="formSenha.controls['senha'].hasError('minlength') || formSenha.value.senha == '' ? 'not-according-criteria': 'according-criteria'">
+    <mat-icon>{{formSenha.controls['senha'].hasError('minlength') || formSenha.value.senha == '' ? 'not_interested' : 'done' }}</mat-icon>
+    Mínimo de 8 caracteres
+  </div>
+
+  <div
+    [ngClass]="formSenha.controls['senha'].hasError('hasUpperCase') ? 'not-according-criteria':'according-criteria'">
+    <mat-icon>{{formSenha.controls['senha'].hasError('hasUpperCase') ? 'not_interested': 'done' }}</mat-icon>
+    Pelo menos 1 letra maiúscula
+  </div>
+
+  <div [ngClass]="formSenha.controls['senha'].hasError('hasNum') ? 'not-according-criteria':'according-criteria'">
+    <mat-icon>{{formSenha.controls['senha'].hasError('hasNum') ? 'not_interested' : 'done' }}</mat-icon>
+    Pelo menos 1 número
+  </div>
+
+  <div [ngClass]="formSenha.controls['confirmarSenha'].hasError('senhasDiferentes') || formSenha.value.senha == '' ? 'not-according-criteria':'according-criteria'">
+    <mat-icon>{{formSenha.controls['confirmarSenha'].hasError('senhasDiferentes') || formSenha.value.confirmarSenha == '' ? 'not_interested' : 'done' }}</mat-icon>
+    {{formSenha.controls['confirmarSenha'].hasError('senhasDiferentes') || formSenha.value.confirmarSenha == '' ? 'As senhas não coincidem' : 'As senhas coincidem' }}
+  </div>
+
+</div>

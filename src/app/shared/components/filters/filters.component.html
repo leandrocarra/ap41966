@@ -1,0 +1,67 @@
+<div id="filtro-faturas" [class.background-group-b]="grupoDoUsuario === 'B'"
+	[class.background-group-a]="grupoDoUsuario === 'A'">
+
+	<h5 class="bold text-white">{{ labelTitle }}</h5>
+
+	<div class="filtro-opcoes">
+		<mat-checkbox [(ngModel)]="selectall" (ngModelChange)="onSelectAll($event)">
+			Selecionar todas
+		</mat-checkbox>
+
+		<div *ngIf="!mobile">
+			<mat-divider class="vertical-divider" vertical></mat-divider>
+		</div>
+
+		<div class="d-flex">
+			<button id="btn-baixar-faturas" class="d-flex align-items-center" type="button" mat-button aria-label="Baixar faturas" (click)="baixarFaturas($event)">
+				Download
+				<mat-icon class="svg-icon" svgIcon="download-faturas"></mat-icon>
+			</button>
+			<app-tooltip class="color-green align-items-start" [filtro]="true" [explicacao]="tooltipMsg"></app-tooltip>
+		</div>
+
+
+		<div *ngIf="!mobile">
+			<mat-divider class="vertical-divider" vertical></mat-divider>
+		</div>
+
+		<div class="d-flex align-items-center">
+			<span class="me-2 text-white">
+				Filtrar por período:
+			</span>
+			<div class="custom-date-picker">
+				<mat-form-field class="d-flex" id="filtro-ano" appearance="filled">
+					<mat-icon>date_range</mat-icon>
+					<mat-select
+						[(ngModel)]="ano" (ngModelChange)="filterByAno(ano)">
+						<mat-option *ngFor="let ano of anosPossiveis"
+							[value]="ano">{{ano}}
+						</mat-option>
+					</mat-select>
+				</mat-form-field>
+			</div>
+		</div>
+
+		<div *ngIf="!mobile">
+			<mat-divider class="vertical-divider" vertical></mat-divider>
+		</div>
+
+		<mat-form-field id="filtro-status" appearance="filled">
+			<mat-select placeholder="Selecionar status"
+				[(ngModel)]="statusFilter" (ngModelChange)="filterByStatus(statusFilter)">
+				<mat-option *ngFor="let statusFatura of statusPossiveis" [class.optionA]="grupoDoUsuario === 'A'" [class.optionB]="grupoDoUsuario === 'B'"
+					[value]="statusFatura">{{statusFatura}}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+
+		<div *ngIf="!mobile">
+			<mat-divider class="vertical-divider" vertical></mat-divider>
+		</div>
+
+		<button type="button" mat-button aria-label="Limpar filtros" (click)="limparFiltros()">
+			Limpar filtros
+		</button>
+
+	</div>
+</div>

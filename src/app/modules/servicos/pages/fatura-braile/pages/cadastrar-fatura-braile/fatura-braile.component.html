@@ -1,0 +1,36 @@
+
+<div *ngIf="servicoCadastrado == false">
+    <h2>Fatura em Braile</h2>
+
+    <p class="subtitulo mt-3 mb-3">Suas informações referentes ao recebimento das faturas em braile:</p>
+
+    <app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+    <app-fatura-braile-component [tipoServicoBraile]="'Serviço não cadastrado.'"></app-fatura-braile-component>
+
+    <div class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar(0)">
+        </app-neo-button>
+
+        <app-neo-button class="me-3" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="mobile === true ? 'CADASTRAR' : 'CADASTRAR FATURA EM BRAILE'" (callFunction)="cadastrar()">
+        </app-neo-button>
+    </div>
+</div>
+
+<div *ngIf="servicoCadastrado == true">
+    <h2>Deseja cadastrar a fatura em braile?</h2>
+
+    <p class="col-12 col-lg-10 ps-0 subtitulo mt-3 mb-3">
+        Para portadores de deficiência visual, disponibilizamos a versão da fatura em braile.
+    </p>
+
+    <app-neo-button class="me-3" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="mobile === true ? 'CADASTRAR' : 'EFETUAR O CADASTRO'" (callFunction)="continuar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'CANCELAR'"
+            (callFunction)="cancelar()">
+        </app-neo-button>
+</div>

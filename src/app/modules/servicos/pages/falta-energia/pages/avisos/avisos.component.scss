@@ -1,0 +1,31 @@
+img {
+  width: stretch;
+  max-height: 350px;
+  max-width: 350px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.aviso {
+  margin: auto;
+  text-align: center;
+}
+
+.laranja {
+  color: var(--neo-pure-red);
+}
+
+.verde {
+  color: var(--neo-dark-green);
+}
+
+.titulo {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.descricao {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--neo-dark-gray);
+}

@@ -1,0 +1,75 @@
+
+
+.not-according-criteria {
+  color: var(--neo-pure-red);
+  font-size: 0.8rem;
+  margin-bottom: 0px !important;
+}
+
+.according-criteria {
+  color: #32cd32;
+  font-size: 0.8rem;
+}
+
+.before-validations {
+  color: var(--neo-dark-gray) !important;
+  font-size: 14px !important;
+  font-weight: 500;
+  opacity: 1.0 !important;
+}
+
+.after-validations {
+  color: var(--neo-dark-gray) !important;
+  font-size: 14px !important;
+  opacity: 1.0 !important;
+}
+
+.space-between-items {
+  margin-left: 41px;
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  border-radius: 5px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  height: 18px !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.input-field:focus {
+  background-color: #ffff !important;
+}
+
+.eyeSpanMobile {
+  position: absolute;
+  top: 3px;
+  right: 8px;
+  cursor: pointer;
+  font-size: 17px;
+  color: rgba(112, 112, 112, 0.3);
+}
+
+.visibillity-eye {
+  color: #828282;
+  cursor: pointer;
+}
+
+form .formGroup {
+  margin-bottom: 0px;
+}
+
+#validador-de-senha {
+  mat-icon {
+    margin-right: 0.8rem;
+    width: 25px;
+  }
+}
+
+#confirmacao {
+    .mat-form-field-wrapper {
+        padding-bottom: 0 !important;
+    }
+}

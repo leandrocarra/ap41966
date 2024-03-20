@@ -1,0 +1,30 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.imgAcompanhamento{
+    width: 15%;
+}
+
+.imgAcompanhamentoMobile{
+    width: 30%;
+}
+
+.texto-conclusao {
+    font-size: 0.813rem;
+}
+
+.texto-link {
+    color: var(--neo-light-green);
+    font-size: 0.813rem;
+ }
+
+@media only screen and (max-width: 426px) {
+    .imgMobile{
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .textoMobile{
+        font-size: 0.688rem;
+    }
+}

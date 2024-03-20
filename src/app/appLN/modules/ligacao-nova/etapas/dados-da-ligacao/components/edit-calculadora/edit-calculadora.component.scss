@@ -1,0 +1,33 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.btn-quantidade:disabled {
+    background-color:lightgray !important;
+    color: black !important;
+    border-color: unset !important;
+}
+
+.btn-quantidade {
+    height: 25px;
+    width: 25px;
+    border-radius: 3px;
+    font-size: 11px;
+    background-color: #e6ecd4;
+    border-color: transparent;
+    color: var(--neo-light-green);
+}
+
+.btn-adicionar {
+    font-size: 13px !important;
+    border-color:  var(--neo-light-green) !important;
+}
+
+.btn-adicionar:hover {
+    background-color: var(--neo-light-green) !important;
+    color: #fff !important;
+}
+
+.btn-adicionar:disabled {
+    background-color: gray !important;
+    color: white !important;
+    border-color: gray !important;
+}

@@ -1,0 +1,35 @@
+<h2>Confirmar cadastro de Fatura{{ tipoRecebimento !== 'WhatsApp' ? ' Digital' : ' por WhatsApp' }}</h2>
+
+<p class="subtitulo mt-3 mb-3">Ao cadastrar a fatura digital, passará a receber a fatura por {{ novaFormeDeEnvio }}.</p>
+
+<app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+<app-forma-recebimento [dadosEnvioDaFatura]="modoDeEnvio?.valor" [tipoRecebimento]="modoDeEnvio?.label"
+                       [mostrarBtn]="true" (alterar)="alterarDados($event)"></app-forma-recebimento>
+
+<div *ngIf="faturaEmOSB">
+    <h6 class="d-flex text-attention">
+        <img class="icone-aviso" src="assets/images/icons/atencao.svg" alt="imagem de alerta"/>
+        <div class="ps-2 pb-2">Sua solicitação será efetuada após o período de leitura.</div>
+    </h6>
+</div>
+
+<div [ngClass]="{
+    'check-group-a': grupoDoUsuario === 'A',
+    'check-group-b': grupoDoUsuario === 'B'
+  }">
+    <mat-checkbox [(ngModel)]="termo" class="mt-2 col-lg-8 col-xl-6 ps-0">
+        <p class="subtitulo mt-3 ms-2">{{declaracaoDeTermos}}</p>
+    </mat-checkbox>
+</div>
+
+
+<div class="d-flex justify-content-between justify-content-md-start mt-4 mb-5">
+    <app-neo-button class="me-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                    (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                    [titleText]="'CONFIRMAR'" [isDisabled]="!termo" (callFunction)="continuar()">
+    </app-neo-button>
+</div>

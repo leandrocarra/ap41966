@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-env-agenciavirtual
+data:
+  SPRING_PROFILES_ACTIVE: "default"
+  ELASTIC_APM_SERVER_URLS: "http://neoaks-hml-apm-http.observability.svc.cluster.local:8200"
+  ELASTIC_APM_SECRET_TOKEN: "nG9REuV277E4vtbPE39S00m1"
+  SPRING_DATASOURCE_PASSWORD: "jcCCmYTzHwAN4bgu"

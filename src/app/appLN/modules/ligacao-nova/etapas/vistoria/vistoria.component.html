@@ -1,0 +1,35 @@
+<div class="">
+    <div class="row">
+        <div class="col-xl-7">
+            <h3 class="titulo outlineNone" tabindex="0" autofocus>Faça a vistoria por foto para agilizar sua ligação!</h3>
+
+            <div class="col-xl-10 p-0 mt-4 mb-4">
+                <p class="texto">
+                    Agora você pode agendar a vistoria técnica de uma nova ligação
+                    digitalmente. Aproveite esta oportunidade para ganhar tempo e
+                    ter energia estabelecida em seu imóvel rapidamente!
+                </p>
+
+                <p class="texto">
+                    Você tem 1 dia para fazer a sua vistoria por foto. Não perca a
+                    chance de agilizar a sua ligação! É super fácil!
+                </p>
+            </div>
+
+            <div class="row mb-5 ps-md-3 pe-md-3 row d-flex justify-content-between justify-content-md-start text-center alignTop mt-4">
+                <div class="pe-md-3 mb-3">
+                    <button type="button" class="btn btn-outline-secondary mx-auto" title="Encerrerar pedido"
+                    (click)="encerrar()">ENCERRAR</button>
+                </div>
+                <div class="">
+                    <button type="button" class="btn btn-outline-secondary " (click)="linkVistoria()" title="Vistoria por foto">VISTORIA POR FOTO</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-xl-5 align-bottom" *ngIf="!mobile">
+            <img src="../../../../../../assets/assetsLN/images/vistoria_foto_bugado.svg" alt="Uma mão segurando um celular" class="imgVistoria align-bottom">
+        </div>
+    </div>
+</div>

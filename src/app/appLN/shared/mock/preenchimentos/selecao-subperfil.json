@@ -1,0 +1,50 @@
+{
+    "RESIDENCIAL_RURAL": {
+        "label": "RESIDENCIAL RURAL",
+        "route": "residencial-rural",
+        "textoTooltip": "Residência localizada na área rural, com fim residencial, utilizada por trabalhador rural ou aposentado nesta condição.",
+        "disabled": false
+    },
+    "AGROPECUARIA_RURAL": {
+        "label": "AGROPECUÁRIA RURAL",
+        "route": "agropecuaria-rural",
+        "textoTooltip": "Localizada na área rural, onde seja desenvolvida atividade relativa à agropecuária.",
+        "disabled": false
+    },
+    "ESCOLA_AGROTECNICA": {
+        "label": "ESCOLA AGROTÉCNICA",
+        "route": "escola-agrotecnica",
+        "textoTooltip": "Estabelecimento de ensino direcionado à agropecuária, localizado na área rural, sem fins lucrativos e explorada por entidade pertencente ou vinculada à Administração Direta, Indireta ou Fundações 'de' Direito Público da União, dos Estados, Distrito Federal ou dos Municípios.",
+        "disabled": true
+    },
+    "AQUICULTOR": {
+        "label": "AQUICULTOR",
+        "route": "aquicultor",
+        "textoTooltip": "Cargas específicas utilizadas no bombeamento para captação de água e dos tanques de criação, no berçário, na aeração e na iluminação nesses locais.",
+        "disabled": false
+    },
+    "AGROINDUSTRIAL": {
+        "label": "AGROINDUSTRIAL",
+        "route": "agroindustrial",
+        "textoTooltip": "Indústrias de transformação ou beneficiamento de produtos advindos diretamente da agropecuária, mesmo que oriundos de outras propriedades, independentemente de sua localização, desde que a potência nominal total do transformador seja de até 112, 5 KVA.",
+        "disabled": true
+    },
+    "AGROPECUARIA_URBANA": {
+        "label": "AGROPECUÁRIA URBANA",
+        "route": "agropecuaria-urbana",
+        "textoTooltip": "Localizada na área urbana, onde seja desenvolvida atividade relativa à agropecuária.",
+        "disabled": false
+    },
+    "SERVICO_PUBLICO_IRRIGACAO": {
+        "label": "SERVIÇO PÚBLICO DE IRRIGAÇÃO",
+        "route": "servico-publico-de-irrigacao",
+        "textoTooltip": "Serviço público de irrigação rural localizado na área rural em que seja desenvolvida a atividade de irrigação e explorado por entidade pertencente ou vinculada à Administração Direta, Indireta ou Fundações de Direito Público da União, dos Estados, Distrito Federal ou dos Municípios.",
+        "disabled": true
+    },
+    "IRRIGANTE": {
+        "label": "IRRIGANTE",
+        "route": "irrigante",
+        "textoTooltip": "Cargas específicas utilizadas no bombeamento para captação de água e adução, na injeção de fertilizantes na linha de irrigação, na aplicação da água no solo mediante o uso de técnicas específicas e na iluminação dos locais de instalação desses equipamentos.",
+        "disabled": false
+    }
+}

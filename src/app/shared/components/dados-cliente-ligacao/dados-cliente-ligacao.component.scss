@@ -1,0 +1,23 @@
+.container-dados-imovel {
+    border: solid 1px var(--neo-dark-gray);
+    border-radius: 6px;
+    background-color: var(--neo-white);
+    padding: 10px;
+
+    .divisor {
+        border-bottom: 1px solid var(--neo-white-500);
+        margin: auto;
+        padding-bottom: 8px;
+        margin-top: 0.5rem;
+    }
+    .divisor:last-child {
+        border-bottom: none;
+    }
+}
+
+
+.text-value {
+    text-align: end;
+    font-weight: 500;
+}
+

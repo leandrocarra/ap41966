@@ -1,0 +1,33 @@
+<div class="status-detalhado-solicitacao">
+    <h4 class="mb-3">{{solicitacao.descricao | uppercase}}</h4>
+
+    <div class="infos-solicitacao">
+        <div>
+            <span class="info-title">SITUAÇÃO</span>
+            <span class="{{solicitacao.situacao | lowercase}}">{{solicitacao.situacao}}</span>
+        </div>
+        <div>
+            <span class="info-title">PROTOCOLO</span>
+            <span class="info-desc">{{solicitacao.protocolo}}</span>
+        </div>
+
+        <h5 class="w-100 mt-3 mb-3">INFORMAÇÕES</h5>
+
+        <div>
+            <span class="info-title">SOLICITANTE</span>
+            <span class="info-desc">Jean Henrique</span>
+        </div>
+        <div>
+            <span class="info-title">PRAZO</span>
+            <span class="info-desc">24 HORAS</span>
+        </div>
+        <div>
+            <span class="info-title">DATA DA SOLICITAÇÃO</span>
+            <span class="info-desc">{{solicitacao.dataSolicitacao}}</span>
+        </div>
+        <div>
+            <span class="info-title">ÚLTIMA ATUALIZAÇÃO</span>
+            <span class="info-desc">{{solicitacao.ultimaAtualizacao}}</span>
+        </div>
+    </div>
+</div>

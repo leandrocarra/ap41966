@@ -1,0 +1,25 @@
+<div>
+    <h1 class="titulo">Projeto Particular</h1>
+
+    <p class="text-pedido-analise">Pedido de análise de documento elaborado por um técnico ou engenheiro responsável,
+    devidamente cadastrado no órgão competente, para aprovação de uma obra que precede
+    para a ligação de uma unidade.</p>
+
+    <div class="div-alert">
+        <img class="img-atencao" src="assets/images/icons/atencao.svg"
+        alt="imagem com símbolo de atenção" />
+        <p class="alerta-atencao">Caso seja Projetista, indicamos que solicite a análise de Projeto Particular a partir do perfil de Projetista.</p>
+    </div>
+
+    <div class="d-flex justify-content-between justify-content-md-start mb-5 mb-md-0">
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-3">
+            <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                (callFunction)="voltar();">
+            </app-neo-button>
+
+            <app-neo-button class="m-0" [classes]="'btn-neoprimary'"
+                [titleText]="!mobile ? 'SOLICITAR ANÁLISE DE PROJETO PARTICULAR' : 'SOLICITAR ANÁLISE'" (callFunction)="solicitarAnalise()">
+            </app-neo-button>
+        </div>
+    </div>
+</div>

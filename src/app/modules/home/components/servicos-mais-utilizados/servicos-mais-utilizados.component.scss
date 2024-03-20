@@ -1,0 +1,57 @@
+#carousel-servicos-mais-utilizados {
+    margin: 0 1.563rem;
+    width: auto;
+    height: 100% !important;
+    mat-card {
+        padding: 0.6rem;
+        height: 100%;
+        margin-right: 5px;
+        img {
+            margin-bottom: 0.313rem;
+        }
+        span {
+            width: 90%;
+            line-height: 0.938rem;
+            color: var(--header-text);
+            @media only screen and (max-width: 767px) {
+                width: 100%;
+            }
+        }
+    }
+
+    .icon-servicos-mais-acessados {
+        width: 1.5rem !important;
+        height: auto;
+    }
+
+    .carousel-cell {
+        font-size: 0.875rem;
+        overflow: visible;
+    }
+
+
+.carousel {
+    z-index: auto !important;
+}
+
+.carousel-container {
+    cursor: pointer !important;
+    padding-bottom: 3px;
+}
+
+.carousel-arrow {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.carousel-arrow-next {
+    right: -40px !important;
+    z-index: auto !important;
+}
+
+.carousel-arrow-prev {
+    left: -40px !important;
+    z-index: auto !important;
+}
+}
+

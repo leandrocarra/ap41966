@@ -1,0 +1,416 @@
+<app-clean-header></app-clean-header>
+
+<div class="background-white">
+  <mat-horizontal-stepper labelPosition="bottom" #stepper [linear]="true" [class.telaSemStepper]="this.indexPage == 8 || this.indexPage == 9 || this.indexPage == 10"
+    ngClass="{{ 'last-edited-step-' + stepper.selectedIndex }}" style="margin-top: 10px;" id="mat-step-horizontal">
+    <ng-template matStepperIcon="edit">
+      <mat-icon>done</mat-icon>
+    </ng-template>
+    <ng-template matStepperIcon="number">
+      <mat-icon>done</mat-icon>
+    </ng-template>
+    <mat-step [stepControl]="identificationFormGroup" class="matStepLabel" label="Identificação" state="edit">
+      <form [formGroup]="identificationFormGroup" class="full-height" *ngIf="indexPage == 1">
+        <div class="col-12 p-0 content-white">
+          <div class="box-forget-password form-group d-flex flex-wrap justify-content-around">
+            <div class="col-12 content-space">
+              <h2 class="mb-4">Passo 1 de 4</h2>
+
+              <p class="mb-4">Olá! Seja bem-vindo à agência virtual! Vamos precisar de alguns dados para
+                iniciar o seu cadastro.
+              </p>
+
+              <h4>IDENTIFICAÇÃO</h4>
+
+              <div class="col-12 col-lg-5 p-0">
+                <mat-form-field appearance="outline" class="mt-3 col-12 p-0 pe-0 pe-md-0">
+                  <mat-label>Digite aqui seu CPF ou CNPJ</mat-label>
+                  <input class="input-field" matInput [mask]="cpfCnpjmask" type="text" name="userId" id="userId"
+                    [(ngModel)]="cadastroRequestDTO.documento" formControlName="userId" maxlength="18"
+                    (ngModelChange)="applyMaskCpfCnpj(cadastroRequestDTO.documento)" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-12 p-0 pe-0 pe-md-0">
+                  <mat-label>Digite aqui seu e-mail</mat-label>
+                  <input class="input-field" matInput type="text" name="email" id="email" [(ngModel)]="cadastroRequestDTO.email"
+                    formControlName="email" maxlength="250" required>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-12 p-0 pe-0 pe-md-0">
+                  <mat-label>Confirme seu e-mail</mat-label>
+                  <input class="input-field" matInput type="text" name="confirmEmail" id="confirmEmail" blockPaste
+                    formControlName="confirmEmail" [errorStateMatcher]="matcher" maxlength="250" required>
+                </mat-form-field>
+                <!-- <div class="col-12 p-0 pe-0 pe-md-0 mb-3">
+                                  <ngx-recaptcha2 #captchaElem [siteKey]="siteKey" formControlName="recaptcha"
+                                      class="input-field" (success)="handleSuccess($event)"></ngx-recaptcha2>
+                              </div> -->
+              </div>
+
+              <div class="col-12 col-lg-5 boxFormPolitica">
+                <div class="pe-0 ps-0 text-box-term-politic">Ao cadastrar-se, você aceita nossa
+                  <a href="https://www.elektro.com.br/sobre-a-elektro/aviso-de-privacidade-clientes"
+                    target="_blank" rel="noopener">Política de
+                    privacidade.</a>
+                </div>
+              </div>
+
+              <div class="row pe-3 ps-3 d-flex justify-content-between justify-content-md-start m-buttons">
+
+                  <button type="button" class="btn btn-outline-secondary btn-forget-password me-md-3 m-0" title="Voltar"
+                    (click)="voltar(0)">VOLTAR</button>
+
+
+                  <button type="button" [disabled]="identificationFormGroup.hasError('notSame')"
+                    class="btn btn-primary-p-light-green btn-forget-password me-md-3 m-0" (click)="continuar(2)"
+                    title="Continuar">CONTINUAR</button>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- Doc com problema -->
+      <div class="full-height" *ngIf="indexPage == 7">
+        <div class="row justify-content-center">
+          <div class="col-8">
+            <div class="d-flex justify-content-center m-4">
+              <img class="img-custom" src="assets/images/woman_warning_orange.svg" alt="">
+            </div>
+            <h3 class="text-center mb-4 d-flex flex-nowrap justify-content-center color-orange">CPF/CNPJ já cadastrado.
+            </h3>
+            <div class="row justify-content-center">
+              <div class="col-8">
+                <p class="text-center texto-alert mb-4">Verificamos que o CPF/CNPJ já está cadastrado.
+                  Faça seu login e, se tiver dificuldades, você pode recuperar sua senha ou pedir ajuda pelo
+                  nosso WhatsApp.</p>
+              </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+              <button class="btn btn-outline-secondary btn-voltar-register" (click)="stepper.reset(); voltar(1)">
+                VOLTAR
+              </button>
+              <button class="btn btn-outline-secondary btn-voltar-register" (click)="redirectLogin()">
+                FAZER LOGIN
+              </button>
+              <button class="btn btn-outline-secondary btn-voltar-register" (click)="redirectForgetPassword()">
+                RECUPERAR SENHA
+              </button>
+              <button class="btn btn-outline-secondary btn-voltar-register" (click)="redirectWhatsapp()">
+                DÚVIDAS WHATSAPP
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doc com problema -->
+      <div class="full-height teste" *ngIf="indexPage == 8">
+        <div class="row justify-content-center">
+          <div class="col-8">
+            <div class="d-flex justify-content-center m-4">
+              <img class="img-custom" src="assets/images/contato.svg" alt="">
+            </div>
+            <h3 class="text-center mb-4 d-flex flex-nowrap justify-content-center">Sua empresa é uma
+              imobiliária?</h3>
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-12">
+                <p class="text-center texto-alert mb-4">Estamos vendo que você está se cadastrando para ter acesso ao
+                  perfil
+                  de uma empresa. Esta empresa é uma imobiliária?</p>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center mb-3">
+              <button class="btn btn-outline-secondary btn-voltar me-3" (click)="stepper.reset(); voltar(1)">
+                VOLTAR
+              </button>
+              <button class="btn btn-outline-secondary btn-voltar me-3" (click)="continuar(9)">
+                SIM
+              </button>
+              <button class="btn btn-outline-secondary btn-voltar" (click)="continuar(10)">
+                NÃO
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doc com problema -->
+      <div class="full-height" *ngIf="indexPage == 9">
+        <div class="col-12 p-0 content-white">
+          <div class="box-forget-password form-group d-flex flex-wrap justify-content-around">
+            <div class="col-12 p-0  content-space">
+              <h2 class="mb-4">Cadastro de imobiliária</h2>
+
+              <p class="col-12 col-md-12 col-lg-8 email-register-imobiliaria">Para cadastrar um perfil de imobiliária, você deve enviar um
+                e-mail para
+                <span style="color: #00A443;">cliente@elektro.com.br</span> com o assunto:
+                ATIVAR CADASTRO E ACESSO AO SITE – NOME DA EMPRESA.
+              </p>
+
+              <span class="col-8 email-register-imobiliaria">
+                <strong>O e-mail deve conter:</strong><br />
+                • Nome do solicitante; <br />
+                • CPF do solicitante; <br />
+                • Data de Nascimento do solicitante; <br />
+                • Telefone de contato; <br />
+                • Celular de contato; <br />
+                • E-mail de contato; <br />
+                • E-mail que será utilizado no login; <br />
+                • Nome da imobiliária; <br />
+                • Número Creci; <br />
+                • Endereço completo da imobiliária; <br />
+                • Anexo do comprovante de contrato social; <br />
+                • Anexo do contrato social (se possuir); <br />
+                • Anexo do Cartão do CNPJ; <br />
+                • Anexos do RG e CPF do representante legal; <br />
+              </span>
+
+              <div class="row pe-3 ps-3 d-flex justify-content-between justify-content-md-start m-buttons">
+
+                  <button type="button" class="btn btn-outline-secondary btn-forget-password me-md-3 m-0" title="Voltar"
+                    (click)="voltar(8)">VOLTAR</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Doc com problema -->
+      <div class="full-height" *ngIf="indexPage == 10">
+        <div class="col-12 p-0 content-white">
+          <div class="box-forget-password form-group d-flex flex-wrap justify-content-around">
+            <div class="col-12 p-0  content-space">
+              <h2 class="mb-4">Cadastro de empresa</h2>
+
+              <p class="col-12 col-md-12 col-lg-8 email-register-imobiliaria email-register-imobiliaria">Para cadastrar um perfil de empresa, você deve enviar um
+                e-mail para
+                <span style="color: #00A443;">cliente@elektro.com.br</span> com o assunto:
+                ATIVAR CADASTRO E ACESSO AO SITE – NOME DA EMPRESA.
+              </p>
+
+              <span class="col-8 email-register-imobiliaria">
+                <strong>O e-mail deve conter:</strong><br />
+                • Nome do solicitante; <br />
+                • CPF do solicitante; <br />
+                • Data de Nascimento do solicitante; <br />
+                • Telefone de contato; <br />
+                • Celular de contato; <br />
+                • E-mail de contato; <br />
+                • E-mail que será utilizado no login; <br />
+                • Anexo do comprovante de contrato social; <br />
+                • Anexo do Cartão do CNPJ; <br />
+                • Anexos do RG e CPF do representante legal; <br />
+                • Anexo do cadastro do CADESP (para propriedades rurais). <br />
+              </span>
+
+              <div class="row pe-3 ps-3 d-flex justify-content-between justify-content-md-start m-buttons">
+
+                  <button type="button" class="btn btn-outline-secondary btn-forget-password me-md-3 m-0" title="Voltar"
+                    (click)="voltar(8)">VOLTAR</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="personalDataFormGroup" class="matStepLabel" label="Dados Pessoais" state="edit">
+      <form [formGroup]="personalDataFormGroup" class="full-height" *ngIf="indexPage == 2">
+        <div class="col-12 p-0 content-white">
+          <div class="box-forget-password form-group d-flex flex-wrap justify-content-around">
+            <div class="col-12 content-space">
+              <h2 class="mb-4">Passo 2 de 4</h2>
+
+              <p class="mb-4">Pode nos contar mais sobre você? Preencha abaixo os seus dados pessoais.</p>
+
+              <h4>DADOS PESSOAIS</h4>
+
+              <div class="row m-0">
+                <div class="col-12 col-lg-5 col-md-6 form-field-name mt-3 ps-0 pe-0 pe-md-0">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Nome Completo</mat-label>
+                    <input matInput type="text" name="fullName" id="fullName" [(ngModel)]="cadastroRequestDTO.nome"
+                      formControlName="fullName" maxlength="250" required>
+                  </mat-form-field>
+                </div>
+                <div class="col-12 col-lg-4 col-md-6 p-0 ps-md-2">
+                  <p class="mt-md-4 mt-0 text-name">É necessário preencher os dados como estão escritos no seu
+                    documento.</p>
+                </div>
+              </div>
+
+              <div class="row m-0">
+                <div class="col-lg-3 col-md-4 p-0">
+
+                  <mat-form-field appearance="outline" class="col-12 p-0">
+                    <mat-label>Selecione o documento</mat-label>
+                    <mat-select [(ngModel)]="tipoDocSecundario" formControlName="tipoDocSecundario">
+                      <mat-option value="RG">RG</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-lg-3 col-md-4 p-0">
+                  <mat-form-field appearance="outline" class="col-12 p-0 ps-md-2" [hideRequiredMarker]="true">
+                    <mat-label>Data de Nascimento</mat-label>
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="cadastroRequestDTO.dataNascimento" style="cursor: pointer"
+                      (focus)="picker?.open()" readonly formControlName="birthDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                </div>
+
+                <div class="col-lg-3 col-md-4 p-0">
+                  <mat-form-field appearance="outline" class="col-12 p-0 ps-md-2">
+                    <mat-label>Celular</mat-label>
+                    <input class="input-field" matInput type="text" name="tel" id="tel" [mask]="telMask"
+                      [(ngModel)]="cadastroRequestDTO.celular" formControlName="tel"
+                      (ngModelChange)="applyMaskTel(cadastroRequestDTO.celular, $event)" required>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row m-0">
+                <div class="col-lg-3 col-md-4 p-0">
+                  <mat-form-field appearance="outline" class="col-12 p-0">
+                    <mat-label>Número do RG</mat-label>
+                    <input matInput type="text" name="rg" id="rg" [(ngModel)]="cadastroRequestDTO.docSecundario" formControlName="rg"
+                      maxlength="250" required>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div class="row pe-3 ps-3 d-flex justify-content-between justify-content-md-start m-buttons">
+
+                  <button type="button" class="btn btn-outline-secondary btn-forget-password me-md-3 m-0" matStepperPrevious
+                    title="Voltar" (click)="voltar(1)">VOLTAR</button>
+
+                  <button type="button" [disabled]="personalDataFormGroup.hasError('notSame')"
+                    class="btn btn-primary-p-light-green btn-forget-password me-md-3 m-0" (click)="continuar(3)"
+                    title="Continuar">CONTINUAR</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="passwordFormGroup" class="matStepLabel" label="Senha" state="edit">
+      <form [formGroup]="passwordFormGroup" class="full-height" *ngIf="indexPage == 3">
+        <div class="col-12 p-0 content-white">
+          <div class="box-forget-password form-group d-flex flex-wrap justify-content-around">
+            <div class="col-12 content-space">
+              <h2 class="mb-4">Passo 3 de 4</h2>
+
+              <p class="mb-4">Pronto! Agora para sua segurança, vamos criar uma nova senha de acesso.</p>
+
+              <h4>CRIE SUA NOVA SENHA DE ACESSO</h4>
+
+              <form class="form-group" role="form" ngNativeValidate>
+                <app-validar-senhas class="col-12 col-xl-12" [documento]="cadastroRequestDTO.documento" (senhaValidada)="getPassword($event)">
+                </app-validar-senhas>
+              </form>
+
+              <div class="row d-flex pe-3 ps-3 justify-content-between justify-content-md-start m-buttons">
+                  <button class="btn btn-outline-secondary btn-forget-password me-md-3 m-0" matStepperPrevious (click)="voltar(2)">
+                    VOLTAR
+                  </button>
+
+                  <button type="button" [disabled]="cadastroRequestDTO.senha == null"
+                    class="btn btn-primary-p-light-green btn-forget-password me-md-3 m-0"
+                    (click)="continuar(4)" title="Continuar">CONTINUAR</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="validationFormGroup" class="matStepLabel" label="Validação" state="edit">
+      <form [formGroup]="validationFormGroup" class="full-height" *ngIf="indexPage == 4">
+        <div class="col-12 p-0 content-white">
+          <div class="box-forget-password form-group d-flex flex-wrap justify-content-around">
+            <div class="col-12 content-space">
+              <h2 class="mb-4">Passo 4 de 4</h2>
+
+              <p class="mb-4">Precisamos confirmar o seu cadastro. Como você deseja receber o link para
+                confirmação?
+              </p>
+
+              <h4>POR ONDE DESEJA RECEBER O LINK DE CONFIRMAÇÃO?</h4>
+
+              <mat-radio-group class="col-12" [(ngModel)]="optionConfirmation" formControlName="optionConfirmation">
+                <div class="d-flex justify-content-center flex-wrap">
+                  <div class="col-12 d-flex flex-nowrap align-radio-btn">
+                    <mat-radio-button id="email" name="email" value="email" (click)="sendOptionConfirmation('email')"
+                      class="format-info-radio-btn">
+                      <strong>E-mail</strong>
+                      <div>{{ email }}</div>
+                    </mat-radio-button>
+                  </div>
+                  <div class="col-12 d-flex flex-nowrap align-radio-btn">
+                    <mat-radio-button id="sms" name="sms" value="sms" (click)="sendOptionConfirmation('sms')"
+                      class="format-info-radio-btn">
+                      <strong>SMS</strong>
+                      <div>{{ sms }}</div>
+                    </mat-radio-button>
+                  </div>
+                </div>
+              </mat-radio-group>
+
+              <div class="row d-flex pe-3 ps-3 justify-content-between justify-content-md-start m-buttons">
+
+                  <button type="button" class="btn btn-outline-secondary btn-forget-password me-md-3 m-0" (click)="voltar(3)"
+                    title="Voltar" matStepperPrevious>VOLTAR</button>
+
+                  <button type="button" class="btn btn-primary-p-light-green btn-forget-password me-md-3 m-0" title="Continuar"
+                    (click)="newRegister()" [disabled]="!optionConfirmation">CONTINUAR</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- CADASTRADO COM SUCESSO -->
+      <div class="full-height" *ngIf="indexPage == 5">
+        <div class="row justify-content-center">
+          <div class="col-8">
+            <div class="d-flex justify-content-center m-4">
+              <img class="img-custom" src="assets/images/man_success.svg" alt="">
+            </div>
+            <h3 class="text-center mb-4 d-flex flex-nowrap justify-content-center">Seja bem-vindo(a)!</h3>
+            <p class="text-center texto-alert mb-4" style="text-transform: none !important">Agora você tem acesso a
+              todos os nossos serviços digitais.</p>
+            <div class="d-flex justify-content-center m-buttons">
+              <button class="btn btn-primary-p-light-green btn-continuar" (click)="newRegisterSuccess()">
+                CONTINUAR
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  Problema na solicitação -->
+      <div class="full-height" *ngIf="indexPage == 6">
+        <div class="row justify-content-center">
+          <div class="col-8">
+            <div class="d-flex justify-content-center m-4">
+              <img class="img-custom" src="assets/images/woman_warning_orange.svg" alt="">
+            </div>
+            <h3 class="text-center mb-4 d-flex flex-nowrap justify-content-center color-orange">Tivemos um problema com
+              seu cadastro.</h3>
+            <p class="text-center texto-alert mb-4" style="text-transform: none !important">Um erro inesperado
+              aconteceu, vamos tentar novamente?</p>
+            <div class="d-flex justify-content-center m-buttons">
+              <button class="btn btn-outline-secondary btn-continuar margin-bottom"
+                (click)="stepper.reset(); voltar(1)">
+                TENTAR NOVAMENTE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>

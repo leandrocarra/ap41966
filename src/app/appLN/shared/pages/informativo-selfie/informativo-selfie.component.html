@@ -1,0 +1,38 @@
+<div class="d-flex flex-wrap">
+    <div class="col-xl-6 col-lg-7 col-md-12 col-12 p-0">
+        <h2 class="titulo mb-5">Agora tire uma selfie para verificarmos que é você mesmo!</h2>
+
+        <mat-list class="p-0 mt-5 mb-5">
+            <mat-list-item>
+                <img src="../../../../../assets/assetsLN/images/sol.svg" alt="Boa Iluminação" class="lista">
+                <h6 class="listItem texto text-left"> Procure um lugar com boa iluminação.</h6>
+            </mat-list-item>
+
+            <mat-list-item>
+                <img src="../../../../../assets/assetsLN/images/oculos.svg" alt="Acessórios" class="lista">
+                <h6 class="listItem texto text-left"> Não utilize óculos ou acessórios.</h6>
+            </mat-list-item>
+
+            <mat-list-item>
+                <img src="../../../../../assets/assetsLN/images/rosto_livre.svg" alt="Rosto livre" class="lista">
+                <h6 class="listItem texto text-left">Tire o cabelo do rosto, e deixei o rosto livre. </h6>
+            </mat-list-item>
+        </mat-list>
+
+        <div class="mb-5 d-flex justify-content-between justify-content-md-start">
+            <div class="pe-md-3">
+                <button type="button" class="btn btn-outline-secondary" title="voltar"
+                    (click)="voltar()">VOLTAR</button>
+            </div>
+            <div class="">
+                <button type="button" class="btn btn-primary-green" title="Avançar" (click)="tirarSelfie()">TIRAR
+                    SELFIE</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-xl-6" *ngIf="!mobile">
+        <img src="../../../../../assets/assetsLN/images/selfie.svg" alt="Informativo Selfie" class="img-selfie">
+    </div>
+</div>

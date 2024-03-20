@@ -1,0 +1,73 @@
+[
+    {
+        "dicaContaBancaria": "Digite o n&uacute;mero da conta corrente sem digitos.",
+        "nomeAbreviadoBanco": "BANCO DO BRASIL",
+        "nomeCompletoBanco": "BANCO DO BRASIL SA",
+        "numeroBanco": "001",
+        "numeroCaracteresContaBancaria": "8",
+        "numeroCaracteresDigitoContaBancaria": "0"
+    },
+    {
+        "nomeAbreviadoBanco": "BANCO INTER S.A",
+        "nomeCompletoBanco": "BANCO INTER S.A",
+        "numeroBanco": "077",
+        "numeroCaracteresContaBancaria": "7",
+        "numeroCaracteresDigitoContaBancaria": "1"
+    },
+    {
+        "nomeAbreviadoBanco": "BANCO ITAU",
+        "nomeCompletoBanco": "BANCO ITAU S A",
+        "numeroBanco": "341",
+        "numeroCaracteresContaBancaria": "5",
+        "numeroCaracteresDigitoContaBancaria": "1"
+    },
+    {
+        "nomeAbreviadoBanco": "BANCO ORIGINAL S.A",
+        "nomeCompletoBanco": "BANCO ORIGINAL S.A",
+        "numeroBanco": "212",
+        "numeroCaracteresContaBancaria": "6",
+        "numeroCaracteresDigitoContaBancaria": "1"
+    },
+    {
+        "nomeAbreviadoBanco": "BCO.MERCANTIL BRASIL",
+        "nomeCompletoBanco": "BANCO MERCANTIL DO BRASIL S A",
+        "numeroBanco": "389",
+        "numeroCaracteresContaBancaria": "8",
+        "numeroCaracteresDigitoContaBancaria": "1"
+    },
+    {
+        "dicaContaBancaria": "<b>Digite o numero da conta com 7 caracteres( se necessario, preencher zero a esquerda). Preencha 1 caracter no campo Digito.",
+        "nomeAbreviadoBanco": "BRADESCO.",
+        "nomeCompletoBanco": "BANCO BRADESCO SA",
+        "numeroBanco": "237",
+        "numeroCaracteresContaBancaria": "7",
+        "numeroCaracteresDigitoContaBancaria": "1"
+    },
+    {
+        "nomeAbreviadoBanco": "CAIXA ECONOMICA",
+        "nomeCompletoBanco": "CAIXA ECONOMICA FEDERAL",
+        "numeroBanco": "104",
+        "numeroCaracteresContaBancaria": "11",
+        "numeroCaracteresDigitoContaBancaria": "1"
+    },
+    {
+        "nomeAbreviadoBanco": "CITIBANK",
+        "nomeCompletoBanco": "CITIBANK S/A",
+        "numeroBanco": "745"
+    },
+    {
+        "dicaContaBancaria": "<b>Inserir o tipo da conta com 2 caracteres antes do numero da conta corrente, com 6 caracteres.",
+        "nomeAbreviadoBanco": "SANTANDER",
+        "nomeCompletoBanco": "BANCO SANTANDER (BRASIL) S.A.",
+        "numeroBanco": "033",
+        "numeroCaracteresContaBancaria": "8",
+        "numeroCaracteresDigitoContaBancaria": "1"
+    },
+    {
+        "nomeAbreviadoBanco": "SICREDI",
+        "nomeCompletoBanco": "BANCO COOPERATIVO SICREDI S.A.",
+        "numeroBanco": "748",
+        "numeroCaracteresContaBancaria": "5",
+        "numeroCaracteresDigitoContaBancaria": "1"
+    }
+]

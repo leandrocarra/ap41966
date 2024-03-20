@@ -1,0 +1,98 @@
+#container-grafico-autoleitura {
+    border: solid 1px var(--neo-dark-gray);
+    border-radius: 6px;
+    background-color: var(--neo-white);
+    padding-top: 10px;
+}
+
+#titulo-grafico-autoleitura {
+    color: var(--neo-dark-gray);
+    font-weight: 500;
+}
+
+#divider {
+    border-color: var(--neo-dark-gray);
+}
+
+.termos-de-uso {
+    font-weight: normal;
+
+    p {
+        color: var(--neo-dark-gray);
+    }
+
+    a {
+        color: var(--neo-dark-blue);
+    }
+}
+
+.confirma-leitura {
+    font-weight: 500;
+    color: var(--neo-dark-gray);
+    margin: auto 0;
+
+    mat-divider {
+        border-top-color: var(--neo-light-gray);
+    }
+}
+
+.text-distance {
+    text-align: end;
+
+    font-weight: normal;
+}
+
+#lista-autoleituras {
+    .dados {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+
+.text-attention {
+    font-weight: bold;
+    color: red;
+    padding-top: 1.5rem;
+    margin: 0;
+}
+
+#text-periodo {
+    font-weight: normal;
+
+    .periodo {
+        color: red;
+    }
+
+    p {
+        color: var(--neo-dark-gray);
+    }
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: var(--neo-light-green) ;
+}
+
+:host ::ng-deep .mat-checkbox-layout {
+    white-space: normal;
+    word-wrap: break-word !important;
+}
+
+
+@media screen and (max-width: 576px) { // Extra Small
+    .material-icons-outlined {
+        margin: auto;
+        margin-bottom: 1rem;
+        font-size: 40px;
+        padding-right: 20px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .text-attention {
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+}

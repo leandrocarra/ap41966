@@ -1,0 +1,202 @@
+{
+    "CORRETO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "proprietario",
+                        "value": "ALONSO DE ALBUQUERQUE",
+                        "score": 1
+                    },
+                    {
+                        "name": "endereco",
+                        "value": "RUA JOÃO M. DE SOUZA, QD. 01, LT. 07\nJARDIM GOIAS\nRIO CLARO\n13505-511",
+                        "score": 1
+                    },
+                    {
+                        "name": "nome",
+                        "value": "",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "agua_num_medidor",
+                        "value": "A06A000011",
+                        "score": 0.99
+                    },
+                    {
+                        "name": "data_geracao",
+                        "value": "16/07/2013",
+                        "score": 1
+                    },
+                    {
+                        "name": "data_referencia",
+                        "value": "07/2013",
+                        "score": 1
+                    },
+                    {
+                        "name": "data_vencimento",
+                        "value": "22/07/2013",
+                        "score": 1
+                    },
+                    {
+                        "name": "valor_total",
+                        "value": "70.84",
+                        "score": 1
+                    },
+                    {
+                        "name": "agua_cons_atual",
+                        "value": "13",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep",
+                        "value": "13500000",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep_logradouro",
+                        "value": "AVENIDA M 55",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep_tipo_logradouro",
+                        "value": null,
+                        "score": null
+                    },
+                    {
+                        "name": "cep_bairro",
+                        "value": "RESIDENCIAL DAS FLORES",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep_cidade",
+                        "value": "RIO CLARO",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep_uf",
+                        "value": "SP",
+                        "score": 1
+                    }
+                ],
+                "deskewImage": "",
+                "docQuality": null,
+                "docQualityScore": 0.73,
+                "docType": "comprovante_residencia",
+                "pageIndex": 1,
+                "tables": [],
+                "tags": [
+                    "comprovante_residencia",
+                    "br-agua-saneago-1"
+                ]
+            }
+        ],
+        "requestId": "tLljkXDKP0i2cJANq1gwQ",
+        "elapsedMilliseconds": 5385,
+        "status": {
+            "message": "Success",
+            "code": "S100",
+            "errors": null
+        }
+    },
+    "INCORRETO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "proprietario",
+                        "value": "ALONSO DE ALBUQUERQUE",
+                        "score": 1
+                    },
+                    {
+                        "name": "endereco",
+                        "value": "RUA JOÃO M. DE SOUZA, QD. 01, LT. 07\nJARDIM GOIAS\nRIO CLARO\n13505-511",
+                        "score": 1
+                    },
+                    {
+                        "name": "nome",
+                        "value": "",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "agua_num_medidor",
+                        "value": "A06A000011",
+                        "score": 0.99
+                    },
+                    {
+                        "name": "data_geracao",
+                        "value": "16/07/2013",
+                        "score": 1
+                    },
+                    {
+                        "name": "data_referencia",
+                        "value": "07/2013",
+                        "score": 1
+                    },
+                    {
+                        "name": "data_vencimento",
+                        "value": "22/07/2013",
+                        "score": 1
+                    },
+                    {
+                        "name": "valor_total",
+                        "value": "70.84",
+                        "score": 1
+                    },
+                    {
+                        "name": "agua_cons_atual",
+                        "value": "13",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep",
+                        "value": "cep_invalido",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep_logradouro",
+                        "value": "AVENIDA M 55",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep_tipo_logradouro",
+                        "value": null,
+                        "score": null
+                    },
+                    {
+                        "name": "cep_bairro",
+                        "value": "RESIDENCIAL DAS FLORES",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep_cidade",
+                        "value": "cep_cidade_invalido",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep_uf",
+                        "value": "SP",
+                        "score": 1
+                    }
+                ],
+                "deskewImage": "",
+                "docQuality": null,
+                "docQualityScore": 0.73,
+                "docType": "comprovante_residencia_INCORRETO",
+                "pageIndex": 1,
+                "tables": [],
+                "tags": [
+                    "comprovante_residencia_INCORRETO",
+                    "br-agua-saneago-1"
+                ]
+            }
+        ],
+        "requestId": "tLljkXDKP0i2cJANq1gwQ",
+        "elapsedMilliseconds": 5385,
+        "status": {
+            "message": "Success",
+            "code": "S100",
+            "errors": null
+        }
+    }
+}

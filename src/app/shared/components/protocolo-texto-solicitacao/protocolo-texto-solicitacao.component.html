@@ -1,0 +1,19 @@
+<div class="card-protocolo">
+    <div *ngFor="let info of dados">
+        <h3 class="mt-4 titulo-protocolo-solicitacao">{{info.titulo}}</h3>
+        <p class="mt-3 texto-protocolo-solicitacao">{{info.texto}}</p>
+
+
+        <div *ngIf="!info.btnBaixar" class="d-flex justify-content-center">
+<!--             <app-neo-button clas="mt-3" [classes]="'btn-neoprimary'" [titleText]="info.titleText">
+            </app-neo-button> -->
+        </div>
+
+        <div *ngIf="info.btnBaixar" class="d-flex justify-content-center">
+            <button class="btn-neoprimary" style="align-items: center; display: flex;">
+              <span class="me-3 ms-3">{{info.titleText}}</span>
+              <span class="me-2 material-icons" style="vertical-align: middle;">get_app</span>
+            </button>
+          </div>
+    </div>
+</div>

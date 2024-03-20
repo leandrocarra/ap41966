@@ -1,0 +1,16 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.lista{
+    height:31px;
+    margin-right:15px;
+}
+
+:host ::ng-deep .mat-list-item-content{
+    padding:0px !important;
+}
+
+.img-selfie{
+    width: 100%;
+    right: 0;
+    margin-top: 15%;
+}

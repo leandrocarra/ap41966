@@ -1,0 +1,19 @@
+
+<div class="aviso col-12 col-lg-8">
+
+    <div>
+        <img alt="Imagem chamando atenção" src="assets/images/illustracao_erro.svg">
+        <h3>{{ aviso.titulo }}</h3>
+        <p>{{ aviso.texto }}</p>
+    </div>
+
+    <!-- botão de solicitar religação da tela de energia cortada -->
+    <div  *ngIf="aviso.escolha === 'energia-cortada'" [routerLink]="['/servicos/religacao']">
+        <app-neo-button class="me-3 m-0 ms-5 col-12" [classes]="'btn-neoprimary'"
+            [titleText]="'SOLICITAR RELIGAÇÃO'">
+        </app-neo-button>
+    </div>
+
+</div>
+
+

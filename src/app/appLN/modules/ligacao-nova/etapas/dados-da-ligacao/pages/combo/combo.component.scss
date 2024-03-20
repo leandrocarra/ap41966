@@ -1,0 +1,115 @@
+.combo {
+    background-color: var(--neo-background-white);
+    outline: 1px solid var(--neo-dark-green);
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+$asset-images-path: '^assets/images/';
+
+.combo-residencial-I {
+    @extend .combo;
+    background-image: url('#{$asset-images-path}res1on.svg');
+
+}
+
+.combo-residencial-II {
+    @extend .combo;
+    background-image: url('#{$asset-images-path}res2on.svg');
+
+}
+
+.combo-residencial-III {
+    @extend .combo;
+    background-image: url('#{$asset-images-path}res3on.svg');
+}
+
+.combo-residencial-IV {
+    @extend .combo;
+
+    background-image: url('#{$asset-images-path}res4on.svg');
+}
+
+.imgComboCalculadora {
+    background-image: url('#{$asset-images-path}CALC.svg');
+    background-color: var(--neo-background-white);
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+
+/*** imagem conjunto de equipamentos ***/
+
+.equipamentos-combo-I {
+    background-image: url('#{$asset-images-path}res1.svg');
+    background-color: var(--neo-background-white);
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.equipamentos-combo-II {
+    background-image: url('#{$asset-images-path}res2.svg');
+    background-color: var(--neo-background-white);
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.equipamentos-combo-III {
+    background-image: url('#{$asset-images-path}res3.svg');
+    background-color: var(--neo-background-white);
+    background-repeat: no-repeat;
+    border-radius: 5px;
+
+}
+
+.equipamentos-combo-IV {
+    background-image: url('#{$asset-images-path}res4.svg');
+    background-color: var(--neo-background-white);
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.imgComboCalculadora {
+    background-image: url('#{$asset-images-path}CALC.svg');
+    background-color: var(--neo-background-white);
+    background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+
+/*** hover ***/
+
+.equipamentos-combo-I:hover {
+    outline: 1px solid var(--neo-dark-green);
+    background-color: var(--neo-background-white);
+    cursor: pointer;
+}
+
+.equipamentos-combo-II:hover {
+    outline: 1px solid var(--neo-dark-green);
+    background-color: var(--neo-background-white);
+    cursor: pointer;
+}
+
+.equipamentos-combo-III:hover {
+    outline: 1px solid var(--neo-dark-green);
+    background-color: var(--neo-background-white);
+    cursor: pointer;
+}
+
+.equipamentos-combo-IV:hover {
+    outline: 1px solid var(--neo-dark-green);
+    background-color: var(--neo-background-white);
+    cursor: pointer;
+}
+
+.imgComboCalculadora:hover {
+    outline: 1px solid var(--neo-dark-green);
+    background-color: var(--neo-background-white);
+    cursor: pointer;
+}
+
+.imgComboSize{
+    width: 10.75rem;
+    height: 20.5rem;
+}

@@ -1,0 +1,25 @@
+.dialog-termos-de-uso {
+  padding: 3rem;
+}
+
+.titulo {
+  padding-bottom: 2rem;
+  padding-top: 0.5rem;
+  text-align: center;
+  color: black;
+  font-weight: 500;
+}
+
+.lista-de-termos {
+  max-height: 60vh;
+  overflow-y: scroll;
+  padding: 0.5rem;
+  font-weight: normal;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 425px) {
+  .dialog-termos-de-uso {
+    padding: 3rem 1rem 3rem 1rem;
+  }
+}

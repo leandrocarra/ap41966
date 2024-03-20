@@ -1,0 +1,36 @@
+.dados-cadastrados {
+    .item-dado-cadastrado {
+        display: flex;
+        border-bottom: 1px solid var(--neo-light-gray);
+        padding: 10px 0;
+        justify-content: space-between;
+        text-align: left;
+        font-weight: 400;
+        :nth-child(1) {
+            color: var(--neo-dark-gray);
+        }
+        :nth-child(2) {
+            color: var(--neo-dark-gray-2);
+        }
+    }
+
+    .legenda-dado-cadastrado {
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}
+
+.termo-de-entrega {
+    display: flex;
+    align-items: center;
+
+    mat-checkbox {
+        margin-right: 5px;
+    }
+}
+
+.text-termo {
+    margin-left: 1.0rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}

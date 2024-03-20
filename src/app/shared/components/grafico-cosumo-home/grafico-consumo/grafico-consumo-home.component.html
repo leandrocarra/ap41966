@@ -1,0 +1,192 @@
+<div class="toggle-history">
+    <mat-card-title>
+        <span>Histórico de consumo</span>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <div class="row d-flex justify-content-between pe-3 ps-3 mb-4">
+        <div class="justify-content-end d-flex flex-wrap ms-auto mt-4 md-md-0">
+            <div class="d-flex align-items-center w-100 justify-content-end flex-wrap">
+                <span class="me-2 select-text">Selecionar o tipo:</span>
+                <mat-button-toggle-group
+                    [(ngModel)]="tipoGrafico"
+                    (change)="mudarVisualizacao()"
+                    color="primary"
+                    name="tipoGrafico"
+                    aria-label="Grafico por consumo ou valor."
+                >
+                    <mat-button-toggle value="kWh">em kWh</mat-button-toggle>
+                    <mat-button-toggle value="rs">em R$</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+        </div>
+    </div>
+
+    <ng-container>
+        <div class="custom-canvas">
+            <div id="canvas-consumos">
+                <canvas #barChart></canvas>
+            </div>
+            <div class="col-12 hist-legenda">
+                <div class="hist-consumo">
+                    Consumo
+                </div>
+                <div class="hist-consumo-atual">
+                    Consumo atual
+                </div>
+                <div class="hist-media">
+                    Média de valor da fatura
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+<ng-container *ngIf="rota != '/home'">
+    <div class="mb-4">
+        <mat-divider></mat-divider>
+    </div>
+
+    <div class="row valores-consumo">
+        <!-- mês anterior -->
+        <div class="col-12 col-md-4 d-flex">
+            <div class="consumo">
+                <p class="bold titulo mes-anterior-color">CONSUMO ATUAL</p>
+                <div class="flex quadro-consumo">
+                    <span
+                        class="material-icons-outlined clock mes-anterior-color"
+                        >schedule</span
+                    >
+                    <div class="consumo-info">
+                        <div class="bold valor">
+                            {{ ultimaLeitura.consumoKw + " kWh" }}
+                        </div>
+                        <div class="subtitle-valor-consumo">
+                            {{
+                                cleanDate(
+                                    regiao === "SE"
+                                        ? ultimaLeitura.especificacao[0]
+                                              .dataLeitura
+                                        : ultimaLeitura.dataLeitura
+                                ).toLocaleDateString("pt-br", {
+                                    month: "long"
+                                }) +
+                                    "/" +
+                                    cleanDate(
+                                        regiao === "SE"
+                                            ? ultimaLeitura.especificacao[0]
+                                                  .dataLeitura
+                                            : ultimaLeitura.dataLeitura
+                                    ).toLocaleDateString("pt-br", {
+                                        year: "numeric"
+                                    }) | titlecase
+                            }}
+                        </div>
+                    </div>
+                </div>
+                <div class="media">
+                    <span
+                        >{{ ultimaLeitura.mediaDiaria }}kWh - média diária</span
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- menor consumo -->
+        <div class="col-12 col-md-4 d-flex justify-content-center">
+            <div class="consumo">
+                <p class="bold titulo menor-consumo-color">MENOR CONSUMO</p>
+                <div class="flex quadro-consumo">
+                    <span
+                        class="material-icons-outlined clock menor-consumo-color"
+                        >schedule</span
+                    >
+                    <div class="consumo-info">
+                        <div class="bold valor">
+                            {{
+                                cleanDate(
+                                    regiao === "SE"
+                                        ? menorLeitura.especificacao[0]
+                                              .dataLeitura
+                                        : menorLeitura.dataLeitura
+                                ).toLocaleDateString("pt-br", {
+                                    month: "long"
+                                }) +
+                                    "/" +
+                                    cleanDate(
+                                        regiao === "SE"
+                                            ? menorLeitura.especificacao[0]
+                                                  .dataLeitura
+                                            : menorLeitura.dataLeitura
+                                    ).toLocaleDateString("pt-br", {
+                                        year: "numeric"
+                                    }) | titlecase
+                            }}
+                        </div>
+                        <div class="subtitle-valor-consumo">
+                            {{
+                                menorLeitura.consumoKw +
+                                    " kWh (-" +
+                                    diferencaPercentualMenorConsumo +
+                                    "%)"
+                            }}
+                        </div>
+                    </div>
+                </div>
+                <div class="media">
+                    <span
+                        >{{ menorLeitura.mediaDiaria }}kWh - média diária</span
+                    >
+                </div>
+            </div>
+        </div>
+
+        <!-- maior consumo -->
+        <div class="col-12 col-md-4 d-flex justify-content-end">
+            <div class="consumo">
+                <p class="bold titulo maior-consumo-color">MAIOR CONSUMO</p>
+                <div class="flex quadro-consumo">
+                    <span
+                        class="material-icons-outlined clock maior-consumo-color"
+                        >schedule</span
+                    >
+                    <div class="consumo-info">
+                        <div class="bold valor">
+                            {{
+                                cleanDate(
+                                    regiao === "SE"
+                                        ? maiorLeitura.especificacao[0]
+                                              .dataLeitura
+                                        : maiorLeitura.dataLeitura
+                                ).toLocaleDateString("pt-br", {
+                                    month: "long"
+                                }) +
+                                    "/" +
+                                    cleanDate(
+                                        regiao === "SE"
+                                            ? maiorLeitura.especificacao[0]
+                                                  .dataLeitura
+                                            : maiorLeitura.dataLeitura
+                                    ).toLocaleDateString("pt-br", {
+                                        year: "numeric"
+                                    }) | titlecase
+                            }}
+                        </div>
+                        <div class="subtitle-valor-consumo">
+                            {{
+                                maiorLeitura.consumoKw +
+                                    " kWh (+" +
+                                    diferencaPercentualMaiorConsumo +
+                                    "%)"
+                            }}
+                        </div>
+                    </div>
+                </div>
+                <div class="media">
+                    <span
+                        >{{ maiorLeitura.mediaDiaria }}kWh - média diária</span
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

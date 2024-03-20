@@ -1,0 +1,19 @@
+<h4 tabindex="0" class="mb-2 titulo">Agora precisamos de alguns documentos!</h4>
+
+<div class="p-4 mb-5 alert-documento">
+    Você pode tirar uma foto ou carregar o documento.
+    Se optar pelo carregamento, o documento deve estar no formato .JPG, .JPEG ou .PNG!
+</div>
+
+<app-box-file class="memd-3 m-0" [documentoLabel]="'DOCUMENTO DE RESPONSABILIDADE TÉCNICA'" (arquivoAnexado)="recebeAnexos($event)"
+    (arquivoRemovido)="removeAnexo($event)">
+</app-box-file>
+
+<div class="d-flex mt-5 justify-content-between justify-content-md-start">
+    <app-neo-button class="me-0 me-md-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+    <app-neo-button [classes]="'btn-neoprimary'"
+        [titleText]="'CONTINUAR'" (callFunction)='continuar()' [isDisabled]="myFiles.length <= 0">
+    </app-neo-button>
+</div>

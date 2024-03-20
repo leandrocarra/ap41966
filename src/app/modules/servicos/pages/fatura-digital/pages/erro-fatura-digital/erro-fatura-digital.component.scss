@@ -1,0 +1,28 @@
+.aviso {
+    margin: auto;
+    text-align: center;
+    padding: 0 !important;
+
+    img {
+        width: stretch;
+        max-height: 350px;
+        max-width: 350px;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    h3 {
+        color: var(--neo-pure-red);
+        font-weight: bold;
+    }
+
+    p {
+        margin-top: 1rem;
+        color: var(--neo-dark-gray);
+        font-size: 1rem;
+    }
+}
+
+
+
+

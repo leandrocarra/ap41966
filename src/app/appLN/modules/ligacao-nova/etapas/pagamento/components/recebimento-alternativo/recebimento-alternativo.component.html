@@ -1,0 +1,75 @@
+<form [formGroup]="formaRecebimentoFormGroup" id="black-and-white-input-1">
+    <div class="row mt-3 m-0 form-area">
+        <div class="row col-12">
+            <h6 class="subtitulo">Informações</h6>
+        </div>
+        <div class="form-row row col-12">
+            <div class="col-md-4 col-xl-3 col-12">
+                <mat-form-field appearance="outline" class="col-12 pe-md-2 pe-xl-0">
+                    <mat-label>CEP</mat-label>
+                    <input matInput placeholder="CEP*" type="text" name="cep" id="cep" formControlName="cep"
+                        mask="00000-000" (ngModelChange)="formToModel()" required>
+                    <a rel="noopener" class="linkCep" target="_blank"
+                        href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCepEndereco.cfm">Não sabe o
+                        CEP? </a>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-8 col-xl-7 col-12">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>ENDEREÇO</mat-label>
+                    <input matInput placeholder="ENDEREÇO*" id="endereco" type="text" (ngModelChange)="formToModel()"
+                        formControlName="endereco" name="endereco" required withoutNumber upperCase specialCharacters
+                        maxlength="100">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4 col-xl-2 col-12">
+                <mat-form-field appearance="outline" class="col-12 pe-md-2">
+                    <mat-label>NÚMERO</mat-label>
+                    <input matInput id="numero" type="text" name="numero" (ngModelChange)="formToModel()"
+                        formControlName="numero" placeholder="NÚMERO*" specialCharacters onlyNumber required>
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4 col-xl-3 col-12">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>COMPLEMENTO</mat-label>
+                    <input matInput id="complemento" type="text" (ngModelChange)="formToModel()"
+                        formControlName="complemento" name="complemento" placeholder="COMPLEMENTO" specialCharacters
+                        upperCase maxlength="100">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4 col-xl-3 col-12">
+                <mat-form-field appearance="outline" class="col-12 ps-md-2 ps-xl-0">
+                    <mat-label>BAIRRO</mat-label>
+                    <input matInput id="bairro" type="text" name="bairro" (ngModelChange)="formToModel()"
+                        formControlName="bairro" placeholder="BAIRRO*" required upperCase specialCharacters
+                        withoutNumber maxlength="100">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-8 col-xl-4 col-12">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>CIDADE</mat-label>
+                    <input type="text" matInput id="cidade" name="cidade" (ngModelChange)="formToModel()"
+                        formControlName="cidade" placeholder="CIDADE" required withoutNumber specialCharacters upperCase
+                        maxlength="100">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-4 col-xl-2 col-12">
+                <mat-form-field appearance="outline" class="col-12 ps-md-2 ps-xl-0 pe-xl-2">
+                    <mat-label>ESTADO</mat-label>
+                    <mat-select formControlName="estado" name="estado" (ngModelChange)="formToModel()" id="estado"
+                        required>
+                        <mat-option *ngFor="let estado of estados" [value]="estado.key">
+                            {{estado.key}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</form>

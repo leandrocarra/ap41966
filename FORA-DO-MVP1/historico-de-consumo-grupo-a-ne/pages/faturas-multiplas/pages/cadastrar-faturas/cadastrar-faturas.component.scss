@@ -1,0 +1,106 @@
+h2 {
+    color: var(--neo-dark-green);
+    letter-spacing: 0.56px;
+    line-height: 35px;
+    font-weight: bold;
+}
+
+h4 {
+    color: var(--neo-dark-gray);
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+}
+
+.container-cnpj {
+    border: solid 1px var(--neo-dark-gray);
+    border-radius: 6px;
+    padding: 10px;
+    background-color: var(--neo-white);
+}
+
+.t-color-dark-silver-200 {
+    color: var(--neo-dark-gray);
+}
+
+.t-cnpj-matriz {
+    text-align: end;
+    font-weight: 500;
+}
+
+.input-tipo-fatura {
+  background-color: var(--background-color);
+  outline: none;
+  color: black !important;
+  border: none;
+  border-bottom: 2px solid var(--neo-light-gray) !important;
+  width: 100%;
+}
+
+.alterar-email {
+  color: var(--neo-light-blue);
+  cursor: pointer;
+  text-align-last: end;
+}
+
+.tipo-email {
+  font-size: 1rem;
+  color: var(--neo-dark-gray);
+}
+
+.mat-form-field
+.mat-form-field-wrapper
+.mat-form-field-appearance-fill
+.mat-form-field-flex {
+background-color: var(--neo-white) !important;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: var(--neo-white) !important;
+  color: black !important;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+  background-color: var(--neo-white) !important;
+  color: black !important;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline, .mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline {
+  background-color: var(--neo-white) !important;
+  color: black !important;
+  opacity: 1 !important;
+}
+
+:host ::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+  background-color: var(--neo-white) !important;
+  opacity: 1 !important;
+}
+
+:host
+  ::ng-deep
+  .mat-form-field-appearance-legacy.mat-form-field-disabled
+  .mat-form-field-underline {
+  background-image: none !important;
+}
+
+.configuracao-input {
+  ::ng-deep .mat-form-field {
+    display: inline;
+  }
+
+  .mat-input-element {
+    padding-bottom: 0.375rem !important;
+  }
+}
+
+.configuracao-input {
+  ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+}
+
+::ng-deep .mat-datepicker-toggle-default-icon {
+  fill: var(--neo-dark-gray) !important;
+}

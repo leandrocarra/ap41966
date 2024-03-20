@@ -1,0 +1,35 @@
+<div>
+    <table>
+        <tbody>
+            <tr *ngFor="let cliente of dadosClientes">
+                <td>
+                    <div class="col-12 col-md-12 col-lg-12 box-clientes text-left">
+                        <div class="row d-flex justify-content-between cursor-pointer container-rows"
+                            (click)="clienteSelecionado(cliente)">
+
+                            <div class="col-12 col-md-12 col-lg-8 d-flex flex-wrap">
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-5 pb-md-0 pb-2">
+                                    <h6 class="documento-cliente-title pb-2">
+                                        {{tipoDocumento(cliente.documentoCliente)}}
+                                    </h6>
+                                    <div class="unidade-consumidora-value p-0">
+                                        {{documentoMask(cliente.documentoCliente)}}
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6 col-md-6  col-lg-7 ">
+                                    <h6 class="documento-cliente-title pb-2">
+                                        CLIENTE
+                                    </h6>
+                                    <div class="unidade-consumidora-value col-12 p-0">
+                                        {{cliente.nomeCliente}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

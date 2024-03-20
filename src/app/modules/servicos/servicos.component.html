@@ -1,0 +1,7 @@
+<div class="width-agencia mt-padrao">
+    <div *ngIf="user.breadcrumb">
+        <xng-breadcrumb></xng-breadcrumb>
+    </div>
+    <app-spinner class="h-100 block" *ngIf="loading.loading" [mensagem]="loading.textLabel"></app-spinner>
+    <router-outlet></router-outlet>
+</div>

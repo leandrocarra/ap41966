@@ -1,0 +1,92 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+@import "~leaflet/dist/leaflet.css";
+
+.box-endereco {
+	background: var(--neo-white);
+	border-radius: 10px;
+	margin: 1rem 0;
+	padding: 24px;
+	width: 100%;
+	max-width: 800px;
+	-webkit-box-shadow: 0 1px 5px -1px rgba(50, 50, 50, 0.3);
+	-moz-box-shadow: 0 1px 5px -1px rgba(50, 50, 50, 0.3);
+	box-shadow: 0 1px 5px -1px rgba(50, 50, 50, 0.3);
+}
+
+.link-cep {
+	position:absolute;
+	right: 0;
+}
+
+.info-anexo {
+	color: var(--neo-light-green);
+}
+
+#map {
+	height: 80%;
+	width: 100%;
+	min-height: 285px;
+}
+
+.box-endereco-max {
+	max-width: 100%;
+}
+
+.titulo2 {
+	color: var(--neo-light-green);
+	font-weight: bolder !important;
+}
+
+.table-row {
+    font-size: 1rem;
+}
+
+.table-row-ucs {
+	background-color: var(--background-color);
+	border: 10px solid var(--neo-white);
+	cursor: pointer;
+    font-size: .9rem;
+}
+
+.table-row-ucs:hover {
+	background-color: var(--neo-white-600);
+}
+
+.uc-selected {
+	background-color: var(--neo-light-green);
+	color: var(--neo-white);
+}
+
+.uc-selected:hover {
+	background-color: var(--neo-light-green);
+	color: var(--neo-white);
+}
+
+:host ::ng-deep .mat-radio-button .mat-radio-label {
+    margin-bottom: 0;
+}
+
+.table-row {
+    margin-left: 5px;
+}
+
+.header-endereco {
+    background-color: var(--neo-dark-green);
+    color: var(--neo-white);
+}
+
+.card-header {
+    background-color: transparent;
+}
+
+@media only screen and (max-width: 320px) {
+	.box-endereco {
+		padding: 12px;
+	}
+}
+
+@media only screen and (max-width: 425px) {
+	.table-row {
+		font-size: .7rem;
+	}
+}

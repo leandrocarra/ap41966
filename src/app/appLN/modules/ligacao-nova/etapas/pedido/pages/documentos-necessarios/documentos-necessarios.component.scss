@@ -1,0 +1,51 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.tamanho-fonte-texto {
+    font-size: 16px;
+}
+
+.cor-label-documento {
+    color: #828282;
+}
+
+.tamanho-imagem {
+    width: 20px;
+}
+
+.mensagem-tarifa-social {
+    color: #346a23;
+    font-weight: bolder;
+}
+
+.link-estilizado {
+    color: var(--neo-light-green);
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.info-doc {
+    color: var(--neo-light-green);
+    font-size: 14px;
+  }
+
+@media only screen and (min-width: 320px) {
+    .tamanho-fonte-texto {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .tamanho-fonte-texto {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .tamanho-fonte-texto {
+        font-size: 20px;
+    }
+}
+
+
+
+

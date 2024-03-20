@@ -1,0 +1,200 @@
+{
+    "VALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "num_nirf",
+                        "value": "05947880",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "nome_imovel_rural",
+                        "value": "FAZENDA OLHO D AGUA",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "municipio_imovel_rural",
+                        "value": "RIO CLARO",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "uf_imovel_rural",
+                        "value": "SP",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "area_total_imovel",
+                        "value": "52,0",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "contribuinte",
+                        "value": "MARIA FLAVIA",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "cpf_cnpj",
+                        "value": "96700905044",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "data_emissao",
+                        "value": "18/03/2060",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "data_validade",
+                        "value": "14/09/2060",
+                        "score": 0.81
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.81,
+                "docType": "certidao",
+                "pageIndex": 1,
+                "tags": [
+                    "certidao",
+                    "br-certificado-cadastro-imovel-rural-1"
+                ]
+            }
+        ],
+        "queryId": "REIMDXKVNBRREFXDDQPLZ",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "INVALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "num_nirf",
+                        "value": "05947880",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "nome_imovel_rural",
+                        "value": "FAZENDA OLHO D AGUA",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "municipio_imovel_rural",
+                        "value": "PLANALTO",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "uf_imovel_rural",
+                        "value": "BA",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "area_total_imovel",
+                        "value": "52,0",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "contribuinte",
+                        "value": "LEONITRO ALVES DE BRITO",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "cpf_cnpj",
+                        "value": "06968830582",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "data_emissao",
+                        "value": "18/03/2015",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "data_validade",
+                        "value": "14/09/2015",
+                        "score": 0.81
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.81,
+                "docType": "certidao",
+                "pageIndex": 1,
+                "tags": [
+                    "certidao",
+                    "INVALIDO-br-certificado-cadastro-imovel-rural-1"
+                ]
+            }
+        ],
+        "queryId": "REIMDXKVNBRREFXDDQPLZ",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "DATA_NULL": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "num_nirf",
+                        "value": "05947880",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "nome_imovel_rural",
+                        "value": "FAZENDA OLHO D AGUA",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "municipio_imovel_rural",
+                        "value": "PLANALTO",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "uf_imovel_rural",
+                        "value": "BA",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "area_total_imovel",
+                        "value": "52,0",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "contribuinte",
+                        "value": "LEONITRO ALVES DE BRITO",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "cpf_cnpj",
+                        "value": "06968830582",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "data_emissao",
+                        "value": null,
+                        "score": 0.81
+                    },
+                    {
+                        "name": "data_validade",
+                        "value": null,
+                        "score": 0.81
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.81,
+                "docType": "certidao",
+                "pageIndex": 1,
+                "tags": [
+                    "certidao",
+                    "INVALIDO-br-certificado-cadastro-imovel-rural-1"
+                ]
+            }
+        ],
+        "queryId": "REIMDXKVNBRREFXDDQPLZ",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

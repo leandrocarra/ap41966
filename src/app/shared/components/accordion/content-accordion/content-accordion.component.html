@@ -1,0 +1,82 @@
+<div class="row" id="content-accordion-fatura-{{indexFatura}}" *ngIf="fatura">
+	<div class="col-lg-6">
+		<div class="d-flex flex-wrap h-100">
+			<div class="w-100">
+				<h4 class=""> fatura de {{ mesReferencia }} </h4>
+
+				<span class="d-block color-dark-gray mt-3">Valor</span>
+				<span class="valor-fatura {{fatura.statusFatura}}">
+					{{ valorFatura(fatura.valorEmissao) }}
+				</span>
+
+				<div class="d-block mt-3">
+					<span class="d-inline">Vencimento:</span>
+					<span class="d-inline bold">
+						{{ fatura.dataVencimento | date: 'dd/MM/yyyy' }}
+					</span>
+				</div>
+
+				<div class="d-block mt-3">
+					<span class="d-inline">Situação:</span>
+					<span class="d-inline bold">
+						{{ getStatus(fatura.statusFatura) }}
+					</span>
+				</div>
+
+			</div>
+
+			<div *ngIf="validarAvisoFatura(fatura.statusFatura)" class="alert-fatura">
+				<h6 class="alert-fatura-titulo mt-3">
+					<mat-icon class="me-2" svgIcon="warning-outline"></mat-icon>Atenção
+				</h6>
+				<p class="alert-fatura-info mt-3">
+					{{ settarAvisoFatura(fatura.statusFatura) }}
+				</p>
+			</div>
+
+
+
+			<mat-divider class="vertical-divider" vertical></mat-divider>
+		</div>
+	</div>
+
+	<!-- ############  OPCOES  ############# -->
+	<div class="col-lg-6">
+		<div class="d-flex flex-wrap">
+			<h6 *ngIf="exibirDadosDePagamento()">Opções de pagamento</h6>
+
+			<div *ngIf="exibirDadosDePagamento()" class="d-flex flex-wrap">
+				<button class="btn-pix" type="button" mat-flat-button aria-label="Pagamento com PIX" (click)="chamarDialogPix()">
+					PIX <mat-icon class="svg-icon" svgIcon="pix"></mat-icon>
+				</button>
+
+				<button type="button" mat-raised-button color="accent" aria-label="Código de Barras" (click)="chamarAlertCodigoDeBarra()">
+					código <mat-icon class="svg-icon" svgIcon="codigo-barras"></mat-icon>
+				</button>
+				<button type="button" mat-raised-button color="accent" aria-label="Pagamento com cartão de crédito" (click)="chamarFlexPag()">
+					cartão de crédito <mat-icon class="svg-icon" svgIcon="cartao-credito"></mat-icon>
+				</button>
+				<button type="button" mat-raised-button color="accent" aria-label="Pagamento com internet banking" (click)="chamarInternetBanking()">
+					internet banking <mat-icon class="svg-icon" svgIcon="internet-banking"></mat-icon>
+				</button>
+			</div>
+
+			<h6 class="mt-3">Opções de fatura</h6>
+			<div class="d-flex flex-wrap">
+				<button type="button" mat-stroked-button color="accent" aria-label="Download da fatura" (click)="abrirDialogDownloadFatura()">
+					download <mat-icon class="svg-icon" svgIcon="download"></mat-icon>
+				</button>
+				<button type="button" mat-stroked-button color="accent" aria-label="Visualizar fatura" (click)="abrirDialogDownloadFatura('visualizar')">
+					visualizar <mat-icon class="svg-icon" svgIcon="visualizar"></mat-icon>
+				</button>
+				<button type="button" mat-stroked-button color="accent" aria-label="Enviar fatura por email" (click)="faturaPorEmail()">
+					enviar por e-mail <mat-icon class="svg-icon" svgIcon="email2"></mat-icon>
+				</button>
+				<button *ngIf="!ucSelecionada.indCCColetiva" type="button" mat-stroked-button color="accent" aria-label="Entenda sua conta" (click)="redirecionarEntendaSuaConta()">
+					entenda sua conta <mat-icon class="svg-icon" svgIcon="entenda-conta"></mat-icon>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+

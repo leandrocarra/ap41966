@@ -1,0 +1,54 @@
+<!-- <div class="card">
+  <div class="card-header" style="background-color:#00A443;">
+      <label *ngIf="!mobile" class="label-strong-neo mat-radio-label col-10" style="color:#fff;">Localizamos mais de uma atividade atrelada ao CNAE informado, selecione a sua atividade correta:</label>
+      <label *ngIf="mobile" class="label-strong-neo mat-radio-label col-10" style="color:#fff;">Selecione a atividade principal do seu CNAE:</label>
+  </div>
+
+  <div class="card-body">
+      <nav class="mb-3">
+          <input class="form-control" type="text" name="classe" placeholder="DIGITE A CLASSE PRINCIPAL" [(ngModel)]="classFilter" (ngModelChange)="search()">
+      </nav>
+
+      <table class="col-xl-12">
+        <caption>Classe Principal</caption>
+          <thead>
+              <tr>
+                  <th id="table-column-logradouro"></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let classe of activePageDataChunk">
+                  <td>
+                      <button *ngIf="!mobile" type="button" class="col-12 btn btn-light btn-lg endereco text-left mt-1" (click)="selectClass(classe)">
+                          {{ classe.atividadeCNAE }}
+                      </button>
+
+                      <button *ngIf="mobile" type="button" class="col-12 p-2 btn btn-light btn-lg btn-block endereco text-left mt-1" style="white-space: normal;" (click)="selectClass(classe)">
+                          {{ classe.atividadeCNAE}}
+                      </button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+      <div class="row mt-2">
+          <div class="col-6">
+              <button *ngIf="!mobile" type="button" class="btn btn-light btn-lg endereco" style="background-color: #00A443; color: #fff;"
+                  (click)="classeNaoEncontrada()">
+                  NÃO ENCONTREI MINHA CLASSE
+              </button>
+          </div>
+          <div class="col-12" *ngIf="mobile">
+              <button type="button" class="btn btn-light btn-lg endereco p-2 col-12" style="background-color: #00A443; color: #fff;"
+                  (click)="classeNaoEncontrada()">
+                  NÃO ENCONTREI MINHA CLASSE
+              </button>
+          </div>
+          <div class="col-6" *ngIf="!mobile">
+              <mat-paginator [length]="classes.length" [pageSize]="pageSize" (page)="onPageChanged($event)"></mat-paginator>
+          </div>
+          <div class="col-12" *ngIf="mobile">
+              <mat-paginator [length]="classes.length" [pageSize]="pageSize" (page)="onPageChanged($event)"></mat-paginator>
+          </div>
+      </div>
+  </div>
+</div> -->

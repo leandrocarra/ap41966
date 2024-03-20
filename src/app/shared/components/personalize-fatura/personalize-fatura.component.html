@@ -1,0 +1,76 @@
+<mat-card id="card-personalizar-fatura" class="mat-neoenergia">
+    <mat-card-title>
+        <span class="color-primary mb-2">PERSONALIZE SUA FATURA</span>
+    </mat-card-title>
+
+
+    <mat-divider></mat-divider>
+    <mat-selection-list [multiple]="false">
+        <mat-list-option class="opcao-personalizacao" (click)="navigateTo('vencimento');">
+            <div class="opcao-display">
+                <span class="color-dark-gray bold">
+                    Vencimento
+                </span>
+                <div class="d-flex align-items-center">
+                    <a href="#/" class="pe-none">
+                        {{dataDeVencimento}}
+                    </a>
+                    <mat-icon>expand_more</mat-icon>
+                </div>
+            </div>
+        </mat-list-option>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-option class="opcao-personalizacao" (click)="navigateTo('fatura');">
+            <div class="opcao-display">
+                <span class="color-dark-gray bold">
+                    Entrega da fatura
+                </span>
+                <div class="d-flex align-items-center">
+                    <a href="#/" class="pe-none">
+                        {{entregaDaFatura}}
+                    </a>
+                    <mat-icon>expand_more</mat-icon>
+                </div>
+            </div>
+        </mat-list-option>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-option class="opcao-personalizacao" (click)="navigateTo('fatura')">
+            <div class="opcao-display">
+                <span class="color-dark-gray bold w-50">
+                    Endereço da entrega
+                </span>
+
+                <span *ngIf="entregaDaFatura === 'Fatura impressa'" class="endereco d-inline-flex p-0 bd-highlight">
+                    {{ !faturaDigitalWhatsapp ? (enderecoDaEntrega) : (enderecoDaEntrega | mask: '(00) 0 0000-0000')}}
+                </span>
+
+                <div *ngIf="entregaDaFatura === 'Fatura digital'" class="d-flex align-items-center">
+                    <a href="#/" class="pe-none">
+                        {{ enderecoDaEntrega }}
+                    </a>
+                    <mat-icon>expand_more</mat-icon>
+                </div>
+            </div>
+        </mat-list-option>
+
+        <mat-divider></mat-divider>
+
+        <mat-list-option class="opcao-personalizacao" (click)="navigateTo('pagamento');">
+            <div class="opcao-display">
+                <span class="color-dark-gray bold">
+                    Pagamento
+                </span>
+                <div class="d-flex align-items-center">
+                    <a href="#/" class="pe-none">
+                        {{opcaoPagamento}}
+                    </a>
+                    <mat-icon>expand_more</mat-icon>
+                </div>
+            </div>
+        </mat-list-option>
+    </mat-selection-list>
+</mat-card>

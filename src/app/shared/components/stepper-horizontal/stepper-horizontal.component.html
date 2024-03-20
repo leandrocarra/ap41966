@@ -1,0 +1,26 @@
+<div id="stepper-horizontal" class="background-stepper-horizontal content-space">
+	<div class="custom-horizontal-stepper width-padrao">
+		<div *ngFor="let etapa of etapas; let i = index" class="step">
+			<div class="step-info"
+			[class.step-current]="etapa.atual"
+			[class.step-done]="etapa.concluida"
+            [class.step-linha]="etapa.linha">
+				<div class="step-header">
+					<mat-icon class="mat-icon">{{etapa.concluida ? 'done' : 'edit'}}</mat-icon>
+					<div class="step-text" *ngIf="!mobile || etapa.atual">
+						{{ etapa.nomeEtapa }}
+					</div>
+				</div>
+				<div class="horizontal-line">
+				</div>
+            </div>
+		</div>
+	</div>
+</div>
+
+<section class="stepper-horizontal-content">
+        <h2 id="passo" *ngIf="mostrarPassos">PASSO {{ etapaAtual }} DE {{ etapas.length }}</h2>
+        <ng-content></ng-content>
+</section>
+
+

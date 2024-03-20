@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="d-flex justify-content-center m-3">
+        <img class="icone-component" src="../../../../../../../../assets/assetsLN/images/icone_exclamacao_verde.svg" alt="ponto de exclamação verde" />
+    </div>
+
+    <div class="texto row mb-3 justify-content-center">
+        <h3 class="text-center font-weight-bold text-center">Termo de Compromisso - Representante Legal</h3>
+    </div>
+    <div class="texto text-justify col-12">
+        <p>  Declaro que li e estou ciente que <strong>apenas o representante legal</strong> mencionado em ata, estatuto social,
+            contrato social ou CCMEI <strong>pode solicitar uma Ligação Nova</strong> para o CNPJ cadastrado no portal do Ligação Nova.
+        </p>
+        <p>
+            <strong class="color">ATENÇÃO: Caso você não seja o representante legal, a solicitação de Ligação Nova será recusada e o imóvel não receberá a ligação.</strong>
+
+        </p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-auto botoes-component pt-3">
+            <button class="btn btn-secondary" type="button" (click)="termoRepresentante(false)">NÃO SOU O RESPONSÁVEL</button>
+        </div>
+        <div class="col-auto botoes-component py-3">
+            <button  class="btn btn-primary-green" type="button" (click)="termoRepresentante(true)">SOU O RESPONSÁVEL</button>
+        </div>
+    </div>
+</div>

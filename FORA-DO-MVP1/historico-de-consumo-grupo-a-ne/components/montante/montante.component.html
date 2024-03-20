@@ -1,0 +1,24 @@
+<div *ngIf="montanteContratado.length" class="toggle-history">
+  <ng-container>
+    <div class="row d-flex justify-content-between pe-3 ps-3">
+      <div class="titulo-grupo-a mt-7">
+        Montante de uso contratado e faturado
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-between align-items-center pe-3 ps-3">
+      <div class="align-left text-graph-grupo-b mt-3">
+        Clique nas barras para mais detalhes.
+      </div>
+    </div>
+
+    <div class="scroll">
+      <ng-container>
+        <div class="custom-canvas">
+          <canvas #barChart></canvas>
+          <div #legend class="legend mt-mb-16"></div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

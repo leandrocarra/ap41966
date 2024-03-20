@@ -1,0 +1,19 @@
+<div class="col-12 col-xl-6 col-lg-7 col-md-10 p-0">
+
+    <h2>Deseja receber sua fatura via WhatsApp?</h2>
+    <p class="subtitulo mt-3 mb-3">Ao cadastrar seu número de celular, passará a receber a fatura via WhatsApp.</p>
+
+    <p class="subtitulo text-telas-informativos">
+        Além da opção de fatura digital por e-mail, agora também temos a opção de fatura digital por WhatsApp.
+    </p>
+
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+        <app-neo-button class=" me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'NÃO QUERO'"
+            (callFunction)="naoCadastrar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="cadastrarBtn" (callFunction)="cadastrar()">
+        </app-neo-button>
+    </div>
+</div>

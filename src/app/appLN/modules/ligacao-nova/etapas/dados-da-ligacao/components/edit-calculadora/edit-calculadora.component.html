@@ -1,0 +1,63 @@
+<div *ngIf="equipamentoForm" class="w-100">
+    <form [formGroup]="equipamentoForm" (submit)="adicionar();">
+        <div class="row mt-3 justify-content-between">
+
+            <div class="col-12 col-md-4" *ngIf="mode === 'EDIT' && equipamento?.equipamento != 'OUTROS'">
+                <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                    <div class="green-circle">
+                        <div class="{{equipamento?.class}}"></div>
+                    </div>
+                    <div class="titulo2">{{ equipamento?.equipamento }}</div>
+                </div>
+            </div>
+
+            <mat-form-field appearance="outline" class="col-12 col-md-4" *ngIf="equipamento?.equipamento === 'OUTROS'">
+                <mat-label>EQUIPAMENTO</mat-label>
+                <input type="text" matInput formControlName="nome" upperCase>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="equipamento" appearance="outline"
+            [ngClass]="{
+                'col-12 col-lg-3 col-md-3': ( mode === 'EDIT' || equipamento?.equipamento === 'OUTROS' ),
+                'col-12 col-lg-6 col-md-4': ( mode === 'ADD' && equipamento?.equipamento != 'OUTROS')
+            }">
+                <mat-label>POTÊNCIA</mat-label>
+                <mat-select formControlName="potencia" placeholder="POTÊNCIA*" name="potencia" id="potencia" required>
+                    <mat-option *ngFor="let potencia of potencias" [value]="potencia">
+                        {{ potencia.key }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div class="justify-content-center col-lg-2 col-md-3">
+                <div class="w-100 text-center">
+                    <label class="m-0"><strong>QUANTIDADE</strong></label>
+                </div>
+
+                <div class="d-flex justify-content-around align-items-center">
+                    <button [disabled]="quantidadeCount === 1" type="button" class="btn-quantidade"
+                        (click)="diminuirQuantidade()">-</button>
+
+                    <label class="m-0">{{ quantidadeCount }}</label>
+
+                    <button type="button" class="btn-quantidade" (click)="aumentarQuantidade()">+</button>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-3 mt-lg-2 col-md-4 mt-4 mt-md-2" *ngIf="mode === 'ADD'">
+                <button [disabled]="equipamentoForm.invalid" type="submit"
+                    class="col-12 btn btn-adicionar">ADICIONAR</button>
+            </div>
+
+            <div class="col-12 col-lg-3 mt-lg-2 col-md-12 mt-4 mt-md-2" *ngIf="mode === 'EDIT'">
+                <div class="d-flex justify-content-md-end justify-content-between">
+                    <button type="button" class="btn  btn-outline-secondary me-1" (click)="cancelar.emit()"
+                    >CANCELAR</button>
+
+                    <button [disabled]="equipamentoForm.invalid" type="submit"
+                        class="btn btn-outline-secondary">SALVAR</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

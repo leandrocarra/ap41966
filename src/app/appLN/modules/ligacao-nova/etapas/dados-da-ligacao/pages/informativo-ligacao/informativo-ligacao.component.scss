@@ -1,0 +1,22 @@
+.textoDadosTecnicos {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    padding: 0.125rem 0 0 1rem;
+}
+
+.background-tomada {
+    position: absolute;
+    bottom: 0;
+    right: -3rem;
+    height: 60vh;
+    width: auto;
+    z-index: -1;
+}
+
+@media only screen and (max-width: 768px) {
+    .background-tomada {
+        display: none;
+    }
+}
+

@@ -1,0 +1,21 @@
+.data-certa {
+    font-size: 00.875rem;
+    border-bottom: 2px solid var(--neo-white-500);
+    padding: 0px 0px 5px 0px !important;
+    font-weight: bolder;
+}
+
+.mat-option:hover:not(.mat-option-disabled) {
+    background-color: var(--neo-light-green) !important;
+    color: var(--neo-white);
+    font-weight: bolder;
+}
+
+.option[aria-selected="true"] {
+    color: var(--neo-dark-green) !important;
+    font-weight: bolder;
+}
+
+.mat-select-data {
+    width: 100%;
+}

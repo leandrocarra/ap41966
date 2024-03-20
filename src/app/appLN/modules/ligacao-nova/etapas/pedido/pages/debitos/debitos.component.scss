@@ -1,0 +1,40 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.box-alert-danger {
+    width:100%;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+.texto {
+    color: #828282;
+    font-size: 1rem;
+}
+
+.box-pagar {
+    width: 50%;
+    top: 20%;
+}
+
+.box-pagar-header {
+    background-color:#00A443;
+}
+
+.box-pagar-link {
+    background-color: #5C881A !important;
+    color: white !important;
+    font-weight: normal;
+    border-color: transparent;
+}
+
+.modal-body {
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .box-pagar {
+        width:100%;
+        top: 20%;
+    }
+}

@@ -1,0 +1,10 @@
+<div class="aviso col-12 col-lg-7">
+    <img src="assets/images/contato.svg" alt="Aviso">
+
+    <h3>Ainda não possui imóvel?</h3>
+
+    <p>Venha fazer parte do grupo Neoenergia.</p>
+
+    <app-neo-button [classes]="userGroup === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="'solicitar ligação nova'" (callFunction)="solicitarLigacaoNova()"></app-neo-button>
+</div>

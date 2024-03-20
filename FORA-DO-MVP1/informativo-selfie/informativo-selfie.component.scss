@@ -1,0 +1,21 @@
+.lista{
+    margin-top:1.875rem;
+    padding-left: 0px;
+}
+
+.texto {
+    color: var(--neo-dark-gray);
+}
+
+.imgSelfie{
+    position: absolute;
+    right: 0;
+    margin-right: -9.063rem;
+;
+}
+
+@media only screen and (max-width: 1279px) and (min-width: 990px) {
+    .imgSelfie {
+        margin-right: -3.063rem;
+    }
+}

@@ -1,0 +1,119 @@
+<div *ngIf="!problemaRegistrado">
+    <h2 class="title">Fatura múltipla</h2>
+
+    <p class="subtitle">Escolha abaixo a unidade consumidora que deseja consultar:</p>
+
+    <div class="row">
+        <div class="col-12 col-md-12 col-lg-9 col-xl-7">
+            <div class="header-accordion flex-wrap">
+                <div id="header-title">
+                    CONFIGURAR GRUPO
+                </div>
+
+                <div id="header-functions">
+                    <div class="header-function p-0" (click)="adicionarUnidade()">
+                        ADICIONAR UNIDADE
+                    </div>
+                </div>
+            </div>
+
+            <div class="background-fake">
+                <div class="box-header box-shadow-cards">
+                    <div class="group-color col-12 col-md-2 col-lg-2 p-0 m-md-0 mb-2">
+                        <span>GRUPO {{finalGroup.grupo}}</span>
+                    </div>
+
+                    <div class="col-12 col-md-4 p-0">
+                        <span class="title-accordion d-block">E-mail</span>
+                        <span class="d-block t-color-dark-silver-200">{{finalGroup.email}}</span>
+                    </div>
+
+                    <div class="col-12 col-md-3 p-0 mt-2 mt-md-0">
+                        <span class="title-accordion">DATA VENCIMENTO</span>
+                        <span class="d-block t-color-dark-silver-200">{{finalGroup.vencimento}}</span>
+                    </div>
+                </div>
+                <div class="box-content">
+                    <div *ngFor="let unidade of ativarDados" class="box-item">
+                        <div class="col-12 row d-flex">
+                            <div class="p-0 col-12 col-md-5 bold">
+                                Unidade Consumidora: {{unidade.uc}}
+                            </div>
+                            <div class="p-0 col-12 col-md-7">
+                                {{ unidade.endereco + ' ' + unidade.cep }}
+                            </div>
+                        </div>
+                        <div class="icon-hover" (click)="removerSelecinado(unidade, 'original')">
+                            <mat-icon>delete_forever</mat-icon>
+                        </div>
+                    </div>
+
+                    <div *ngIf="finalGroup.ucs.length > 3" class="mt-4">
+                        <app-pagination [ativarDados]="ativarDados" [pageSize]="pageSize" [collections]="finalGroup.ucs"
+                            [grupo]="'A'" (eventPagination)="eventPagination($event, i)" #pagination></app-pagination>
+                    </div>
+
+                    <div *ngIf="excludedGroup.length > 0">
+                        <h6 class="title-removed">Removidas</h6>
+                        <div *ngFor="let excluded of excludedGroup" class="box-excluded ">
+                            <div class="col-12 row d-flex">
+                                <div class="p-0 col-12 col-md-5 bold">
+                                    Unidade Consumidora: {{excluded.uc}}
+                                </div>
+                                <div class="p-0 col-10 col-md-5">
+                                    {{ excluded.endereco + ' ' + excluded.cep }}
+                                </div>
+                            </div>
+                            <div class="cancel-hover" (click)="revert(excluded)">
+                                Cancelar
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="addedGroup.length > 0">
+                        <h6 class="title-added">Adicionadas</h6>
+                        <div *ngFor="let unidadeAdicionada of addedGroup" class="box-item">
+                            <div class="col-12 row d-flex">
+                                <div class="p-0 col-12 col-md-5 bold">
+                                    Unidade Consumidora: {{unidadeAdicionada.uc}}
+                                </div>
+                                <div class="p-0 col-12 col-md-7">
+                                    {{ unidadeAdicionada.endereco + ' ' + unidadeAdicionada.cep }}
+                                </div>
+                            </div>
+                            <div class="icon-hover" (click)="removerSelecinado(unidadeAdicionada, 'adicionada')">
+                                <mat-icon>delete_forever</mat-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="d-flex  justify-content-between mt-4">
+                <app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                    (callFunction)="voltar()">
+                </app-neo-button>
+
+                <div>
+                    <app-neo-button class="me-3"
+                        [classes]="'btn-neoprimary'" [titleText]="'EXCLUIR GRUPO'"
+                        (callFunction)="excluirGrupo()">
+                    </app-neo-button>
+
+                    <app-neo-button class="m-0"
+                    [isDisabled]="!changed"
+                        [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'" [titleText]="'CONFIRMAR'"
+                        (callFunction)="confirmar()">
+                    </app-neo-button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div *ngIf="problemaRegistrado">
+    <app-problema-registrado [tipo]="'Fatura Múltipla'" [dados]="faturasMultiplasRegistro"
+        [titulo]="'Sua solicitação foi enviada com sucesso!'"></app-problema-registrado>
+</div>

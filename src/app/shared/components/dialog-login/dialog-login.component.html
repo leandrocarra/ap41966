@@ -1,0 +1,97 @@
+<mat-dialog-content id="dialog-login">
+    <section class="row gy-3 justify-content-between">
+        <nav class="col-12 d-flex align-items-center"
+        [ngClass]="stepper.selectedIndex !== 0 ? 'justify-content-between' : 'justify-content-end'">
+            <button *ngIf="stepper.selectedIndex !== 0" mat-button class="col-auto ps-0"
+                    color="primary" (click)="voltarSelecaoDeTipoDeAcesso();">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+                <span>Voltar</span>
+            </button>
+            <button class="col-auto close-dialog pe-0" type="button" mat-icon-button aria-label="Fechar" title="Fechar"
+                    (click)="close();">
+                <mat-icon>
+                    close
+                </mat-icon>
+            </button>
+        </nav>
+        <header>
+            <h2>Login</h2>
+        </header>
+        <mat-horizontal-stepper class="col-12" [linear]="true" #stepper>
+            <!-- Step 1 -->
+            <mat-step>
+                <ng-template matStepLabel>Tipo de Acesso</ng-template>
+                <p class="mb-2">Nos informe o tipo de acesso que será realizado:</p>
+                <div class="row g-3">
+                    <div *ngFor="let opcao of opcoes" class="col">
+                        <button class="btn btn-perfil w-100"
+                                (click)="selecionarPerfil(opcao.value)" type="button">
+                            <div>
+                                <mat-icon>{{opcao.icon}}</mat-icon>
+
+                                <span>{{opcao.text}}</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </mat-step>
+
+            <!-- Step 2 -->
+            <mat-step>
+                <ng-template matStepLabel>Login</ng-template>
+                <p class="mb-2">Nos informe seu documento e senha:</p>
+                <form [formGroup]="formLogin" class="mt-3 w-100">
+                    <div *ngIf="formLogin.value.tipoDocumento !== ''">
+                        <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="d-block">
+                            <mat-label>CPF/CNPJ</mat-label>
+                            <input matInput placeholder="CPF/CNPJ" type="text" id="userId" formControlName="userId"
+                                   required
+                                   onlyNumber
+                                   [mask]="userIdMask" (keyup)="verificarErro()" (ngModelChange)="applyMaskCpfCnpj()"/>
+                            <mat-error>
+                                <app-custom-mat-error [mensagem]="msgAvisoDocumento"></app-custom-mat-error>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+
+                    <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="d-block">
+                        <mat-label>Senha</mat-label>
+                        <input matInput [type]="mostrarSenha ? 'password' : 'text'" placeholder="Senha" name="password"
+                               id="password"
+                               formControlName="password" required/>
+                        <mat-error>
+                            <app-custom-mat-error [mensagem]="'Senha deve ser preenchida'"></app-custom-mat-error>
+                        </mat-error>
+
+                        <mat-icon matSuffix class="visibillity-eye" (click)="mostrarSenha = !mostrarSenha">
+                            {{ mostrarSenha ? 'visibility_off' : 'visibility' }}
+                        </mat-icon>
+                    </mat-form-field>
+
+                    <div class="mb-4 d-flex justify-content-end">
+
+                    <a (click)="recuperarSenha()">Esqueceu sua senha?</a>
+                    </div>
+
+                    <span class="col-12 recaptcha-description">
+        This site is protected by reCAPTCHA and the Google
+        <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and
+        <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+      </span>
+
+                    <div class="mt-4 col-12 text-center">
+                        <app-neo-button class="mx-auto" [classes]="'btn-neoprimary w-50'" [titleText]="'ENTRAR'"
+                                        [isDisabled]="formLogin.invalid" (callFunction)="enviarDadosParaLogin();">
+                        </app-neo-button>
+                    </div>
+                </form>
+            </mat-step>
+        </mat-horizontal-stepper>
+
+
+        <p class="col-12 mt-3 text-center">Conheça aqui nossa <a [href]="linkDePrivacidade" target="_blank"
+                                                                 rel="noopener">
+            Política de privacidade</a>.
+        </p>
+    </section>
+</mat-dialog-content>

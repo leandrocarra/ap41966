@@ -1,0 +1,38 @@
+<mat-card class="background-white">
+    <div class="toggle-history">
+        <div class="row d-flex justify-content-between pe-3 ps-3">
+            <div class="titulo mt-7">Composição da sua conta</div>
+
+            <div class="align-right text-graph mt-3">
+                <span><strong>Visualização do gráfico:</strong></span>
+                <mat-slide-toggle [(ngModel)]="isMoeda" (change)="onToggle()"></mat-slide-toggle>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-between align-items-center pe-3 ps-3">
+            <div class="align-left sub-text-graph mt-3">
+                {{ interacaoGrafico }} para mais detalhes.
+            </div>
+        </div>
+
+        <div class="mt-2">
+            <ng-container>
+                <div class="custom-canvas">
+                    <div class="col-12 col-md-6 p-0">
+                        <canvas #barChart></canvas>
+                    </div>
+
+                    <div class="col-12 col-md-6 p-0 ps-md-3">
+                        <app-legenda-composicao-fatura></app-legenda-composicao-fatura>
+                    </div>
+
+                    <div class="mt-2" *ngIf="!mobile">
+                        <div class="me-2d-inline ps-3 dot {{tituloGrafico}}"></div>
+                        <div class="d-inline descricao-titulo">{{tituloGrafico}}</div>
+                        <div class="descricao-item mt-3">{{descricaoGrafico}}</div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</mat-card>

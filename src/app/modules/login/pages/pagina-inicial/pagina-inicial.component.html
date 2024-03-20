@@ -1,0 +1,29 @@
+<section id="section-um" class="banner" [ngStyle]="{'background-image': 'url(' + banner + ')'}" id="section-login">
+    <div class="row justify-content-center justify-content-md-between w-100">
+        <h1 *ngIf="!mobile" class="col-6 text-white bold">Nós somos a Energia<br>
+        Conectada com a inovação
+        <br>
+        AGORA SOMOS TODOS NEOENERGIA</h1>
+        <app-conectar-cadastrar class="col-auto"></app-conectar-cadastrar>
+    </div>
+</section>
+
+<section id="section-dois" class="mt-5">
+    <div class="row">
+        <h2 class="col-12 mb-3" [innerHTML]="tituloSectionDois"></h2>
+
+        <div class="col-lg-3 gy-4" *ngFor="let cardAcessoRapido of cardsAcessoRapido">
+            <app-card-acesso-rapido class="h-100" [card]="cardAcessoRapido"></app-card-acesso-rapido>
+        </div>
+    </div>
+</section>
+
+<section id="section-tres" class="mt-5 mb-5">
+    <div class="row">
+        <h2 class="col-12 mb-3" [innerHTML]="tituloSectionTres"></h2>
+
+        <div class="col-lg-4 gy-4" *ngFor="let cardDestaque of cardsDestaques">
+            <app-card-destaques class="h-100" [card]="cardDestaque"></app-card-destaques>
+        </div>
+    </div>
+</section>

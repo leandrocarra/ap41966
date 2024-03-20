@@ -1,0 +1,21 @@
+<h2>{{possuiFaturaDigital ? 'Recebimento de Fatura Digital' : 'Fatura Digital'}}</h2>
+
+<p class="subtitulo mt-3 mb-3">Suas informações referentes ao recebimento das faturas:</p>
+
+<app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+<app-forma-recebimento [tipoRecebimento]="dadosFaturaDigital.modoDeEnvioAtual.label" [dadosEnvioDaFatura]="dadosFaturaDigital.modoDeEnvioAtual.valor"></app-forma-recebimento>
+
+<div class="d-flex justify-content-between justify-content-md-start flex-wrap mt-5">
+    <app-neo-button class="mt-2 mt-sm-0 me-sm-1 me-md-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button *ngIf="possuiFaturaDigital" class="mt-2 mt-sm-0 me-sm-1 me-md-3" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="'ALTERAR'" (callFunction)="alterar()">
+    </app-neo-button>
+
+    <app-neo-button class="mt-2 mt-sm-0 me-sm-1 me-md-3 "[classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="alterarNomeBtn()" (callFunction)="continuar()">
+    </app-neo-button>
+</div>

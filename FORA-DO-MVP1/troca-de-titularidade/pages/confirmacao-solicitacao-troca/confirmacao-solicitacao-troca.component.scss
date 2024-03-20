@@ -1,0 +1,13 @@
+.text-periodo {
+    font-size: 1.125rem;
+    color: var(--neo-dark-gray);
+}
+
+.quebra-linha {
+    word-break: break-word;
+}
+
+:host ::ng-deep .mat-checkbox-layout {
+    white-space: normal;
+    word-wrap: break-word !important;
+}

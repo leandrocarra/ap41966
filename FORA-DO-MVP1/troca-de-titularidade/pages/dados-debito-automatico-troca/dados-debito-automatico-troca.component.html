@@ -1,0 +1,44 @@
+<h2>Cadastre-se no débito automático</h2>
+
+<p class="subtitulo mt-3 mb-3">Para cadastrar-se no débito automático é necessário informar uma conta corrente:</p>
+
+<h6 class="mt-4 subtitulo-h6">Dados Bancários</h6>
+
+<div id="black-and-white-input-1" class="mt-3 col-12 col-xl-6 col-lg-7 col-md-10 col-sm-12 p-0 m-divider">
+	<mat-form-field appearance="outline" [hideRequiredMarker]="true" class="col-12 p-0">
+		<mat-label>BANCO</mat-label>
+		<mat-select [(ngModel)]="bancoSelected" name="banco" id="banco" required (ngModelChange)="verificar()">
+			<mat-option *ngFor="let banco of bancos" [value]="banco">
+				{{ banco.nomeCompletoBanco }}
+			</mat-option>
+		</mat-select>
+	</mat-form-field>
+
+	<mat-form-field appearance="outline" [hideRequiredMarker]="true" class="col-12 p-0">
+		<mat-label>AGÊNCIA</mat-label>
+		<input matInput type="text" [(ngModel)]="dadosConta.agencia" mask="0000"
+		required onlyNumber (ngModelChange)="verificar()">
+	</mat-form-field>
+
+	<mat-form-field appearance="outline" [hideRequiredMarker]="true" class="col-12 p-0"
+		[hideRequiredMarker]="bancoSelected?.nomeAbreviadoBanco !== 'BANCO DO BRASIL'">
+		<mat-label>CONTA CORRENTE COM DÍGITO</mat-label>
+		<input matInput type="text" id="conta" name="conta" [(ngModel)]="dadosConta.conta"
+            mask="{{ bancoSelected?.numeroCaracteresContaBancaria }} - {{ bancoSelected?.numeroCaracteresDigitoContaBancaria }}"
+            maxlength="{{ bancoSelected?.mascara.length }}" required (ngModelChange)="verificar()">
+	</mat-form-field>
+
+	<p class="mb-0 texto-atencao" *ngIf="bancoSelected?.nomeAbreviadoBanco === 'BANCO DO BRASIL'">
+		* Se o dígito da sua conta for X utilize o dígito 0
+	</p>
+</div>
+
+<div class="row gy-4 justify-content-between justify-content-md-start mt-3">
+	<app-neo-button class="col-auto" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+		(callFunction)="voltar()">
+	</app-neo-button>
+
+	<app-neo-button class="col-auto" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+		[titleText]="'CONTINUAR'" (callFunction)="continuar()" [isDisabled]="isDisabled">
+	</app-neo-button>
+</div>

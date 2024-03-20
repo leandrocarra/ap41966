@@ -1,0 +1,38 @@
+<ng-container *ngIf="beneficio !== 'BENEFÍCIO DE PRESTAÇÃO CONTINUADA'; else templateformBPC">
+   
+    <form [formGroup]="formDadosBeneficio">
+
+        <div id="black-and-white-input-1" class="pt-3 row">
+            <div class="p-0 col-md-6 col-xl-6 col-12">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>NIS</mat-label>
+                    <input matInput type="text" id="nis" formControlName="nis" (ngModelChange)="validarFormularios()"
+                        onlyNumber required [attr.disabled]="disabledForm"/>
+                </mat-form-field>
+            </div>
+
+            <div class="p-0 col-md-6 col-xl-6 col-12">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>INFORME O NÚMERO DO CÓDIGO FAMILIAR</mat-label>
+                    <input matInput type="text" id="codigoFamiliar" name="codigoFamiliar"
+                        formControlName="codigoFamiliar" (ngModelChange)="validarFormularios()" onlyNumber required [attr.disabled]="disabledForm"/>
+                </mat-form-field>
+            </div>
+        </div>
+  
+    </form>
+</ng-container>
+
+<ng-template #templateformBPC>
+    <form [formGroup]="formDadosBeneficioBPC" class="pt-3 row">
+        <div id="black-and-white-input-1" class="p-0 col-md-6 col-xl-6 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>INFORME O NÚMERO DO NB</mat-label>
+                <input matInput type="text" id="nb" formControlName="nb" (ngModelChange)="validarFormularios()" onlyNumber
+                    required [attr.disabled]="disabledForm"/>
+            </mat-form-field>
+        </div>
+    </form>
+</ng-template>
+
+

@@ -1,0 +1,17 @@
+<section id="notificacoes" class="notificacoes-header">
+    <div class="notificacao" *ngFor="let notificacao of notificacoesHeader.notificacoes">
+        <div class="notificacao-interna">
+            <div class="me-2 {{notificacao.status}}">
+                •
+            </div>
+            <div>
+                <p class="d-block m-0">
+                {{notificacao.conteudo}}
+                </p>
+                <p id="data-notificacao" class="m-0 d-block text-right">{{notificacao.data}}</p>
+            </div>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+    <a aria-label="Exibir todas as notificações" href="" class="mt-3 d-block">Exibir todas</a>
+</section>

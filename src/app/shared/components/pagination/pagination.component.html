@@ -1,0 +1,19 @@
+<div class="row justify-content-center">
+    <div class="col-auto" [class.isGrupoA]="user.group == 'A'" [class.isGrupoB]="user.group == 'B'" *ngIf="mobile">
+        <ngb-pagination [collectionSize]="collections.length" [(page)]="pageIndex" [pageSize]="pageSize" [ellipses]="false" [rotate]="true"
+                        [boundaryLinks]="true" [maxSize]="2" (pageChange)="onPageChanged($event)" [size]="'sm'" currentPage="false">
+            <ng-template ngbPaginationPrevious><</ng-template>
+            <ng-template ngbPaginationNext>></ng-template>
+        </ngb-pagination>
+    </div>
+
+    <div class="col-auto" [class.isGrupoA]="user.group == 'A'" [class.isGrupoB]="user.group == 'B'" *ngIf="!mobile">
+        <ngb-pagination [collectionSize]="collections.length" [(page)]="pageIndex" [pageSize]="pageSize" [ellipses]="false" [rotate]="true"
+                        [boundaryLinks]="true" [maxSize]="4" (pageChange)="onPageChanged($event)" currentPage="false">
+            <ng-template ngbPaginationPrevious>Anterior</ng-template>
+            <ng-template ngbPaginationNext>Próximo</ng-template>
+            <ng-template *ngIf="!mobile" ngbPaginationLast>Último</ng-template>
+            <ng-template *ngIf="!mobile" ngbPaginationFirst>Primeiro</ng-template>
+        </ngb-pagination>
+    </div>
+</div>

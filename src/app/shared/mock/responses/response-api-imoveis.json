@@ -1,0 +1,199 @@
+{
+    "ATUAL": {
+        "ucs": [
+            {
+                "status": "LIGADA",
+                "uc": "000000469084",
+                "nomeCliente": "CELIA RIBEIRO BRANDAO",
+                "instalacao": "0002885382",
+                "local": {
+                    "endereco": "PC JOSE INACIO 15",
+                    "bairro": "CENTRO-JUAZEIRO",
+                    "municipio": "JUAZEIRO",
+                    "cep": "48924-999",
+                    "uf": "BA"
+                },
+                "isGrupo": null,
+                "nomeGrupo": null,
+                "grupoTensao": "B",
+                "bOptante": null,
+                "contrato": "0007454440",
+                "dt_inicio": "2009-01-30",
+                "dt_fim": "9999-12-31",
+                "medidor": "X11576"
+            },
+            {
+                "status": "LIGADA",
+                "uc": "000012812990",
+                "nomeCliente": "CELIA RIBEIRO BRANDAO",
+                "instalacao": "0002887040",
+                "local": {
+                    "endereco": "PC 2 DE JULHO 134",
+                    "bairro": "CENTRO-JUAZEIRO",
+                    "municipio": "JUAZEIRO",
+                    "cep": "48903-525",
+                    "uf": "BA"
+                },
+                "isGrupo": null,
+                "nomeGrupo": null,
+                "grupoTensao": "B",
+                "bOptante": null,
+                "contrato": "0008001621",
+                "dt_inicio": "2009-01-30",
+                "dt_fim": "9999-12-31",
+                "medidor": "000000001184460226"
+            },
+            {
+                "status": "LIGADA",
+                "uc": "000012812990",
+                "nomeCliente": "CELIA RIBEIRO BRANDAO",
+                "instalacao": "0002887040",
+                "local": {
+                    "endereco": "PC 2 DE JULHO 134",
+                    "bairro": "CENTRO-JUAZEIRO",
+                    "municipio": "JUAZEIRO",
+                    "cep": "48903-525",
+                    "uf": "BA"
+                },
+                "isGrupo": null,
+                "nomeGrupo": null,
+                "grupoTensao": "B",
+                "bOptante": null,
+                "contrato": "0008001621",
+                "dt_inicio": "2009-01-30",
+                "dt_fim": "9999-12-31",
+                "medidor": "000000001184460226"
+            }
+        ]
+    },
+    "ANTIGO": {
+        "ucs": [
+            {
+                "instalacao": "0001089164",
+                "status": "Ligada",
+                "uc": "29645581",
+                "nomeCliente": "YUDI TAMAGOSH DE ALMEIRA ASSIS",
+                "local": {
+                    "bairro": "Centro",
+                    "cep": "13480-002",
+                    "endereco": "R. Anhangabau, 1110",
+                    "municipio": "Indaiatuba",
+                    "uf": "SP"
+                },
+                "isGrupo": true,
+                "nomeGrupo": "grupo 1",
+                "contaColetivaPrincipal": false,
+                "grupoTensao": "Grupo A",
+                "bOptante": true
+            },
+            {
+                "instalacao": "0001089164",
+                "status": "Ligada",
+                "uc": "26225019",
+                "nomeCliente": "ZENOBIO CAMARA",
+                "local": {
+                    "bairro": "Centro",
+                    "cep": "13480-002",
+                    "endereco": "R. Anhangabau, 1110",
+                    "municipio": "Indaiatuba",
+                    "uf": "SP"
+                },
+                "isGrupo": true,
+                "nomeGrupo": "grupo 1",
+                "contaColetivaPrincipal": false,
+                "grupoTensao": "Grupo A",
+                "bOptante": true
+            },
+            {
+                "instalacao": "0001089164",
+                "status": "Ligada",
+                "uc": "29883025",
+                "nomeCliente": "MAURICIO DE ALMEIRA ASSIS",
+                "local": {
+                    "bairro": "Centro",
+                    "cep": "13480-002",
+                    "endereco": "R. da Casa Amarela, 425",
+                    "municipio": "Louveira",
+                    "uf": "SP"
+                },
+                "isGrupo": true,
+                "nomeGrupo": "grupo 1",
+                "contaColetivaPrincipal": false,
+                "grupoTensao": "Grupo A",
+                "bOptante": true
+            },
+            {
+                "instalacao": "0001089164",
+                "status": "ainda não ligada",
+                "uc": "789987",
+                "nomeCliente": "MAURICIO DE ALMEIRA ASSIS",
+                "local": {
+                    "bairro": "Centro",
+                    "cep": "13480-002",
+                    "endereco": "R. Sen. Vergueiro, 1110",
+                    "municipio": "Limeira",
+                    "uf": "UF"
+                },
+                "isGrupo": true,
+                "nomeGrupo": "grupo 1",
+                "contaColetivaPrincipal": false,
+                "grupoTensao": "Grupo A",
+                "bOptante": true
+            },
+            {
+                "instalacao": "0001089164",
+                "status": "cortada",
+                "uc": "2345678",
+                "nomeCliente": "GABRIEL PENSADOR",
+                "local": {
+                    "bairro": "Centro",
+                    "cep": "13480-002",
+                    "endereco": "R. da Paz, 1110",
+                    "municipio": "Rio de Janeiro",
+                    "uf": "RJ"
+                },
+                "isGrupo": true,
+                "nomeGrupo": "grupo 1",
+                "contaColetivaPrincipal": false,
+                "grupoTensao": "Grupo A",
+                "bOptante": true
+            },
+            {
+                "instalacao": "0001089164",
+                "status": "sem luz",
+                "uc": "156753648",
+                "nomeCliente": "MAURICIO DE ALMEIRA ASSIS",
+                "local": {
+                    "bairro": "Centro",
+                    "cep": "13480-002",
+                    "endereco": "R. Sen. Vergueiro, 1110",
+                    "municipio": "Limeira",
+                    "uf": "SP"
+                },
+                "isGrupo": true,
+                "nomeGrupo": "grupo 1",
+                "contaColetivaPrincipal": false,
+                "grupoTensao": "Grupo A",
+                "bOptante": true
+            },
+            {
+                "instalacao": "0001089164",
+                "status": "desligada",
+                "uc": "102030",
+                "nomeCliente": "MAURICIO DE ALMEIRA ASSIS",
+                "local": {
+                    "bairro": "Centro",
+                    "cep": "22250-040",
+                    "endereco": "R. Sen. Vergueiro, 1110",
+                    "municipio": "Limeira",
+                    "uf": "SP"
+                },
+                "isGrupo": true,
+                "nomeGrupo": "grupo 1",
+                "contaColetivaPrincipal": false,
+                "grupoTensao": "Grupo A",
+                "bOptante": true
+            }
+        ]
+    }
+}

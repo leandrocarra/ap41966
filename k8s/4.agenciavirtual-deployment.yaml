@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: AGENCIA_APP_NAME
+  name: AGENCIA_APP_NAME
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2        # how many pods we can add at a time
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: AGENCIA_APP_NAME
+  template:
+    metadata:
+      labels:
+        app: AGENCIA_APP_NAME
+    spec:
+      containers:
+        - name: AGENCIA_APP_NAME
+          image: acrneononprod.azurecr.io/AGENCIA_APP_NAME:BUILD_ID
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "1200Mi"
+              cpu: .10
+            limits:
+              memory: "2500Mi"
+              cpu: .50
+          ports:
+          - containerPort: 8080
+            protocol: TCP

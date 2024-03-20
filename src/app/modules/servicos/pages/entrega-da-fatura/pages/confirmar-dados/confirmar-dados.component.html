@@ -1,0 +1,38 @@
+<h2>Confirme as informações da solicitação</h2>
+<p class="subtitulo mt-3 mb-3">
+    Para concluir a solicitação, confirme as informações abaixo:
+</p>
+<app-dados-imovel-ligacao [userUC]="userUC" [userEndereco]="userEndereco"></app-dados-imovel-ligacao>
+
+<form [formGroup]="confirmacaoForm">
+    <div class="dados-cadastrados col-12 col-md-10 col-lg-7 col-xl-6 p-0 mt-3">
+        <div class="item-dado-cadastrado" *ngFor="let item of dados">
+            <span class="legenda-dado-cadastrado">{{ item.label }}</span>
+            <span > {{ item.data }} </span>
+        </div>
+
+
+        <div class="col-12 termo-de-entrega mt-3 p-0" *ngIf="fluxoDiferenteUC">
+            <div [ngClass]="{
+                'check-group-a': grupoDoUsuario === 'A',
+                'check-group-b': grupoDoUsuario === 'B'
+              }" id="termo">
+                <mat-checkbox formControlName="aceitarTermo"> </mat-checkbox>
+            </div>
+            <p class="col-xs-7 col-sm-12 col-md-9 col-lg-8 p-0 text-termo">
+                {{textoTermoAceite}}
+            </p>
+        </div>
+    </div>
+</form>
+
+
+<div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="'CONCLUIR'" [isDisabled]="confirmacaoForm.invalid" (callFunction)="concluir()">
+    </app-neo-button>
+</div>

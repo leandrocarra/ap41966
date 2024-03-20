@@ -1,0 +1,66 @@
+#dialog-login {
+    padding: 1rem;
+    max-width: 33rem;
+    margin: 0;
+    max-height: 100% !important;
+
+    .mat-horizontal-stepper-header-container {
+        display: none !important;
+    }
+    .mat-horizontal-content-container {
+        padding: 0;
+    }
+
+    a {
+        color: var(--bs-link-color) !important;
+    }
+
+    .btn-perfil {
+        border-radius: 0.625em;
+        border: 1px solid var(--neo-white-400) !important;
+        height: 5rem;
+
+        div {
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+        }
+
+        mat-icon {
+            width: 28px;
+            font-size: 1.75rem;
+            color: var(--neo-dark-green);
+            display: block;
+        }
+
+        span {
+            color: var(--neo-dark-gray);
+            display: block;
+        }
+
+        &:hover {
+            background-color: var(--neo-dark-green);
+            color: var(--neo-white);
+            border: 2px solid var(--neo-light-green);
+
+            mat-icon {
+                color: var(--neo-white);
+            }
+
+            span {
+                color: var(--neo-white);
+            }
+        }
+    }
+}
+
+::-ms-reveal {
+    display: none;
+}
+
+.recaptcha-description {
+    font-size: 0.875rem;
+    color: slategray;
+}

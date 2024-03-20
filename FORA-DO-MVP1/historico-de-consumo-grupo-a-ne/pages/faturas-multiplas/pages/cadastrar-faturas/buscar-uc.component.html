@@ -1,0 +1,71 @@
+<div style="margin: 22px;">
+  <div class="col-12 mt-3" style="text-align-last: end;">
+    <mat-icon (click)="close()" style="cursor: pointer;">close</mat-icon>
+  </div>
+  <div class="col-12">
+    <h6>{{ data.nomeGrupo }}</h6>
+  </div>
+
+  <div class="col-12 mt-3 d-md-flex justify-content-between">
+    <div class="d-flex ps-0 col-12 col-md-6 pt-2 pt-md-0 search-field">
+      <mat-form-field appearance="outline" class="form-field-search">
+        <div class="row">
+          <div class="col-2 pe-0 ps-1 mt-1">
+            <mat-icon>
+              <span class="material-icons-outlined">search</span>
+            </mat-icon>
+          </div>
+          <div class="col-6 mt-2">
+            <input matInput type="text" placeholder="Pesquisar..." (keyup)="search($event.target.value)" [(ngModel)]="imovelFilter"/>
+          </div>
+        </div>
+      </mat-form-field>
+    </div>
+    <div class="d-flex pe-0 ps-0 mt-3 mt-md-0 col-12 col-md-6 pt-md-0 justify-content-md-end checkbox-field">
+      <div>
+        <mat-checkbox (click)="onSelectAll($event)"></mat-checkbox>
+      </div>
+      <div style="margin-top: 6px;">
+        <p>Selecionar todas as unidades consumidoras</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="col-12 mt-1 d-flex justify-content-between">
+    <table>
+      <th></th>
+      <tbody>
+        <tr *ngFor="let imovel of ativarDados">
+          <td>
+            <div class="col-12 box-imoveis">
+              <div class="row d-flex justify-content-between" style="cursor: pointer; align-items: center;">
+                <div class="col-1">
+                  <mat-checkbox [checked]="selectItem" (click)="escolhaUC(imovel)"></mat-checkbox>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 pb-md-0 pb-2">
+                  <div class="unidade-consumidora-title pb-2">
+                    UNIDADE CONSUMIDORA:
+                  </div>
+                  <div class="unidade-consumidora-value">
+                    {{ imovel.UnidadeConsumidora }}
+                  </div>
+                </div>
+                <div class="col-12 col-md-5 col-lg-5 endereco-value">
+                  {{ imovel.Endereco }}
+                </div>
+              </div>
+            </div>
+          </td>
+    </table>
+  </div> -->
+
+  <div class="col-12 mt-3 d-md-flex justify-content-center">
+    <app-pagination [ativarDados]="ativarDados" [pageSize]="pageSize" [collections]="imoveis"
+      (eventPagination)="eventPagination($event)" #pagination></app-pagination>
+  </div>
+
+  <div class="d-flex justify-content-center">
+  <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'Cadastrar no grupo'" (callFunction)="cadastrarGrupo()" [isDisabled]="imovelEscolhido.length < 1">
+  </app-neo-button>
+  </div>
+</div>

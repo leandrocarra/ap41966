@@ -1,0 +1,14 @@
+<svg id="help_outline_black_24dp" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <path id="Path_14116" data-name="Path 14116" d="M0,0H28V28H0Z" fill="none"/>
+  <g id="Group_39569" data-name="Group 39569" transform="translate(16359 9894)">
+    <g id="bolt-24px" transform="translate(-16357 -9892)">
+      <g id="Group_14576" data-name="Group 14576">
+        <rect id="Rectangle_18681" data-name="Rectangle 18681" width="24" height="24" fill="none"/>
+      </g>
+    </g>
+    <g id="crop_free-24px" transform="translate(-16357 -9892)">
+      <path id="Path_13283" data-name="Path 13283" d="M0,0H24V24H0Z" fill="none"/>
+      <path id="Path_13284" data-name="Path 13284" d="M3,5.23V8.574a1.115,1.115,0,0,0,2.23,0V6.344A1.118,1.118,0,0,1,6.344,5.23h2.23a1.115,1.115,0,0,0,0-2.23H5.23A2.236,2.236,0,0,0,3,5.23ZM4.115,16.378A1.118,1.118,0,0,0,3,17.492v3.344a2.236,2.236,0,0,0,2.23,2.23H8.574a1.115,1.115,0,1,0,0-2.23H6.344A1.118,1.118,0,0,1,5.23,19.722v-2.23A1.118,1.118,0,0,0,4.115,16.378Zm16.722,3.344a1.118,1.118,0,0,1-1.115,1.115h-2.23a1.115,1.115,0,0,0,0,2.23h3.344a2.236,2.236,0,0,0,2.23-2.23V17.492a1.115,1.115,0,0,0-2.23,0ZM20.837,3H17.492a1.115,1.115,0,0,0,0,2.23h2.23a1.118,1.118,0,0,1,1.115,1.115v2.23a1.115,1.115,0,1,0,2.23,0V5.23A2.236,2.236,0,0,0,20.837,3Z" transform="translate(-1.033 -1.033)" fill="#14a7ff"/>
+    </g>
+  </g>
+</svg>

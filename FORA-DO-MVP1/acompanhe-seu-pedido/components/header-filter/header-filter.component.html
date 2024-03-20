@@ -1,0 +1,9 @@
+<div class="box-filtros" [class.background-group-b]="user.group === 'B'"
+    [class.background-group-a]="user.group === 'A'">
+    <div class="t-faturas-title">
+        <h6>ACOMPANHAR SOLICITAÇÕES</h6>
+    </div>
+    <app-filters-acompanhe (eventOutput)="eventFilter($event)" (eventClear)="eventClearTO($event)" [itens]="itens"
+        [pageSize]="pageSize">
+        ></app-filters-acompanhe>
+</div>

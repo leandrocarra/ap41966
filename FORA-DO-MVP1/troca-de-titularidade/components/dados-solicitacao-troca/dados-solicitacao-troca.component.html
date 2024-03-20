@@ -1,0 +1,36 @@
+<div class="dados-cadastrados col-12 col-md-10 col-lg-7 col-xl-6 p-0 mt-3">
+    <div *ngFor="let content of dados">
+        <div *ngIf="content.rota === undefined" class="item-dado-cadastrado flex">
+            <span>{{content.label}}</span>
+            <span *ngIf="content.label != 'CPF'">{{content.data}}</span>
+            <span *ngIf="content.label == 'CPF'">{{content.data | formatCpfCnpj}}</span>
+        </div>
+
+        <!-- exemplo de dados que contém rota        
+            "label": "E-MAIL PARA CONTATO",
+            "data": "123@gmail.com",
+            "rota": "/minha-conta/editar-dados"
+        -->
+        <div *ngIf="content.rota !== undefined" class="item-dado-cadastrado flex">
+            <span class="rota-label">{{content.label}}</span>
+            <div class="info-btn-edit flex">
+                <span class="rota-data d-flex justify-content-end" *ngIf="content.label == 'Telefone para contato'">{{content.data | formatCelular}}</span>
+                <span class="rota-data d-flex justify-content-end" *ngIf="content.label != 'Telefone para contato'">{{content.data}}</span>
+                <span class="d-flex justify-content-end"><a
+                        (click)="redirecionar(content.rota, content.navExtra)">Alterar</a></span>
+            </div>
+        </div>
+    </div>
+
+    <div *ngFor=" let file of files">
+        <div class="item-dado-cadastrado flex">
+            <span>{{file.fileName}}</span>
+            <div class="file">
+                <mat-icon class="d-inline">image</mat-icon>
+                <div class="overflow-hidden flex-wrap">
+                    <p class="mb-0 d-inline text-nowrap">{{file.fileName.substring(0, 3)}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

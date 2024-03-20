@@ -1,0 +1,89 @@
+
+<div *ngIf="faturas.length > 0">
+    <div *ngFor="let fatura of faturas">
+        <mat-card class="mat-card-pendencias">
+            <mat-card-content class="row m-0 d-flex justify-content-between">
+                    <div class="row col-12 p-0 m-0 d-flex justify-content-between header-fatura">
+                            <div class="align-items-center d-lg-block attention">
+                                <span class="material-icons-outlined ">error_outline</span>
+                            </div>
+
+                            <div class="align-items-center d-lg-block">
+                                <div class="titulo-coluna d-block">
+                                    Valor
+                                </div>
+                                <div class="valor-coluna d-block">{{ fatura.valor }}</div>
+                            </div>
+
+                            <div class="" [class.w-100]="mobileXS">
+                                <div class="titulo-coluna d-block mt-2 mt-sm-0">
+                                    Vencimento
+                                </div>
+                                <div class="valor-coluna d-block">{{ fatura.vencimento }}</div>
+                            </div>
+
+                            <div class="" [class.w-100]="mobileXS">
+                                <div class="titulo-coluna d-block green-dark mt-sm-0 mt-2">
+                                    Código de Barras
+                                </div>
+                                <div class="valor-coluna d-block text-wrap" style="word-wrap:break-word;">
+                                    {{ fatura.codigoBarras }}
+                                </div>
+                            </div>
+                    </div>
+                <div class="row m-0 d-flex justify-content-between justify-content-md-start mt-4">
+
+                    <button type="button" class="btn-primary-p-light-green btn-formatter me-4" [class.mb-1]="mobile"
+                        #menuBtn2 mat-button [matMenuTriggerFor]="Pagar">
+                        <span
+                            class="justify-content-between justify-content-md-around content-button d-flex align-items-center">
+                            pagar com
+                            <mat-icon>
+                                <span class="material-icons">expand_more</span>
+                            </mat-icon>
+                        </span>
+                    </button>
+
+                    <mat-menu #Pagar="matMenu" hidden>
+                        <button mat-menu-item (click)="codigoBarras(fatura.codigoBarras)">
+                            Código de Barras
+                        </button>
+                        <button mat-menu-item (click)="pagarComCartaoCredito()">
+                            Cartão de Crédito
+                        </button>
+                        <button mat-menu-item (click)="pagarComInternetBanking()">
+                            Internet Banking
+                        </button>
+                        <button mat-menu-item (click)="pagarComPix(fatura.codigoBarras)">
+                            Pix
+                        </button>
+                    </mat-menu>
+
+                    <button type="button" class="btn-primary-p-light-green btn-formatter me-4" [class.mb-1]="mobile"
+                        (click)="codigoBarras(fatura.codigoBarras)">
+                        <span
+                            class="justify-content-between justify-content-md-around content-button d-flex align-items-center">
+                            copiar código
+                            <mat-icon>
+                                <span class="material-icons">content_copy</span>
+                            </mat-icon>
+                        </span>
+                    </button>
+
+                    <button type="button" class="btn-primary-p-light-green btn-formatter" [class.mb-1]="mobile">
+                        <span
+                            class="justify-content-between justify-content-md-around content-button d-flex align-items-center"
+                            (click)="visualizar(fatura)">
+                            visualizar
+                            <mat-icon>
+                                <span class="material-icons-outlined">insert_drive_file</span>
+                            </mat-icon>
+                        </span>
+                    </button>
+
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

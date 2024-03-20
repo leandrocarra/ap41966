@@ -1,0 +1,120 @@
+[id^=content-accordion-fatura] {
+	button {
+		padding: 0.5rem 50px 0.5rem 25px;
+		border-radius: 25px;
+		display: flex;
+		justify-content: space-evenly;
+		height: fit-content;
+		align-items: center;
+		margin: 0.5rem;
+		text-transform: uppercase;
+	}
+
+	.svg-icon {
+		position: absolute;
+		top: 5px;
+		margin-left: 5px;
+	}
+
+	h6 {
+		width: 100%;
+		display: block;
+		color: var(--neo-dark-gray);
+	}
+
+	h4 {
+		text-transform: uppercase;
+		color: var(--neo-dark-gray);
+		font-weight: bold;
+	}
+
+    .hist-consumo {
+        p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+        .valor-fatura {
+            font-size: 3rem !important;
+            font-weight: bold;
+            padding: 10px 0 10px 0;
+            &.Vencida {
+                color: #ff3921;
+                margin-left: -3px;
+            }
+            &.Pago {
+                color: #00a443;
+                margin-left: -3px;
+            }
+        }
+        .valor-kwh {
+            font-size: 3rem !important;
+            font-weight: bold;
+            padding: 10px 0 10px 0;
+            color: #707070;
+        }
+    }
+    .hist-divider {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background-color: var(--bs-gray-400);
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+	.vertical-divider {
+		max-height: 100%;
+		position: absolute;
+		height: 500px;
+		right: 16px;
+		top: 0;
+	}
+
+	.alert-fatura {
+		align-self: flex-end;
+	}
+
+	.alert-fatura-titulo {
+		color: var(--neo-pure-red);
+		font-size: 1rem;
+	}
+
+	.alert-fatura-info {
+		color: var(--neo-dark-gray);
+	}
+
+	.btn-pix {
+		vertical-align: middle;
+		background-color: var(--neo-dark-blue);
+		color: var(--neo-white);
+	}
+
+	@media screen and (max-width: 1024px) {
+		button {
+			width: 200px !important;
+		}
+	}
+
+	@media screen and (max-width: 768px) {
+		button {
+			width: 300px !important;
+		}
+
+		mat-divider {
+			display: none;
+		}
+	}
+
+	@media screen and (max-width: 575px) {
+		button {
+			max-width: 320px !important;
+			width: 100% !important;
+		}
+
+		mat-divider {
+			display: none;
+		}
+	}
+}

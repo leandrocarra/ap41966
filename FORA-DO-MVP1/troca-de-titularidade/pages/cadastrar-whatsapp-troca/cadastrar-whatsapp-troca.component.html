@@ -1,0 +1,38 @@
+<h2>Fatura por WhatsApp</h2>
+<p class="subtitulo mt-3 mb-3">Para receber suas faturas via WhatsApp, forneça um número de celular para recebimento:
+</p>
+
+<form [formGroup]="cadastrarWhatsAppGroup">
+    <h6 class="subtitulo-h6 mt-4 mb-2">
+        NÚMERO DE WHATSAPP PARA RECEBIMENTO DA FATURA:
+    </h6>
+
+    <div id="black-and-white-input-1">
+
+        <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 col-lg-4 pb-0 ps-0">
+            <mat-label>Número de WhatsApp</mat-label>
+            <input matInput type="text" name="celular" id="celular" formControlName="celular" (keyup)="getCelMask()"
+                [mask]="mascaraCelular" (ngModelChange)="verificarBotao()" required />
+        </mat-form-field>
+    </div>
+
+    <div id="black-and-white-input-2">
+        <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 col-lg-4 pb-0 ps-0">
+            <mat-label>Confirmar número de WhatsApp</mat-label>
+            <input matInput type="text" name="confirmarCelular" id="confirmarCelular" formControlName="confirmarCelular"
+                (keyup)="getCelMask()" [mask]="mascaraCelular" (ngModelChange)="verificarBotao()" required />
+        </mat-form-field>
+    </div>
+
+
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+        <app-neo-button class=" me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="'CONFIRMAR'" [isDisabled]="isDisabled" (callFunction)="confirmar()">
+        </app-neo-button>
+    </div>
+
+</form>

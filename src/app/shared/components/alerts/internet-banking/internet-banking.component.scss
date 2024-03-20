@@ -1,0 +1,103 @@
+#dialog-internet-banking.box-content {
+    display: block;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+#dialog-internet-banking {
+    .title-alert {
+        color: var(--neo-dark-gray);
+        font-weight: bold;
+        margin: 12px auto 8px;
+    }
+
+    .titulo-fatura {
+        color: var(--neo-pure-red);
+    }
+
+    .subtitulo {
+        font-weight: normal;
+        color: var(--neo-dark-gray);
+        margin: 0 auto 16px;
+    }
+
+    .descricao-selecionar-banco {
+        font-weight: bold;
+        color: var(--neo-dark-gray-2);
+        margin: 0 auto 8px;
+    }
+
+    .estilo-direcionamento {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        text-decoration: none !important;
+    }
+
+    .divisao-bancos {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin: 0 auto 8px;
+    }
+
+    .imagem-banco {
+        width: 110px;
+    }
+
+    .span-banco {
+        font-weight: bold;
+        color: var(--neo-dark-gray-2);
+    }
+
+    .text-left {
+        margin: 30px auto;
+    }
+
+    .formatacao-recomendacao {
+        margin: 8px auto auto auto;
+    }
+
+    .margem-fatura {
+        margin: auto 20px auto auto;
+    }
+
+    .caixa-qrcode{
+        word-break: break-all;
+        margin: auto;
+        background-color: var(--neo-light-green);
+        border-radius: 10px;
+        padding: 15px;
+        border: 1px solid var(--neo-light-green);
+    }
+
+    .codigo-de-barras{
+        color: var(--neo-white);
+        font-weight: 500;
+    }
+
+    .dados-endereco {
+        color: var(--neo-dark-gray-2);
+        font-size: 1.125rem;
+        margin-top: 0.025rem;
+    }
+
+    .valor-fatura {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: var(--neo-dark-gray-2);
+    }
+
+    .texto-codigo-barras{
+        font-size: 14px;
+    }
+
+    .text-nowrap {
+        font-weight: 500;
+        color: var(--neo-dark-gray);
+    }
+
+    button {
+        padding: 0.75rem 1.5rem 0.6rem;
+    }
+}

@@ -1,0 +1,8 @@
+<div class="col-12 col-xl-6 col-lg-7 col-md-10 container-dados-imovel">
+    <div *ngFor="let dado of dados" class="divisor">
+        <div class="row d-flex justify-content-between">
+            <div class="col-4 col-md-6 subtitulo">{{dado.label}}</div>
+            <div class="col-7 col-md-6 text-value">{{ dado.value }}</div>
+        </div>
+    </div>
+</div>

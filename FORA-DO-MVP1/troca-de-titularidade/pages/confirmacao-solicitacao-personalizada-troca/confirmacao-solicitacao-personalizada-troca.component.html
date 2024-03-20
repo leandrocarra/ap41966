@@ -1,0 +1,90 @@
+<div id="black-and-white-input-1">
+    <h2>Confirme as informações da solicitação</h2>
+
+    <p class="subtitulo">Para concluir a solicitação, confirme as informações abaixo:</p>
+
+    <app-dados-cliente-ligacao [valores]="dadosCliente"></app-dados-cliente-ligacao>
+    <app-dados-solicitacao-troca [dados]="dadosSolicitacao"></app-dados-solicitacao-troca>
+
+    <h6 class="subtitulo-h6 mt-4 mb-3">GOSTARIA DE CADASTRAR O DÉBITO AUTOMÁTICO?</h6>
+
+    <mat-radio-group class="radio-group" [(ngModel)]="debitoAutomatico" (change)="verificarBtn()">
+        <div class="d-inline col-12 p-0 mt-md-4 mb-18 me-3">
+            <mat-radio-button class="format-info-radio-btn" value="Quero cadastrar">
+                Quero cadastrar</mat-radio-button>
+        </div>
+        <div class="d-inline col-12 p-0 mb-18">
+            <mat-radio-button class="format-info-radio-btn" value="Não quero">Não quero
+            </mat-radio-button>
+        </div>
+    </mat-radio-group>
+
+    <div *ngIf="debitoAutomatico === 'Quero cadastrar'"
+        class="mt-3 col-12 col-xl-6 col-lg-7 col-md-10 col-sm-12 p-0 m-divider">
+        <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="col-12 p-0">
+            <mat-label>BANCO</mat-label>
+            <mat-select placeholder="Banco" [(ngModel)]="bancoSelected" name="banco" id="banco" required
+                (ngModelChange)="verificarBtn()">
+                <mat-option *ngFor="let banco of bancos" [value]="banco">
+                    {{ banco.nomeCompletoBanco }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="col-12 p-0">
+            <mat-label>AGÊNCIA</mat-label>
+            <input matInput type="text" id="agencia" [(ngModel)]="dadosConta.agencia" placeholder="AGÊNCIA" mask="0000"
+                required onlyNumber (ngModelChange)="verificarBtn()">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="col-12 p-0"
+            [hideRequiredMarker]="bancoSelected?.nomeAbreviadoBanco !== 'BANCO DO BRASIL'">
+            <mat-label>CONTA CORRENTE COM DÍGITO</mat-label>
+            <input matInput type="text" id="conta" name="conta" [(ngModel)]="dadosConta.conta"
+                placeholder="Conta corrente com dígito"
+                mask="{{ bancoSelected?.numeroCaracteresContaBancaria }} - {{ bancoSelected?.numeroCaracteresDigitoContaBancaria }}"
+                maxlength="{{ bancoSelected?.mascara.length }}" required (ngModelChange)="verificarBtn()">
+        </mat-form-field>
+
+        <p class="mb-0 texto-atencao" *ngIf="bancoSelected?.nomeAbreviadoBanco === 'BANCO DO BRASIL'">
+            * Se o dígito da sua conta for X utilize o dígito 0
+        </p>
+    </div>
+
+    <div id="data-certa">
+        <h6 class="subtitulo-h6 mt-3 mb-3">DATA DE VENCIMENTO</h6>
+        <div class="col-12 col-xl-3 col-lg-4 col-md-6 p-0">
+            <mat-form-field appearance="outline" class="mat-select-data">
+                <mat-label>Data de Vencimento</mat-label>
+                <mat-select placeholder="Data de Vencimento" [(ngModel)]="dataCerta" (selectionChange)="verificarBtn()">
+                    <mat-option class="option" *ngFor="let data of datasPossiveis" [value]="data">{{data}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div id="termo" class="col-12 col-xl-6 col-lg-7 col-md-12 p-0 d-flex align-items-center">
+            <div [ngClass]="{
+                'check-group-a': user.group === 'A',
+                'check-group-b': user.group === 'B'
+              }">
+                <mat-checkbox class="text-wrap me-2" [(ngModel)]="checkTermo" (ngModelChange)="verificarBtn()">
+                </mat-checkbox>
+            </div>
+            <div>
+                Declaro que li e estou ciente que a data de vencimento da fatura somente poderá ser modificada em um
+                intervalo superior a 12 (doze) meses.
+            </div>
+
+        </div>
+    </div>
+
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'CONCLUIR'"
+            (callFunction)="continuar()" [isDisabled]="isDisabled">
+        </app-neo-button>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<mat-card id="uc-infos" class="mat-neoenergia">
+    <div class="row justify-content-center justify-content-md-start align-middle">
+        <span class="col-auto pe-2 align-self-center material-icons-outlined icon-house text-dark">other_houses</span>
+        <div class="col-12 col-sm mat-neo mat-neo--meus-imoveis">
+            <div class="titulo-uc">
+                {{ uc }}
+            </div>
+            <div class="endereco-uc">
+                {{ (contaColetiva ? 'Unidade Consumidora Coletiva' : enderecoCompleto) | titlecase}}
+            </div>
+        </div>
+        <app-neo-button class="d-flex ps-0 align-items-center col-auto"
+                        [classes]="grupoTensao === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                        [titleText]="'Minhas Unidades Consumidoras'" [innerContent]="htmlbuttonImoveis" (callFunction)="redirecionarMeusImoveis()">
+        </app-neo-button>
+    </div>
+</mat-card>

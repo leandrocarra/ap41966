@@ -1,0 +1,73 @@
+<p class="subtitulo mt-5 mt-md-0 mb-0">Nos conte mais sobre você! Preencha abaixo os seus dados pessoais.</p>
+
+<h6 class="bold color-dark-gray my-4">DADOS DO REPRESENTANTE LEGAL</h6>
+
+<form [formGroup]="formRepresentante">
+
+    <div class="row">
+        <mat-form-field class="col-12 col-md-6 col-lg-3" id="documento" color="primary" appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input matInput type="text" name="documento" formControlName="documento" onlyNumber [mask]="cpfMask">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorCPF"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-md-6 col-lg-3" color="primary" appearance="outline">
+            <mat-label>DATA DE NASCIMENTO</mat-label>
+            <input matInput name="dataNascimento" formControlName="dataNascimento" type="text" maxLength="10" mask="00/00/0000">
+            <mat-error class="erro-input-cadastro">
+                <app-custom-mat-error [mensagem]="matErrorData"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field class="col-12 col-md-6 col-lg-3" color="primary" appearance="outline">
+            <mat-label>SELECIONE O DOCUMENTO</mat-label>
+            <mat-select placeholder="Documento" name="tipoDocSecundario" formControlName="tipoDocSecundario" (selectionChange)="aoAlterarSelecao($event)">
+                <mat-option class="option" *ngFor="let documento of tipoDeDocumentoSelecionado" [value]="documento">{{ documento
+                    }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-md-6 col-lg-3" color="primary" appearance="outline">
+            <mat-label>NÚMERO DO DOCUMENTO</mat-label>
+            <input matInput type="text" name="docSecundario" formControlName="docSecundario" [mask]="maskInputDocumento">
+            <mat-error>
+                <app-custom-mat-error [mensagem]="matErrorDocumentoSecundario"></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-md-6 col-lg-2" id="documento" color="primary" appearance="outline">
+            <mat-label>ÓRGÃO EMISSOR</mat-label>
+            <mat-select placeholder="Documento" name="tipoDocSecundario" formControlName="orgao">
+                <mat-option *ngFor="let orgao of orgaosEmissores" [value]="orgao.sigla" class="option">
+                    {{orgao.sigla}} - {{orgao.nomeExtenso}}
+                </mat-option>
+            </mat-select>
+            <mat-error class="erro-input-cadastro">
+                <app-custom-mat-error></app-custom-mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-12 col-md-6 col-lg-2" appearance="outline" color="primary">
+            <mat-label>ESTADO EMISSOR</mat-label>
+            <mat-select focus name="estado" formControlName="estado" id="estado">
+                <mat-option *ngFor="let estado of estados" [value]="estado.sigla">{{ estado.sigla }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="d-flex justify-content-between justify-content-md-start mb-5 mb-md-0">
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-3">
+            <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                (callFunction)="voltar();">
+            </app-neo-button>
+
+            <app-neo-button class="me-3 m-0" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                [titleText]="'CONTINUAR'" (callFunction)="continuar()" [isDisabled]="formRepresentante.invalid">
+            </app-neo-button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,36 @@
+<div class="mx-auto text-center pt-3 pb-4 px-1 my-auto" id="dialog-pix">
+    <img class="mx-auto d-block" alt="Imagem pix" src="assets/images/pix_colorido.svg">
+
+    <h3 class="subtitulo mt-3 text-center">Pagamento por Pix</h3>
+
+    <div class="col-10 col-lg-8 mx-auto text-center">
+        <p class="color-dark-primary text-center"><strong>
+                Abra o aplicativo do seu banco ou instituição financeira e use este QR code para pagar via PIX.
+            </strong></p>
+    </div>
+    
+    <img class="qrcode-pix" [src]="qrcodePix" alt="Falha ao carregar o QR-CODE do PIX">
+
+    <div class="col-10 col-lg-6 mx-auto text-center ">
+        <p class="color-dark-primary"><strong>Se preferir, acesse o internet banking e cole o código PIX no campo
+                indicado no site</strong></p>
+    </div>
+
+    <div class="caixa-qrcode col-10 col-lg-6">
+        <p class="m-0 d-flex p-0">{{ chaveAleatoriaPix }}</p>
+    </div>
+
+    <div class="row m-0 d-flex justify-content-center mt-5">
+        <button type="button" class="btn-primary-p-light-green btn-formatter px-4" (click)="copiarCodigoPix()">
+            COPIAR CÓDIGO PIX
+        </button>
+    </div>
+
+    <div class="col-10 col-lg-6 mx-auto text-center mt-5">
+        <p class="color-dark-primary"><strong>O pedido será cancelado caso o PIX não seja pago até o vencimento</strong>
+        </p>
+    </div>
+
+    <button type="button" mat-stroked-button color="accent" class="botao-fechar mt-4 mb-2"
+        [class]="grupoDoUsuario === 'A' ? 'dark-green' : 'light-green'" (click)="fechar()">FECHAR</button>
+</div>

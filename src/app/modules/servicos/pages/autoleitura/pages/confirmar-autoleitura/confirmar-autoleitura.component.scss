@@ -1,0 +1,54 @@
+.leitura-medidor {
+    margin-top: 2rem;
+    font-weight: 500;
+    color: var(--neo-dark-gray);
+}
+
+.confirma-leitura {
+    font-weight: 500;
+    color: var(--neo-dark-gray);
+    margin: auto 0;
+}
+
+.text-distance {
+    text-align: end;
+    margin: auto 0;
+    font-weight: normal;
+}
+
+.text-distance-title {
+    @extend .text-distance;
+    font-weight: 500;
+    color: var(--neo-dark-gray);
+}
+
+.corrigir-autoleitura {
+    cursor: pointer;
+    color: var(--neo-light-blue);
+    text-decoration: none;
+}
+
+.corrigir-autoleitura:hover {
+    text-decoration: underline;
+}
+
+#lista-autoleituras {
+    .dados {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    mat-divider {
+        border-top-color: var(--neo-light-gray);
+    }
+}
+
+.text-link,
+.text-link:hover {
+    color: var(--neo-dark-blue) !important;
+    font-weight: normal;
+}
+
+.text-consumo-consciente {
+    font-weight: normal;
+}

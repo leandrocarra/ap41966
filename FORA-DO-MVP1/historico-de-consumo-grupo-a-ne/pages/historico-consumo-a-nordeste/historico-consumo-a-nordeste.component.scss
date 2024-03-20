@@ -1,0 +1,162 @@
+h2 {
+  color: var(--neo-dark-green);
+  letter-spacing: 0.56px;
+  line-height: 35px;
+  font-weight: bold;
+}
+
+.box-economia-energia {
+  background-color: #f6f8e7;
+  height: 100%;
+}
+
+.alert {
+  color: var(--neo-dark-gray);
+  margin-bottom: 0px;
+}
+
+.text-alert {
+  vertical-align: super;
+  margin-left: 8px;
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+}
+
+.icon-green {
+  color: var(--neo-light-green);
+  width: 35px;
+  height: 19px;
+  font-size: 2.188rem;
+}
+
+.icon-red {
+  color: var(--neo-pure-red);
+  width: 35px;
+  height: 19px;
+  font-size: 2.188rem;
+  margin-left: 34px;
+  margin-top: 4px;
+}
+
+.text-green {
+  color: var(--neo-light-green) !important;
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.36px;
+  font-weight: 700;
+}
+
+.text-red {
+  margin-left: 46px;
+  color: var(--neo-pure-red) !important;
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.36px;
+  font-weight: 700;
+}
+
+.text-green:hover {
+  color: var(--neo-light-green) !important;
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.36px;
+  font-weight: 700;
+}
+
+.text-dicas {
+  text-align: left;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.28px;
+  color: var(--neo-dark-gray-2);
+  padding: 0px;
+}
+
+a {
+  color: var(--neo-dark-gray-2) !important;
+}
+
+.box-paginator {
+  width: 91%;
+  background-color: var(--background-color);
+}
+
+.box-componente-accordion {
+  margin-top: 20px;
+}
+
+.box-component-filter {
+  margin-top: 36px;
+}
+
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.categoria-explicacao {
+  cursor: pointer;
+  font-size: 0.875rem ;
+}
+
+.categoria-tarifaria {
+  font-size: 0.875rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+
+  mat-icon {
+    margin-right: 2px;
+  }
+}
+
+.meu-perfil-header {
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: var(--neo-light-green);
+  color: var(--neo-white);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  height: auto;
+}
+
+.gradient {
+  background: rgb(134, 134, 134);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(66, 115, 20, 1) 0%,
+    rgba(66, 115, 20, 1) 60%,
+    rgba(105, 143, 15, 1) 80%,
+    rgba(164, 186, 8, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(66, 115, 20, 1) 0%,
+    rgba(66, 115, 20, 1) 60%,
+    rgba(105, 143, 15, 1) 80%,
+    rgba(164, 186, 8, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(66, 115, 20, 1) 0%,
+    rgba(66, 115, 20, 1) 60%,
+    rgba(105, 143, 15, 1) 80%,
+    rgba(164, 186, 8, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--neo-dark-green)",endColorstr="var(--neo-light-green)",GradientType=1);
+}
+
+.mt-12 {
+  margin-top: 12px !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .alert-baixo-consumo {
+    padding: 0.75rem 0px;
+    padding-top: 0px;
+  }
+}

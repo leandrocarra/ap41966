@@ -1,0 +1,29 @@
+<h2>Fatura Múltipla | Grupo 1</h2>
+
+<p class="mt-3">
+	Consulte as suas contas ou solicite uma 2ª via para realizar o pagamento
+</p>
+
+<div class="row mt-4">
+	<div class="col-12 col-lg-6">
+		<app-faturas [isTelaFaturas]="true"></app-faturas>
+	</div>
+	<div class="col-12 col-lg-6 mt-lg-0 mt-3"> 
+		<app-personalize-fatura></app-personalize-fatura>
+	</div>	
+</div>
+
+<div class="mt-4" style="margin-top: 36px;">
+	<app-filters [labelTitle]="'LISTA DE FATURAS'" [itens]="itens" [pageSize]="pageSize"
+		(eventOutput)="eventFilter($event)" (eventClear)="eventClear($event)" (eventSelectAll)="eventSelectAll($event)">
+	</app-filters>
+</div>
+
+<div style="margin-top: 20px;">
+	<app-accordion></app-accordion>
+</div>
+
+<div class="col-11 box-paginator">
+	<app-pagination [ativarDados]="ativarDados" [pageSize]="pageSize" [collections]="itens" [grupo]="user.group"
+		(eventPagination)="eventPagination($event)" #pagination></app-pagination>
+</div>

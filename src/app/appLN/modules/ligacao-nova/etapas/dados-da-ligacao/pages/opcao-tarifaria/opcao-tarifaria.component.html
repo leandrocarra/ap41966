@@ -1,0 +1,51 @@
+<h4 class="titulo">Confirme a sua opção tarifária:</h4>
+<p class="texto mb-3">Por padrão, consideramos a tarifa convencional para todos os clientes. Confira as opções e confirme a sua escolha:</p>
+
+<form [formGroup]="formTarifa" (submit)="continuar();">
+    <div class="d-flex justify-content-between">
+        <mat-radio-group formControlName="tarifa" class="w-md-50">
+            <div class="row">
+                <mat-radio-button class="col-md-9 texto" id="convencional" name="convencional" [value]="'CONVENCIONAL'">
+                    <strong>Tarifa Convencional: </strong>
+                    tarifa única de consumo de energia elétrica, independentemente das horas de utilização do dia.
+
+                    <p class="mb-0" *ngIf="mobile">
+                        <strong class="textoSeloMobile">A MAIS ADOTADA PELOS CLIENTES</strong>
+                        <img class="melhorOpcaoMobile" src="../../../../../../../../assets/assetsLN/images/seloMobile.svg"
+                            alt="selo vermelho de tarifa mais adotada">
+                    </p>
+
+                </mat-radio-button>
+                <img *ngIf="!mobile" class="melhorOpcao col-md-3" src="../../../../../../../../assets/assetsLN/images/tarifa_adotada.svg"
+                    alt="selo vermelho de tarifa mais adotada">
+            </div>
+
+            <mat-radio-button *ngIf="perfil === 'RESIDENCIAL'" class="mt-3 texto" id="social" name="social" [value]="'SOCIAL'">
+                <strong>Tarifa Social: </strong>
+                tarifa única reduzida de consumo de energia elétrica para imóveis de famílias com baixa renda.
+                Confira mais informações <a (click)="infoTarifa('social');">aqui</a>.
+            </mat-radio-button>
+
+            <mat-radio-button class="mt-3 texto" id="branca" name="branca" [value]="'BRANCA'">
+                <strong>Tarifa Branca: </strong>
+                tarifa diferenciada de consumo de energia elétrica, de acordo com as horas de utilização do dia.
+                Confira mais informações <a (click)="infoTarifa('branca');">aqui</a>.
+            </mat-radio-button>
+
+
+        <div class="mt-5 d-flex justify-content-between justify-content-md-start">
+            <div class="me-3">
+                <button type="button" class="btn btn-outline-secondary mx-auto" title="Voltar"
+                    (click)="voltar();">VOLTAR</button>
+            </div>
+            <button type="submit" class="btn btn-primary-green" title="Continuar"
+                [disabled]="formTarifa.invalid">CONTINUAR</button>
+        </div>
+
+        </mat-radio-group>
+
+        <div class="d-none d-md-none d-lg-block">
+            <img src="../../../../../../../../assets/assetsLN/images/mulhercalc.svg" class="img-tarifa" alt="Seleciona a opção tarifária">
+        </div>
+    </div>
+</form>

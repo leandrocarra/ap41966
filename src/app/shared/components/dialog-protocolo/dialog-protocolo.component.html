@@ -1,0 +1,39 @@
+<div class="dialog-protocolo dialog-configurations">
+	<div class="w-100 d-flex justify-content-center">
+		<span class="custom-check-icon material-icons-outlined">check_circle_outline</span>
+	</div>
+
+	<h2 class="text-center mb-3">Selecione o e-mail que deseja receber as informações do protocolo solicitado:
+		<strong class="text-break">{{data.protocolo}}</strong>
+	</h2>
+
+	<form [formGroup]="dialogForm" (submit)="submit()">
+		<mat-radio-group class="row d-flex justify-content-center" formControlName="selectedEmail" (change)="selectEmail(dialogForm.get('selectedEmail')?.value)">
+			<p>E-mail de cadastro</p>
+			<div class="col-12 d-flex justify-content-center mb-3">
+				<mat-radio-button value="registered">
+					<strong class="text-dark font-weight-bold">{{data.email}}</strong>
+				</mat-radio-button>
+			</div>
+			
+			<p>Outro E-mail:</p>
+			<div class="col-12 d-flex justify-content-center mb-3">
+				<mat-radio-button  value="other">
+					<div id="black-and-white-input-protocolo" class="d-flex">
+						<mat-form-field appearance="outline">
+							<input matInput formControlName="otherEmail" type="email" placeholder="Digite um endereço de e-mail" />
+						</mat-form-field>
+					</div>
+				</mat-radio-button>
+			</div>
+		</mat-radio-group>
+
+		<div class="w-100 d-flex justify-content-center mb-3">
+			<button type="submit" class="btn btn-primary-p-light-green" [disabled]="dialogForm.invalid">Enviar</button>
+		</div>
+
+		<div class="w-100 d-flex justify-content-center">
+			<a (click)="close();">Cancelar</a>
+		</div>
+	</form>
+</div>

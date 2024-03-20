@@ -1,0 +1,69 @@
+<h5 class="titulo">Ops! Verificamos que você tem pendências em aberto!</h5>
+
+<div class="alert alert-danger box-alert-danger" role="alert">
+    Para continuar com a solicitação de Ligação Nova você precisa realizar o pagamento desses débitos em aberto.
+</div>
+
+<div class="mt-5">
+    <neo-debito-documento (faturasAPagar)="faturasAPagarDocumento($event)" (valorAPagar)="valorAPagarDoc($event)"
+        (totalFaturas)="verificarTotalDoc($event)" (obterUc)="obterUcDoc($event)"></neo-debito-documento>
+</div>
+
+<div class="mt-5">
+    <neo-debito-imovel (faturasAPagar)="faturasAPagarImovel($event)" (valorAPagar)="valorAPagarImovel($event)"
+        (totalFaturas)="verificarTotalImovel($event)"></neo-debito-imovel>
+</div>
+
+<h5 class="titulo mt-5">Você pode pagar à vista ou parcelado no cartão de crédito:</h5>
+
+<div class="d-flex justify-content-start">
+    <div class="justify-content-between m-2">
+        <button type="button" (click)="pagarCartao()" class="btn btn-outline-secondary"
+            [disabled]="getValorTotalDebitosSomados() === 0">PAGAR</button>
+    </div>
+    <div class="justify-content-between m-2">
+        <button type="button" (click)="justificarDebito()" [disabled]="!btnJustificar"
+            class="btn btn-primary-green">JUSTIFICAR DÉBITO</button>
+    </div>
+    <div *ngIf="liberaProsseguir" class="justify-content-between m-2">
+        <button type="button" (click)="checkPagamento();" class="btn btn-primary">PROSSEGUIR</button>
+    </div>
+</div>
+
+<div id="modalPagar" class="modal" role="dialog">
+    <div class="modal-dialog box-pagar">
+        <div class="modal-content">
+            <div class="modal-header box-pagar-header justify-content-end">
+                <button type="button" class="close-light" data-dismiss="modal" (click)="closePagar()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Você será redirecionado para uma nova aba onde poderá efetuar o pagamento online.</p>
+                <p>Após efetuar o pagamento retorne aqui para continuar sua solicitação. </p>
+                <a class="btn btn-primary btn-lg box-pagar-link me-2" rel="noopener" target="_blank" href="#" id="linkPagarFatura"
+                    (click)="liberaBtnProsseguir()">PAGAR</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIM DO MODAL DE PAGAR FATURAS -->
+
+<div class="mt-5" *ngIf="justificaDebito">
+    <h5 class="titulo"><strong>Qual seria a justificativa?</strong></h5>
+
+    <mat-radio-group [(ngModel)]="justificativa">
+        <div class="d-flex flex-md-nowrap flex-wrap mt-4 mb-5 p-0">
+            <div>
+                <mat-radio-button (click)="setJustificativa('debitoPago')" id="debitoPago" value="debitoPago"
+                    class="p-0 pe-3">
+                    <strong class="texto">DÉBITO JÁ FOI PAGO!</strong>
+                </mat-radio-button>
+            </div>
+            <div>
+                <mat-radio-button (click)="setJustificativa('naoReconhecoDebito')" id="naoReconhecoDebito"
+                    value="naoReconhecoDebito" class="p-0 mt-2 mt-md-0">
+                    <strong class="texto">NÃO RECONHEÇO O DÉBITO</strong>
+                </mat-radio-button>
+            </div>
+        </div>
+    </mat-radio-group>
+</div>

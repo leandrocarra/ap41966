@@ -1,0 +1,44 @@
+#dialog-baixar-segunda-via.box-content {
+
+    display: block;
+    padding: 1rem;
+    text-align: center;
+}
+
+#dialog-baixar-segunda-via {
+
+
+    .icon-description {
+        font-size: 126px;
+        margin-bottom: 10px;
+    }
+
+    .title-alert {
+        color: var(--neo-dark-gray);
+        font-weight: bold;
+        margin: 12px auto 12px auto;
+    }
+
+    .box-motivos {
+        text-align: left;
+        width: max-content;
+        margin: 12px auto 12px auto;
+    }
+
+    .btn-cancelar {
+        color: var(--neo-dark-blue);
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        margin: 12px auto 10px auto;
+    }
+
+    .box-buttons {
+        text-align: center;
+    }
+
+    .mat-radio-label {
+        white-space: normal;
+        word-wrap: break-word !important;
+    }
+}

@@ -1,0 +1,43 @@
+<h5 class="titulo mb-4">
+  Qual será a finalidade do imóvel que tera a troca de titularidade?
+</h5>
+
+<div class="row">
+  <div *ngFor="let perfil of infos; let i = index" class="py-2 col-md-3 col-sm-6" (click)="!perfil.bloqueado ? setSelecaoPerfil(i) : ''">
+    <div
+    [class.card-perfil-disable]="perfil.bloqueado"  
+    [class.card-perfil]="!perfil.bloqueado && !perfil.perfilSelecionado"
+    [class.card-perfil-select]="!perfil.bloqueado && perfil.perfilSelecionado"
+    >
+      <div class="align-perfil">
+        <h6 class="d-flex">{{perfil.perfil}}</h6>
+      </div>
+      <div class="align-perfil">
+        <img src="{{perfil.bloqueado ? perfil.imagem_off : perfil.imagem}}" alt="Imagem de perfil" class="img-perfil">
+      </div>
+      <div class="card-descricao">
+        {{perfil.textoPerfil}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-12">
+  <div class="align-button-perfil row">
+    <div class="my-3">
+      <app-neo-button [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'" (callFunction)="voltar()">
+      </app-neo-button>
+    </div>
+    <div class="my-3 mx-3 ">
+      <app-neo-button [classes]="'btn-neoprimary'" [titleText]="btnAlterarCaracteristica"
+        (callFunction)="alteracaoPerfil()">
+      </app-neo-button>
+    </div>
+    {{infoSelecaoPerfil}}
+    <div class="my-3">
+      <app-neo-button [isDisabled]="!isSelect" [classes]="isSelect ? 'btn-neoprimary' : 'btn-neodarkgreen'" [titleText]="'CONTINUAR'"
+        (callFunction)="continuar()">
+      </app-neo-button>
+    </div>
+  </div>
+</div>

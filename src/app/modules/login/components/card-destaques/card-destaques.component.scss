@@ -1,0 +1,21 @@
+.card-destaque {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-destaque .card-atualizacao {
+    align-self: flex-end;
+}
+
+.card-destaque p {
+    font-size: 0.875rem;
+}
+
+.card-destaque {
+    .img-destaque {
+        height: 12rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

@@ -1,0 +1,125 @@
+<div class="box-equipamentos-adicionados">
+    <div class="w-100" *ngIf="!editar">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-4">
+                <div class="d-flex align-items-center justify-content-center justify-content-md-start">
+                    <div class="green-circle">
+                        <div class="{{equipamento?.class}}"></div>
+                    </div>
+                    <div class="titulo2">{{ equipamento?.equipamento === 'OUTROS' ? equipamento?.nome : equipamento?.equipamento }}</div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-2 mt-3 mt-md-0 col-md-2">
+                <span class="d-flex flex-wrap">
+                    <strong class="titulo2 w-100 text-center">POTÊNCIA</strong>
+                    <br />
+                    <strong class="texto w-100 text-center">{{ equipamento?.potenciaReal }}</strong>
+                </span>
+            </div>
+
+            <div class="col-6 col-md-2 mt-3 mt-md-0 col-md-2">
+                <span class="d-flex flex-wrap">
+                    <strong class="titulo2 w-100 text-center">QUANTIDADE</strong>
+                    <br />
+                    <strong class="texto w-100 text-center">{{ equipamento?.quantidade }}</strong>
+                </span>
+            </div>
+
+            <div class="col-12 mt-3 mt-md-0 col-md-4">
+                <div class="d-flex justify-content-between justify-content-md-end">
+                    <button type="button" class="btn btn-outline-secondary me-1" title="Editar equipamento"
+                        (click)="editar = !editar">EDITAR</button>
+                    <button type="button" class="btn btn-outline-secondary " title="Excluir equipamento"
+                        (click)="excluir.emit();">EXCLUIR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="w-100">
+        <neo-edit-calculadora *ngIf="editar" [mobile]="mobile" (cancelar)="cancelar()" [equipamento]="equipamento"
+            (add)="atualizar($event);" [mode]="'EDIT'">
+        </neo-edit-calculadora>
+    </div>
+</div>
+
+
+
+<!-- ============ EDITAR DESKTOP ========= -->
+<!-- <div class="d-flex flex-nowrap justify-content-around confEquipamento mt-2"
+    *ngIf="equipamentoSelecionado && editando && (!mobile || tablet) && editandoIndex === i && !others">
+
+    <div class="form-calc row col-md-4 marginTop">
+        <div class="backgroundImage ms-3 p-2" *ngIf="equipamento?.equipamento != 'MOTOR/BOMBAS'">
+            <img [src]="equipamento?.pathIcon" class="imgAdd font-size: 0.5em;">
+        </div>
+        <div class="backgroundImage ms-3 p-2" *ngIf="equipamento?.equipamento === 'MOTOR/BOMBAS'">
+            <img [src]="equipamento?.pathIcon" class="mt-1 font-size: 0.5em;">
+        </div>
+        <div style="font-size: 12px;" class="titulo2 nomeEquipamento">{{ equipamento?.equipamento }}</div>
+    </div>
+
+    <div class="col-xl-3 col-md-3 col-3 mt-4 pe-0">
+        <mat-form-field appearance="outline" class="col-12 p-0">
+            <mat-label>POTÊNCIA</mat-label>
+            <mat-select [(ngModel)]="potencia" placeholder="POTÊNCIA*" name="potencia" id="potencia" required>
+                <mat-option *ngFor="let potencia of potencias" [value]="potencia">
+                    {{ potencia.key }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="col-xl-3 col-lg-5 col-md-4 col-3 quantidade" *ngIf="!others">
+        <label class="lblQuantidade me-2"><strong>QUANTIDADE</strong></label>
+        <button type="button" class="btnQuantidade me-1" (click)="diminuirQuantidade()">-</button>
+        <label class="valueQuantidade me-1">{{ quantidadeCount }}</label>
+        <button type="button" class="btnQuantidade" (click)="aumentarQuantidade()">+</button>
+    </div>
+
+    <div class="marginTop form-calc" *ngIf="editando">
+        <button type="button" class="btn btn-outline-success btnAdicionar" (click)="salvarEdicao()"
+            [disabled]="!potencia || quantiaZerada">Salvar</button>
+    </div>
+</div> -->
+
+<!-- ============ EDITAR DESKTOP "OUTROS" =========
+<div class="d-flex justify-content-around flex-nowrap confEquipamento mt-2"
+    *ngIf="equipamentoSelecionado && editando && (!mobile || tablet) && editandoIndex === i && others">
+    <div class="col-xl-3 col-md-3 col-3 mt-4 pe-0" *ngIf="others">
+        <mat-form-field appearance="outline" class="col-12">
+            <mat-label>NOME</mat-label>
+            <input [(ngModel)]="nomeEquipamento" matInput type="text" name="nomeEq" id="nomeEq" upperCase
+                maxlength="255" required focus [inputId]="'nomeEq'">
+        </mat-form-field>
+    </div>
+
+    <div class="col-xl-3 col-md-3 col-3 mt-4 pe-0">
+        <mat-form-field appearance="outline" class="col-12 p-0">
+            <mat-label>POTÊNCIA</mat-label>
+            <mat-select [(ngModel)]="potencia" placeholder="POTÊNCIA*" name="potencia" id="potencia" required>
+                <mat-option *ngFor="let potencia of potencias" [value]="potencia">
+                    {{ potencia.key }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="col-md-3">
+        <div class="row justify-content-center" style="margin-top: 17px;">
+            <label class="lblQuantidade"><strong>QUANTIDADE</strong></label>
+        </div>
+        <div class="row justify-content-center quantidade">
+            <button type="button" class="btnQuantidade me-1" (click)="diminuirQuantidade()">-</button>
+            <label class="valueQuantidade me-1">{{ quantidadeCount }}</label>
+            <button type="button" class="btnQuantidade" (click)="aumentarQuantidade()">+</button>
+        </div>
+    </div>
+
+    <div class="marginTop form-calc" *ngIf="editando">
+        <button type="button" class="btn btn-outline-success btnAdicionar" (click)="salvarEdicao()"
+            [disabled]="!potencia || quantiaZerada">Salvar</button>
+    </div>
+</div> -->

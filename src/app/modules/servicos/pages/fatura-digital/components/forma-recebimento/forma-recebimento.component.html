@@ -1,0 +1,19 @@
+<h6 class="mt-4 subtitulo-h6">Sua forma de recebimento de fatura:</h6>
+
+<div class="row">
+    <div class="col-12 col-sm-10 col-lg-7 col-xl-6">
+        <div class="configuracao-input-forma-recebimento">
+            <span *ngIf="tipoRecebimentoCelular" class="input-fatura">
+                {{ dadosEnvioDaFatura |  mask: '(00) 0 0000-0000' }}
+            </span>
+
+            <span *ngIf="!tipoRecebimentoCelular" class="input-fatura">
+                {{ dadosEnvioDaFatura }}
+            </span>
+
+            <p class="alterar-email" *ngIf="mostrarBtn" (click)="alterarDados()">Alterar</p>
+
+        </div>
+        <p>{{ tipoRecebimento }}</p>
+    </div>
+</div>

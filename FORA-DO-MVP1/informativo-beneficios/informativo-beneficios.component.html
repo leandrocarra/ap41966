@@ -1,0 +1,63 @@
+
+<h2>Confira os documentos necessários para solicitar a Tarifa Social
+    <app-tooltip class="titulo-tooltip" [explicacao]="'A tarifa social é um benefício criado pelo Governo Federal para as residências de famílias com baixa
+    renda. Consiste na redução da tarifa de consumo de energia elétrica em até 65% e para indígenas e quilombolas em
+    até 100%'"> </app-tooltip>
+</h2>
+
+<div class="justify-content-between d-inline-flex">
+
+    <div class="mt-3" [class.w-50]="!mobile">
+
+        <h5 class="subtitulo-tarifa-social">Programa Social do Governo
+            <app-tooltip [explicacao]="'Famílias no Cadastro Único para Programas Sociais do Governo Federal com renda familiar mensal
+            por pessoa menor ou igual a meio salário mínimo nacional'"></app-tooltip>
+        </h5>
+
+        <p>Será necessário informar o número de identificação social - NIS, RG e CPF do beneficiário
+            e enviar os seguintes documentos: <br />
+            • Documento com Foto do Titular do NIS*<br />
+            • Folha Resumo Cadastro Único–V7*</p>
+
+
+        <h5>Assistência Médica Domiciliar
+            <app-tooltip [explicacao]="'Famílias no Cadastro Único da Prefeitura, com renda familiar mensal de até três salários
+            mínimos, que tenha alguém com doença ou patologia que precise do uso continuado de aparelhos ou equipamentos
+            elétricos'"></app-tooltip>
+        </h5>
+
+        <p>Será necessário informar o número de identificação social - NIS, RG e CPF do beneficiário
+            e enviar os seguintes documentos: <br />
+            • Documento com Foto do Titular do NIS*<br />
+            • Folha Resumo Cadastro Único–V7* <br />
+            • Relatório e atestado emitido por profissional médico*<br /></p>
+
+
+        <h5>Benefício de Prestação Continuada
+            <app-tooltip [explicacao]="'Famílias com idoso ou deficiente que receba o Benefício de Prestação Continuada da Assistência
+            Social - BPC (Lei LOAS)'"></app-tooltip>
+        </h5>
+
+
+        <p>Será necessário informar o número de identificação social - NIS, RG e CPF do beneficiário
+            e enviar os seguintes documentos: <br />
+            • Documento com Foto do Titular do NB* <br />
+            • Carta de Concessão do INSS*</p>
+
+
+        <p class="nota-rodape">•Documento que será necessário anexar na plataforma</p>
+
+        <div class="mt-5">
+            <app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'FECHAR'"
+                (callFunction)="fechar()">
+            </app-neo-button>
+
+        </div>
+    </div>
+
+    <div class="d-flex align-items-baseline">
+        <img *ngIf="!mobile" src="assets/images/informativo_tarifa_social.svg" width="400" class="imagem-tarifa-social"
+            alt="Pessoas apertando as mãos de duas pessoas idosas e uma prancheta de fundo">
+
+    </div>
+</div>

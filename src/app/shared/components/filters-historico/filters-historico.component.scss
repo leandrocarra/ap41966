@@ -1,0 +1,139 @@
+#filtro-faturas {
+	padding: 1rem;
+	border-radius: 10px 10px 0 0;
+	box-shadow: var(--shadow);
+}
+
+.background-group-a {
+	@extend .gradient;
+}
+
+.gradient {
+	background: rgb(66, 115, 20);
+	background: -moz-linear-gradient(90deg,
+			rgba(66, 115, 20, 1) 0%,
+			rgba(66, 115, 20, 1) 60%,
+			rgba(105, 143, 15, 1) 80%,
+			rgba(164, 186, 8, 1) 100%);
+	background: -webkit-linear-gradient(90deg,
+			rgba(66, 115, 20, 1) 0%,
+			rgba(66, 115, 20, 1) 60%,
+			rgba(105, 143, 15, 1) 80%,
+			rgba(164, 186, 8, 1) 100%);
+	background: linear-gradient(90deg,
+			rgba(66, 115, 20, 1) 0%,
+			rgba(66, 115, 20, 1) 60%,
+			rgba(105, 143, 15, 1) 80%,
+			rgba(164, 186, 8, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--neo-dark-green)", endColorstr="var(--neo-light-green)", GradientType=1);
+}
+
+#filtro-faturas .filtro-opcoes {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+
+	.mat-checkbox .mat-checkbox-frame {
+		border-color: var(--neo-white) ;
+	}
+	.mat-checkbox:checked .mat-checkbox-frame:checked {
+		border-color: var(--neo-white) ;
+	}
+}
+
+#filtro-faturas .svg-icon {
+	position: absolute;
+	top: 2px;
+	margin-left: 5px;
+}
+
+#filtro-faturas button {
+	color: var(--neo-white);
+
+}
+
+#filtro-faturas #btn-baixar-faturas {
+	padding: 0.325rem 40px 0.325rem 15px;
+	display: flex;
+	justify-content: flex-start;
+	height: fit-content;
+	align-items: center;
+}
+
+#filtro-faturas {
+	font-size: 14px;
+	color: var(--neo-white) !important;
+	font-weight: 500;
+
+	.mat-form-field-wrapper {
+		padding-bottom: 11px; //Para alinhar os botões e os inputs
+	}
+
+	label {
+		font-size: 14px;
+		margin-bottom: .2rem;
+		color: var(--neo-white);
+		font-weight: 500;
+	}
+
+	.vertical-divider {
+		height: 20px;
+	}
+
+	.custom-date-picker {
+		background-color: var(--neo-white);
+		border-radius: 10px;
+		padding: 0 10px;
+		max-height: 30px;
+	}
+
+	#filtro-ano {
+		max-width: 75px;
+
+		.mat-select-value {
+			margin-top: 0.375rem;
+		}
+
+		.mat-form-field-appearance-outline .mat-form-field-outline {
+			background-color: var(--neo-white);
+		}
+
+		.mat-select-arrow {
+			opacity: 0;
+		}
+
+		.mat-form-field-wrapper {
+			margin-top: -15px;
+		}
+
+		mat-icon {
+			left: 55px;
+			top: 5px;
+			position: absolute;
+			color: black;
+		}
+	}
+
+	#filtro-status  {
+		.mat-form-field-appearance-outline .mat-form-field-outline {
+			color: var(--neo-white);
+		}
+
+		.mat-select-value {
+			color: var(--neo-white);
+		}
+
+		.mat-select-placeholder {
+			color: var(--neo-white);
+			font-size: 14px;
+			font-weight: 500;
+		}
+
+		.mat-select-arrow {
+			color: var(--neo-white);
+		}
+
+		max-width: 150px;
+	}
+}

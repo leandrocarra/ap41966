@@ -1,0 +1,50 @@
+<div class="card-header bkg-color-alert-header">
+    <h5 mat-dialog-title class=" py-4 px-4 my-auto font-color-alert-header">Autoleitura
+        registrada com sucesso!</h5>
+</div>
+<div mat-dialog-content class="card-body d-flex justify-content-center mr-3 ms-3 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="dialog-wrapper" style="max-width: 500px;">
+                    <div *ngFor="let leitura of leiturasDestePeriodo" id="lista-autoleituras" class="row my-3 py-3">
+                        <div class="col-12 d-flex justify-content-between">
+                            <span class="protocolo-legenda">PROTOCOLO</span>
+                            <span class="protocolo-numero">{{ protocolo }}</span>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="dados d-flex justify-content-between">
+                                <p class="confirma-leitura">TIPO DE REGISTRADOR</p>
+                                <p class="confirma-leitura text-distance-title">{{ leitura.tipoRegistrador }}</p>
+                            </div>
+
+                            <div class="justify-content-between dados d-flex">
+                                <p class="confirma-leitura">LEITURA</p>
+                                <p class="text-distance">{{ leitura.valor }}</p>
+                            </div>
+
+                            <div class="my-2 dados">
+                                <app-aviso-media-autoleitura
+                                    [leituraDentroDaMedia]="leitura.statusMedia"></app-aviso-media-autoleitura>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <a class="mb-3 text-link text-consumo-consciente" [href]="linkParaConsumoConsciente"
+                                target="_blank" rel="noopener">Confira aqui dicas de consumo consciente.</a>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="mt-5">
+                                <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'"
+                                    [titleText]="'ALTERAR'" (callFunction)="alterar()"></app-neo-button>
+                                <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'CONTINUAR'"
+                                    (callFunction)="continuar()"></app-neo-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

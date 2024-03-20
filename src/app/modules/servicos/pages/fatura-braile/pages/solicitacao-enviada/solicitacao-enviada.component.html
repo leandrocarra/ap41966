@@ -1,0 +1,25 @@
+<h2 [class.a]="this.user.group === 'A'" [class.b]="this.user.group === 'B'">
+    Sua solicitação foi enviada com sucesso!
+</h2>
+
+<div class="dados-problema">
+    <div class="tipo-problema flex justify-content-sb">
+        <h3>DADOS</h3>
+        <p class="subtitle flex">Fatura em Braile</p>
+    </div>
+
+    <div class="detalhamento-problema">
+        <div class="flex justify-content-sb protocolo-style" style="padding: 12px 6px 0px 6px;">
+            <div>PROTOCOLO</div>
+            <div>{{protocolo}}</div>
+        </div>
+        <div class="flex justify-content-sb" style="padding: 12px 6px 0px 6px;">
+            <div class="title col-6 p-0">UNIDADE CONSUMIDORA</div>
+            <p>{{uc}}</p>
+        </div>
+        <div class="flex justify-content-sb" style="padding: 12px 6px;">
+            <div class="title col-6 p-0">ENDEREÇO</div>
+            <p style="text-align: end;">{{enderecoCompleto}}</p>
+        </div>
+    </div>
+</div>

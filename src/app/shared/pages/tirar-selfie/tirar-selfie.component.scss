@@ -1,0 +1,29 @@
+.container-selfie {
+    height: 40vh;
+    width: 100%;
+    max-height: 40vh;
+    position: relative;
+}
+
+.mascara-selfie{
+    top: 0px;
+    z-index: 2;
+    max-height: 40vh;
+    max-width: 100%;
+    opacity: 0.9;
+    position: absolute;
+    bottom: 0;
+}
+
+video {
+    border-radius: 10px;
+    max-height: 40vh;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 767px){
+    .container-selfie {
+        min-height: fit-content;
+        height: fit-content;
+    }
+}

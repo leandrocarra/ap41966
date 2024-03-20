@@ -1,0 +1,45 @@
+.box-filtros {
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+    box-shadow: var(--shadow);
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.background-group-a {
+    @extend .gradient;
+}
+
+.gradient {
+    background: rgb(66, 115, 20);
+    background: -moz-linear-gradient(
+      90deg,
+      rgba(66, 115, 20, 1) 0%,
+      rgba(66, 115, 20, 1) 60%,
+      rgba(105, 143, 15, 1) 80%,
+      rgba(164, 186, 8, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      90deg,
+      rgba(66, 115, 20, 1) 0%,
+      rgba(66, 115, 20, 1) 60%,
+      rgba(105, 143, 15, 1) 80%,
+      rgba(164, 186, 8, 1) 100%
+    );
+    background: linear-gradient(
+      90deg,
+      rgba(66, 115, 20, 1) 0%,
+      rgba(66, 115, 20, 1) 60%,
+      rgba(105, 143, 15, 1) 80%,
+      rgba(164, 186, 8, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--neo-dark-green)",endColorstr="var(--neo-light-green)",GradientType=1);
+}
+
+.t-faturas-title {
+    color: var(--neo-white);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.42px;
+    margin-bottom: 10px;
+}

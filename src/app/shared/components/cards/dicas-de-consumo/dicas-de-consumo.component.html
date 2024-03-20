@@ -1,0 +1,6 @@
+<mat-card>
+    <p class="titulo-card">DICAS DE CONSUMO</p>
+    <div *ngFor="let content of data" class="d-flex justify-content-between text-link mt-3">
+        <a href="{{content.link}}" target="_blank" rel="noopener">{{content.label}}</a>
+    </div>
+</mat-card>

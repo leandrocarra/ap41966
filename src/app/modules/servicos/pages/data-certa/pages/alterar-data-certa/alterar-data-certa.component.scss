@@ -1,0 +1,83 @@
+.subtitulo,
+.subtitulo-h6 {
+    color: var(--neo-dark-gray);
+    font-weight: bolder;
+}
+
+.data-certa {
+    font-size: 0.875rem;
+    border-bottom: 2px solid var(--neo-white-500);
+    padding-bottom: 5px;
+}
+
+
+.mat-form-field-appearance-outline:not(.mat-form-field-disabled) {
+    .mat-form-field-flex:hover .mat-form-field-outline,
+    &.mat-focused .mat-form-field-outline,
+    &.mat-form-field-invalid .mat-form-field-outline {
+        color: var(--neo-dark-gray-2);
+    }
+}
+
+.mat-form-field-appearance-outline {
+    &.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick,
+    .mat-form-field-outline {
+        opacity: 1;
+        color: var(--neo-dark-gray-2);
+        background-color: var(--neo-white);
+    }
+}
+
+.mat-select-arrow,
+.mat-form-field-label {
+    color: black;
+}
+
+.mat-checkbox-layout {
+    white-space: unset;
+    color: var(--neo-dark-gray);
+    font-weight: bolder;
+}
+
+.data-group-a,
+.data-group-b {
+    cursor: default;
+
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: var(--neo-dark-green);
+    }
+}
+
+.data-group-b {
+    .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: var(--neo-light-green);
+    }
+}
+
+.checkdata-group-a,
+.checkdata-group-b {
+    .mat-checkbox-frame {
+        border-color: var(--neo-dark-green);
+    }
+}
+
+.mat-option:hover:not(.mat-option-disabled) {
+    background-color: var(--neo-light-green);
+    color: var(--neo-white);
+    font-weight: bolder;
+}
+
+.option[aria-selected="true"] {
+    color: var(--neo-dark-green);
+    font-weight: bolder;
+}
+
+.mat-select-data {
+    width: 100%;
+}
+
+.mat-select-panel {
+    max-height: 90vh !important;
+}

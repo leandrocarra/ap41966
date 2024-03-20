@@ -1,0 +1,9 @@
+<h2>Entenda sua conta</h2>
+
+<p class="subtitulo mt-3 mb-3">Por meio deste serviço, você pode entender a sua fatura e consumo.</p>
+
+<div class="row justify-content-between ">
+    <app-chart-entenda-sua-conta *ngIf="faturaDisponivel" class="col-12 col-lg-8 chart-conta"></app-chart-entenda-sua-conta>
+    <app-descricao-conta-component [class.col-lg-4]="faturaDisponivel" class="col-12 descricao-conta "></app-descricao-conta-component>
+    <app-indicadores-continuidade-component class="col-12 mt-4 indicadores"></app-indicadores-continuidade-component>
+</div>

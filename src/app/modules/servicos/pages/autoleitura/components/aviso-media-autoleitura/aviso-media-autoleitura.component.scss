@@ -1,0 +1,31 @@
+.text-media {
+    color: var(--neo-light-green);
+}
+
+.text-fora-media {
+    color: var(--neo-dark-gray);
+}
+
+.input-attention-color {
+    color: var(--neo-pure-red);
+}
+
+.aviso-media {
+    font-weight: normal;
+}
+
+@media screen and (max-width: 576px) { // Extra Small
+    .material-icons-round {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        padding: 0 !important;
+    }
+
+    .material-icons-outlined {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+        padding: 0 !important;
+    }
+}

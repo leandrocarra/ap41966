@@ -1,0 +1,72 @@
+h2 {
+    font-size: 2.25rem;
+    font-weight: 400;
+    text-align: center;
+}
+
+.dados-problema {
+    max-width: 578px;
+    margin: 40px auto;
+    background-color: var(--neo-white);
+    border-radius: 6px;
+    padding: 20px;
+}
+
+.texto-atencao {
+    color : var(--neo-dark-gray);
+    font-size: 0.875rem !important;
+  }
+
+.tipo-problema {
+    h3 {
+        color: var(--neo-dark-green);
+        font-weight: bold;
+    }
+    :nth-child(2) {
+        align-self: center;
+    }
+}
+
+.detalhamento-problema {
+    border: 1px solid var(--neo-white-500);
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+.detalhamento-problema div {
+    padding: 10px 0;
+
+    :nth-child(2) {
+        text-align: right;
+    }
+}
+
+.protocoloStyle {
+    font-weight: bold;
+    :nth-child(1) {
+        color: var(--neo-dark-gray);
+    }
+    :nth-child(2) {
+        color: var(--neo-dark-gray-2);
+    }
+}
+
+.subtitle {
+    color: var(--neo-white-500);
+}
+
+// .type-bullet {
+//     align-self: center;
+//     margin-right: 6px;
+//     width: 10px;
+//     height: 10px;
+//     border-radius: 10px;
+//     background-color: var(--neo-light-green);
+// }
+
+.color-group-a1{
+  color: var(--neo-dark-green) !important;
+}
+
+.color-group-b {
+  color: var(--neo-light-green) !important;
+}

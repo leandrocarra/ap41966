@@ -1,0 +1,23 @@
+<h6 class="mt-4 subtitulo-h6">Forma de pagamento para esta unidade consumidora:</h6>
+
+<div class="configuracao-input col-md-8 col-lg-6 ps-0 pe-0 mt-3">
+	<div class="row ps-3">
+		<span class="input-fatura col-md-8 ps-0 pe-0 pe-md-0">Boleto bancário</span>
+	</div>
+</div>
+
+<div class="mt-4">
+	<p class="titulo m-0">CADASTRE SUAS FATURAS NO DÉBITO AUTOMÁTICO.</p>
+	<p class="subtitulo mt-1">Facilite seu dia a dia e evite esquecimentos com débito automático.</p>
+</div>
+
+<div class="d-flex justify-content-between justify-content-md-start mt-5">
+	<app-neo-button class="me-3" [classes]="'btn-neo-outline-secondary'" [titleText]="voltarBtn"
+		(callFunction)="voltar()">
+	</app-neo-button>
+
+	<app-neo-button class="me-3" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+		[titleText]="mobile ? 'CADASTRAR' : 'QUERO DÉBITO AUTOMÁTICO'" (callFunction)="cadastrar()">
+	</app-neo-button>
+</div>
+

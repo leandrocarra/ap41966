@@ -1,0 +1,36 @@
+<div>
+    <h6 class="subtitulo-h6 mb-4">Alterar Senha</h6>
+
+    <div class="col-12 col-md-6 col-lg-3 p-0 mb-2">
+        <form [formGroup]="senhasFormGroup">
+            <mat-form-field appearance="outline" class="col-12 ps-0 pe-0 pe-md-0">
+                <mat-label>SENHA ATUAL</mat-label>
+                <input class="input-field" matInput (keyup)="validaBotaoContinuar()"
+                    [type]="esconderSenha ? 'password' : 'text'" name="senha-antiga" id="senha-antiga"
+                    formControlName="senhaAntiga" minlength="8" maxlength="50" required>
+
+                <mat-icon matSuffix class="visibillity-eye" (click)="esconderSenha = !esconderSenha">
+                    {{ esconderSenha ? 'visibility_off' : 'visibility' }}</mat-icon>
+
+            </mat-form-field>
+        </form>
+    </div>
+
+
+    <div>
+        <app-validar-senhas [compararComSenhaAntiga]="true" [senhaAntiga]="senhaAntiga" [documento]="documento" (keyup)="validaBotaoContinuar()"
+            (senhaValidada)="setPassword($event)">
+        </app-validar-senhas>
+    </div>
+
+    <div class="row gy-4 justify-content-between justify-content-md-start mt-3">
+        <app-neo-button class="col-auto" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="col-auto" [classes]="'btn-neoprimary'" [isDisabled]="btnContinuar"
+            [titleText]="'SALVAR ALTERAÇÕES'" (callFunction)="continuar()">
+        </app-neo-button>
+    </div>
+
+</div>

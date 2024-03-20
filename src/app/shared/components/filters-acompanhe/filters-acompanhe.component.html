@@ -1,0 +1,59 @@
+<div class="row t-filtros">
+
+    <mat-form-field appearance="outline" class="form-field-search col-lg-4 col-md-6 col-12">
+        <div class="row mt-1">
+            <input matInput class="input-search" type="text" (keyup)="search(searchFilter)"
+                [(ngModel)]="searchFilter" placeholder="Pesquisar..." />
+            <mat-icon class="search-icon">search</mat-icon>
+        </div>
+    </mat-form-field>
+
+
+    <div class="selecionar-status mt-3 mt-md-0">
+        <mat-form-field appearance="outline" class="input-status">
+            <mat-select placeholder="Selecionar Status" class="mat-select-selecionar-status" [(ngModel)]="statusFilter"
+                (ngModelChange)="filterByStatus(statusFilter)">
+                <mat-option [class.optionA]="user.group == 'A'" [class.optionB]="user.group == 'B'"
+                    value="Em andamento">Em andamento</mat-option>
+                <mat-option [class.optionA]="user.group == 'A'" [class.optionB]="user.group == 'B'" value="Concluída">
+                    Concluída</mat-option>
+                <mat-option [class.optionA]="user.group == 'A'" [class.optionB]="user.group == 'B'" value="Cancelada">
+                    Cancelada</mat-option>
+                <mat-option [class.optionA]="user.group == 'A'" [class.optionB]="user.group == 'B'" value="Rejeitada">
+                    Rejeitada</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+
+    <div class="custom-filter mt-3 mt-lg-0">
+        <p class="m-0"><strong>Filtrar por periodo:</strong></p>
+
+        <div class="filter-data">
+
+            <mat-form-field appearance="outline" class="form-field-filters">
+                <mat-label class="custom-label">Data Início</mat-label>
+                <input matInput [(ngModel)]="dtInicioFilter" [matDatepicker]="picker1" style="cursor: pointer"
+                    (ngModelChange)="compareDates()" (focus)="picker1?.open()" readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-field-filters">
+                <mat-label class="custom-label">Data Final</mat-label>
+                <input matInput [(ngModel)]="dtFimFilter" [matDatepicker]="picker2" style="cursor: pointer"
+                    (ngModelChange)="compareDates()" (focus)="picker2?.open()" readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+
+        </div>
+    </div>
+
+    <a type="button" class="mt-2 btn btn-limpar-filtros" (click)="limparFiltros()">
+       <mat-icon><span class="material-icons-outlined">
+        search_off
+        </span></mat-icon> Limpar Filtros
+    </a>
+
+</div>

@@ -1,0 +1,30 @@
+<h2 class="titulo">Verificamos a necessidade de um documento adicional</h2>
+<p class="texto mb-3">Para seu imóvel receber a ligação, é necessário que nos envie o documento de autorização da prefeitura.</p>
+
+<div *ngIf="!mobile" class="alert alert-secondary mt-2 info-doc" role="alert">
+    Você pode carregar o documento oficial com foto no formato .PDF, .JPG, .JPEG ou .PNG!
+</div>
+
+<div *ngIf="mobile" class="alert alert-secondary mt-2 info-doc" role="alert">
+    Você pode tirar uma foto ou carregar o documento oficial. Se optar pelo carregamento, o documento deve estar no
+    formato .PDF, .JPG, .JPEG ou .PNG!
+</div>
+
+<div class="row">
+    <div class="col-12 col-xl-4 col-md-6">
+        <app-box-file [documentoLabel]="docNecessario.label" [docName]="docNecessario.docName"
+            (arquivoAnexado)="recebeAnexos($event)" [infoDoc]="infoTooltip"></app-box-file>
+        <app-attached-file [arquivoAnexado]=anexo.arquivos
+            (arquivoRemovido)="remove()"></app-attached-file>
+    </div>
+</div>
+
+<div class="row m-0 mb-5 d-flex justify-content-between justify-content-md-start mt-5">
+    <div>
+        <button (click)="voltar()" class="btn btn-outline-secondary" title="Voltar">VOLTAR</button>
+    </div>
+    <div class="ps-md-3">
+        <button (click)="continuar()" class="btn btn-primary-green" [disabled]="anexo.arquivos.length < 1"
+            title="Continuar">CONTINUAR</button>
+    </div>
+</div>

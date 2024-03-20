@@ -1,0 +1,134 @@
+{
+    "MOCK": {
+        "codigo": 27662608,
+        "medidor": "M11927582",
+        "fase": "MONOFASICO",
+        "local": {
+            "endereco": "JOSE J DE CARVALHO, 299-",
+            "bairro": "NOVA PACAEMBU",
+            "codLocalidade": "0672",
+            "localidade": "PACAEMBU",
+            "codMunicipio": "00353490",
+            "municipio": "PACAEMBU",
+            "cep": 17860000,
+            "localizacao": {
+                "sigla": "URBANO",
+                "codigo": "UB",
+                "descricao": "ZONA URBANA"
+            },
+            "uf": "SP",
+            "tipoLogradouro": "R",
+            "nomeLogradouro": "JOSE J DE CARVALHO",
+            "numero": 299,
+            "complementoEndereco": ""
+        },
+        "situacao": {
+            "codigo": "LG",
+            "descricao": "LIGADA",
+            "dataSituacaoUC": "12/07/2005"
+        },
+        "dataLigacao": "23/08/2002",
+        "faturamento": {
+            "classePrincipal": {
+                "principal": {
+                    "codigo": "01",
+                    "descricao": "RESIDENCIAL"
+                },
+                "classificacaoConsumo": {
+                    "codigo": 9101,
+                    "descricao": "RESIDENCIAL NORMAL"
+                }
+            },
+            "grupoFaturamento": {
+                "grupo": {
+                    "codigo": "B",
+                    "descricao": "BAIXA TENSAO",
+                    "subGrupo": {
+                        "codigo": 1,
+                        "descricao": "RESIDENCIAL BX TENSAO"
+                    }
+                },
+                "grupoOriginal": {
+                    "codigo": "B",
+                    "descricao": "BAIXA TENSAO",
+                    "subGrupo": {
+                        "codigo": 1,
+                        "descricao": "RESIDENCIAL BX TENSAO"
+                    }
+                },
+                "tipoTarifa": {
+                    "codigo": "01",
+                    "descricao": "CONVENCIONAL"
+                }
+            }
+        },
+        "cliente": {
+            "codigo": 34315507,
+            "nome": "JULIO CESAR DE OLIVEIRA",
+            "dataAtualizacao": "29/01/2018",
+            "documento": {
+                "tipo": {
+                    "codigo": "CPF",
+                    "descricao": "CADASTRO PESSOA FISICA"
+                },
+                "numero": 22759820866
+            },
+            "segundoDocumento": {
+                "uf": "SP",
+                "orgaoExpedidor": {
+                    "codigo": "SSP",
+                    "descricao": "SECRETARIA DE SEGURANCA PUBLICA"
+                },
+                "tipo": {
+                    "codigo": "RG",
+                    "descricao": "SECRETARIA DE SEGURANCA"
+                },
+                "numero": 454257910
+            },
+            "contato": {
+                "email": "",
+                "celular": {
+                    "ddd": 18,
+                    "numero": 996925415
+                },
+                "telefone": {
+                    "ddd": 18,
+                    "numero": 35286048
+                }
+            },
+            "dataNascimento": "14/10/1982"
+        },
+        "servicos": {
+            "baixaRenda": "N",
+            "faturaEmail": "N",
+            "dataCerta": "S",
+            "debitoAutomatico": "S",
+            "cadesp": "N",
+            "faturaBraile": "N",
+            "entregaAlternativa": "N",
+            "debitosVencidos": "S",
+            "reavisoCorte": "S",
+            "listaCorte": "N",
+            "medidorTelemedicao": "N",
+            "vip": "N"
+        },
+        "caracteristicas": {
+            "grandeCliente": "N",
+            "irrigacao": "N",
+            "vip7": "N",
+            "medicaoInteligente": "N",
+            "espelho": "N",
+            "iluminacao": "S"
+        },
+        "uc": "",
+        "instalacao": "",
+        "listaMedidores": [],
+        "retorno": {
+            "tipo": "string",
+            "id": "string",
+            "numero": 1,
+            "e_resultado": "string",
+            "mensagem": "string"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+<h2>Agora precisamos uma forma de contatar o novo titular</h2>
+
+<div id="black-and-white-input-1" class="col-12 col-xl-6 col-lg-7 col-md-10 p-0">
+    <form [formGroup]="contatoNovoTitularFormGroup">
+        <h6 class="subtitulo-h6 mt-3 mb-3">TELEFONE PARA CONTATO (OBRIGATÓRIO)</h6>
+        <mat-form-field appearance="outline" class="mb-1 col-12 pb-0 ps-0">
+            <mat-label>NÚMERO</mat-label>
+            <input matInput type="text" name="telefone" id="telefone" formControlName="telefone" [(ngModel)]="telefone"
+                (ngModelChange)="getTelCelMask(telefone)" [mask]="mascaraTelCel" />
+        </mat-form-field>
+
+        <h6 class="subtitulo-h6 mb-3">E-MAIL PARA CONTATO</h6>
+        <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 pb-0 ps-0">
+            <mat-label>E-MAIL</mat-label>
+            <input matInput type="text" name="email" id="email" formControlName="email"
+                (ngModelChange)="verificarBotao()" />
+            <mat-error>
+                <div class="row">
+                    <span class="material-icons-round ps-0 pe-1">warning_amber</span>
+                    <div class="row ps-3 mt-1 conf-text-input-mat-error">E-mail inválido</div>
+                </div>
+            </mat-error>
+        </mat-form-field>
+    </form>
+
+    <div [ngClass]="{
+        'check-group-a': user.group === 'A',
+        'check-group-b': user.group === 'B'
+      }">
+        <div id="termo" class="col-12 p-0">
+            <mat-checkbox [(ngModel)]="checkTermo" class="mt-2" (ngModelChange)="verificarBotao()">
+                <p class="quebra-linha text-periodo mt-3">
+                    Declaro que li e estou ciente que os benefícios atuais não serão transferidas para o novo titular.
+                </p>
+            </mat-checkbox>
+        </div>
+    </div>
+
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="'CONTINUAR'" (callFunction)="continuar()" [isDisabled]="isDisabled">
+        </app-neo-button>
+    </div>
+</div>

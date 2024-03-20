@@ -1,0 +1,23 @@
+<div class="margem-personalizada">
+    <div *ngFor="let arqAnexado of arquivoAnexado; let i = index">
+        <div *ngIf="arqAnexado !== null" class="file-info">
+            <div class="d-flex">
+                <div class="attached-file-box">
+                    <span class="icon material-icons-outlined">{{icones[arqAnexado.fileExtension]}}</span>
+                </div>
+                <div>
+                    <p class="texto m-0">
+                        {{ arqAnexado.fileName.substring(0, 8) + '...'}}{{ arqAnexado.fileExtension }}
+                        <br /> {{ arqAnexado.fileSize | formatBytes }}
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" class="close-dark" data-dismiss="alert" aria-label="close" (click)="remove(i)">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

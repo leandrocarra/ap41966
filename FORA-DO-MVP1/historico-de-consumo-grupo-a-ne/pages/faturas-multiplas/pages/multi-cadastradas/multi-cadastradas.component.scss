@@ -1,0 +1,42 @@
+.title {
+  color: var(--neo-dark-green);
+  font-weight: bold;
+  letter-spacing: 0.035rem;
+  line-height: 2.188rem;
+}
+
+.subtitle {
+  color: var(--neo-dark-gray);
+  margin-top: 1.5rem;
+  letter-spacing: 0.035rem;
+  line-height: 2.188rem;
+}
+
+.header-accordion {
+  margin-bottom: 1rem;
+  background-color: var(--neo-light-green);
+  color: var(--neo-white);
+  padding: 24px;
+  border-radius: 10px 10px 0px 0px;
+  line-height: 2.188rem;
+  font-size: 1.313rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.42px;
+}
+
+.footer-accordion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  border-radius: 10px;
+  padding: 24px;
+  min-height: 85px;
+  font-size: 0.938rem;
+  background-color: var(--neo-white);
+  box-shadow: var(--shadow);
+  color: var(--neo-dark-green);
+  text-transform: uppercase;
+  font-weight: bolder;
+}

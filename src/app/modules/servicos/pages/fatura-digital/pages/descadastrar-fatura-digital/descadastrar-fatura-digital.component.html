@@ -1,0 +1,62 @@
+<div *ngIf="fluxoAtivo === opcoesDeFluxo.inicial">
+    <h2>Tem certeza que deseja descadastrar a fatura digital?</h2>
+
+    <div class="col-lg-10 ps-0 text-telas-informativos">
+        <p>
+            Ao descadastrar a Fatura Digital você passará a receber a fatura de forma impressa no endereço de sua
+            preferência e poderá ser cobrado
+            pelo serviço de entrega em endereço alternativo.</p>
+        <p>Ao optar por manter a fatura digital, além de contribuir com o meio ambiente, reduz o acúmulo de papel, sua
+            conta
+            será entregue com segurança,
+            de forma rápida e prática, e você ainda pode acessar a fatura quando quiser e onde estiver.</p>
+    </div>
+    <div class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'NÃO'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="'SIM, DESCADASTRAR FATURA DIGITAL'" (callFunction)="descadastrar(opcoesDeFluxo.whatsApp)">
+        </app-neo-button>
+    </div>
+</div>
+
+<div *ngIf="fluxoAtivo === opcoesDeFluxo.whatsApp">
+    <h2>Deseja receber sua fatura via WhatsApp?</h2>
+
+    <p class="subtitulo mt-3 mb-3">Ao cadastrar seu número de celular, passará a receber a fatura via WhatsApp.</p>
+
+    <p class="col-12 col-lg-10 ps-0 text-telas-informativos">
+        Além da opção de fatura digital por e-mail, agora também temos a opção de fatura digital por WhatsApp.
+    </p>
+
+    <div class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-3" [classes]="'btn-neo-outline-secondary'" [titleText]="'NÃO'"
+            (callFunction)="descadastrar(opcoesDeFluxo.confirmar)">
+        </app-neo-button>
+
+        <app-neo-button class="me-3" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="'SIM, CADASTRAR WHATSAPP'" (callFunction)="cadastrarWhatsapp()">
+        </app-neo-button>
+    </div>
+</div>
+
+<div *ngIf="fluxoAtivo === opcoesDeFluxo.confirmar">
+    <h2>Deseja receber sua fatura na unidade consumidora?</h2>
+
+    <p class="subtitulo mt-3 mb-3">Ao confirmar essa opção, passará a receber a fatura impressa.</p>
+    <p class="col-12 col-lg-10 ps-0 text-telas-informativos">
+        A fatura impressa será enviada para o endereço de cadastro da unidade consumidora.
+    </p>
+
+    <div class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-3" [classes]="'btn-neo-outline-secondary'"
+            [titleText]="'NÃO, PERMANECER NA FATURA DIGITAL'" (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="'CONFIRMAR'" (callFunction)="confirmar()">
+        </app-neo-button>
+    </div>
+</div>

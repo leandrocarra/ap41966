@@ -1,0 +1,36 @@
+<div [ngClass]="dadosUsuarioFilho.isValid ? 'conjuge-acesso' : 'conjuge-acesso isActive'">
+
+    <div [ngClass]="dadosUsuarioFilho.isValid ? '' : 'isActive--cpf'">
+        <h6>CPF</h6>
+        <p>{{documentoMask(dadosUsuarioFilho.docTitular)}}</p>
+    </div>
+
+    <div [ngClass]="dadosUsuarioFilho.isValid ? 'd-none' : 'isActive--conjuge'">
+        <img class="img-atencao" src="assets/images/icons/atencao.svg" alt="imagem com símbolo de atenção" />
+        <p>
+            Usuário não cadastrado! Por favor, tente novamente. Caso não consiga, solicite que o usuário se cadastre na
+            Agência Virtual.
+        </p>
+    </div>
+
+        <div *ngIf="mostrarTodosDados">
+            <h6>NOME</h6>
+            <p>{{dadosUsuarioFilho.nomeTitular}}</p>
+        </div>
+
+        <div *ngIf="mostrarTodosDados">
+            <h6>INÍCIO</h6>
+            <p>{{formatarData(dadosUsuarioFilho.dataInclusao)}}</p>
+
+        </div>
+
+        <div *ngIf="mostrarTodosDados">
+            <h6>FIM</h6>
+            <p>{{formatarData(dadosUsuarioFilho.dataVigencia)}}</p>
+        </div>
+
+    <div class="conjuge-acesso__button">
+        <app-neo-button [isDisabled]="desabilitarBtn" [classes]="'btn-neoprimary'"
+            [titleText]="dadosUsuarioFilho.button" (callFunction)="emitirAcao()"></app-neo-button>
+    </div>
+</div>

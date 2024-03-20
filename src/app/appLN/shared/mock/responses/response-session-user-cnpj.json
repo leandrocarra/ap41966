@@ -1,0 +1,21 @@
+{
+    "codUsuario": 157164,
+    "codTipoUsuario": 1,
+    "codImobiliaria": 0,
+    "nome": "Teste CNPJ",
+    "documento": "33991294000110",
+    "telefone": "",
+    "celular": "00000000000",
+    "email": "teste@teste.com",
+    "senha": "76424F59ED76389C291A418DFFF670EA",
+    "recebeEmail": false,
+    "recebeSMS": false,
+    "data": "2021-03-02T11:51:00.593",
+    "ativo": true,
+    "dataAtualizacao": "2021-03-19T00:00:00",
+    "blacklist": false,
+    "isRepositorio": false,
+    "dataRepositorio": "0001-01-01T00:00:00",
+    "dataNascimento": "0001-01-01T00:00:00",
+    "tipoEnvio": 0
+}

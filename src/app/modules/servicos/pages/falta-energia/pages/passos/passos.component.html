@@ -1,0 +1,32 @@
+<h2>{{ textoTitulo }}</h2>
+<p class="subtitulo mt-3 mb-4">
+  {{ textoSubtitulo }}
+</p>
+
+<div class="row">
+  <div class="col-xs-10 col-lg-7 col-md-9 flex pe-xs-4 falta-energia-warning">
+    <img class="img-atencao" src="assets/images/icons/atencao.svg" alt="imagem com símbolo de atenção"/>
+    <span class="ps-3">
+      Muito cuidado na hora de verificar a sua instalação elétrica. <br *ngIf="!mobile" />Para evitar risco de choque
+      elétrico, caso o seu quadro esteja danificado ou
+      mal conservado, chame um eletricista particular.
+    </span>
+  </div>
+</div>
+
+<div class="instrucoes justify-content-between">
+  <div *ngFor="let passo of passos; let last = last" [class.ultimo-passo]="last">
+    <h3 class="mt-4 color-group-a">{{ passo.titulo }}</h3>
+    <p class="descricao">{{ passo.descricao }}</p>
+  </div>
+</div>
+
+<div class="d-flex justify-content-between justify-content-md-start">
+  <app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+    (callFunction)="voltar()">
+  </app-neo-button>
+
+  <app-neo-button class="me-md-3 m-0" [classes]="grupoTensao === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+    [titleText]="'CONTINUAR'" (callFunction)="continuar()">
+  </app-neo-button>
+</div>

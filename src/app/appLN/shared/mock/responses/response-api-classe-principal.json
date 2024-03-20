@@ -1,0 +1,102 @@
+{
+  "UNICA": [
+    {
+      "codigoPrincipal": "03",
+      "descricaoPrincipal": "COMERCIAL,SERVICOS,OUTRAS ATIVIDADES",
+      "codigoConsumo": "5552",
+      "descricaoConsumo": "PROMOCAO DE VENDAS",
+      "cnae": "7319-0/02",
+      "atividadeCNAE": "PROMOCAO DE VENDAS"
+    }
+  ],
+  "VARIAS_CLASSES": [
+    {
+      "codigoPrincipal": "03",
+      "descricaoPrincipal": "COMERCIAL,SERVICOS,OUTRAS ATIVIDADES",
+      "codigoConsumo": "5552",
+      "descricaoConsumo": "PROMOCAO DE VENDAS",
+      "cnae": "7319-0/02",
+      "atividadeCNAE": "PROMOCAO DE VENDAS"
+    },
+    {
+      "codigoPrincipal": "03",
+      "descricaoPrincipal": "COMERCIAL,SERVICOS,OUTRAS ATIVIDADES",
+      "codigoConsumo": "5585",
+      "descricaoConsumo": "ALUGUEL EQUIP CIENT/MEDICO/HOSP SEM OPER",
+      "cnae": "7739-0/02",
+      "atividadeCNAE": "ALUGUEL DE EQUIPAMENTOS CIENTIFICOS, MEDICOS E HOSPITALARES, SEM OPERADOR"
+    },
+    {
+      "codigoPrincipal": "03",
+      "descricaoPrincipal": "COMERCIAL,SERVICOS,OUTRAS ATIVIDADES",
+      "codigoConsumo": "5589",
+      "descricaoConsumo": "SELECAO E AGENCIAMENTO DE MAO-DE-OBRA",
+      "cnae": "7810-8/00",
+      "atividadeCNAE": "SELECAO E AGENCIAMENTO DE MAO-DE-OBRA"
+    },
+    {
+      "codigoPrincipal": "02",
+      "descricaoPrincipal": "INDUSTRIAL",
+      "codigoConsumo": "2262",
+      "descricaoConsumo": "FABRICACAO DE JOGOS ELETRONICOS",
+      "cnae": "3240-0/01",
+      "atividadeCNAE": "FABRICACAO DE JOGOS ELETRONICOS"
+    },
+    {
+      "codigoPrincipal": "02",
+      "descricaoPrincipal": "INDUSTRIAL",
+      "codigoConsumo": "2266",
+      "descricaoConsumo": "FAB APAR CORRECAO DEF FISICO S/ENCOMENDA",
+      "cnae": "3250-7/03",
+      "atividadeCNAE": "FABRICACAO DE APARELHOS E UTENSILIOS PARA CORRECAO DE DEFEITOS FISICOS E APARELHOS ORTOPEDICOS EM GERAL SOB ENCOMENDA"
+    },
+    {
+      "codigoPrincipal": "02",
+      "descricaoPrincipal": "INDUSTRIAL",
+      "codigoConsumo": "2271",
+      "descricaoConsumo": "FAB ROUPA PROTECAO/SEGURANCA RESIST FOGO",
+      "cnae": "3292-2/01",
+      "atividadeCNAE": "FABRICACAO DE ROUPAS DE PROTECAO E SEGURANCA E RESISTENTES A FOGO"
+    },
+    {
+      "codigoPrincipal": "02",
+      "descricaoPrincipal": "INDUSTRIAL",
+      "codigoConsumo": "2277",
+      "descricaoConsumo": "FAB DE PRODUTOS NAO ESPEC ANTERIORMENTE",
+      "cnae": "3299-0/99",
+      "atividadeCNAE": "FABRICACAO DE PRODUTOS DIVERSOS NAO ESPECIFICADOS ANTERIORMENTE"
+    },
+    {
+      "codigoPrincipal": "03",
+      "descricaoPrincipal": "COMERCIAL,SERVICOS,OUTRAS ATIVIDADES",
+      "codigoConsumo": "5819",
+      "descricaoConsumo": "ORGANISMO INTERN OUTRA INST EXTRATERRIT",
+      "cnae": "9900-8/00",
+      "atividadeCNAE": "ORGANISMOS INTERNACIONAIS E OUTRAS INSTITUICOES EXTRATERRITORIAIS"
+    },
+    {
+      "codigoPrincipal": "03",
+      "descricaoPrincipal": "COMERCIAL,SERVICOS,OUTRAS ATIVIDADES",
+      "codigoConsumo": "5488",
+      "descricaoConsumo": "AUDITORIA E CONSULTORIA ATUARIAL",
+      "cnae": "6621-5/02",
+      "atividadeCNAE": "AUDITORIA E CONSULTORIA ATUARIAL"
+    },
+    {
+      "codigoPrincipal": "03",
+      "descricaoPrincipal": "COMERCIAL,SERVICOS,OUTRAS ATIVIDADES",
+      "codigoConsumo": "6057",
+      "descricaoConsumo": "SERV MANUTENCAO REP ELETRICA VEIC AUTO",
+      "cnae": "4520-0/03",
+      "atividadeCNAE": "SERVICOS DE MANUTENCAO E REPARACAO ELETRICA DE VEICULOS AUTOMOTORES"
+    },
+    {
+      "codigoPrincipal": "03",
+      "descricaoPrincipal": "COMERCIAL,SERVICOS,OUTRAS ATIVIDADES",
+      "codigoConsumo": "6310",
+      "descricaoConsumo": "INCORPORACAO DE IMOVEIS",
+      "cnae": "6810-2/01",
+      "atividadeCNAE": "COMPRA E VENDA DE IMOVEIS PROPRIOS"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+<div class="filtro-faturas">
+
+	<h2>Solicitar Religação</h2>
+
+	<p class="subtitulo mt-3 mb-3">
+		Confira os dados da Unidade Consumidora para solicitar a Religação:
+	</p>
+
+	<app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+	<div class="faturas-atrasadas">
+		<div class="alerta-atrasadas d-flex">
+			<span class="material-icons-outlined">error_outline</span>
+			<p>FATURAS ATRASADAS</p>
+		</div>
+
+		<p class="qtd-valor subtitulo">
+			Identificamos {{ textoInformativoFaturas }} para esta Unidade Consumidora no valor de <span>{{ valorTotalFaturas | currency: "BRL" }}.</span>
+		</p>
+
+		<div *ngFor="let f of faturas" class="fatura col-12 col-xl-6 col-lg-7 col-md-10">
+			<div class="fatura-infos">
+				<div>
+					<span class="titulo">VENCIMENTO</span>
+					<span class="valor">{{ f.dataVencimento | date: 'dd/MM/yyyy' }}</span>
+				</div>
+				<div>
+					<span class="titulo">VALOR DA CONTA</span>
+					<span class="valor">{{ valorFatura(f.valorEmissao) }}</span>
+				</div>
+				<div>
+					<span class="titulo">SITUAÇÃO</span>
+					<span class="status-fatura">{{ getStatus(f.statusFatura) }}</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="d-flex flex-wrap justify-content-between justify-content-md-start mt-2 mt-md-5">
+			<app-neo-button class="me-md-3 m-0 mt-3 mt-md-0" [classes]="'btn-neo-outline-secondary'"
+				[titleText]="'VOLTAR'" (callFunction)="voltar()">
+			</app-neo-button>
+
+			<app-neo-button class="me-md-3 m-0 mt-3 mt-md-0"
+				[classes]="grupoTensao === 'A' ? 'btn-neodarkgreen text-nowrap' : 'btn-neoprimary text-nowrap'"
+				[titleText]="'PAGAR FATURAS'" (callFunction)="pagarFaturas()">
+			</app-neo-button>
+
+			<app-neo-button *ngIf="regiao === 'SE'" class="me-md-3 m-0 mt-3 mt-md-0"
+				[classes]="grupoTensao === 'A' ? 'btn-neodarkgreen text-nowrap' : 'btn-neoprimary text-nowrap'"
+				[titleText]="'JÁ PAGUEI'" (callFunction)="faturasPaga()">
+			</app-neo-button>
+
+			<app-neo-button *ngIf="faturas.length > 3" class="me-md-3 m-0 mt-3 mt-md-0"
+				[classes]="'btn-neoblue text-nowrap'" [titleText]="'NEGOCIAR DÍVIDAS'" (callFunction)="redirecionarWhatsapp()">
+			</app-neo-button>
+		</div>
+	</div>
+</div>

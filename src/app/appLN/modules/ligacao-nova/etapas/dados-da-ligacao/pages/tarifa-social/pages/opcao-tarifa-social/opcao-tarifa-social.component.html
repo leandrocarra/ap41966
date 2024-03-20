@@ -1,0 +1,50 @@
+<h4 class="titulo mb-3">Agora que você optou pela tarifa social, precisamos de
+    algumas informações adicionais.
+</h4>
+
+<p class="texto">Passo 1: Escolha do programa social em que você ou algum familiar esteja
+    cadastrado.</p><br />
+<p class="texto">Passo 2: Identificação do titular ou do familiar cadastrado no programa social e
+    apresentação dos documentos.</p>
+
+
+<h4 class="titulo mb-4 mt-4">Passo 1: Em qual programa social a sua família está cadastrada?</h4>
+<form [formGroup]="formBeneficio" (submit)="continuar();">
+    <mat-radio-group id="form-beneficio" formControlName="beneficio">
+
+        <mat-radio-button id="programaSocialGoverno" [value]="'PROGRAMA SOCIAL DO GOVERNO'">
+            <strong class="tituloProgramaSocial">Programa
+                Social do Governo: </strong><br />
+            <span class="texto">Famílias no Cadastro Único para Programas Sociais do Governo Federal com renda
+                familiar mensal por pessoa menor ou igual a meio salário mínimo nacional.</span>
+        </mat-radio-button>
+
+        <mat-radio-button class="mt-3" id="assistenciaMedicaDomiciliar" name="assistenciaMedicaDomiciliar"
+            [value]="'ASSISTÊNCIA MÉDICA DOMICILIAR'">
+            <strong class="tituloProgramaSocial">Assistência Médica Domiciliar: </strong><br />
+            <p class="texto">Famílias no Cadastro Único da Prefeitura, com renda familiar mensal de até três
+                salários mínimos, que tenha alguém com doença ou patologia que precise do uso continuado de aparelhos ou
+                equipamentos elétricos.
+            </p>
+        </mat-radio-button>
+
+        <mat-radio-button class="mt-3" id="beneficioPrestacaoContinuada" name="beneficioPrestacaoContinuada"
+            [value]="'BENEFÍCIO DE PRESTAÇÃO CONTINUADA'">
+            <strong class="tituloProgramaSocial">Benefício
+                de Prestação Continuada: </strong><br />
+            <span class="texto">Famílias com idoso ou deficiente que receba o Benefício de Prestação Continuada
+                da Assistência Social - BPC (Lei LOAS).</span>
+        </mat-radio-button>
+    </mat-radio-group>
+
+
+
+    <div class="mt-5 d-flex justify-content-between justify-content-md-start">
+        <div class="me-3">
+            <button type="button" (click)="voltar();" class="btn btn-outline-secondary mx-auto"
+                title="Voltar">VOLTAR</button>
+        </div>
+
+        <button type="submit" class="btn btn-primary-green" title="Continuar" [disabled]="formBeneficio.invalid">CONTINUAR</button>
+    </div>
+</form>

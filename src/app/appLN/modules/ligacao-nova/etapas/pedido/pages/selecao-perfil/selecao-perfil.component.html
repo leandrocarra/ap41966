@@ -1,0 +1,90 @@
+<h5 class="titulo mb-4">Qual será a finalidade do imóvel que receberá a Ligação?</h5>
+
+<div>
+    <div *ngIf="mobile; then mobileTemplate else desktopTemplate"></div>
+
+    <div class="mx-auto d-flex justify-content-center justify-content-lg-end mt-4">
+        <div>
+            <button (click)="voltar()" type="button" class="btn btn-outline-secondary mx-auto"
+                title="voltar">VOLTAR</button>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #desktopTemplate>
+    <div class="row centralizar">
+        <div *ngFor="let perfil of infos" class="col-12 col-sm-6 col-md-6 col-lg-3 mb-2 mt-3">
+            <div class="h-100" mat-raised-button matTooltip="{{perfil.mensagemBloqueado}}">
+                <div [ngClass]="perfil.bloqueado ? 'box-perfil perfil-bloqueado' : 'box-perfil'"
+                    (click)="continuar(perfil)">
+                    <div class="row">
+                        <img src="{{perfil.imagem}}" alt="{{perfil.alt}}" class="mx-auto icon imagem-perfil">
+                    </div>
+                    <div class="d-flex justify-content-center row mt-3">
+                        <span class="mx-auto estilizacao-span">
+                            {{perfil.perfil}}
+                        </span>
+                    </div>
+                    <div class="row texto-perfil mt-2 mx-auto">
+                        <p>{{perfil.textoPerfil}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+
+<ng-template #mobileTemplate>
+
+    <div *ngFor="let perfil of infos" class="d-flex w-100">
+        <div [ngClass]="perfil.bloqueado ? 'box-perfil mb-3 perfil-bloqueado-mobile' : 'box-perfil mb-3'"
+            (click)="perfil.bloqueado ? alertBlocked(perfil.mensagemBloqueado) : continuar(perfil)">
+            <div class="row">
+                <img src="{{perfil.imagem}}" alt="{{perfil.alt}}" class="mx-auto icon imagem-perfil">
+            </div>
+            <div class="d-flex justify-content-center row mt-3">
+                <span class="mx-auto estilizacao-span">
+                    {{perfil.perfil}}
+                </span>
+            </div>
+            <div class="row texto-perfil mt-2 mx-auto">
+                <p>{{perfil.textoPerfil}}</p>
+            </div>
+        </div>
+    </div>
+
+<!--<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner centralizar">
+            <div *ngFor="let perfil of infos" [class]="perfil == infos[0] ? 'carousel-item active centralizar-mobile' : 'carousel-item centralizar-mobile'">
+
+                <div [class]="perfil.bloqueado ? 'box-perfil perfil-bloqueado-mobile' : 'box-perfil'"
+                    (click)="perfil.bloqueado ? alertBlocked(perfil.mensagemBloqueado) : continuar(perfil)">
+                    <div class="row">
+                        <img src="{{perfil.imagem}}" alt="{{perfil.alt}}" class="mx-auto icon imagem-perfil">
+                    </div>
+                    <div class="d-flex justify-content-center row mt-3">
+                        <span class="mx-auto estilizacao-span">
+                            {{perfil.perfil}}
+                        </span>
+                    </div>
+                    <div class="row texto-perfil mt-2 mx-auto">
+                        <p>{{perfil.textoPerfil}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" data-bs-target="#carouselExampleIndicators" type="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" data-bs-target="#carouselExampleIndicators" type="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> -->
+
+</ng-template>

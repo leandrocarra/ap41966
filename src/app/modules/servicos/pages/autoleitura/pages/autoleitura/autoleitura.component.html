@@ -1,0 +1,81 @@
+<h2>Autoleitura</h2>
+
+<p class="subtitulo mt-3 mb-4">Confira os dados da Unidade Consumidora e código do medidor para realizar a Autoleitura:
+</p>
+
+<!-- DADOS DA UC -->
+<app-dados-imovel-ligacao [codigoMedidor]="medidor"></app-dados-imovel-ligacao>
+
+<!-- GRÁFICO -->
+<div *ngIf="regiao === sudeste" id="container-grafico-autoleitura" class="col-12 col-sm-10 col-lg-7 col-xl-6 mt-5">
+    <p id="titulo-grafico-autoleitura" class="mt-2 p-3">HISTÓRICO DE CONSUMO (kWh)</p>
+    <mat-divider id="divider"></mat-divider>
+    <app-grafico-autoleitura [consumos]="leituras" [diferenciarUltimaBarra]="false"
+        [statusMedia]="naMedia"></app-grafico-autoleitura>
+</div>
+
+<!-- ALERTA EM VERMELHO -->
+<div class="row mt-1 align-items-center text-attention">
+    <div class="col-auto d-none d-md-block p-0"><span class="material-icons-outlined p-0">error_outline</span></div>
+    <div class="col p-2 mb-2">{{ selecionarTextoDoAlerta() }}</div>
+  </div>
+
+<!-- TEXTO PERÍODO DE AUTOLEITURA SE-->
+<div *ngIf="(regiao === sudeste)" class="mt-3" id="text-periodo-1">
+    <p class="d-inline">Atenção! Seu período de autoleitura é do dia </p>
+    <p class="d-inline periodo">{{ periodoInicio | date: 'dd/MM/yyyy'}}</p>
+    <p class="d-inline"> até o dia </p>
+    <p class="d-inline periodo">{{ periodoFim | date: 'dd/MM/yyyy'}}</p>
+    <p class="d-inline">.</p>
+    <p *ngIf="(fluxo === 'simulacao')">Enquanto isso, você pode simular sua Autoleitura.</p>
+</div>
+
+<!-- TEXTOS INFORMATIVOS DE LEITURA NE-->
+<div class ="mt-3" *ngIf="(regiao !== sudeste)">
+    <p class="d-inline">{{validarLeitura()}}</p>
+</div>
+
+
+<!-- LEITURA NORDESTE-->
+<div class="col-12 col-md-10 col-lg-7 col-xl-6 p-0 mb-5"
+    *ngIf="(regiao !== sudeste && fluxo === 'leitura' && leituraJaInformada)">
+
+    <div class=" pe-0 row justify-content-between">
+        <p class="mt-5 ms-3 confirma-leitura">LEITURAS INFORMADAS</p>
+        <mat-divider class="col-12 mt-3"></mat-divider>
+    </div>
+
+    <div class=" pe-0 row justify-content-between" *ngFor="let leitura of leiturasPeriodoAtual">
+        <p class="mt-3  ms-3 confirma-leitura">REGISTRADOR {{ leitura.tipoRegistrador }}</p>
+        <p class="text-distance mt-3 ms-3 confirma-leitura">{{ leitura.valor | mask: maskCVCD }}</p>
+        <mat-divider class="col-12 mt-3"></mat-divider>
+    </div>
+
+</div>
+
+<!-- TERMOS DE USO -->
+<div *ngIf="!termosDeUsoAceitos" class="termos-de-uso mt-3">
+    <mat-checkbox [(ngModel)]="checkTermo">
+        <p class="text-periodo mt-3">Declaro que li e aceito os
+            <a class="text-link" (click)="exibirDialogTermosDeUso()">Termos de Uso</a> de Autoleitura.
+        </p>
+    </mat-checkbox>
+</div>
+
+<!-- TERMOS DE USO JÁ ACEITOS -->
+<div *ngIf="termosDeUsoAceitos" class="termos-de-uso mt-4 mb-5">
+    <p class="text-periodo mt-3">Confira aqui os
+        <a class="text-link" (click)="exibirDialogTermosDeUso()">Termos de Uso</a> de Autoleitura.
+    </p>
+</div>
+
+<!-- BOTÕES -->
+<div class="d-flex justify-content-between justify-content-md-start mt-4 mb-3">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="selecionarTextoDoBotao()"
+        (callFunction)="informarAutoleitura()" [isDisabled]="!checkTermo || semMaisTentativasParaLeitura">
+    </app-neo-button>
+</div>

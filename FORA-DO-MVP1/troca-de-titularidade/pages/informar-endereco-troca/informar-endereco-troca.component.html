@@ -1,0 +1,36 @@
+<div id="black-and-white-input-1">
+    <h2>Precisamos saber qual o imóvel deseja trocar a titularidade</h2>
+    <h6 class="subtitulo-h6 mt-4 mb-3">SELECIONE A UNIDADE CONSUMIDORA:</h6>
+
+    <div class="col-12 col-md-10 col-lg-6 p-0 row m-0 mt-3">
+        <mat-form-field appearance="outline" class="mat-select-data col-12 col-md-5 p-0 pe-md-2">
+            <mat-label>Unidade Consumidora</mat-label>
+            <mat-select placeholder="Unidade consumidora" [(ngModel)]="selectedUC" (ngModelChange)="isDisabled()">
+                <mat-option class="option" *ngFor="let uc of ucs" [value]="uc">{{
+                    uc
+                    }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <ng-container *ngIf="selectedUC">
+        <div class="col-12 col-md-10 col-lg-6 p-0 row m-0 mt-3">
+            <mat-form-field appearance="outline" class="col-sm-5 col-12 col-xl-3 p-0 pe-md-2">
+                <mat-label>CEP</mat-label>
+                <input matInput type="text" id="cep" [(ngModel)]="endereco.cep" mask="00000-000" onlyNumber required
+                    [disabled]="true" />
+            </mat-form-field>
+        </div>
+
+        <app-endereco [disableAll]="true" [endereco]="endereco" [disableNum]=true [disableComplemento]=true>
+        </app-endereco>
+    </ng-container>
+
+    <div class="row gy-4 justify-content-between justify-content-md-start mt-3">
+        <app-neo-button class="col-auto" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()"></app-neo-button>
+
+        <app-neo-button class="col-auto" [classes]="_user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="'CONTINUAR'" [isDisabled]="invalidContinuar" (callFunction)="continuar()"></app-neo-button>
+    </div>
+</div>

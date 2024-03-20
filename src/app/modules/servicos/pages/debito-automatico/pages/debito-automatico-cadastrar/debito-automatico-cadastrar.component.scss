@@ -1,0 +1,35 @@
+#debito-automatico-cadastrar {
+    .alinhar-erro {
+        margin-left: -0.5rem;
+    }
+
+    .svg-icon {
+        height: 1rem;
+        width: 1.3rem;
+        top: 0.313rem;
+        margin-left: 0.313rem;
+    }
+
+    .svg-icon-poupanca {
+        height: 1rem;
+        width: 2.3rem;
+        top: 0.313rem;
+        margin-left: 0.313rem;
+    }
+
+    .icone-mobile {
+        height: 1rem;
+        width: 4.3rem;
+        top: 0.313rem;
+        margin-left: 0.313rem;
+    }
+
+    .margem-erro {
+        margin-bottom: 6rem !important;
+    }
+
+    .text-input-error {
+        color: var(--neo-pure-red);
+        font-weight: 400;
+    }
+}

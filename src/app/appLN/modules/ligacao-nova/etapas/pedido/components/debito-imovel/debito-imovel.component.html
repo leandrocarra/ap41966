@@ -1,0 +1,39 @@
+<div *ngIf="faturasAtrasadasImovel?.length">
+    <h5 class="titulo"><strong>Débito vinculado ao imóvel</strong></h5>
+
+    <table class="table">
+        <caption></caption>
+        <thead>
+            <tr>
+                <th scope="col-xl-2 col-6">
+                    <mat-checkbox [checked]="selectAll" (click)="onSelectAll($event)"></mat-checkbox>
+                </th>
+                <th scope="col-xl-2 col-6">
+                    <h6 class="subtitulo fonte14px">MÊS DE REFERÊNCIA</h6>
+                </th>
+                <th scope="col-xl-2 col-6">
+                    <h6 class="subtitulo fonte14px">DATA DE VENCIMENTO</h6>
+                </th>
+                <th scope="col-xl-2 col-6">
+                    <h6 class="subtitulo fonte14px">VALOR</h6>
+                </th>
+                <th scope="col-xl-2 col-6">
+                    <h6 class="subtitulo fonte14px">ATRASO</h6>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let vencida of faturasAtrasadasImovel">
+                <td>
+                    <div>
+                        <mat-checkbox [checked]="selectItem" [(ngModel)]="vencida.selectItem" (click)="faturasSelecionadas(vencida)"></mat-checkbox>
+                    </div>
+                </td>
+                <td class="texto">{{formatarData(vencida.dataVencimento)}}</td>
+                <td class="texto">{{getDate(vencida.dataVencimento) | date:'dd/MM/yyyy'}}</td>
+                <td class="texto">{{vencida.valor | currency:'BRL'}}</td>
+                <td class="texto">{{diasDeAtraso(getDate(vencida.dataVencimento))}} dias</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

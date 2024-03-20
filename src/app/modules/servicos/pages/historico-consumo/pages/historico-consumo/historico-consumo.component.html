@@ -1,0 +1,28 @@
+<h2>Aqui você pode acompanhar o consumo de energia</h2>
+
+<p class="subtitulo mt-3 mb-3">
+	Por meio deste serviço, você pode acompanhar o histórico de consumo dos
+	últimos meses da sua unidade consumidora.
+</p>
+
+<mat-card id="tela-historico-consumo">
+	<app-grafico-consumo></app-grafico-consumo>
+	<app-alerta-consumo></app-alerta-consumo>
+
+</mat-card>
+
+<div class="box-component-filter">
+	<app-filters-historico [labelTitle]="'HISTÓRICO DE CONSUMO'" [itens]="itens" [pageSize]="pageSize"
+		(eventOutput)="eventFilter($event)" (eventClear)="eventClear($event)" (eventSelectAll)="eventSelectAll($event)">
+	</app-filters-historico>
+</div>
+
+<div class="box-componente-accordion">
+	<app-accordion-historico></app-accordion-historico>
+</div>
+
+<div class="col-11 box-paginator">
+	<app-pagination [ativarDados]="ativarDados" [pageSize]="pageSize" [collections]="itens" [grupo]="grupoDoUsuario"
+		(eventPagination)="eventPagination($event)" #pagination>
+	</app-pagination>
+</div>

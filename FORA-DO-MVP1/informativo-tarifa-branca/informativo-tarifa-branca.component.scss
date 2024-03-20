@@ -1,0 +1,36 @@
+.vermelho{
+    color: #EF3D59;
+}
+
+.titulo-icone{
+    color: var(--neo-light-green);
+    font-weight: bold;
+}
+
+.amarelo{
+    color: #EFC958;
+}
+
+.black{
+    color: #1E2D36;
+}
+
+
+.horario{
+    font-size: 14px;
+    color: var(--neo-dark-gray);
+}
+
+.img-tarifaria {
+    position: absolute;
+    right: 0;
+    max-width: 50%;
+    max-height: 500px;
+}
+
+@media screen and (max-width: 1000px) {
+    .img-tarifaria {
+        display: none;
+    }
+}
+

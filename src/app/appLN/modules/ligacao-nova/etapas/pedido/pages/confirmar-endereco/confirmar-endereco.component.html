@@ -1,0 +1,63 @@
+<h4 class="titulo">Confirme se os dados informados estão corretos para prosseguirmos com seu pedido.</h4>
+
+<div class="confirmacao-de-endereco mt-5">
+    <div>
+        <p><strong>O imóvel possui padrão pronto para a instalação?</strong></p>
+        <p>{{dadosDoImovel.padraoPronto ? 'Sim' : 'Não'}}</p>
+    </div>
+    <div>
+        <p><strong>O imóvel é um apartamento, condomínio ou sala comercial?</strong></p>
+        <p>{{dadosDoImovel.endereco.apartamento ? 'Sim' : 'Não' }}</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-md-between">
+        <p><strong class="me-1">CEP: </strong></p>
+        <p>{{dadosDoImovel.endereco.cep != '00000000' ? dadosDoImovel.endereco.cep : 'Não Possui'}}</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-md-between">
+        <p><strong class="me-1">Logradouro: </strong></p>
+        <p>{{dadosDoImovel.endereco.endereco}}</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-md-between">
+        <p><strong class="me-1">Nº: </strong></p>
+        <p>{{dadosDoImovel.endereco.numero}}</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-md-between">
+        <p><strong class="me-1">Bairro: </strong></p>
+        <p>{{dadosDoImovel.endereco.bairro}}</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-md-between">
+        <p><strong class="me-1">Complemento: </strong></p>
+        <p>{{dadosDoImovel.endereco.complemento}}</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-md-between">
+        <p><strong class="me-1">Cidade: </strong></p>
+        <p>{{dadosDoImovel.endereco.cidade}}</p>
+    </div>
+    <div class="d-flex flex-wrap justify-content-md-between">
+        <p><strong class="me-1">Estado: </strong></p>
+        <p>{{dadosDoImovel.endereco.estado}}</p>
+    </div>
+
+    <div class="d-flex flex-wrap justify-content-md-between">
+        <p><strong class="me-1">Ponto de Referência: </strong></p>
+        <p>{{dadosDoImovel.endereco.pontoReferencia}}</p>
+    </div>
+
+    <div>
+        <p><strong>O imóvel está localizado em uma área de preservação ambiental?</strong></p>
+        <p>{{dadosDoImovel.endereco.areaAmbiental === 'NÃO SEI' ? 'Não soube informar.' : dadosDoImovel.endereco.areaAmbiental}}</p>
+    </div>
+
+    <div>
+        <mat-checkbox class="mt-3 texto-checkbox" [(ngModel)]="confirmarEnderecoPreenchido">Confirmo que os campos
+            preenchidos acima referem-se ao endereço correto do imóvel que receberá a instalação.</mat-checkbox>
+    </div>
+</div>
+
+<div class="d-flex justify-content-md-end justify-content-between">
+    <button type="button" class="btn btn-outline-secondary me-md-3 m-0" title="voltar"
+        (click)="voltar();">VOLTAR</button>
+
+    <button type="button" class="btn btn-primary-green" title="Avançar" [disabled]="!confirmarEnderecoPreenchido"
+        (click)="debitoCep();">INICIAR PEDIDO</button>
+</div>

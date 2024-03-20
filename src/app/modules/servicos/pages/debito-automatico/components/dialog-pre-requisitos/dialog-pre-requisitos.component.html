@@ -1,0 +1,29 @@
+<section id="dialog-pre-requisitos-debito-automatico" class="dialog-aviso-debito-automatico">
+    <h6 class="titulo">CONFIRA OS PRÉ-REQUISITOS PARA A SOLICITAÇÃO DE DÉBITO AUTOMÁTICO:</h6>
+
+    <div class="m-3">
+        <ol class="lista-pre-requisitos" id="termos-debito-automatico">
+            <li *ngFor="let requisito of preRequisitos" class="item-lista" [class.item-lista-verde-escuro]="grupoA" [class.item-lista-verde-claro]="!grupoA" [innerHTML]="requisito"></li>
+        </ol>
+        <div class="d-flex align-checkbox margem-termo">
+            <mat-checkbox class="text-wrap me-2" [(ngModel)]="checkDeclaracao" (change)="desbloquearBotao();"></mat-checkbox>
+            <p class ="termo-declaracao">
+                Declaro que li e estou ciente que ao solicitar o cadastro do Débito
+                Automático as informações irão passar por validação do banco com
+                efetivação em até <strong>3 (três) dias</strong>.
+            </p>
+        </div>
+    </div>
+
+    <div class="row m-0 justify-content-between justify-content-md-center my-5">
+        <app-neo-button class="me-md-3 m-0 col-auto" [classes]="'btn-neo-outline-secondary'" [titleText]="'voltar'"
+            (callFunction)="prosseguir(false)">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0 col-auto" [classes]="'btn-neoprimary'"
+            [titleText]="'continuar'" (callFunction)="prosseguir(true)" [isDisabled]="isDisabled">
+        </app-neo-button>
+    </div>
+</section>
+
+

@@ -1,0 +1,25 @@
+<h6 class="mt-3 mb-2 subtitulo-h6">E-MAIL:</h6>
+
+<form [formGroup]="formEmail">
+	<div id="black-and-white-input-1">
+		<mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 pb-0 ps-0">
+			<mat-label>E-MAIL PARA RECEBIMENTO DA FATURA*</mat-label>
+			<input matInput type="text" name="email" id="email" formControlName="email" maxlength="50" class="text-lowercase" required
+				(ngModelChange)="changeInputEmail()" (keyup)="verificarEmailDiferenteDoCadastrado()">
+			<mat-error>
+				<app-custom-mat-error *ngIf="email.hasError('emailsInvalidos')" [mensagem]="mobile ? 'Este e-mail não é válido!' : 'Este e-mail não é válido! Por favor, tente novamente.'"></app-custom-mat-error>
+			</mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline" [hideRequiredMarker]="true" class="col-12 ps-0 mt-1">
+			<mat-label>CONFIRMAR E-MAIL*</mat-label>
+			<input matInput type="text" name="confirmarEmail" id="confirmarEmail" formControlName="confirmarEmail" class="text-lowercase"
+			maxlength="50" formControlName="confirmarEmail" blockPaste required (ngModelChange)="changeInputEmail()">
+			<mat-error>
+				<app-custom-mat-error *ngIf="confirmarEmail.hasError('emailsDiferentes')" [mensagem]="mobile ? 'Os e-mails não conferem!' : 'Os e-mails não conferem! Por favor, tente novamente.'"></app-custom-mat-error>
+			</mat-error>
+		</mat-form-field>
+
+		<app-custom-mat-error *ngIf="emailIgualAoCadastrado" class="custom-error-dados-email mat-error" [mensagem]="mobile ? 'O e-mail é igual ao atual cadastrado!' : 'O e-mail é igual ao atual cadastrado! Por favor, tente novamente com outro e-mail.'"></app-custom-mat-error>
+	</div>
+</form>

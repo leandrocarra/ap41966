@@ -1,0 +1,12 @@
+$content-space: 5.5rem;
+#promo-neoenergia {
+    box-shadow: 0px 2px 4px #60617029;
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    padding: 1rem;
+    height: calc($content-space * 3);
+}

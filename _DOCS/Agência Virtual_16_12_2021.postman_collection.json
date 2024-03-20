@@ -1,0 +1,1895 @@
+{
+	"info": {
+		"_postman_id": "57a8390e-69f3-45ef-bf92-a25726394099",
+		"name": "Agência Virtual",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuário",
+			"item": [
+				{
+					"name": "Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "9t9_VatgKksy3F9pKwphm_MLwd4a",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "r8xPYdcEj7QNfZHC_z0iDtiumaca",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "ELEKTRO/age-user",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "welcome1",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "openid",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/token",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Verifica usuário ativo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "apikey",
+								"value": "eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJnbGF1Y2lvIiwiYXV0IjoiQVBQTElDQVRJT05fVVNFUiIsImF1ZCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJuYmYiOjE2MzM2MzE2MDMsImF6cCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzMzYzNTIwMywiaWF0IjoxNjMzNjMxNjAzLCJqdGkiOiIzNWFkYTg4My03Y2RlLTQ4MDgtODk0My00YTE3MGMzNDcyZjcifQ.TQo9de8_FDkuKrAni01n4uz4iIVo47cw-qZ4BwdYziDOBtdOxf7NevRxr6UcMtQgB-6Qhz2eBdZRsjwOzn950Vstki7DRqWgTDt9x4p85G1MyDL-J4XhlYvFz4b61lPIQMOtpHt9RS3aZDwJ72RBtF_EWUjW9jJhqsNEKDOafLI6yN5HITnmILh8J3nghXY7s1xWOIH8DTsLb4SokQ3TOxKaQKMkn6l8CK9Hvau6-Z1qyM4FlebihJ6mZrrbqyBgsnp-06S6FYDcH_25aaFVqZbWDGj38uYgkO0JcJQ0ZQhGo0Cfsqt3IT8KJuuPtBO8NRJDQkHBI5PGMEBG8ZFikQ",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJnbGF1Y2lvIiwiYXV0IjoiQVBQTElDQVRJT05fVVNFUiIsImF1ZCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJuYmYiOjE2MzM2NDAyNzksImF6cCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzMzY0Mzg3OSwiaWF0IjoxNjMzNjQwMjc5LCJqdGkiOiJmNDVjYzdlNi0yNmRlLTQ3MjEtYWUwZS0yYmNmNDhlYWI0OWUifQ.poOhvzaViTNzta235dd2IGQPzvOOoomN0DTWAFcSdMgBvtXExVSJHO8-gLvrnaK3paiA_LNhCQkOU6BTlEa8lvrA0gGjRgTy0HXA76_OMimTtR9NHTrlfyRWMonpTlgXs6wo06TVQAMXR40Lx6RLfKFM3mFZiYEIAAB22hOj5kkjc1-hbhm9IOXodXJB0iES3_hWU1AmWMF63dVQ3blfiEu0O8zuS67KNz6IiCNbQK0efRkgQfq6rth-r6wLACJkWLXe_gb-56FBVAacJtryffbkhoL4It4RkiOq3Gf9naj-s7uopIesQYiZ0nKsAS9Ttqo9t1N0iZnDt2Z-rte90A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"recaptcha\": \"6LdaaWMaAAAAANL8oFVh62kBOVuUYZ2NWeZDyFQF\",\r\n  \"userName\": \"CELPE/55315186849\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/login/1.0.0/usuarios/ativo",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"login",
+								"1.0.0",
+								"usuarios",
+								"ativo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Usuário",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC9hZ2UtdXNlciIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJhdWQiOiI5dDlfVmF0Z0trc3kzRjlwS3dwaG1fTUx3ZDRhIiwibmJmIjoxNjM0NzU5Mzg4LCJhenAiOiI5dDlfVmF0Z0trc3kzRjlwS3dwaG1fTUx3ZDRhIiwic2NvcGUiOiJvcGVuaWQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzNDc2Mjk4OCwiaWF0IjoxNjM0NzU5Mzg4LCJqdGkiOiJmYTZhM2RmYy1hMzk5LTQ4N2ItOGNmYy0zNjY3ZGVlZWYzNzYifQ.HmY3HHpftmmGflrSjDiknkcjKHAJfOnhe1uVnDRmQIIpanXCHBDh1fpYT1Pxj0awZIJlBJ57G6UlgmFayHZ4JDKKOVLM0_oxO_YeB-gTtJlkbFMf7y9XpkReqC03Xm33oP06yrY5QgeYob70TCspzgeqbimoPb-VgC2DnvwI6zpk_DZIZ2-UoVpE01aPM9L1OkFsHO35xpJBjJwRnGaxOTmtUNrWqDshe8Jmgbvsg-B0jeI7VgPdzJ72OvG0ezOYxwVTaSdtqAunSnJGYLT2cJ4PVZIjstPrdZRuzIvLkzQo7aMddnsWrsO7eDITog0Ah9b4tku3Bpwoie5IIXizAw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"ELEKTRO/oflandes\",\r\n  \"senha\" :\"q1w2e3r4\",\r\n  \"nome\": \"Oflandes Rodrigues\",\r\n  \"documento\": \"00000000000\",\r\n  \"telefone\": \"0000000000\",\r\n  \"celular\": \"0000000000\",\r\n  \"email\": \"oflandesrps@gmail.com\",\r\n  \"protocolo\": \"0\",\r\n  \"canalDigital\": \"App-coelba-android\",\r\n  \"tipoDocSecundario\": \"RG\",\r\n  \"docSecundario\": \"000000000\",\r\n  \"dataNascimento\": \"31/07/1996\",\r\n  \"tipoEnvio\": \"1\",\r\n  \"distribuidora\": \"Elektro\",\r\n  \"regiao\": \"SE\",\r\n  \"recaptcha\": \"JUAHDT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/login/1.0.0/usuarios",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"login",
+								"1.0.0",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Esqueci Senha",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJnbGF1Y2lvIiwiYXV0IjoiQVBQTElDQVRJT05fVVNFUiIsImF1ZCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJuYmYiOjE2MzM2NDgzOTIsImF6cCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzMzY1MTk5MiwiaWF0IjoxNjMzNjQ4MzkyLCJqdGkiOiI1ZDk4YzI0Zi1hYTgzLTQ3ODktODZlZi1mYThlYzE1ZjA3YTcifQ.bZIDxjH8xQDSt2YpCvnJYEaHl60zLjZ-8MkgKul-y36EbP-18tcp0jW_QECIiWSDKQwaK-WXzAONwSfHfV36XWyE05zkhQKeuwSqOOnqjasy4rTXjvH9G7V1TnPaXNUmWJ4hBX23ujQuPvr-pGX9ps0k0JHdEjBRGvgBPuAX11GuyUxX-wDeOTEYOcFfnX-AB-cAxGJY0zonjjMlUOlXC7WmbDloA7xhkCx1sqvCnbr6L_U_NSbahDfKI41Gv0AlEuEzmg9nyDcuBpjp6KgfC0xi3uhB6AWLimkYCGGvbEpdMngTaVRyT5Lz7BBSE5-_-OdpI2ttwBa2Twu0zp9YHg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"senha\": \"Teste01\",\r\n  \"tokenValidator\": \"JUAHDT\",\r\n  \"userName\": \"CELPE/55315186849\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/login/1.0.0/usuarios/solicita-troca-senha",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"login",
+								"1.0.0",
+								"usuarios",
+								"solicita-troca-senha"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Senha",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJnbGF1Y2lvIiwiYXV0IjoiQVBQTElDQVRJT05fVVNFUiIsImF1ZCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJuYmYiOjE2MzM2NDgzOTIsImF6cCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzMzY1MTk5MiwiaWF0IjoxNjMzNjQ4MzkyLCJqdGkiOiI1ZDk4YzI0Zi1hYTgzLTQ3ODktODZlZi1mYThlYzE1ZjA3YTcifQ.bZIDxjH8xQDSt2YpCvnJYEaHl60zLjZ-8MkgKul-y36EbP-18tcp0jW_QECIiWSDKQwaK-WXzAONwSfHfV36XWyE05zkhQKeuwSqOOnqjasy4rTXjvH9G7V1TnPaXNUmWJ4hBX23ujQuPvr-pGX9ps0k0JHdEjBRGvgBPuAX11GuyUxX-wDeOTEYOcFfnX-AB-cAxGJY0zonjjMlUOlXC7WmbDloA7xhkCx1sqvCnbr6L_U_NSbahDfKI41Gv0AlEuEzmg9nyDcuBpjp6KgfC0xi3uhB6AWLimkYCGGvbEpdMngTaVRyT5Lz7BBSE5-_-OdpI2ttwBa2Twu0zp9YHg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"recaptcha\": \"KLDNFDSNFSDFLKAFN\",\r\n      \"canalDigital\": \"AGE\",\r\n      \"documento\": \"1234567890\",\r\n      \"userName\": \"ELEKTRO/Teste\",\r\n      \"senha\": \"Teste01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/login/1.0.0/usuarios/atualiza-senha",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"login",
+								"1.0.0",
+								"usuarios",
+								"atualiza-senha"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ativa Usuário",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC9hZ2UtdXNlciIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJhdWQiOiI5dDlfVmF0Z0trc3kzRjlwS3dwaG1fTUx3ZDRhIiwibmJmIjoxNjM3ODY0NzQ2LCJhenAiOiI5dDlfVmF0Z0trc3kzRjlwS3dwaG1fTUx3ZDRhIiwic2NvcGUiOiJvcGVuaWQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzNzg2ODM0NiwiaWF0IjoxNjM3ODY0NzQ2LCJqdGkiOiI4M2E3YzZlZC05MDRhLTQ4YzItYTJkMS0xNDk2MWQyOGYxNWQifQ.wX7ju8YEx-_IHDShW8XA0oF2BUtZ7_VLlMcQFgt3tGajex1-MU6hLBA9IFrpOacTTjgMXsShU3tfcBKQ9Gv08vsCUcnf8U1obY3d3VTsQyNoZnMONToQMEBQtlRquR8jZU_uDqQqcITFHZziNeJUTwC8cnZwWp40SCiGbz89hL1IQ4m9U6LsMsuQCdA8yeEnDr6LcgYSeaU75U6ixwhaRlfX0Xsspi0OCr9OUK3orTnZhzNUX2uICYHd28OQ0bbQ2vZjETdOvloWA07eUntslo2AJDRfsmWbeq_bWqIG-n-SmxCdYydn-TviB03nn63HvKT1nI7kw7HKxzmA_83dRg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"ELEKTRO/oflandes\",\r\n    \"uid\": \"1cb91eb7-8830-4326-bdc8-38336a6e8da7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/login/1.0.0/usuarios/ativa-usuario",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"login",
+								"1.0.0",
+								"usuarios",
+								"ativa-usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desativa Usuário",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJnbGF1Y2lvIiwiYXV0IjoiQVBQTElDQVRJT05fVVNFUiIsImF1ZCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJuYmYiOjE2MzM2NDgzOTIsImF6cCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzMzY1MTk5MiwiaWF0IjoxNjMzNjQ4MzkyLCJqdGkiOiI1ZDk4YzI0Zi1hYTgzLTQ3ODktODZlZi1mYThlYzE1ZjA3YTcifQ.bZIDxjH8xQDSt2YpCvnJYEaHl60zLjZ-8MkgKul-y36EbP-18tcp0jW_QECIiWSDKQwaK-WXzAONwSfHfV36XWyE05zkhQKeuwSqOOnqjasy4rTXjvH9G7V1TnPaXNUmWJ4hBX23ujQuPvr-pGX9ps0k0JHdEjBRGvgBPuAX11GuyUxX-wDeOTEYOcFfnX-AB-cAxGJY0zonjjMlUOlXC7WmbDloA7xhkCx1sqvCnbr6L_U_NSbahDfKI41Gv0AlEuEzmg9nyDcuBpjp6KgfC0xi3uhB6AWLimkYCGGvbEpdMngTaVRyT5Lz7BBSE5-_-OdpI2ttwBa2Twu0zp9YHg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"canaldigital\": \"App-coelba-android\",\r\n  \"dataNascimento\": \"1983-12-20\",\r\n  \"docSecundario\": \"12345678\",\r\n  \"documento\": \"6794913158\",\r\n  \"tipoCliente\": \"F\",\r\n  \"tipoDocSecundario\": \"RG\",\r\n  \"userName\": \"CELPE/55315186849\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/login/1.0.0/usuarios/desativa-usuario",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"login",
+								"1.0.0",
+								"usuarios",
+								"desativa-usuario"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fatura por Email",
+			"item": [
+				{
+					"name": "NE",
+					"item": [
+						{
+							"name": "Cadastrar Fatura Por E-mail NE",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJnbGF1Y2lvIiwiYXV0IjoiQVBQTElDQVRJT05fVVNFUiIsImF1ZCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJuYmYiOjE2MzQxNTYzNDksImF6cCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzNDE1OTk0OSwiaWF0IjoxNjM0MTU2MzQ5LCJqdGkiOiIyMDZmMTdkNy1mNGY1LTRjZGEtYTQ4OC01ZThmNTMxZWEzYTIifQ.rcGcJ70qEKDKmuM72tRSFYvH9gym2Iag7RHxjClI0lFujkq-CuIj3YuE2_aMVeDZYd_kU8rQOR7ZaLA80KVQJFn6FUVPB1bW1uK_E69VdHnWosquUpwrJaVHzSRWS06eyHyK9lL6Yd8jB1RbWiQMRqWaXzocqu7akwPPMkxqHE-kNAH4Z5L05IyVgLK2Z7q3ljof3Q6ZYcgHOatssdyw9osGTdLIUjMlXNsXptScBm5keDoA_9ULyZoQpK06j9Xle_IoKpAXVksSGyN7tcjeZZX_-PlaVPPJQtYTw6-zqC7UYpJ0mWvcMiGdeyQvWt_cNHBCa9t6XDGAR3iBygtu4w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"codigo\": \"469084\",\r\n    \"email\": \"\",\r\n    \"telefone\": \"21987175883\",\r\n    \"frase\": \"FATURA DIGITAL NEO\",\r\n    \"protocolo\": \"33\",\r\n    \"canalDigital\": \"ZWA\",\r\n    \"usuario\": \"Teste0001\"\r\n}\r\n// ZWA e SMS com telefone\r\n// APP com email",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wso2gwhml.neoenergia.net/faturas/1.1.0/ucs/:codigo/fatura-email-cadastra",
+									"protocol": "https",
+									"host": [
+										"wso2gwhml",
+										"neoenergia",
+										"net"
+									],
+									"path": [
+										"faturas",
+										"1.1.0",
+										"ucs",
+										":codigo",
+										"fatura-email-cadastra"
+									],
+									"variable": [
+										{
+											"key": "codigo",
+											"value": "624551",
+											"description": "Conta contrato/Unidade Consumidora (UC)."
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SE",
+					"item": [
+						{
+							"name": "Cadastrar Fatura Por E-mail SE",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJnbGF1Y2lvIiwiYXV0IjoiQVBQTElDQVRJT05fVVNFUiIsImF1ZCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJuYmYiOjE2MzQxNTYzNDksImF6cCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzNDE1OTk0OSwiaWF0IjoxNjM0MTU2MzQ5LCJqdGkiOiIyMDZmMTdkNy1mNGY1LTRjZGEtYTQ4OC01ZThmNTMxZWEzYTIifQ.rcGcJ70qEKDKmuM72tRSFYvH9gym2Iag7RHxjClI0lFujkq-CuIj3YuE2_aMVeDZYd_kU8rQOR7ZaLA80KVQJFn6FUVPB1bW1uK_E69VdHnWosquUpwrJaVHzSRWS06eyHyK9lL6Yd8jB1RbWiQMRqWaXzocqu7akwPPMkxqHE-kNAH4Z5L05IyVgLK2Z7q3ljof3Q6ZYcgHOatssdyw9osGTdLIUjMlXNsXptScBm5keDoA_9ULyZoQpK06j9Xle_IoKpAXVksSGyN7tcjeZZX_-PlaVPPJQtYTw6-zqC7UYpJ0mWvcMiGdeyQvWt_cNHBCa9t6XDGAR3iBygtu4w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"codigo\": \"29645581\",\r\n    \"email\": \"catherinetostes@gmail.com\",\r\n    \"telefone\": \"\",\r\n    \"frase\": \"FATURA DIGITAL NEO\",\r\n    \"protocolo\": \"33\",\r\n    \"canalDigital\": \"AGE\",\r\n    \"usuario\": \"Teste0001\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://wso2gwhml.neoenergia.net/faturas/1.1.0/ucs/:codigo/fatura-email-cadastra",
+									"protocol": "https",
+									"host": [
+										"wso2gwhml",
+										"neoenergia",
+										"net"
+									],
+									"path": [
+										"faturas",
+										"1.1.0",
+										"ucs",
+										":codigo",
+										"fatura-email-cadastra"
+									],
+									"variable": [
+										{
+											"key": "codigo",
+											"value": "624551",
+											"description": "Conta contrato/Unidade Consumidora (UC)."
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Minha Conta",
+			"item": [
+				{
+					"name": "Minha Conta",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC8xOTkzNTE5Mzg2MSIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJ0ZWxlZm9uZSI6IjIxOTg3NjU0NTYiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImRvY3VtZW50byI6IjE5OTM1MTkzODYxIiwibm9tZSI6IkFEUklBTkEgQU5EUkFERSIsInJlZ2lhbyI6IlNFIiwicHJvdG9jb2xvIjoiMTIzNDU1NiIsImF1ZCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJjYW5hbGRpZ2l0YWwiOiJBR0UiLCJuYmYiOjE2MzU0MjI5ODgsImF6cCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJzY29wZSI6Im9wZW5pZCIsImRpc3RyaWJ1aWRvcmEiOiJFTEVLVFJPIiwiZXhwIjoxNjM1NDI2NTg4LCJkYXRhTmFzY2ltZW50byI6IjAzXC8xMlwvMTk3MSIsImlhdCI6MTYzNTQyMjk4OCwiZmFtaWx5X25hbWUiOiJBTkRSQURFIiwianRpIjoiNmNmZjU1YjAtMTQ4NC00MTAyLTg3ZTgtZmI3ZTcwMWRjYjc0IiwiZW1haWwiOiJjYXRoZXJpbmV0b3N0ZXNAZ21haWwuY29tIiwidGlwb0VudmlvIjoiMSJ9.db7v3GQtb5GfdQ5kGBrQJkY4AmMmnhpIPmOpDi9zA0O2fq8JJgzxY7HKV9RFeDAojEk-tPPYiRK92glAGvJyArJMyWopgUxvBr4Z_MQk0MAIqn23j5ft3RhZAKTWT0IP5qj5EzZbp3RYDheiioBjKGqUGq8ILby_IdFPpFbnOk-8HygGH5iRa2cXJrJ9sqNbbiZn7dM6zmovDmq4kHfrRBNSp0vsxmj0wxTj5A7dCMtJedxKr5vvx2L1TAfSaO-A6hXyrclpTS-Nr6CslD-JBXGw-wb17gehUUjur1Qp_UX-wWxxIiWTru-uGbx-XHbgkBLRwjI5H3IhIsgWQ2gtbA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/login/1.0.0/usuarios?userName=ELEKTRO/19935193861&canalDigital=AGE",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"login",
+								"1.0.0",
+								"usuarios"
+							],
+							"query": [
+								{
+									"key": "userName",
+									"value": "ELEKTRO/19935193861",
+									"description": "Nome da distribuidora concatenada com o documento."
+								},
+								{
+									"key": "canalDigital",
+									"value": "AGE",
+									"description": "Identifica que a chamada ao endpoint foi feita em uma determinada distribuidora."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Minha Conta",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJnbGF1Y2lvIiwiYXV0IjoiQVBQTElDQVRJT05fVVNFUiIsImF1ZCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJuYmYiOjE2MzQxNTYzNDksImF6cCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzNDE1OTk0OSwiaWF0IjoxNjM0MTU2MzQ5LCJqdGkiOiIyMDZmMTdkNy1mNGY1LTRjZGEtYTQ4OC01ZThmNTMxZWEzYTIifQ.rcGcJ70qEKDKmuM72tRSFYvH9gym2Iag7RHxjClI0lFujkq-CuIj3YuE2_aMVeDZYd_kU8rQOR7ZaLA80KVQJFn6FUVPB1bW1uK_E69VdHnWosquUpwrJaVHzSRWS06eyHyK9lL6Yd8jB1RbWiQMRqWaXzocqu7akwPPMkxqHE-kNAH4Z5L05IyVgLK2Z7q3ljof3Q6ZYcgHOatssdyw9osGTdLIUjMlXNsXptScBm5keDoA_9ULyZoQpK06j9Xle_IoKpAXVksSGyN7tcjeZZX_-PlaVPPJQtYTw6-zqC7UYpJ0mWvcMiGdeyQvWt_cNHBCa9t6XDGAR3iBygtu4w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"canaldigital\": \"\",\r\n  \"documento\": \"\",\r\n  \"emailCadastro\": \"\",\r\n  \"telefone\": \"\",\r\n  \"celular\": \"\",\r\n  \"usuarioAcesso\": \"\",\r\n  \"emailAcesso\": \"\",\r\n  \"termosUso\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/MinhaConta/1.2/atualizar-minha-conta",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"MinhaConta",
+								"1.2",
+								"atualizar-minha-conta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Senha",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJnbGF1Y2lvIiwiYXV0IjoiQVBQTElDQVRJT05fVVNFUiIsImF1ZCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJuYmYiOjE2MzQxNTYzNDksImF6cCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzNDE1OTk0OSwiaWF0IjoxNjM0MTU2MzQ5LCJqdGkiOiIyMDZmMTdkNy1mNGY1LTRjZGEtYTQ4OC01ZThmNTMxZWEzYTIifQ.rcGcJ70qEKDKmuM72tRSFYvH9gym2Iag7RHxjClI0lFujkq-CuIj3YuE2_aMVeDZYd_kU8rQOR7ZaLA80KVQJFn6FUVPB1bW1uK_E69VdHnWosquUpwrJaVHzSRWS06eyHyK9lL6Yd8jB1RbWiQMRqWaXzocqu7akwPPMkxqHE-kNAH4Z5L05IyVgLK2Z7q3ljof3Q6ZYcgHOatssdyw9osGTdLIUjMlXNsXptScBm5keDoA_9ULyZoQpK06j9Xle_IoKpAXVksSGyN7tcjeZZX_-PlaVPPJQtYTw6-zqC7UYpJ0mWvcMiGdeyQvWt_cNHBCa9t6XDGAR3iBygtu4w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"canaldigital\": \"\",\r\n  \"documento\": \"\",\r\n  \"senha\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/MinhaConta/1.2/atualizar-senha",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"MinhaConta",
+								"1.2",
+								"atualizar-senha"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Falta de Energia",
+			"item": [
+				{
+					"name": "Registrar Falta de Energia",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"canaldigital\": \"string\",\r\n  \"condicaoTempo\": \"string\",\r\n  \"confirmacaoAviso\": \"string\",\r\n  \"confirmacaoProcesso\": \"string\",\r\n  \"informacaoImportante\": true,\r\n  \"nomeSolicitante\": \"string\",\r\n  \"observacoes\": \"string\",\r\n  \"origemSolicitante\": \"string\",\r\n  \"protocolo\": \"string\",\r\n  \"riscoMorte\": true,\r\n  \"subTipoAviso\": \"string\",\r\n  \"telefoneContato\": \"string\",\r\n  \"uc\": \"string\",\r\n  \"usuarioUE\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/falta-energia/1.1.0/ucs/falta-energia",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"falta-energia",
+								"1.1.0",
+								"ucs",
+								"falta-energia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Falta de Energia",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/falta-energia/1.1.0/ucs/:codigo/falta-energia?protocolo=1234567&usuario=Teste0001",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"falta-energia",
+								"1.1.0",
+								"ucs",
+								":codigo",
+								"falta-energia"
+							],
+							"query": [
+								{
+									"key": "protocolo",
+									"value": "1234567",
+									"description": "Protocolo gerado pelo sistema através do [GET]protocolo/{usuario}/{codigo} – ET Geral "
+								},
+								{
+									"key": "usuario",
+									"value": "Teste0001",
+									"description": "Usuário do sistema comercial para o aplicativo."
+								}
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "624551",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar Ocorrência",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/falta-energia/1.1.0/ucs/:codigo/falta-energia-ocorrencia?protocolo=1234567&usuario=Teste0001",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"falta-energia",
+								"1.1.0",
+								"ucs",
+								":codigo",
+								"falta-energia-ocorrencia"
+							],
+							"query": [
+								{
+									"key": "protocolo",
+									"value": "1234567",
+									"description": "Protocolo gerado pelo sistema através do [GET]protocolo/{usuario}/{codigo} – ET Geral "
+								},
+								{
+									"key": "usuario",
+									"value": "Teste0001",
+									"description": "Usuário do sistema comercial para o aplicativo."
+								}
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "624551",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Débito Automático",
+			"item": [
+				{
+					"name": "Obter Bancos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC8xOTkzNTE5Mzg2MSIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJ0ZWxlZm9uZSI6IjIxOTg3NjU0NTYiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImRvY3VtZW50byI6IjE5OTM1MTkzODYxIiwibm9tZSI6IkFEUklBTkEgQU5EUkFERSIsInJlZ2lhbyI6IlNFIiwicHJvdG9jb2xvIjoiMTIzNDU1NiIsImF1ZCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJjYW5hbGRpZ2l0YWwiOiJBR0UiLCJuYmYiOjE2MzgyMTQ4MDYsImF6cCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJzY29wZSI6Im9wZW5pZCIsImRpc3RyaWJ1aWRvcmEiOiJFTEVLVFJPIiwiZXhwIjoxNjM4MjE4NDA2LCJkYXRhTmFzY2ltZW50byI6IjAzXC8xMlwvMTk3MSIsImlhdCI6MTYzODIxNDgwNiwiZmFtaWx5X25hbWUiOiJBTkRSQURFIiwianRpIjoiYzdlOGY1MDAtYzIzNS00YTkyLTkzNDItYzJhMjQ2Y2Y1ZTY5IiwiZW1haWwiOiJjYXRoZXJpbmV0b3N0ZXNAZ21haWwuY29tIiwidGlwb0VudmlvIjoiMSJ9.gXxVc9cTH9ZCaSC3sWgRsFdHOFJ--mAVqxxX0jqdlbdOj-ZZtddjskXGjZOX_0qyx8ZSJ6qZQ_egbFitcQU18ZJfl2OhnRk31JqWAks_pokH31ojGGpJ1OrrI3ddoMT1NikF6M2gzgOTWRkB7mshq_m8nx0fx9ZCoyApT8v_xsCnau8T8mv8C_lr-4UMWV53x0sgnrj4grdXatTGPjnAqBTVG8VV1_dhkQjpAigpvGXtNwALUmUWKHvU-KGX_emXZRllWN32Ii26iYahnFNONgbsW_Z3cvU_iMeildp3FF4jLKceMhtPoVdRohSAJWtl6XAm6qu7UyDbr7t1UoWNEQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/debito-automatico/1.1.0/bancos?codigo=41812069",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"debito-automatico",
+								"1.1.0",
+								"bancos"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "41812069"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Agência",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC8xOTkzNTE5Mzg2MSIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJ0ZWxlZm9uZSI6IjIxOTg3NjU0NTYiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImRvY3VtZW50byI6IjE5OTM1MTkzODYxIiwibm9tZSI6IkFEUklBTkEgQU5EUkFERSIsInJlZ2lhbyI6IlNFIiwicHJvdG9jb2xvIjoiMTIzNDU1NiIsImF1ZCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJjYW5hbGRpZ2l0YWwiOiJBR0UiLCJuYmYiOjE2MzU5NTg2NDYsImF6cCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJzY29wZSI6Im9wZW5pZCIsImRpc3RyaWJ1aWRvcmEiOiJFTEVLVFJPIiwiZXhwIjoxNjM1OTYyMjQ2LCJkYXRhTmFzY2ltZW50byI6IjAzXC8xMlwvMTk3MSIsImlhdCI6MTYzNTk1ODY0NiwiZmFtaWx5X25hbWUiOiJBTkRSQURFIiwianRpIjoiYjYxYWYyMWItNzc5Zi00MWI5LTk1NGQtYjU3NGQ0NDExZjNiIiwiZW1haWwiOiJjYXRoZXJpbmV0b3N0ZXNAZ21haWwuY29tIiwidGlwb0VudmlvIjoiMSJ9.qAGAdEiwA90aM1cDWjOBZ5LT-L216ZLC1KOYDa4NKQZP-b1WbF8eL_a_HQZbzZOzNU-jQ0ZUSBNR2p76kpSfsJeuwm-WhcXRTxZemuV1yZgHv3nISeFFBPEOc5POjJXlQFLPUtJyqOtH2okaqWkkBquQqBuc1ajNBFGqnYOU5fadg_8fKjaTIK1vL8fpouFtaYEaHGI7rw35s6Ewro6bfeOJx-i4hqoDw_mVoVs5EztsnwonvKznx-H-vj_ubi2wTZU9lp0MX9coNH8QcpXVZ-9Vn1p0A95LNtYqGE-UpYGsC1yaaaefijP2EVbcteuA_CvRr6KOSM3o-cEWF36-7w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/debito-automatico/1.1.0/bancos/:banco/:agencia/agencias?usuario=Teste0001",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"debito-automatico",
+								"1.1.0",
+								"bancos",
+								":banco",
+								":agencia",
+								"agencias"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "Teste0001",
+									"description": "Usuário do sistema comercial para o aplicativo."
+								}
+							],
+							"variable": [
+								{
+									"key": "banco",
+									"value": "341",
+									"description": "Código do banco."
+								},
+								{
+									"key": "agencia",
+									"value": "3850",
+									"description": "Número da Agência."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Débito Automático",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC8xOTkzNTE5Mzg2MSIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJ0ZWxlZm9uZSI6IjIxOTg3NjU0NTYiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImRvY3VtZW50byI6IjE5OTM1MTkzODYxIiwibm9tZSI6IkFEUklBTkEgQU5EUkFERSIsInJlZ2lhbyI6IlNFIiwicHJvdG9jb2xvIjoiMTIzNDU1NiIsImF1ZCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJjYW5hbGRpZ2l0YWwiOiJBR0UiLCJuYmYiOjE2MzgyMTQ4MDYsImF6cCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJzY29wZSI6Im9wZW5pZCIsImRpc3RyaWJ1aWRvcmEiOiJFTEVLVFJPIiwiZXhwIjoxNjM4MjE4NDA2LCJkYXRhTmFzY2ltZW50byI6IjAzXC8xMlwvMTk3MSIsImlhdCI6MTYzODIxNDgwNiwiZmFtaWx5X25hbWUiOiJBTkRSQURFIiwianRpIjoiYzdlOGY1MDAtYzIzNS00YTkyLTkzNDItYzJhMjQ2Y2Y1ZTY5IiwiZW1haWwiOiJjYXRoZXJpbmV0b3N0ZXNAZ21haWwuY29tIiwidGlwb0VudmlvIjoiMSJ9.gXxVc9cTH9ZCaSC3sWgRsFdHOFJ--mAVqxxX0jqdlbdOj-ZZtddjskXGjZOX_0qyx8ZSJ6qZQ_egbFitcQU18ZJfl2OhnRk31JqWAks_pokH31ojGGpJ1OrrI3ddoMT1NikF6M2gzgOTWRkB7mshq_m8nx0fx9ZCoyApT8v_xsCnau8T8mv8C_lr-4UMWV53x0sgnrj4grdXatTGPjnAqBTVG8VV1_dhkQjpAigpvGXtNwALUmUWKHvU-KGX_emXZRllWN32Ii26iYahnFNONgbsW_Z3cvU_iMeildp3FF4jLKceMhtPoVdRohSAJWtl6XAm6qu7UyDbr7t1UoWNEQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/debito-automatico/1.1.0/conta-cadastrada-debito?codigo=29645581&usuario=Teste0001",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"debito-automatico",
+								"1.1.0",
+								"conta-cadastrada-debito"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "29645581",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								},
+								{
+									"key": "usuario",
+									"value": "Teste0001",
+									"description": "Usuário do sistema comercial para o aplicativo"
+								},
+								{
+									"key": "canalDigital",
+									"value": "AGE",
+									"description": "Identifica que a chamada ao endpoint foi feita em uma determinada distribuidora.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar Débito Automático",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC8xOTkzNTE5Mzg2MSIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJ0ZWxlZm9uZSI6IjIxOTg3NjU0NTYiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImRvY3VtZW50byI6IjE5OTM1MTkzODYxIiwibm9tZSI6IkFEUklBTkEgQU5EUkFERSIsInJlZ2lhbyI6IlNFIiwicHJvdG9jb2xvIjoiMTIzNDU1NiIsImF1ZCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJjYW5hbGRpZ2l0YWwiOiJBR0UiLCJuYmYiOjE2MzgyMTU1NjQsImF6cCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJzY29wZSI6Im9wZW5pZCIsImRpc3RyaWJ1aWRvcmEiOiJFTEVLVFJPIiwiZXhwIjoxNjM4MjE5MTY0LCJkYXRhTmFzY2ltZW50byI6IjAzXC8xMlwvMTk3MSIsImlhdCI6MTYzODIxNTU2NCwiZmFtaWx5X25hbWUiOiJBTkRSQURFIiwianRpIjoiMWQ0N2M0YjktYzEzYi00ZmY5LWJkYjMtNGY5Y2Q1MDRmMjNlIiwiZW1haWwiOiJjYXRoZXJpbmV0b3N0ZXNAZ21haWwuY29tIiwidGlwb0VudmlvIjoiMSJ9.Zz9Oyg5a8Rn5U9UJ_srWwa041tP1FR3x9mVaK5GFJgYOH4h0ZlIre7lVtni0Babfqj1ibtPzm6VIPvEUizuGXI4yW-N1IjSiPkfDMuc1jaL4ZrMaEy09xjkWirsi8R134Kf8piBqfzy-TpY7Q8BhAq7bLj_M8mne21TVcWjHC1lsGT_TP0cZZ-7z1c69C3GM-TGro7feaMNsKrOLpD9Fp8-Ja77uZSWT0c7-J2lskRpElllBUrrcTeD_pwMttN73qYXxj2Zk7ioKC_WcN1g-dpS2_LaE-2vMWa1e8L96DVX50WQgB45hEyG1PvxUI6I32kefHBKnfNY8hevR4RFaDg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codAgencia\": \"29345\",\r\n  \"codBanco\": \"341\",\r\n  \"contaCorrente\": \"391422\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/debito-automatico/1.1.0/ucs/:codigo/debito-automatico",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"debito-automatico",
+								"1.1.0",
+								"ucs",
+								":codigo",
+								"debito-automatico"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "41812069",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancelar Débito Automático",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC8xOTkzNTE5Mzg2MSIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJ0ZWxlZm9uZSI6IjIxOTg3NjU0NTYiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImRvY3VtZW50byI6IjE5OTM1MTkzODYxIiwibm9tZSI6IkFEUklBTkEgQU5EUkFERSIsInJlZ2lhbyI6IlNFIiwicHJvdG9jb2xvIjoiMTIzNDU1NiIsImF1ZCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJjYW5hbGRpZ2l0YWwiOiJBR0UiLCJuYmYiOjE2MzgyMTU1NjQsImF6cCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJzY29wZSI6Im9wZW5pZCIsImRpc3RyaWJ1aWRvcmEiOiJFTEVLVFJPIiwiZXhwIjoxNjM4MjE5MTY0LCJkYXRhTmFzY2ltZW50byI6IjAzXC8xMlwvMTk3MSIsImlhdCI6MTYzODIxNTU2NCwiZmFtaWx5X25hbWUiOiJBTkRSQURFIiwianRpIjoiMWQ0N2M0YjktYzEzYi00ZmY5LWJkYjMtNGY5Y2Q1MDRmMjNlIiwiZW1haWwiOiJjYXRoZXJpbmV0b3N0ZXNAZ21haWwuY29tIiwidGlwb0VudmlvIjoiMSJ9.Zz9Oyg5a8Rn5U9UJ_srWwa041tP1FR3x9mVaK5GFJgYOH4h0ZlIre7lVtni0Babfqj1ibtPzm6VIPvEUizuGXI4yW-N1IjSiPkfDMuc1jaL4ZrMaEy09xjkWirsi8R134Kf8piBqfzy-TpY7Q8BhAq7bLj_M8mne21TVcWjHC1lsGT_TP0cZZ-7z1c69C3GM-TGro7feaMNsKrOLpD9Fp8-Ja77uZSWT0c7-J2lskRpElllBUrrcTeD_pwMttN73qYXxj2Zk7ioKC_WcN1g-dpS2_LaE-2vMWa1e8L96DVX50WQgB45hEyG1PvxUI6I32kefHBKnfNY8hevR4RFaDg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"protocolo\": 1234567,\r\n\"nroCliente\": 9876456,\r\n\"dataGeracao\": \"2021-06-30T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/debito-automatico/1.1.0/ucs/:codigo/cancela-debito-automatico",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"debito-automatico",
+								"1.1.0",
+								"ucs",
+								":codigo",
+								"cancela-debito-automatico"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "41812069",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autoleitura",
+			"item": [
+				{
+					"name": "Validar Autoleitura",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/autoleitura/1.1.0/ucs/:codigo/valida-autoleitura?usuario=Teste0001",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"autoleitura",
+								"1.1.0",
+								"ucs",
+								":codigo",
+								"valida-autoleitura"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "Teste0001",
+									"description": "Usuário do sistema comercial para o aplicativo"
+								}
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "792330",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Simular Autoleitura",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/autoleitura/1.1.0/ucs/:codigo/simula-autoleitura?usuario=Teste001&protocolo=1234567&canalDigital=AGE&geraSSOS=S",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"autoleitura",
+								"1.1.0",
+								"ucs",
+								":codigo",
+								"simula-autoleitura"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "Teste001",
+									"description": "Usuário do sistema comercial para o aplicativo."
+								},
+								{
+									"key": "protocolo",
+									"value": "1234567",
+									"description": "Protocolo gerado pelo sistema através do [GET]protocolo/{usuario}/{codigo} – ET Geral."
+								},
+								{
+									"key": "canalDigital",
+									"value": "AGE",
+									"description": "Identifica que a chamada ao endpoint foi feita em uma determinada distribuidora."
+								},
+								{
+									"key": "geraSSOS",
+									"value": "S",
+									"description": "S: Para todos os atendimentos ao cliente deve ser gerado OS para registrar. N: Os processos internos não devem gerar."
+								}
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "41812069",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Autoleitura",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"canalDigital\": \"App-coelba-android\",\r\n  \"protocolo\": 0,\r\n  \"usuario\": \"EG001EX01\",\r\n  \"valor\": 20.25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/autoleitura/1.1.0/ucs/:codigo/autoleitura",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"autoleitura",
+								"1.1.0",
+								"ucs",
+								":codigo",
+								"autoleitura"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "792330",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Religacao",
+			"item": [
+				{
+					"name": "Valida Religação",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC9hZ2UtdXNlciIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJhdWQiOiI5dDlfVmF0Z0trc3kzRjlwS3dwaG1fTUx3ZDRhIiwibmJmIjoxNjM5Njc3MDIxLCJhenAiOiI5dDlfVmF0Z0trc3kzRjlwS3dwaG1fTUx3ZDRhIiwic2NvcGUiOiJvcGVuaWQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzOTY4MDYyMSwiaWF0IjoxNjM5Njc3MDIxLCJqdGkiOiIyMmVhMDAzZS1jZDk2LTQwOGQtOGY4NC1iZTg3MmVkYjNkNzAifQ.Xp0W6H6XEw9Hdue1rOawIssLlNBrr3TF54yQ8n5VSdcPHdI9lNIRvroUM5iBW09SwlWI02L89m303RexdCNH3PJjg6YP-2u-jjBuxNW3SdNvDFFY7mM4QAJDmUvwErldBk_Avtbd9PI8WQFH41CaUZcTXDjo69ubO9h44HiWbFib-iGkQbjCnc-DERB-Yn7gBtEHlXvczRIztWQaKAR2bMmLx_Wdl3ii_vFhBplNdaGAuCrdqDa7xfPoXitJyhPMR1YiBCbrIkFciNlHBeoDZ5p9wiUIuGD9f0dE3jHuGllFDmT2CwEyuWMj7s-DbJiAvSXhJDI8IB2cHjePyfWAqQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/religacao/1.1.0/ucs/:codigo/valida-religacao",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"religacao",
+								"1.1.0",
+								"ucs",
+								":codigo",
+								"valida-religacao"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "41812069",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Taxa Religação",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC8xOTkzNTE5Mzg2MSIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJ0ZWxlZm9uZSI6IjIxOTg3NjU0NTYiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImRvY3VtZW50byI6IjE5OTM1MTkzODYxIiwibm9tZSI6IkFEUklBTkEgQU5EUkFERSIsInJlZ2lhbyI6IlNFIiwicHJvdG9jb2xvIjoiMTIzNDU1NiIsImF1ZCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJjYW5hbGRpZ2l0YWwiOiJBR0UiLCJuYmYiOjE2MzcwODkzMjksImF6cCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJzY29wZSI6Im9wZW5pZCIsImRpc3RyaWJ1aWRvcmEiOiJFTEVLVFJPIiwiZXhwIjoxNjM3MDkyOTI5LCJkYXRhTmFzY2ltZW50byI6IjAzXC8xMlwvMTk3MSIsImlhdCI6MTYzNzA4OTMyOSwiZmFtaWx5X25hbWUiOiJBTkRSQURFIiwianRpIjoiMjMwMzY5NzEtNTI1My00YzJkLWFhNTQtZmNhYTlhYzg3MWNhIiwiZW1haWwiOiJjYXRoZXJpbmV0b3N0ZXNAZ21haWwuY29tIiwidGlwb0VudmlvIjoiMSJ9.fWqthB-l9gYnKgqdzEL63m-lMuU5eQoDkUxa7gAxH4XcocSwaflhUECNb2SyIepUIz2zFgXJ2-dn3SuqmpFGUEMhSYhQWUkRBNjacpQVyjdfNgFHexKeho1FSTIm35IEby8983m5BChTZfUU_o3EjVsq0NP7KLsEuxzNfue-Nk2KFMKfxgRHq2DLGjaFjBpDCTL2MGUXfo8rtIZx8Td0dd3iJlO0hbdDMqvOZ6S309rOuOk3MXhvhcfCxt8iPfOIDlEL1JsZQiMAv7vzr-6F2KXO_Pye7DsSOj5Yv64P_Yto5iOs_VT166lo3yHg7QvsAcPAzPgc75qd1z-_cveogw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/religacao/1.1.0/ucs/:codigo/taxa-religacao?protocolo=1234567",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"religacao",
+								"1.1.0",
+								"ucs",
+								":codigo",
+								"taxa-religacao"
+							],
+							"query": [
+								{
+									"key": "protocolo",
+									"value": "1234567",
+									"description": "Protocolo gerado pelo sistema através do [GET]protocolo/{usuario}/{codigo} – ET Geral."
+								}
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "41812069",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Religação Imediata",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC8xOTkzNTE5Mzg2MSIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJ0ZWxlZm9uZSI6IjIxOTg3NjU0NTYiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImRvY3VtZW50byI6IjE5OTM1MTkzODYxIiwibm9tZSI6IkFEUklBTkEgQU5EUkFERSIsInJlZ2lhbyI6IlNFIiwicHJvdG9jb2xvIjoiMTIzNDU1NiIsImF1ZCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJjYW5hbGRpZ2l0YWwiOiJBR0UiLCJuYmYiOjE2MzcwODkzMjksImF6cCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJzY29wZSI6Im9wZW5pZCIsImRpc3RyaWJ1aWRvcmEiOiJFTEVLVFJPIiwiZXhwIjoxNjM3MDkyOTI5LCJkYXRhTmFzY2ltZW50byI6IjAzXC8xMlwvMTk3MSIsImlhdCI6MTYzNzA4OTMyOSwiZmFtaWx5X25hbWUiOiJBTkRSQURFIiwianRpIjoiMjMwMzY5NzEtNTI1My00YzJkLWFhNTQtZmNhYTlhYzg3MWNhIiwiZW1haWwiOiJjYXRoZXJpbmV0b3N0ZXNAZ21haWwuY29tIiwidGlwb0VudmlvIjoiMSJ9.fWqthB-l9gYnKgqdzEL63m-lMuU5eQoDkUxa7gAxH4XcocSwaflhUECNb2SyIepUIz2zFgXJ2-dn3SuqmpFGUEMhSYhQWUkRBNjacpQVyjdfNgFHexKeho1FSTIm35IEby8983m5BChTZfUU_o3EjVsq0NP7KLsEuxzNfue-Nk2KFMKfxgRHq2DLGjaFjBpDCTL2MGUXfo8rtIZx8Td0dd3iJlO0hbdDMqvOZ6S309rOuOk3MXhvhcfCxt8iPfOIDlEL1JsZQiMAv7vzr-6F2KXO_Pye7DsSOj5Yv64P_Yto5iOs_VT166lo3yHg7QvsAcPAzPgc75qd1z-_cveogw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigo\": \"41812069\",\r\n  \"faturaArrecadada\": //analisar necessidade\r\n      {\r\n        \"codCPU\": \"string\",\r\n        \"dataPagamento\": \"2021-11-16T18:07:24.016Z\",\r\n        \"localPagamento\": \"string\",\r\n        \"numSeqOper\": \"string\"\r\n      },\r\n  \"pontoReferencia\": \"Próximo a padaria\",\r\n  \"telefone\": \"11 55218876\",\r\n  \"protocolo\": \"\",\r\n  \"tipoTaxa\": \"C\",\r\n  \"usuario\": \"Teste0001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/religacao/1.1.0/ucs/:codigo/religacao-imediata",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"religacao",
+								"1.1.0",
+								"ucs",
+								":codigo",
+								"religacao-imediata"
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "41812069"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Histórico de Consumo",
+			"item": [
+				{
+					"name": "Consumos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC9hZ2UtdXNlciIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJhdWQiOiI5dDlfVmF0Z0trc3kzRjlwS3dwaG1fTUx3ZDRhIiwibmJmIjoxNjM5Njc3MDIxLCJhenAiOiI5dDlfVmF0Z0trc3kzRjlwS3dwaG1fTUx3ZDRhIiwic2NvcGUiOiJvcGVuaWQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzOTY4MDYyMSwiaWF0IjoxNjM5Njc3MDIxLCJqdGkiOiIyMmVhMDAzZS1jZDk2LTQwOGQtOGY4NC1iZTg3MmVkYjNkNzAifQ.Xp0W6H6XEw9Hdue1rOawIssLlNBrr3TF54yQ8n5VSdcPHdI9lNIRvroUM5iBW09SwlWI02L89m303RexdCNH3PJjg6YP-2u-jjBuxNW3SdNvDFFY7mM4QAJDmUvwErldBk_Avtbd9PI8WQFH41CaUZcTXDjo69ubO9h44HiWbFib-iGkQbjCnc-DERB-Yn7gBtEHlXvczRIztWQaKAR2bMmLx_Wdl3ii_vFhBplNdaGAuCrdqDa7xfPoXitJyhPMR1YiBCbrIkFciNlHBeoDZ5p9wiUIuGD9f0dE3jHuGllFDmT2CwEyuWMj7s-DbJiAvSXhJDI8IB2cHjePyfWAqQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/historicos/1.0.0/ucs/:codigo/consumos?canalDigital=AGE&usuario=Teste0001&statusFatura=aVencer",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"historicos",
+								"1.0.0",
+								"ucs",
+								":codigo",
+								"consumos"
+							],
+							"query": [
+								{
+									"key": "protocolo",
+									"value": "1234567",
+									"description": "Protocolo gerado pelo sistema através do [GET]protocolo/{usuario}/{codigo} – ET Geral.",
+									"disabled": true
+								},
+								{
+									"key": "codCliente",
+									"value": "3567733",
+									"description": "Código do cliente.",
+									"disabled": true
+								},
+								{
+									"key": "canalDigital",
+									"value": "AGE",
+									"description": "Identifica que a chamada ao endpoint foi feita em uma determinada distribuidora."
+								},
+								{
+									"key": "usuario",
+									"value": "Teste0001",
+									"description": "Usuário do sistema comercial para o aplicativo."
+								},
+								{
+									"key": "dataInicioVencFat",
+									"value": "2021-09-02",
+									"description": "Data de início do vencimento da fatura.",
+									"disabled": true
+								},
+								{
+									"key": "dataFimVencFat",
+									"value": "2021-09-20",
+									"description": "Data fim do vencimento da fatura.",
+									"disabled": true
+								},
+								{
+									"key": "opcaoSSOS",
+									"value": "S",
+									"description": "S: Para todos os atendimentos ao cliente deve ser gerado OS para registrar. N: Os processos internos não devem gerar.",
+									"disabled": true
+								},
+								{
+									"key": "statusFatura",
+									"value": "aVencer",
+									"description": "Estado da fatura."
+								}
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "624551",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consumo Grupo A",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/historicos/1.0.0/ucs/:codigo/consumo-grupo-a?protocolo=1234567&codCliente=243553&canalDigital=AGE&usuario=Teste0001",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"historicos",
+								"1.0.0",
+								"ucs",
+								":codigo",
+								"consumo-grupo-a"
+							],
+							"query": [
+								{
+									"key": "protocolo",
+									"value": "1234567",
+									"description": "Protocolo gerado pelo sistema através do [GET]protocolo/{usuario}/{codigo} – ET Geral."
+								},
+								{
+									"key": "codCliente",
+									"value": "243553",
+									"description": "Código do cliente."
+								},
+								{
+									"key": "canalDigital",
+									"value": "AGE",
+									"description": "Identifica que a chamada ao endpoint foi feita em uma determinada distribuidora."
+								},
+								{
+									"key": "usuario",
+									"value": "Teste0001",
+									"description": "Usuário do sistema comercial para o aplicativo."
+								}
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "41812069",
+									"description": "Conta contrato/Unidade Consumidora (UC)."
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Segunda Via",
+			"item": [
+				{
+					"name": "PDF",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/faturas/1.1.1/:numSeqOper/pdf?codigo=123&protocolo=123&usuario=Teste0001&canaldigital=AGE&opcaoSSOS=S",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"faturas",
+								"1.1.1",
+								":numSeqOper",
+								"pdf"
+							],
+							"query": [
+								{
+									"key": "codigo",
+									"value": "123"
+								},
+								{
+									"key": "protocolo",
+									"value": "123"
+								},
+								{
+									"key": "usuario",
+									"value": "Teste0001"
+								},
+								{
+									"key": "canaldigital",
+									"value": "AGE"
+								},
+								{
+									"key": "opcaoSSOS",
+									"value": "S"
+								}
+							],
+							"variable": [
+								{
+									"key": "numSeqOper",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Faturas",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/faturas/1.1.1/ucs/faturas?usuario=Teste0001&codigo=123&protocolo=123&documento=15427694773&canaldigital=AGE&dataInicioVencFat=2021-03-02&dataFimVencFat=2021-03-10&opcaoSSOS=S",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"faturas",
+								"1.1.1",
+								"ucs",
+								"faturas"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "Teste0001"
+								},
+								{
+									"key": "codigo",
+									"value": "123"
+								},
+								{
+									"key": "protocolo",
+									"value": "123"
+								},
+								{
+									"key": "documento",
+									"value": "15427694773"
+								},
+								{
+									"key": "canaldigital",
+									"value": "AGE"
+								},
+								{
+									"key": "dataInicioVencFat",
+									"value": "2021-03-02"
+								},
+								{
+									"key": "dataFimVencFat",
+									"value": "2021-03-10"
+								},
+								{
+									"key": "opcaoSSOS",
+									"value": "S"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dados Pagamento",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/faturas/1.1.1/:numSeqOper/dados-pagamento?usuario=123&codigo=123&protocolo=123&canaldigital=AGE&opcaoSSOS=S",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"faturas",
+								"1.1.1",
+								":numSeqOper",
+								"dados-pagamento"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "123"
+								},
+								{
+									"key": "codigo",
+									"value": "123"
+								},
+								{
+									"key": "protocolo",
+									"value": "123"
+								},
+								{
+									"key": "canaldigital",
+									"value": "AGE"
+								},
+								{
+									"key": "opcaoSSOS",
+									"value": "S"
+								}
+							],
+							"variable": [
+								{
+									"key": "numSeqOper",
+									"value": "123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista Motivo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/faturas/1.1.1/lista-motivo-segundavia?usuario=Teste0001&canaldigital=AGE",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"faturas",
+								"1.1.1",
+								"lista-motivo-segundavia"
+							],
+							"query": [
+								{
+									"key": "usuario",
+									"value": "Teste0001"
+								},
+								{
+									"key": "canaldigital",
+									"value": "AGE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fatura Simplificada",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/faturas/1.1.1/faturas-simplificada?documento=15427694773&tipoCliente=1&usuario=Teste0001&dataNascimento=2021-03-18&codUc=123&protocolo=123&canaldigital=AGE&opcaoSSOS=S",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"faturas",
+								"1.1.1",
+								"faturas-simplificada"
+							],
+							"query": [
+								{
+									"key": "documento",
+									"value": "15427694773"
+								},
+								{
+									"key": "tipoCliente",
+									"value": "1"
+								},
+								{
+									"key": "usuario",
+									"value": "Teste0001"
+								},
+								{
+									"key": "dataNascimento",
+									"value": "2021-03-18"
+								},
+								{
+									"key": "codUc",
+									"value": "123"
+								},
+								{
+									"key": "protocolo",
+									"value": "123"
+								},
+								{
+									"key": "canaldigital",
+									"value": "AGE"
+								},
+								{
+									"key": "opcaoSSOS",
+									"value": "S"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Seleção de Imóveis",
+			"item": [
+				{
+					"name": "Informações da UC SE",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-JWT-Assertion",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC8xOTkzNTE5Mzg2MSIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJ0ZWxlZm9uZSI6IjIxOTg3NjU0NTYiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImRvY3VtZW50byI6IjE5OTM1MTkzODYxIiwibm9tZSI6IkFEUklBTkEgQU5EUkFERSIsInJlZ2lhbyI6IlNFIiwicHJvdG9jb2xvIjoiMTIzNDU1NiIsImF1ZCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJjYW5hbGRpZ2l0YWwiOiJBR0UiLCJuYmYiOjE2MzgyMTYyNzMsImF6cCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJzY29wZSI6Im9wZW5pZCIsImRpc3RyaWJ1aWRvcmEiOiJFTEVLVFJPIiwiZXhwIjoxNjM4MjE5ODczLCJkYXRhTmFzY2ltZW50byI6IjAzXC8xMlwvMTk3MSIsImlhdCI6MTYzODIxNjI3MywiZmFtaWx5X25hbWUiOiJBTkRSQURFIiwianRpIjoiYjhlYTg2OTMtZWQ5Mi00MGE5LThjYzktZGRlYjdiMzRjY2ViIiwiZW1haWwiOiJjYXRoZXJpbmV0b3N0ZXNAZ21haWwuY29tIiwidGlwb0VudmlvIjoiMSJ9.QLubgQpb9d8f9TRBT8m6Z66T-08k3FF8tVIpfel52fKy_JIOzNPppc2fwxEV8ku_vmQeNTTC9WD8edGhiOibE6ofDpfi1pH6-YbtSkT6OE_gpR3QDesKNnWxnRQj73HD_7Vy6S7CGZfkBftMgx17CLM-PRgdXOwvcyGHtQkuEHgDN4lR7yY4exz_LlTtF1U6_gaAbgs7SGEECjuHv94T48_ivFlJj39vMrtSUfNPc_V8HVol4DG_twlnUeB7Fsqk8TjDMNs32itD9ulvzw8QoW-5GpkRMXkOQzuAQhvsNilLJszPzgFh4rBlJOH7w0kuQ0YsTkkNtngmhCzxBVw_2w",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/imoveis/1.1.0/ucs/:codigo?usuario=TESTE0001&canaldigital=AEL",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"imoveis",
+								"1.1.0",
+								"ucs",
+								":codigo"
+							],
+							"query": [
+								{
+									"key": "protocolo",
+									"value": "AGC",
+									"disabled": true
+								},
+								{
+									"key": "opcaoSSOS",
+									"value": "123",
+									"disabled": true
+								},
+								{
+									"key": "usuario",
+									"value": "TESTE0001"
+								},
+								{
+									"key": "canaldigital",
+									"value": "AEL"
+								}
+							],
+							"variable": [
+								{
+									"key": "codigo",
+									"value": "29645581"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UCS do usuário",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJFTEVLVFJPXC8xOTkzNTE5Mzg2MSIsImF1dCI6IkFQUExJQ0FUSU9OX1VTRVIiLCJ0ZWxlZm9uZSI6IjIxOTg3NjU0NTYiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImRvY3VtZW50byI6IjE5OTM1MTkzODYxIiwibm9tZSI6IkFEUklBTkEgQU5EUkFERSIsInJlZ2lhbyI6IlNFIiwicHJvdG9jb2xvIjoiMTIzNDU1NiIsImF1ZCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJjYW5hbGRpZ2l0YWwiOiJBR0UiLCJuYmYiOjE2Mzg4OTY5NjUsImF6cCI6Ijl0OV9WYXRnS2tzeTNGOXBLd3BobV9NTHdkNGEiLCJzY29wZSI6Im9wZW5pZCIsImRpc3RyaWJ1aWRvcmEiOiJFTEVLVFJPIiwiZXhwIjoxNjM4OTAwNTY1LCJkYXRhTmFzY2ltZW50byI6IjAzXC8xMlwvMTk3MSIsImlhdCI6MTYzODg5Njk2NSwiZmFtaWx5X25hbWUiOiJBTkRSQURFIiwianRpIjoiNTY3ZDM3ODktN2RmMy00ZTQyLWEwY2EtMzZmYjY5OWNjMTUxIiwiZW1haWwiOiJjYXRoZXJpbmV0b3N0ZXNAZ21haWwuY29tIiwidGlwb0VudmlvIjoiMSJ9.HOVJr33hlSHcDbZsOpPe0vixM8RwVL_y671skFFvZ7HUaqkp08VljMlxVCaGEJFkyWbmUjeSZCvLhlgFSQv-I9svlYE3wCdegY7hqU4MafwJlxzNVpvbIKBwTMi4t8730SiLLSsLnML4Wri7sK3u2-v7rU5ZA2rpg0CjYNgdATAbVR8HPmTUIriAh-teUFOfy0I5vVlbb0h1AIWcdYny6JO1GPK8v3tApEBwt9eQN3U9NsvOvm9-0G7ZpkIUve6b64KOdXX6y8xu2bmjO6tuOEfL-F1hR4NLzJp1adSBEs8EMVmhQL7X2RFUZJiz-rWiVah0tf0G_mISedTPQsY8ag",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://wso2gwhml.neoenergia.net/imoveis/1.1.0/clientes/:documento/ucs?canaldigital=AEL&usuario=TESTE0001",
+							"protocol": "https",
+							"host": [
+								"wso2gwhml",
+								"neoenergia",
+								"net"
+							],
+							"path": [
+								"imoveis",
+								"1.1.0",
+								"clientes",
+								":documento",
+								"ucs"
+							],
+							"query": [
+								{
+									"key": "canaldigital",
+									"value": "AEL"
+								},
+								{
+									"key": "usuario",
+									"value": "TESTE0001"
+								}
+							],
+							"variable": [
+								{
+									"key": "documento",
+									"value": "22759820866"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "tokenType",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "accessToken",
+				"value": "eyJ4NXQiOiJNell4TW1Ga09HWXdNV0kwWldObU5EY3hOR1l3WW1NNFpUQTNNV0kyTkRBelpHUXpOR00wWkdSbE5qSmtPREZrWkRSaU9URmtNV0ZoTXpVMlpHVmxOZyIsImtpZCI6Ik16WXhNbUZrT0dZd01XSTBaV05tTkRjeE5HWXdZbU00WlRBM01XSTJOREF6WkdRek5HTTBaR1JsTmpKa09ERmtaRFJpT1RGa01XRmhNelUyWkdWbE5nX1JTMjU2IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiJnbGF1Y2lvIiwiYXV0IjoiQVBQTElDQVRJT05fVVNFUiIsImF1ZCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJuYmYiOjE2MzM2MzE2MDMsImF6cCI6IjVoZnlIRklmcTY3dEdHNHVpTjJEMGpCS3p0NGEiLCJzY29wZSI6ImRlZmF1bHQiLCJpc3MiOiJodHRwczpcL1wvd3NvMmFtaG1sLm5lb2VuZXJnaWEubmV0OjQ0M1wvb2F1dGgyXC90b2tlbiIsImV4cCI6MTYzMzYzNTIwMywiaWF0IjoxNjMzNjMxNjAzLCJqdGkiOiIzNWFkYTg4My03Y2RlLTQ4MDgtODk0My00YTE3MGMzNDcyZjcifQ.TQo9de8_FDkuKrAni01n4uz4iIVo47cw-qZ4BwdYziDOBtdOxf7NevRxr6UcMtQgB-6Qhz2eBdZRsjwOzn950Vstki7DRqWgTDt9x4p85G1MyDL-J4XhlYvFz4b61lPIQMOtpHt9RS3aZDwJ72RBtF_EWUjW9jJhqsNEKDOafLI6yN5HITnmILh8J3nghXY7s1xWOIH8DTsLb4SokQ3TOxKaQKMkn6l8CK9Hvau6-Z1qyM4FlebihJ6mZrrbqyBgsnp-06S6FYDcH_25aaFVqZbWDGj38uYgkO0JcJQ0ZQhGo0Cfsqt3IT8KJuuPtBO8NRJDQkHBI5PGMEBG8ZFikQ",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "welcome1",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "UPwYJgJXtZOE1sf9bdokG1rQC7sa",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "5hfyHFIfq67tGG4uiN2D0jBKzt4a",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "queryParams",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "COELBA/glaucio",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "password_credentials",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "sandbox-oauth",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://wso2gwhml.neoenergia.net/token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

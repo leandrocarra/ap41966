@@ -1,0 +1,9 @@
+<div class="descricao-composicao-fatura">
+    <div id="{{item.id}}" class="item-composicao" *ngFor="let item of descricoes">
+        <div class="div-titulo" (click)="showDescription(item);">
+            <div class="dot {{item.title}}"></div>
+            <div class="descricao-titulo">{{item.title}}</div>
+        </div>
+        <div id="{{item.title}}" class="descricao-item">{{item.description}}</div>
+    </div>
+</div>

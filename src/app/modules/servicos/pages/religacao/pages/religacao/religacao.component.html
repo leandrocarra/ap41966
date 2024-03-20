@@ -1,0 +1,43 @@
+<h2>Solicitar Religação</h2>
+
+<p class="subtitulo mt-3 mb-3">
+    Confira os dados da Unidade Consumidora para solicitar a Religação:
+</p>
+
+<app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+<div class="mt-5">
+    <h6 class="subtitulo-h6 font-weight-bold">TAXA DE RELIGAÇÃO</h6>
+    <p class="color-neo-dark-gray">
+        Esta solicitação possui uma taxa de serviço no valor de <span class="valor">{{ dados.dadosTaxa.taxa | currency:
+            "BRL" }}</span> que será
+        cobrado na próxima fatura.
+    </p>
+
+    <h6 class="subtitulo-h6 font-weight-bold mt-4">PRAZO DE RELIGAÇÃO</h6>
+    <p class="color-neo-dark-gray">
+        O prazo do serviço de religação é de até <span class="valor">{{ dados.dadosTaxa.tempo }} {{
+            dados.dadosTaxa.unidadeTempo }}</span> após a solicitação.
+    </p>
+
+</div>
+
+<div class="row">
+    <div class="alerta-religacao col-xs-10 col-lg-7 col-md-9 flex pe-xs-4 religacao-warning">
+        <img class="img-atencao" src="assets/images/icons/atencao.svg" alt="imagem com símbolo de atenção" />
+        <span>
+            A Religação da Unidade Consumidora só poderá ocorrer se a mesma não possuir nenhum
+            débito. <br> Evite recusa! A caixa de medição precisa ter livre acesso para a execução do serviço.
+        </span>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-md-3 m-0" [classes]="grupoTensao  === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="'SOLICITAR RELIGAÇÃO'" (callFunction)="continuar()">
+    </app-neo-button>
+</div>

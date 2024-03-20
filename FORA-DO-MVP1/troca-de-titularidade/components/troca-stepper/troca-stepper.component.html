@@ -1,0 +1,21 @@
+<div id="stepper-troca" class="background-stepper-troca content-space">
+	<div class="custom-troca-stepper">
+		<div *ngFor="let step of rotaTrocaTitularidade; let i = index" class="step">
+			<div class="step-info"
+			[class.step-current]="step.current"
+			[class.step-done]="step.done">
+				<div class="step-header">
+					<mat-icon>done</mat-icon>
+					<div class="step-text" *ngIf="!mobile || step.current">
+						{{step.step}}
+					</div>
+				</div>
+				<div class="horizontal-line">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<ng-content></ng-content>
+

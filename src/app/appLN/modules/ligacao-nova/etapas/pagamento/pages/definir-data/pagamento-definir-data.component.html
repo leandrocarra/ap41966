@@ -1,0 +1,27 @@
+<h5 class="titulo">Agora só precisamos definir as opções de pagamento!</h5>
+<h6 class="subtitulo mb-4 mt-3">Gostaria de definir a data de vencimento?</h6>
+
+<div class="row btn-data-vencimento">
+    <div class="col-3 col-md-1 col-xl-1 mb-2 text-nowrap" *ngFor="let data of possiveisDatas">
+        <button type="button" [class.trocarBotao]="dadosPagamento.dataVencimento == data" *ngIf="data != 'undefined'"
+            (click)="setDataVencimento(data)" class="btn btn-outline-secondary"
+            value="dadosPagamento.dataVencimento">{{data}}</button>
+        <button type="button" [class.trocarBotao]="dadosPagamento.dataVencimento == data" *ngIf="data == 'undefined'"
+            (click)="setDataVencimento(data)" class="btn btn-outline-secondary"
+            value="dadosPagamento.dataVencimento">NÃO DEFINIR</button>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between justify-content-md-start mt-5 mb-5">
+    <div class="pe-3">
+        <button type="button" class="btn btn-outline-secondary" title="Voltar" (click)="voltar()">VOLTAR</button>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary-green" title="Avançar" (click)="avancar()"
+            [disabled]="!dadosPagamento.dataVencimento">CONTINUAR</button>
+    </div>
+
+    <div class="col-9 d-flex justify-content-end" *ngIf="!mobile">
+        <img src="../../../../../../../../assets/assetsLN/images/data.svg" alt="Data de Vencimento" height="80%">
+    </div>
+</div>

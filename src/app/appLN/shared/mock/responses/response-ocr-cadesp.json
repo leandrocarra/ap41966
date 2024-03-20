@@ -1,0 +1,164 @@
+{
+    "VALIDO": {
+        "result": [
+            {
+                "tables": [],
+                "fields": [
+                    {
+                        "name": "inscricao_estadual",
+                        "value": "145252250110",
+                        "score": 1.0
+                    },
+                    {
+                        "name": "situacao",
+                        "value": "",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "cnpj",
+                        "value": "15502723000166",
+                        "score": 1.0
+                    },
+                    {
+                        "name": "data_inscricao_estado",
+                        "value": "10/05/2012",
+                        "score": 1.0
+                    },
+                    {
+                        "name": "nome",
+                        "value": "D O M. DOCA BRINQUEDOS E VESTUARIOS LTDA-ME",
+                        "score": 0.97
+                    },
+                    {
+                        "name": "natureza_juridica",
+                        "value": "Sociedade Empresária Limitada",
+                        "score": 1.0
+                    }
+                ],
+                "deskewImage": null,
+                "docQuality": null,
+                "docQualityScore": 0.69,
+                "docType": "certidao",
+                "pageIndex": 1,
+                "tags": [
+                    "certidao",
+                    "br-cadesp-1"
+                ]
+            }
+        ],
+        "queryId": "kUmDoezYok24gwOWQXTto",
+        "elapsedMilliseconds": 6781,
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "INVALIDO": {
+        "result": [
+            {
+                "tables": [],
+                "fields": [
+                    {
+                        "name": "inscricao_estadual",
+                        "value": "145252250110",
+                        "score": 1.0
+                    },
+                    {
+                        "name": "situacao",
+                        "value": "",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "cnpj",
+                        "value": "15502723000166",
+                        "score": 1.0
+                    },
+                    {
+                        "name": "data_inscricao_estado",
+                        "value": "10/05/2012",
+                        "score": 1.0
+                    },
+                    {
+                        "name": "nome",
+                        "value": "D O M. DOCA BRINQUEDOS E VESTUARIOS LTDA-ME",
+                        "score": 0.97
+                    },
+                    {
+                        "name": "natureza_juridica",
+                        "value": "Sociedade Empresária Limitada",
+                        "score": 1.0
+                    }
+                ],
+                "deskewImage": null,
+                "docQuality": null,
+                "docQualityScore": 0.69,
+                "docType": "certidao",
+                "pageIndex": 1,
+                "tags": [
+                    "certidao",
+                    "br-cadesp-invalido"
+                ]
+            }
+        ],
+        "queryId": "kUmDoezYok24gwOWQXTto",
+        "elapsedMilliseconds": 6781,
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "INATIVO": {
+        "result": [
+            {
+                "tables": [],
+                "fields": [
+                    {
+                        "name": "inscricao_estadual",
+                        "value": "145252250110",
+                        "score": 1.0
+                    },
+                    {
+                        "name": "situacao",
+                        "value": "Inativo",
+                        "score": 0.81
+                    },
+                    {
+                        "name": "cnpj",
+                        "value": "15502723000166",
+                        "score": 1.0
+                    },
+                    {
+                        "name": "data_inscricao_estado",
+                        "value": "10/05/2012",
+                        "score": 1.0
+                    },
+                    {
+                        "name": "nome",
+                        "value": "D O M. DOCA BRINQUEDOS E VESTUARIOS LTDA-ME",
+                        "score": 0.97
+                    },
+                    {
+                        "name": "natureza_juridica",
+                        "value": "Sociedade Empresária Limitada",
+                        "score": 1.0
+                    }
+                ],
+                "deskewImage": null,
+                "docQuality": null,
+                "docQualityScore": 0.69,
+                "docType": "certidao",
+                "pageIndex": 1,
+                "tags": [
+                    "certidao",
+                    "br-cadesp-1"
+                ]
+            }
+        ],
+        "queryId": "kUmDoezYok24gwOWQXTto",
+        "elapsedMilliseconds": 6781,
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

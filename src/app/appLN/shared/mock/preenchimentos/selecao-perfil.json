@@ -1,0 +1,34 @@
+{
+  "RESIDENCIAL": {
+    "perfil": "RESIDENCIAL",
+    "textoPerfil": "Imóvel será utilizado apenas para fins residenciais.",
+    "imagem": "assets/assetsLN/images/Residencial.svg",
+    "alt": "Residencial",
+    "bloqueado": false,
+    "mensagemBloqueado": ""
+  },
+  "RURAL": {
+    "perfil": "BENEFÍCIO RURAL",
+    "textoPerfil": "Imóvel será utilizado para fins de atividades rurais ou para fins residenciais de trabalhadores ou aposentados rurais.",
+    "imagem": "assets/assetsLN/images/atividadesrurais.svg",
+    "alt": "Rural",
+    "bloqueado": false,
+    "mensagemBloqueado": ""
+  },
+  "COMERCIAL": {
+    "perfil": "COMERCIAL",
+    "textoPerfil": "Imóvel será utilizado para fins de atividades comerciais ou de prestação de serviços, à exceção dos serviços públicos.",
+    "imagem": "assets/assetsLN/images/comercial.svg",
+    "alt": "Comercial Bloqueado",
+    "bloqueado": true,
+    "mensagemBloqueado": "Para fazer esta solicitação, você deve fazer o login utilizando um CNPJ ativo com situação regular na Receita Federal."
+  },
+  "INDUSTRIAL": {
+    "perfil": "INDUSTRIAL",
+    "textoPerfil": "Imóvel será utilizado para fins de atividades industriais caracterizadas como baixa tensão.",
+    "imagem": "assets/assetsLN/images/Industrial.svg",
+    "alt": "Industrial Bloqueado",
+    "bloqueado": true,
+    "mensagemBloqueado": "Para fazer esta solicitação, você deve fazer o login utilizando um CNPJ ativo com situação regular na Receita Federal."
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "histConsumo": {
+        "Origem": "FAT",
+        "consumoKw": 640,
+        "dataFimPeriodo": "2021-01-31T00:00:00",
+        "dataInicioPeriodo": "2021-01-31T00:00:00",
+        "dataLeitura": "2021-01-31T00:00:00",
+        "dataPagamento": "2021-01-31T00:00:00",
+        "dataProxLeitura": "2021-01-31T00:00:00",
+        "dataVencimento": "2021-01-31T00:00:00",
+        "mesReferencia": "03/2021",
+        "numeroFatura": "20216107074121",
+        "numeroLeitura": 451,
+        "situacaoFatura": "AB",
+        "situacaoLeitura": 2,
+        "statusFatura": "emProcessamento",
+        "valorConsumido": 124.68,
+        "valorFatura": 124.6,
+        "valorImposto": 23.42,
+        "valorPagamento": 120.4
+    }
+}

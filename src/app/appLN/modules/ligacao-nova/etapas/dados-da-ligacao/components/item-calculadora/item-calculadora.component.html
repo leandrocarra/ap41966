@@ -1,0 +1,12 @@
+<button class="box-button-calculadora" [class.box-button-verde]="equipamento?.selected" (click)="selecionarEquipamento.emit();">
+	<div class="green-circle" [class.white-circle]="equipamento?.selected">
+		<div [class]="equipamento?.selected ? equipamento?.class + '-verde' : equipamento?.class" ></div>
+	</div>
+	<strong class="">{{equipamento?.equipamento}}</strong>
+</button>
+
+<neo-edit-calculadora *ngIf="equipamento?.selected && mobile"
+[equipamento]="equipamento" 
+[mode]="'ADD'"
+(add)="adicionar($event);"></neo-edit-calculadora>
+

@@ -1,0 +1,10 @@
+<carousel [cellsToShow]="cellsToShow | async" height="104" pauseOnHover="false" id="carousel-servicos-mais-utilizados">
+    <div *ngFor="let item of carouselItens" class="carousel-cell"
+         (click)="navigateTo(item.routeNavigate)">
+        <mat-card class="mat-card-neoenergia">
+            <img class="d-block icon-servicos-mais-acessados" src="assets/images/icons/{{ item.icon }}"
+                 alt="{{ item.servico }}"/>
+            <span class="d-block" [textContent]="item.servico"></span>
+        </mat-card>
+    </div>
+</carousel>

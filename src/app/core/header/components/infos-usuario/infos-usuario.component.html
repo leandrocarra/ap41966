@@ -1,0 +1,18 @@
+<div class="infos-usuario">
+    <div *ngIf="ucSelecionada">
+        <h6 class="texto"><strong> Código {{distribuidora | titlecase}}</strong></h6>
+        <span class="text-green">{{ ucSelecionada.uc }}</span>
+        <span *ngIf="!contaColetiva" class="texto">{{ enderecoCompleto }}</span>
+
+        <h6 class="texto"><strong> Situação </strong></h6>
+        <span class="text-green">{{ ucSelecionada.status }}</span>
+    </div>
+
+    <h6 class="texto"><strong> Titular da Conta </strong></h6>
+    <span class="text-green">{{ (dadosUser.nome ?? dadosUser.nomeSolicitante) | titlecase}}</span>
+    <mat-divider></mat-divider>
+
+    <a class="d-block" [routerLink]="minhaContaRedirect">Minha conta</a>
+    <a class="d-block" *ngIf="podeAlterarPerfilDeAcesso" [routerLink]="alterarPerfilDeAcessoRedirect">Alterar Perfil de Acesso</a>
+    <a class="d-block" href="">Sair</a>
+</div>

@@ -1,0 +1,55 @@
+<mat-sidenav-container class="sidenav-container" autosize>
+    <!-- Menu Lateral INICIO -->
+    <mat-sidenav #sidenav class="" mode="side" opened="true">
+        <!-- <mat-toolbar class="toolbar-neo mb-4 mt-4">
+            <h2 class="environment" *ngIf="isHomologacao">HOMOLOGAÇÃO</h2>
+
+            <div class="d-flex mx-auto">
+                <div *ngIf="!isExpanded" (click)="isExpanded = !isExpanded">
+                    <img class="logo-big" src="assets/assetsLN/images/logo_folhas.svg" alt="Logo da Elektro">
+                </div>
+                <div *ngIf="isExpanded">
+                    <a href="https://www.neoenergiaelektro.com.br/" target="_blank" rel="noopener">
+                        <img class="logo-big" src="assets/assetsLN/images/logo_folhas.svg" alt="Logo da Elektro">
+                    </a>
+                </div>
+            </div>
+        </mat-toolbar> -->
+
+        <!-- <mat-vertical-stepper> -->
+        <mat-nav-list class="nav-list">
+            <div  class="events-none">
+                <mat-list-item [hidden]="url != '/ligacao-nova/pedido/imovel-pronto'" class="current-page">
+                    <p class="col-12" style="font-size: 15px !important">Preparação do imóvel</p>
+                </mat-list-item>
+                <mat-list-item [hidden]="url === '/ligacao-nova/pedido/imovel-pronto' || url === '/ligacao-nova/pedido'" [class.nav-color-checked]="route.visited"
+                *ngFor="let route of routes" [class.current-page]="route.current">
+                    <p class="col-12" style="font-size: 15px !important">{{route.number}}. {{route.label}}</p>
+                </mat-list-item>
+            </div>
+
+            <br />
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <!-- Menu Lateral FIM -->
+    <mat-sidenav-content id="content-ligacao-nova">
+        <mat-toolbar>
+            <mat-toolbar-row class="p-0 barraProgressoMobile" *ngIf="isMobile"
+                style="justify-content:space-between;" id="toolBarPrincipal">
+                <div id="fundoBranco">
+                    <div id="nomeRotaMobile" class="mt-2">
+                        <p [hidden]="url === '/ligacao-nova/pedido'" class="titulo2"> {{telaAtual}}</p>
+                    </div>
+                    <mat-nav-list class="alinharNavMobile">
+                        <mat-list-item fxLayout="row" *ngFor="let route of routes" class="circulo"
+                            [class.circuloAtual]="route.current" [class.circuloChecked]="route.visited">
+                            <p class="numeroRota">{{route.number}}</p>
+                        </mat-list-item>
+                    </mat-nav-list>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>

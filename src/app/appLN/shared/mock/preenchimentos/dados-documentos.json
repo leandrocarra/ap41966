@@ -1,0 +1,123 @@
+{
+  "selfie": [],
+  "selfieError": false,
+  "selfieScore": "10",
+  "residencial": {
+    "anexos": {
+      "Doc Oficial": {
+        "frente": false,
+        "verso": false,
+        "frenteVerso": false,
+        "arquivos": [],
+        "tentativas": 0,
+        "maxAnexos": 2,
+        "docsSuficientes": false
+      }
+    }
+  },
+  "comercial": {
+    "anexos": {
+      "Doc Oficial": {
+        "frente": false,
+        "verso": false,
+        "frenteVerso": false,
+        "arquivos": [],
+        "tentativas": 0,
+        "maxAnexos": 2,
+        "docsSuficientes": false
+      },
+      "CNPJ": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 2,
+        "maxAnexos": 1
+      },
+      "CTT Social ou CCMEI": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 0,
+        "maxAnexos": 1
+      }
+    }
+  },
+  "industrial": {
+    "anexos": {
+      "Doc Oficial": {
+        "frente": false,
+        "verso": false,
+        "frenteVerso": false,
+        "arquivos": [],
+        "tentativas": 0,
+        "maxAnexos": 2,
+        "docsSuficientes": false
+      },
+      "CNPJ": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 2,
+        "maxAnexos": 1
+      },
+      "CTT Social ou CCMEI": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 0,
+        "maxAnexos": 1
+      }
+    }
+  },
+  "rural": {
+    "anexos": {
+      "Doc Oficial": {
+        "frente": false,
+        "verso": false,
+        "frenteVerso": false,
+        "arquivos": [],
+        "tentativas": 0,
+        "maxAnexos": 2,
+        "docsSuficientes": false
+      },
+      "CNPJ": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 4,
+        "maxAnexos": 1
+      },
+      "CTT Social ou CCMEI": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 0,
+        "maxAnexos": 1
+      },
+      "Comp Trabalhador Rural": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 3,
+        "maxAnexos": 1
+      },
+      "Comp Atividade Rural": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 3,
+        "maxAnexos": 1
+      },
+      "Outorga": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 0,
+        "maxAnexos": 1
+      },
+      "Lic Ambiental": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 0,
+        "maxAnexos": 1
+      },
+      "Cadesp": {
+        "arquivos": [],
+        "tentativas": 0,
+        "maxTentativas": 3,
+        "maxAnexos": 1
+      }
+    }
+  }
+}

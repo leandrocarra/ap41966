@@ -1,0 +1,5 @@
+{
+    "API_ELEKTRO_URL": "https://api-agenciahml.elektro.com.br",
+    "API_ELEKTRO_OCR": "https://api-agenciahml.elektro.com.br/v2/ligacao-nova",
+    "GOOGLE_ANALYTICS_TOKEN": "UA-45804662-11"
+}

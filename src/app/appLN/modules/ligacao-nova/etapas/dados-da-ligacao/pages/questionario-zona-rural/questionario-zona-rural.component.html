@@ -1,0 +1,96 @@
+<div class="d-flex justify-content-between col-12 p-0">
+    <div>
+        <h4 class="titulo">Selecione os itens que existem na propriedade:</h4>
+        <form [formGroup]="formPropriedade" [class.row]="mobile" class="m-0">
+            <div class="row col-sm-6 col-xl-12 col-6 mt-4">
+                <div class="col-xl-4 p-0 custom-checkbox">
+                    <mat-checkbox (click)="controlPropriedade();" formControlName="casa" class="me-5 ln-checkbox">
+                        CASA
+                    </mat-checkbox>
+                </div>
+
+                <div class="col-xl-4 p-0 custom-checkbox">
+                    <mat-checkbox (click)="controlPropriedade();" formControlName="cerca" class="me-5 custom-checkbox ln-checkbox">
+                        CERCA
+                    </mat-checkbox>
+                </div>
+
+                <div class="col-xl-4 p-0">
+                    <mat-checkbox (click)="controlPropriedade();" formControlName="muro" class="ln-checkbox">MURO
+                    </mat-checkbox>
+                </div>
+
+            </div>
+
+            <div class="row col-sm-6 col-xl-12 col-6 mt-4">
+                <div class="col-xl-4 p-0">
+                    <mat-checkbox (click)="controlPropriedade();" formControlName="barracao" class="me-5 ln-checkbox">
+                        BARRACÃO</mat-checkbox>
+                </div>
+
+                <div class="col-xl-4 p-0">
+                    <mat-checkbox (click)="controlPropriedade();" formControlName="poco" class="me-5 ln-checkbox">
+                        POÇO
+                    </mat-checkbox>
+                </div>
+
+                <div class="col-xl-4 p-0">
+                    <mat-checkbox (click)="controlPropriedade(true);" formControlName="nenhum" class="ln-checkbox">NENHUM
+                        DESSES</mat-checkbox>
+                </div>
+
+            </div>
+        </form>
+
+        <h4 tabindex="0" class="titulo mt-5">Selecione os itens que existem próximo à propriedade:</h4>
+        <form [formGroup]="formNaPropriedade" [class.row]="mobile" class="m-0">
+            <div class="row col-sm-6 col-xl-12 col-6 mt-4 me-2">
+                <div class="col-xl-4 p-0">
+                    <mat-checkbox (click)="controlNaPropriedade();" formControlName="corrego" class="me-5 ln-checkbox"
+                        >
+                        CÓRREGO</mat-checkbox>
+                </div>
+
+                <div class="col-xl-4 p-0">
+                    <mat-checkbox (click)="controlNaPropriedade();" formControlName="acude" class="me-5 ln-checkbox" >
+                        AÇUDE</mat-checkbox>
+                </div>
+
+                <div class="col-xl-4 p-0">
+                    <mat-checkbox (click)="controlNaPropriedade();" formControlName="rodovia" class="ln-checkbox" >
+                        RODOVIA
+                    </mat-checkbox>
+                </div>
+
+            </div>
+
+            <div class="row col-sm-6 col-xl-12 col-6 mt-4">
+                <div class="col-xl-4 p-0">
+                    <mat-checkbox (click)="controlNaPropriedade();" formControlName="ferrovia" class="me-5 ln-checkbox"
+                        >
+                        FERROVIA</mat-checkbox>
+                </div>
+
+                <div class="col-xl-4 p-0">
+                    <mat-checkbox (click)="controlNaPropriedade(true);" formControlName="nenhum" class="ln-checkbox" >
+                        NENHUM
+                        DESSES</mat-checkbox>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-5 d-none d-md-none d-lg-block">
+        <img [src]='urlImgPoste' alt="desenho de uma casa e a distância do poste de luz">
+    </div>
+</div>
+
+<div class="mt-5 d-flex justify-content-between justify-content-md-start">
+    <div class="me-3">
+        <button type="button" class="btn btn-outline-secondary mx-auto" title="voltar"
+            (click)="voltar()">VOLTAR</button>
+    </div>
+    <button type="button" class="btn btn-primary-green" title="Avançar" [disabled]="disable()"
+        (click)="continuar();">CONTINUAR</button>
+</div>

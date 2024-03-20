@@ -1,0 +1,53 @@
+<h2>{{ fluxo === 'simulacao' ? 'Simular Autoleitura': 'Autoleitura'  }}</h2>
+
+<p class="subtitulo mt-3 mb-4">Confira os dados da unidade consumidora e código do medidor para realizar a Autoleitura:
+</p>
+
+<!-- DADOS DA UC -->
+<app-dados-imovel-ligacao [codigoMedidor]="medidor"></app-dados-imovel-ligacao>
+
+<!-- INPUTS -->
+<form class="mt-4" [formGroup]="formAutoleitura">
+    <div [formArrayName]="'formArrayRegistradores'">
+        <div *ngFor="let leitura of leiturasDoUltimoPeriodo; let i = index">
+            <div [formGroupName]="i">
+                <div class="mt-1 leitura-medidor">
+                    <p>TIPO DE REGISTRADOR {{ leitura.tipoRegistrador }}:</p>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="col-12 col-md-5 p-0" [hideRequiredMarker]="true">
+                        <mat-label>Insira aqui a leitura do registrador</mat-label>
+                        <input matInput type="text" formControlName="leitura" [value]="leitura.valor"
+                            [mask]="criarMaskParaInput(leitura)" (keyup)="definirCampoPreenchido(i)" required onlyNumber>
+                        <mat-error>
+                            <app-custom-mat-error class="texto-informativo" [mensagem]="msgDePreenchimento"></app-custom-mat-error>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <div *ngIf="warningLeitura" class="ms-2 d-flex align-items-start" (keyup)="conferirLeitura()">
+                        <img class="icone " src="assets/images/icons/atencao.svg" alt="imagem com símbolo de atenção"/>
+                        <p class="texto-informativo">Você só poderá corrigir a Autoleitura uma vez.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- LINK YOUTUBE -->
+<div class="mt-3"  id="text-link">
+    <p>Teve dificuldade de encontrar os números de seu registrador?
+        <a href="https://www.youtube.com/watch?v=sQ0pg5asUiE" target="_blank" rel="noopener">Clique aqui</a>.
+    </p>
+</div>
+
+<!-- BOTÕES -->
+<div class="d-flex justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="selecionarTextoDoBotao()"
+        (callFunction)="enviarAutoleitura()" [isDisabled]="formAutoleitura.invalid">
+    </app-neo-button>
+</div>

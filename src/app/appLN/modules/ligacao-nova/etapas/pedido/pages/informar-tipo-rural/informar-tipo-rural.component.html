@@ -1,0 +1,57 @@
+<div>
+    <h5 class="titulo mb-4">Selecione a atividade que será desenvolvida na sua propriedade:</h5>
+
+
+    <div class="row">
+        <form [formGroup]="formTipoRural">
+            <mat-radio-group formControlName="tipoRural">
+                <div class="row col-12">
+                    <div class="col-12 col-md-5 col-lg-4 col-xl-3">
+                        <ul class="row removerMarcador mb-0">
+                            <li *ngFor="let tipo of tiposLeftArray" class="col-12 p-0 ">
+                                <mat-radio-button class="cor-label-documento d-flex justify-content-center"
+                                    [value]="tipo.label" [disabled]="tipo.disabled">
+                                    <div class="d-flex align-items-center">
+                                        {{tipo.label}}
+                                        <neo-tooltip [explicacao]="tipo.textoTooltip"></neo-tooltip>
+                                    </div>
+                                </mat-radio-button>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-12 col-md-5 col-lg-5 col-xl-6">
+                        <ul class="row removerMarcador">
+                            <li *ngFor="let tipo of tiposRightArray" class="col-12 p-0">
+                                <mat-radio-button class="cor-label-documento d-flex" [value]="tipo.label"
+                                    [disabled]="tipo.disabled">
+                                    <div class="d-flex align-items-center">
+                                        {{tipo.label}}
+                                        <neo-tooltip [explicacao]="tipo.textoTooltip"></neo-tooltip>
+                                    </div>
+                                </mat-radio-button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </mat-radio-group>
+        </form>
+    </div>
+
+
+    <div class="d-flex justify-content-between justify-content-md-start mt-5 mb-5 pe-3 ps-3">
+        <div class="pe-3">
+            <button type="button" class="btn btn-outline-secondary mx-auto" title="voltar"
+                (click)="voltar()">VOLTAR</button>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary-green" title="Avançar" (click)="continuar()"
+                [disabled]="formTipoRural.invalid">CONTINUAR</button>
+        </div>
+    </div>
+
+    <div *ngIf="!mobile" class="row justify-content-right">
+        <img src="../../../../../../../../assets/assetsLN/images/atividade.svg" width="400" alt="Atividade rural" class="offset-xl-6 offset-lg-5">
+    </div>
+</div>

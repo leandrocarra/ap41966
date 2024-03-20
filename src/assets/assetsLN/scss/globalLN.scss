@@ -1,0 +1,168 @@
+$asset-images-path: '^assets/assetsLN/images/';
+
+.swal2-html-container {
+    overflow: hidden;
+}
+
+.close {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: 500;
+    position: relative;
+    top: -8px;
+}
+
+.close-light {
+    @extend .close;
+    color: var(--neo-white);
+}
+
+.close-dark {
+    @extend .close;
+    color: var(--neo-dark-gray);
+}
+
+.content-space {
+	max-width: 100%;
+	padding: 3rem 5.5rem;
+}
+
+.titulo {
+	color: var(--neo-dark-green);
+	font-weight: bolder !important;
+}
+
+.titulo-cinza {
+	color: var(--neo-dark-gray);
+	font-weight: bolder !important;
+}
+
+.subtitulo {
+	color: var(--neo-light-green) !important;
+	font-weight: bolder !important;
+}
+
+.texto {
+	color: var(--neo-dark-gray);
+	font-size: 1rem;
+}
+
+.text-link {
+	font-weight: 500 !important;
+}
+
+.logo-inicio {
+	background-image: url('../images/LogoElektro.png');
+	background-position-x: center;
+	background-position-y: center;
+	height: 15vh;
+	background-repeat: no-repeat;
+}
+
+.btn-primary-green {
+	background-color: var(--neo-light-green) !important;
+	color: white !important;
+}
+
+.btn-primary-green:disabled {
+	background-color: var(--neo-light-green) !important;
+	color: white;
+}
+
+.formArea {
+	background: white;
+	border-radius: 10px;
+	margin-bottom: 20px;
+	box-shadow: 2px 2px #dedede;
+	padding: 25px;
+}
+
+.form-neo {
+	margin-bottom: 0 !important;
+	padding: 0;
+}
+
+.label-strong-neo {
+	font-weight: 500 !important;
+}
+
+.custom-checkbox .custom-control-input:checked .custom-control-label::before {
+	background-color: var(--neo-dark-green) !important;
+}
+
+.texto-link {
+	color: var(--neo-light-green);
+	background-color: transparent;
+	font-size: 1rem;
+}
+
+.form-control:focus {
+	border-color: var(--neo-dark-green) !important;
+	box-shadow: 0 0 0 0.2rem rgba(93, 139, 47, 0.25) !important;
+}
+
+.mat-checkbox-indeterminate.mat-accent
+.mat-checkbox-background,
+.mat-checkbox-checked.mat-accent
+.mat-checkbox-background  {
+	cursor: default;
+	background-color: var(--neo-dark-green);
+}
+
+.mat-checkbox-frame {
+	border-color: var(--neo-dark-green);
+}
+
+.mat-checkbox-inner-container {
+	height: 1.25rem !important;
+	width: 1.25rem !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+	border-color: var(--neo-dark-green);
+	background-color: var(--neo-dark-green);
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: var(--neo-dark-green);
+}
+
+.alert-secondary {
+	background-color: #f5f6f4 !important;
+}
+
+@media only screen and (max-width: 576px) {
+}
+
+@media only screen and (max-width: 768px) {
+	.content-space {
+		max-width: 100%;
+		padding: 1.5rem;
+	}
+}
+
+@media only screen and (max-width: 1280px) {
+	.content-space {
+		max-width: 100%;
+		padding: 2.5rem;
+	}
+}
+
+.environment {
+	background-color: #ff5a00;
+	color: white;
+	font-size: 20px;
+	margin: 0;
+	padding: 10px;
+}
+
+.mat-checkbox-layout {
+    white-space: normal !important;
+}
+
+.info-doc {
+    color: var(--neo-light-green) !important;
+    font-size: 14px;
+    text-align: justify;
+}

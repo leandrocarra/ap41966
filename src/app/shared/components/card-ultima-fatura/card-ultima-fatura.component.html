@@ -1,0 +1,70 @@
+<mat-card id="ultima-fatura" *ngIf="faturas.length > 0" class="mat-neoenergia">
+    <mat-card-title class="mb-2">
+        <div class="d-flex justify-content-between align-items-center">
+            <span>ÚLTIMA FATURA</span>
+            <span *ngIf="faturaAtrasada" class="fatura-status">
+                <strong id="bullet-fatura" class="{{faturas[0].statusFatura}}">&bull;</strong>
+                <p>Pagamento atrasado</p>
+                <app-tooltip class="color-green d-flex align-items-center" [explicacao]="tooltipMsg"></app-tooltip>
+            </span>
+
+        </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <div class="d-flex justify-content-between home-valor">
+        <div>
+            <!-- <span class="color-dark-gray bold">Valor</span> -->
+            <h4 class="valor {{faturas[0].statusFatura}}">{{ valorFatura(faturas[0].valorEmissao) }}</h4>
+        </div>
+        <div class="legenda-fatura">
+            <span class="d-block bold color-dark-gray">Vencimento: <strong class="text-dark">
+                    {{ faturas[0].dataVencimento | date: 'dd/MM/yyyy' }}
+                </strong></span>
+            <span class="d-block bold color-dark-gray mt-3">Situação: <strong class="text-dark">
+                    {{ getStatus(faturas[0].statusFatura!) }}
+                </strong></span>
+        </div>
+    </div>
+
+    <div class="row-btn row gy-2">
+        <button class="col-auto btn-pix" *ngIf="this.faturas[0].statusFatura !== 'Pago' && this.faturas[0].statusFatura !== 'Vinculada'" type="button" mat-flat-button aria-label="Pagamento com PIX"
+            (click)="chamarDialogPix()">
+            PIX <mat-icon class="svg-icon" svgIcon="pix"></mat-icon>
+        </button>
+
+        <button class="col-auto d-flex" [matMenuTriggerFor]="maisOpcoesFatura" type="button" mat-flat-button
+            aria-label="Mais opções de pagamento" color="accent">
+            MAIS OPÇÕES
+            <mat-icon class="svg-icon" svgIcon="mais-opcoes"></mat-icon>
+        </button>
+    </div>
+
+    <mat-menu #maisOpcoesFatura="matMenu" hidden>
+        <div class="custom-menu-ultima-fatura">
+            <button *ngIf="habilitarOpcoesDePagamento(this.faturas[0])" type="button" mat-menu-item [matMenuTriggerFor]="menuOpcoesPagamento">Opções de pagamento</button>
+            <button type="button" mat-menu-item [matMenuTriggerFor]="opcoesFatura">Opções de fatura</button>
+
+            <mat-menu #menuOpcoesPagamento="matMenu" hidden>
+                <button type="button" mat-menu-item *ngFor="let opcaoPagamento of opcoesPagamento"
+                    (click)="redirecionar(opcaoPagamento)">
+                    {{opcaoPagamento}}
+                </button>
+            </mat-menu>
+
+            <mat-menu #opcoesFatura="matMenu" hidden>
+                <button type="button" mat-menu-item *ngFor="let opcoesDeFatura of opcoesDeFatura"
+                    (click)="redirecionar(opcoesDeFatura)">
+                    {{opcoesDeFatura}}
+                </button>
+            </mat-menu>
+        </div>
+    </mat-menu>
+
+</mat-card>
+
+<!-- TODO: Validar com o time da NEO/UX/REQ qual informação deve ser apresentada
+     quando a Unidade Consumidora não possui fatura emitida
+-->
+<mat-card id="sem-fatura" class="sem-fatura" *ngIf="faturas.length === 0">
+    {{ msgInformativoFatura }}
+</mat-card>

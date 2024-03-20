@@ -1,0 +1,28 @@
+.img-tarifa {
+  max-height: 450px;
+  align-self: flex-end;
+  margin-top: 50px;
+
+
+}
+
+.link-tarifa{
+  color: var(--neo-light-green) ;
+	font-weight: bolder;
+}
+
+::ng-deep {
+    .mat-radio-label {
+      white-space: pre-line !important;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .img-tarifa {
+        display: none;
+    }
+  }
+
+
+
+

@@ -1,0 +1,15 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.icone-component {
+    min-width: 150px;
+    width: 15%;
+    align-self: center;
+}
+
+.titulo-component {
+    color: var(--neo-dark-green);
+}
+
+.color {
+    color: var(--neo-pure-red);
+}

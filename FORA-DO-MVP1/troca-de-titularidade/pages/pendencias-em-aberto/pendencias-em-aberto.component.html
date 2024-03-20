@@ -1,0 +1,76 @@
+<app-pendencias-terceiro *ngIf="this.navExtra.state!.fluxoPendencia === 'pendencia-antigo-terceiro'"></app-pendencias-terceiro>
+<app-pendencias-titular *ngIf="this.navExtra.state!.fluxoPendencia === 'pendencia-novo-titular' || this.navExtra.state!.fluxoPendencia === 'pendencia-antigo-titular'"></app-pendencias-titular>
+<app-pendencias-uc *ngIf="this.navExtra.state!.fluxoPendencia === 'pendencia-antigo-uc' || this.navExtra.state!.fluxoPendencia === 'pendencia-novo-uc'"></app-pendencias-uc>
+
+<div class="d-flex align-items-center text-danger mt-3 mb-3">
+    <mat-icon class="me-1">
+        <span class="material-icons-outlined">
+            info
+        </span>
+    </mat-icon>
+    <strong class="bold">FATURAS ATRASADAS</strong>
+</div>
+
+<p class="subtitulo mb-4">Identificamos <strong class="text-danger">{{listaFaturas.length}} faturas</strong> atrasadas para este
+    imóvel no valor de <strong class="text-danger">{{totalFaturas}}</strong>.</p>
+
+<div class="custom-w-faturas">
+    <!-- <app-accordion></app-accordion> -->
+    <app-listagem-pendencias [faturas]="listaFaturas" (pagamentoRealizado)=validarPagamento($event) ></app-listagem-pendencias>
+</div>
+
+
+<h6 class="subtitulo-h6 mt-4 mb-3">CASO AS FATURAS JÁ TENHAM SIDO PAGAS, FAVOR ANEXAR O COMPROVANTE DE PAGAMENTO:</h6>
+<p class="subtitulo mt-3 mb-3">O documento deve estar no formato .PDF, .JPG, .JPEG ou .PNG.</p>
+
+<app-box-file class="me-md-3 m-0" [documentoLabel]="'COMPROVANTE DE PAGAMENTO'" (arquivoAnexado)="recebeAnexos($event)"
+    (arquivoRemovido)="removeAnexo($event)">
+</app-box-file>
+
+<div *ngIf="this.navExtra.state!.fluxoPendencia === 'pendencia-novo-uc'" class="col-12 col-xl-6 col-lg-7 col-md-12 p-0 d-flex"
+[ngClass]="{
+    'check-group-a': groupUser === 'A',
+    'check-group-b': groupUser === 'B'
+  }">
+    <mat-checkbox class="text-wrap me-2" [(ngModel)]="checkDeclaracao" (ngModelChange)="validarBtnNovoUC()"></mat-checkbox>
+    <div>
+        Declaro que irei assumir as dívidas desse terceiro.
+    </div>
+</div>
+
+<div class="mt-4 d-flex flex-wrap justify-content-between justify-content-sm-start">
+    <app-neo-button class="me-sm-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'voltar'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <button class="btn btn-primary-p-light-green btn-faturas me-md-3 me-0 mt-0" [class.mt-3]="mobileS"
+        [class.group-a-bkg-darkgreen]="groupUser === 'A'" #menuBtn2 mat-button [matMenuTriggerFor]="Pagar">
+        <span class="content-button">
+            PAGAR TODAS AS FATURAS
+            <mat-icon>
+                <span class="material-icons-outlined">expand_more</span>
+            </mat-icon>
+        </span>
+    </button>
+
+    <mat-menu #Pagar="matMenu" hidden>
+        <button mat-menu-item (click)="cartaoCredito()">
+            Cartão de Crédito
+        </button>
+        <button mat-menu-item (click)="internetBanking()">
+            Internet Banking
+        </button>
+        <button mat-menu-item (click)="pix()">
+            Pix
+        </button>
+    </mat-menu>
+
+    <app-neo-button *ngIf="this.navExtra.state!.fluxoPendencia === 'pendencia-antigo-terceiro' || this.navExtra.state!.fluxoPendencia === 'pendencia-novo-uc'" class="me-sm-3 mt-0" [class.mt-3]="mobileXS" [class.w-100]="mobileXS"
+        [classes]="mobileXS === true ? 'btn-neoblue' : 'btn-neoblue'" [titleText]="'não reconheço a dívida'"
+        (callFunction)="naoReconheceDivida()">
+    </app-neo-button>
+
+    <app-neo-button class="me-sm-3 mt-3 mt-lg-0" [classes]="groupUser === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'" [titleText]="'continuar'"
+    [isDisabled]="isDisabled" (callFunction)="continuar()">
+    </app-neo-button>
+</div>

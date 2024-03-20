@@ -1,0 +1,23 @@
+<div class="cadastroParceiros me-2">
+    <h3 class="text-start mb-2  justify-content: flex-start;  flex-nowrap color-primary font-weight-bold">Cadastro de Parceiros</h3>
+    <h6 class="titulo font-weight-normal color-dark-gray">Selecione o tipo de parceiro que deseja cadastrar.</h6>
+
+    <div class="row me-2" id="card-selecao ">
+        <div class=" col-sm-8 col-md-5 col-lg-5 pt-2 mt-3 me-4" *ngFor="let card of cardsParceiros; let i = index">
+            <button class="cardPerfil btn" type="button" (click)="navegarPara(card.rota);">
+                <img class="icone-acesso-rapido me-2" [src]="card.img" alt="{{ card.titulo }}" />
+                <div class="pt-3">
+                    <h6 class="titulo" [innerHTML]="card.titulo"></h6>
+                    <p class="descricao" [innerHTML]="card.descricao"></p>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between justify-content-md-start mb-5 mb-md-0">
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-5">
+            <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'" (callFunction)="voltar()">
+            </app-neo-button>
+        </div>
+    </div>
+</div>

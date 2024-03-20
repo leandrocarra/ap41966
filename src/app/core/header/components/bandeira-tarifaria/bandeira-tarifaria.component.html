@@ -1,0 +1,18 @@
+<section *ngIf="dadosBandeira.tipo !== 'ERRO'" id="bandeira-tarifaria">
+    <h5 class="bandeira-titulo">
+        BANDEIRA TARIFÁRIA
+    </h5>
+    <div class="mt-4 mb-3 bandeira-container">
+        <span class="me-2 material-icons-outlined icone {{ dadosBandeira.cor }}">outlined_flag</span>
+        <div>
+            <p class="mb-2 cinza-escuro">{{ dadosBandeira.mesReferencia }}</p>
+            <p class="mb-0 cinza-claro">{{ dadosBandeira.mensagem }} <a class="a-link" target="_blank" rel="noopener" href="https://www.gov.br/aneel/pt-br/assuntos/tarifas/bandeiras-tarifarias">Saiba mais.</a></p>
+        </div>
+    </div>
+</section>
+
+<section *ngIf="dadosBandeira.tipo === 'ERRO'" id="bandeira-tarifaria">
+    <div class="bandeira-container">
+        <p class="mb-0 vermelho-erro" [innerHTML]="dadosBandeira.mensagem"></p>
+    </div>
+</section>

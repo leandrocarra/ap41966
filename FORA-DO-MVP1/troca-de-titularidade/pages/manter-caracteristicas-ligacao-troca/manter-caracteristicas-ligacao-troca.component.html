@@ -1,0 +1,46 @@
+<div class="col-md-12 d-flex justify-content-between">
+    <img src="assets/images/fatura_digital.svg" alt="Fatura digital" class="d-none d-md-none d-lg-block">
+    <div class="ms-0 ms-md-4 mt-md-5">
+        <h2>Deseja manter as características da ligação?</h2>
+
+        <p class="subtitulo mt-3 p-0 text-telas-informativos">
+            Para solicitar a troca de titularidade você precisa validar as características.
+        </p>
+
+        <div class="subtitulo alignment-status mt-3">
+            <strong class="subtitulo-informativo-troca">Perfil de ligação:</strong>&nbsp;{{perfilLigacao}}
+            <p>
+                Imóvel será utilizado para fins de atividades industriais caracterizadas como baixa tensão.
+            </p>
+
+        </div>
+
+
+        <div class="subtitulo alignment-status mt-3">
+            <strong class="subtitulo-informativo-troca">Categoria da ligação:</strong>&nbsp;{{categoriaLigacao}}
+            <p>
+                A ligação elétrica do imóvel é feita com três fios (duas fases e um neutro, proporcionando voltagens de
+                até
+                127V (110) e 220V).
+            </p>
+        </div>
+
+
+        <div class="subtitulo alignment-status mt-3">
+            <strong class="subtitulo-informativo-troca">Tarifa: </strong>&nbsp;{{tarifa}}
+            <p>
+                Tarifa única de consumo de energia elétrica, independentemente das horas de utilização do dia.
+            </p>
+        </div>
+
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+            <app-neo-button class=" me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="alterarCaracButton"
+                (callFunction)="alterarCaracteristicas()">
+            </app-neo-button>
+
+            <app-neo-button class="me-3 m-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                [titleText]="seguirCaracButton" (callFunction)="seguirCaracteristicas()">
+            </app-neo-button>
+        </div>
+    </div>
+</div>

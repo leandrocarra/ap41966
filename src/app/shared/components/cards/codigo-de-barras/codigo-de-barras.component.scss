@@ -1,0 +1,82 @@
+.light-green {
+    color: var(--neo-light-green);
+}
+
+.dark-green {
+    color: var(--neo-dark-green);
+}
+
+.light-green-border {
+    border-color: var(--neo-light-green);
+}
+
+.dark-green-border {
+    border-color: var(--neo-dark-green);
+}
+
+.light-green-bkg {
+    background-color: var(--neo-light-green);
+}
+
+.dark-green-bkg {
+    background-color: var(--neo-dark-green);
+}
+
+.mat-icon {
+    width: 126px;
+    height: 126px;
+}
+
+.icone {
+    font-size: 126px;
+}
+
+.titulo {
+    color: var(--neo-dark-gray);
+    font-weight: bold;
+    margin: auto;
+}
+
+.subtitulo {
+    color: var(--neo-dark-gray);
+    font-weight: normal;
+    font-size: 1.1rem;
+    margin: 20px auto auto auto;
+}
+
+.codigo-de-barras-container {
+    margin: 30px 0px 30px 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 6px;
+    word-break: break-all;
+}
+
+.codigo-de-barras {
+    color: var(--neo-dark-gray);
+    font-weight: normal;
+    margin: 20px 0px 20px 0px;
+}
+
+.botao-copiar {
+    color: var(--neo-white);
+    margin: 30px 5px 5px 5px;
+    border-radius: 26px;
+    height: 60px;
+    background-color: var(--neo-light-green);
+}
+
+.aviso {
+    color: var(--neo-dark-gray);
+    font-weight: normal;
+    font-size: 1.1rem;
+    margin: 40px auto 20px auto;
+}
+
+.botao-fechar {
+    border: 1px solid var(--neo-light-gray);
+    border-radius: 25px;
+    height: 40px;
+    width: 120px;
+    background-color: var(--neo-white);
+}

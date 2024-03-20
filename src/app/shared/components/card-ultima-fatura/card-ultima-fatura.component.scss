@@ -1,0 +1,150 @@
+#ultima-fatura {
+    height: 100%;
+    padding: 1rem 1.875rem 1.5rem;
+
+    button {
+        padding: 0.7rem 1.5rem;
+        border-radius: 3.125rem;
+        display: flex;
+        justify-content: flex-start;
+        height: fit-content;
+        align-items: center;
+    }
+
+    .mat-card-title {
+        color: var(--neo-dark-green);
+        font-size: 1.563rem;
+        font-weight: bold;
+    }
+
+    .svg-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0.938rem;
+    }
+
+    .fatura-status {
+        list-style: circle;
+        display: flex;
+        align-items: center;
+        margin-top: -2px;
+        font-weight: normal;
+
+        p {
+            color: var(--neo-dark-gray);
+            margin: 0;
+            font-size: 0.98rem;
+        }
+
+        strong {
+            margin-right: 5px;
+            font-size: 30px;
+        }
+    }
+
+    .valor {
+        font-size: 2.688rem;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+    }
+
+    .row-btn {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+
+        button {
+            margin-right: 1.875rem;
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+
+            .mat-button-wrapper {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .legenda-fatura {
+            span {
+                display: flex;
+            }
+
+            strong {
+                display: block;
+            }
+        }
+        .row-btn {
+            .btn-pix {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    .Vencida {
+        color: var(--neo-pure-red);
+    }
+
+    .legenda-fatura {
+        text-align: left;
+    }
+
+    .home-valor {
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 7.5rem;
+        }
+    }
+}
+
+.btn-pix {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    background-color: var(--neo-dark-blue);
+    color: var(--neo-white);
+}
+
+.custom-btn-menu-verde:not(.pix) {
+    background-color: var(--neo-light-green);
+    text-transform: capitalize;
+    color: var(--neo-white);
+}
+
+.custom-btn-menu-verde:hover:not(.pix) {
+    background-color: var(--neo-dark-green);
+}
+
+.pix {
+    background-color: var(--neo-dark-blue);
+    text-transform: uppercase;
+    color: var(--neo-white);
+}
+
+.pix:hover {
+    background-color: var(--neo-dark-blue) !important;
+}
+
+.custom-menu-ultima-fatura {
+    button {
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+
+    mat-icon {
+        margin-left: 0.5rem;
+    }
+}
+
+mat-card#sem-fatura {
+    text-align: center;
+    background-color: var(--neo-light-gray);
+    color: black;
+}

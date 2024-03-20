@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between">
+
+    <form [formGroup]="formTipoLigacao" (submit)="continuar()">
+
+        <div>
+            <h2>Qual é o tipo da ligação do seu prédio ou condomínio?</h2>
+            <p class="subtitulo mt-3 mb-3">Caso não saiba responder, consulte o síndico ou construtora para obter essa
+                informação.</p>
+
+            <mat-radio-group formControlName="tipoLigacao" class="mt-3" aria-label="Selecione uma opção">
+                <mat-radio-button class="format-info-radio-btn me-3" value="nao sei">MONOFÁSICO</mat-radio-button>
+                <mat-radio-button class="format-info-radio-btn me-3" value="nao">BIFÁSICO </mat-radio-button>
+                <mat-radio-button class="format-info-radio-btn me-3" value="sim">TRIFÁSICO</mat-radio-button>
+            </mat-radio-group>
+
+            <div class="row gy-4 justify-content-between justify-content-md-start mt-3">
+                <app-neo-button class="col-auto" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+                    (callFunction)="voltar()">
+                </app-neo-button>
+                <app-neo-button class="col-auto" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                    [isDisabled]="formTipoLigacao.invalid" [titleText]="'continuar'" (callFunction)='continuar()'>
+                </app-neo-button>
+
+            </div>
+        </div>
+    </form>
+
+</div>

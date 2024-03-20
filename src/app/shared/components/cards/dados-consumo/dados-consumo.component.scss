@@ -1,0 +1,72 @@
+.menor-consumo-color {
+  color: var(--neo-light-green);
+}
+
+.maior-consumo-color {
+  color: var(--neo-pure-red);
+}
+
+.mes-anterior-color {
+    color: var(--neo-light-blue);
+}
+
+.tamanho-fonte {
+  font-size: 20px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.clock {
+  font-size: 45px;
+}
+
+.date-title {
+  color: var(--neo-dark-gray);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.subtitle {
+  color: var(--neo-white-500);
+  font-size: 1rem;
+}
+
+.media {
+  padding-top: 10px;
+  font-size: 13px;
+  justify-content: center;
+}
+
+.media span {
+  text-align: center;
+}
+
+.separator {
+  padding-bottom: 10px;
+    border-bottom: 2px solid var(--neo-white-500);
+}
+
+.media-font-size {
+  font-size: 0.875rem;
+}
+
+.mat-card {
+  padding: 18px 50px;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 425px) {
+  .mat-card {
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// @media (max-width: 320px) {
+
+// }
+
+
+

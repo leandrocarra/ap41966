@@ -1,0 +1,67 @@
+<h5 class="titulo">Para sua comodidade, você pode optar pelo débito automático em conta:</h5>
+<h6 class="subtitulo mt-4">Gostaria de cadastrar o débito automático?</h6>
+
+<form [formGroup]="formDebitoAutomatico" id="black-and-white-input-1">
+    <div class="col-xl-6 col-lg-8 col-md-7 col-12 ps-0 mt-4">
+        <mat-radio-group formControlName="debitoAutomatico" (ngModelChange)="controlFormRequired($event)">
+            <mat-radio-button [value]="true" class="texto p-0 col-xl-5 col-lg-5 col-12 col-md-7"><strong>QUERO
+                    CADASTRAR</strong>
+            </mat-radio-button>
+            <mat-radio-button [value]="false" class="texto p-0 col-xl-4 col-lg-4 col-12 col-md-5"><strong>NÃO
+                    QUERO</strong>
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <div class="row mt-3" *ngIf="formDebitoAutomatico.value?.debitoAutomatico">
+        <div class="col-xl-3 col-md-4 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>BANCO</mat-label>
+                <mat-select formControlName="banco" (ngModelChange)="setBanco()" required>
+                    <mat-option *ngFor="let banco of bancos; let i = index" [value]="banco">
+                        {{ banco.nomeCompletoBanco }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="col-xl-3 col-md-4 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>AGÊNCIA</mat-label>
+                <input matInput type="text" formControlName="agencia" placeholder="AGÊNCIA" mask="0000" required
+                    onlyNumber>
+            </mat-form-field>
+        </div>
+
+        <div class="col-xl-3 col-md-4 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>CONTA</mat-label>
+                <input matInput type="text" formControlName="conta"
+                    [placeholder]="placeholderConta"
+                    [mask]="maskConta"
+                    required>
+            </mat-form-field>
+        </div>
+
+    </div>
+
+    <p class="texto mt-2" *ngIf="formDebitoAutomatico.value.debitoAutomatico">Não se esqueça que também é preciso
+        habilitar o débito automático em conta no seu banco!</p>
+
+    <div class="d-flex justify-content-between justify-content-md-start mt-5">
+        <div class="pe-3">
+            <button type="button" class="btn btn-outline-secondary" title="voltar" (click)="voltar()">VOLTAR</button>
+        </div>
+        <div class="">
+            <button type="button" class="btn btn-primary-green" title="Avançar" [disabled]="formDebitoAutomatico.invalid"
+                (click)="finalizar()">FINALIZAR PEDIDO</button>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="!mobile">
+        <div class="col-12">
+            <img src="../../../../../../../../assets/assetsLN/images/debito_automatico.svg" alt="Débito Automático" class="offset-xl-5 offset-lg-4"
+                 height="85%">
+        </div>
+    </div>
+</form>

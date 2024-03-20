@@ -1,0 +1,43 @@
+<div class="container-fluid fundo-login">
+	<div class="logo-inicio"></div>
+	<div class="row">
+
+		<mat-card class="mx-auto col-12 col-xl-5">
+			<mat-card-content>
+
+				<h2 class="h-center">Confirmação de Acesso</h2>
+
+				<div class="content-confirmacao-acesso">
+					<form [formGroup]="confirmacaoForm" (submit)="confirm()">
+
+						<div class="row">
+							<div class="form-group form-neo mx-auto col-12 col-xl-6">
+								<label class="label-strong-neo" for="codigo">Insira o código de 8 letras</label>
+								<input type="text" class="input-bottom-border " formControlName="codigo">
+							</div>
+						</div>
+
+						<div class="row mx-auto col-12 col-xl-8">
+							<div class="form-group form-neo  mx-auto col-12 col-xl-6">
+								<button type="button" class=" btn btn-primary-grey btn-block" title="voltar"
+									routerLink="/cadastro">VOLTAR</button>
+							</div>
+
+							<div class="form-group form-neo  mx-auto col-12 col-xl-6">
+								<button type="submit" class=" btn btn-primary btn-block" title="Seguir"
+									[disabled]="confirmacaoForm.invalid">SEGUIR</button>
+							</div>
+						</div>
+					</form>
+
+					<div class="form-group align-mid mx-auto col-12 col-xl-10">
+						<p class="logado-neo text-center">Não recebeu o código de confirmação? <a
+								class="alert-link-neo new-user">Reenviar
+								código </a> </p>
+					</div>
+
+				</div>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>

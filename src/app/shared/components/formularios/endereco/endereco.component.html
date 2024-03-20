@@ -1,0 +1,69 @@
+<div id="black-and-white-input-1" class="col-12 col-xl-6 col-lg-7 col-md-10 row p-0 m-0">
+    <mat-form-field appearance="outline" class="col-12 col-sm-9 p-0 pe-sm-2">
+        <mat-label>Logradouro</mat-label>
+        <input
+            matInput
+            type="text"
+            id="endereco.logradouro"
+            [(ngModel)]="endereco.logradouro"
+            maxlength="100"
+            [disabled]="disableAll!"
+        >
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-12 col-sm-3 p-0 ps-sm-2 mat-input-error-color" [hideRequiredMarker]="true">
+        <mat-label>Número</mat-label>
+        <input
+            matInput
+            type="text"
+            id="endereco.numero"
+            [(ngModel)]="endereco.numero"
+            maxlength="6"
+            onlyNumber
+            required
+            [disabled]="disableAll! && disableNum!"
+        >
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-12 col-sm-5 col-xl-4 p-0 pe-sm-2">
+        <mat-label>Complemento</mat-label>
+        <input
+            matInput
+            type="text"
+            id="endereco.complemento"
+            [(ngModel)]="endereco.complemento"
+            maxlength="100"
+            [disabled]="disableAll! && disableComplemento!"
+        >
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-12 col-sm-7 col-xl-8 p-0 ps-sm-2">
+        <mat-label>Bairro</mat-label>
+        <input
+            matInput
+            type="text"
+            id="endereco.bairro"
+            [(ngModel)]="endereco.bairro"
+            maxlength="100"
+            [disabled]="disableAll!"
+        >
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-12 col-sm-9 p-0 pe-sm-2">
+        <mat-label>Cidade</mat-label>
+        <input
+            matInput
+            type="text"
+            id="endereco.cidade"
+            maxlength="100"
+            [(ngModel)]="endereco.cidade"
+            [disabled]="disableAll!"
+        >
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-12 col-sm-3 p-0 ps-sm-2">
+        <mat-label>Estado</mat-label>
+        <input
+            matInput
+            type="text"
+            id="endereco.estado"
+            [(ngModel)]="endereco.estado"
+            [disabled]="disableAll!"
+        >
+    </mat-form-field>
+</div>

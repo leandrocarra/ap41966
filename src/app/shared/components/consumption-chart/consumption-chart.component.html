@@ -1,0 +1,146 @@
+<div *ngIf="consumos && consumos.length" class="toggle-history">
+	<ng-container *ngIf="grandesClientes; else templateNoclient">
+
+		<mat-card *ngIf="isTela === 'home'">
+			<div *ngIf="isMoeda" class="titulo-grupo-a">Histórico de faturamento</div>
+			<div *ngIf="!isMoeda" class="titulo-grupo-a">Histórico de consumo</div>
+
+			<div class="text-graph d-flex justify-content-end mt-2">
+				<span> Selecionar o tipo: </span>
+				<span>
+					<mat-slide-toggle [(ngModel)]="isMoeda" class="big-client" (change)="onToggle()"></mat-slide-toggle>
+				</span>
+			</div>
+			<div class="scroll">
+				<ng-container>
+					<div class="custom-canvas">
+						<canvas #barChart></canvas>
+					</div>
+					<div #legend class="legend"></div>
+				</ng-container>
+			</div>
+			<div class="ver-consumo">
+				<button style="border: none; line-height: 36px !important;" [class.btnDarkGreen]="grandesClientes"
+					(click)="goToHistorico()">SAIBA MAIS</button>
+			</div>
+		</mat-card>
+
+		<div *ngIf="isTela === 'historicoConsumo'">
+			<div class="row d-flex justify-content-between pe-3 ps-3">
+				<div *ngIf="isMoeda" class="titulo-grupo-a mt-7">Histórico de faturamento</div>
+				<div *ngIf="!isMoeda" class="titulo-grupo-a mt-7">Histórico de consumo</div>
+
+				<div class="align-right text-graph mt-3">
+					<span> Selecionar o tipo: </span>
+					<mat-slide-toggle [(ngModel)]="isMoeda" class="big-client" (change)="onToggle()"></mat-slide-toggle>
+				</div>
+			</div>
+
+			<div class="row d-flex justify-content-between align-items-center pe-3 ps-3">
+				<div class="align-left text-graph-grupo-b mt-3">
+					Clique nas barras para mais detalhes.
+				</div>
+
+				<div class="align-right text-graph">
+					<mat-form-field class="width-combo margin-h6">
+						<mat-label>Selecionar o ano</mat-label>
+						<mat-select (selectionChange)="onChangeCombobox($event)">
+							<mat-option *ngFor="let ano of anos" [value]="ano">{{
+								ano
+								}}</mat-option>
+						</mat-select>
+					</mat-form-field>
+				</div>
+
+
+			</div>
+			<div class="scroll">
+				<ng-container>
+					<div class="custom-canvas">
+						<canvas #barChart></canvas>
+					</div>
+					<div #legend class="legend mt-mb-16"></div>
+				</ng-container>
+			</div>
+		</div>
+
+	</ng-container>
+
+	<ng-template #templateNoclient>
+		<mat-card *ngIf="isTela === 'home'">
+			<div *ngIf="isMoeda" class="titulo-grupo-b">HISTÓRICO DE FATURAMENTO</div>
+			<div *ngIf="!isMoeda" class="titulo-grupo-b">HISTÓRICO DE CONSUMO</div>
+
+			<div class="d-flex justify-content-end text-graph mt-2">
+				<span> Selecionar o tipo: </span>
+				<span>
+					<mat-slide-toggle [(ngModel)]="isMoeda" (change)="onToggle()"></mat-slide-toggle>
+				</span>
+			</div>
+			<div class="scroll">
+				<ng-container>
+					<div class="custom-canvas">
+						<canvas #barChart></canvas>
+					</div>
+					<div #legend class="legend"></div>
+				</ng-container>
+			</div>
+			<div class="ver-consumo">
+				<button style="border: none; line-height: 36px !important;" (click)="goToHistorico()">SAIBA
+					MAIS</button>
+			</div>
+		</mat-card>
+
+		<div *ngIf="isTela === 'historicoConsumo'">
+			<div class="row d-flex justify-content-between pe-3 ps-3">
+				<div *ngIf="isMoeda" class="titulo-grupo-a mt-7">Histórico de faturamento</div>
+				<div *ngIf="!isMoeda" class="titulo-grupo-a mt-7">Histórico de consumo</div>
+
+				<div class="align-right text-graph mt-3">
+					<span> Selecionar o tipo: </span>
+					<mat-slide-toggle [(ngModel)]="isMoeda" (change)="onToggle()"></mat-slide-toggle>
+				</div>
+			</div>
+
+			<div class="row d-flex justify-content-between align-items-center pe-3 ps-3">
+				<div class="align-left text-graph-grupo-b mt-3">
+					Clique nas barras para mais detalhes.
+				</div>
+
+				<div class="align-right text-graph">
+					<mat-form-field class="width-combo margin-h6">
+						<mat-label>Selecionar o ano</mat-label>
+						<mat-select (selectionChange)="onChangeCombobox($event)">
+							<mat-option *ngFor="let ano of anos" [value]="ano">{{
+								ano
+								}}</mat-option>
+						</mat-select>
+					</mat-form-field>
+				</div>
+
+
+			</div>
+			<div class="scroll">
+				<ng-container>
+					<div class="custom-canvas">
+						<canvas #barChart></canvas>
+					</div>
+					<div #legend class="legend mt-mb-16"></div>
+				</ng-container>
+			</div>
+		</div>
+
+		<mat-card *ngIf="isTela === 'autoLeitura'" class="mat-card-autoleitura">
+			<div *ngIf="!isMoeda" class="titulo-autoleitura">LEITURAS ANTERIORES (kWh)</div>
+			<mat-divider></mat-divider>
+			<div class="scroll">
+				<ng-container>
+					<div class="custom-canvas">
+						<canvas #barChart></canvas>
+					</div>
+					<div #legend class="legend"></div>
+				</ng-container>
+			</div>
+		</mat-card>
+	</ng-template>
+</div>

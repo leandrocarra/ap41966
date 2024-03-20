@@ -1,0 +1,35 @@
+.faturas-items {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.fatura-item {
+  background-color: var(--neo-dark-green);
+  border-radius: 8px;
+  color: var(--neo-white);
+  font-size: 0.875rem;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.fatura-item .item-descricao {
+  padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .fatura-item {
+    display: block;
+    width: 47%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1080px) {
+  .fatura-items {
+    justify-content: space-between;
+  }
+  .fatura-item {
+    width: calc(100% / 4 - 10px);
+  }
+}

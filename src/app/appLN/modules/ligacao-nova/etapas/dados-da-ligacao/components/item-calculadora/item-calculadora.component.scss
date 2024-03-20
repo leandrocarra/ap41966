@@ -1,0 +1,38 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+$asset-images-path: "^assets/assetsLN/images/";
+
+.box-button-calculadora {
+    height: 90px;
+    font-size: 11px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1.5px solid #ffffff;
+	-webkit-box-shadow: 0 1px 5px -1px rgba(50, 50, 50, 0.54);
+	-moz-box-shadow: 0 1px 5px -1px rgba(50, 50, 50, 0.54);
+	box-shadow: 0 1px 5px -1px rgba(50, 50, 50, 0.54);
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.box-button-calculadora:hover {
+    border: 1.5px solid var(--neo-light-green);
+}
+
+.box-button-verde {
+    background-color: var(--neo-light-green);
+    color: white;
+    border: 1.5px solid var(--neo-light-green);
+}
+
+.box-button-verde:hover {
+    border: 1.5px solid white;
+}
+
+
+
+
+

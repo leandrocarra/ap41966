@@ -1,0 +1,60 @@
+#bandeira-tarifaria {
+    padding: 1rem 1.5rem;
+    width: 28rem;
+    display: flex;
+    text-align: left;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 520px) {
+        width: auto;
+    }
+
+    .bandeira-titulo {
+        color: var(--neo-light-green);
+        font-weight: 600;
+    }
+
+    .bandeira-container {
+        display: flex;
+        text-align: left;
+        justify-content: flex-start;
+        align-items: center;
+
+        .icone {
+            font-weight: 100;
+            font-size: 50px;
+        }
+
+        // Cores e estilos dos textos
+        .cinza-escuro {
+            color: var(--neo-dark-gray-2);
+            font-weight: 600;
+        }
+        .cinza-claro {
+            color: var(--neo-white-600);
+            font-weight: 500;
+        }
+        .vermelho-erro {
+            color: var(--neo-pure-red);
+            font-weight: 600;
+        }
+
+        // Cores das bandeiras
+        .preta {
+            color: var(--neo-bandeira-preta);
+        }
+        .vermelha2 {
+            color: var(--neo-bandeira-vermelha2);
+        }
+        .vermelha1 {
+            color: var(--neo-bandeira-vermelha1);
+        }
+        .amarela {
+            color: var(--neo-bandeira-amarela);
+        }
+        .verde {
+            color: var(--neo-bandeira-verde);
+        }
+    }
+}

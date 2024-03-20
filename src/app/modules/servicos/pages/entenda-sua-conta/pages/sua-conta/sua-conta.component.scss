@@ -1,0 +1,28 @@
+.tamanho-card {
+    width: 25%;
+    min-width: fit-content;
+}
+
+@media only screen and (max-width: 425px) {
+    .tamanho-card {
+        width: 100%;
+    }
+}
+
+.top-separator {
+    width: 95%;
+    margin: auto;
+    border-top: 2px solid var(--neo-white-500);
+}
+
+.indicadores{
+    height: unset;
+}
+
+.descricao-conta{
+    height: unset;
+}
+
+.chart-conta{
+    height: unset;
+}

@@ -1,0 +1,43 @@
+<mat-accordion class="accordion-changed-styles" *ngFor="let fatura of itens; let i = index" id="accordion-fatura-{{i}}">
+	<mat-expansion-panel #expansionPanel>
+		<mat-expansion-panel-header class="box-shadow-cards" (click)="expandPanel(expansionPanel, $event)">
+			<div class="expansion-header">
+				<div [ngClass]="{
+						'check-group-a': userGroup === 'A',
+						'check-group-b': userGroup === 'B',
+						'checkframe-group-b': userGroup === 'B',
+						'checkframe-group-a': userGroup === 'A'
+					}">
+					<mat-checkbox [checked]="fatura.fatura.selecionado" (change)="setarFatura(fatura.fatura)"></mat-checkbox>
+				</div>
+
+				<div class="fatura-infos">
+					<div class="m-2">
+						<span class="d-block uppercase bold color-primary text-nowrap">VENCIMENTO</span>
+						<span class="d-block color-dark-gray">{{
+							fatura.fatura.dataVencimento | date: 'dd/MM/yyyy'
+							}}</span>
+					</div>
+
+					<div class="m-2">
+						<span class="d-block uppercase bold color-primary text-nowrap">VALOR DA CONTA</span>
+						<span class="d-block color-dark-gray">{{ valorFatura(fatura.fatura.valorEmissao) }}</span>
+					</div>
+
+					<div class="fatura-situacao m-2">
+						<span class="d-block uppercase bold color-primary">SITUAÇÃO</span>
+						<span class="d-block {{ fatura.fatura.statusFatura.toLowerCase().replace(' ','') }}">
+						<!-- <span class="d-block teste-accordion"> -->
+							<strong>
+								{{ getStatus(fatura.fatura.statusFatura) }}
+							</strong>
+						</span>
+					</div>
+				</div>
+			</div>
+		</mat-expansion-panel-header>
+		<app-content-accordion [fatura]="fatura.fatura" [historico]="fatura.historico" [indexFatura]="i">
+		</app-content-accordion>
+	</mat-expansion-panel>
+</mat-accordion>
+

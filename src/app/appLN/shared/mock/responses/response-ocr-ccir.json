@@ -1,0 +1,264 @@
+{
+  "VALIDO": {
+    "result": [
+      {
+        "fields": [
+          {
+            "name": "denominador_imovel",
+            "value": "FAZ SUBAE",
+            "score": 0.81
+          },
+          {
+            "name": "localizador_imovel_rural",
+            "value": "DO TREVO SP 127 E 310",
+            "score": 0.95
+          },
+          {
+            "name": "matricula",
+            "value": "",
+            "score": 0
+          },
+          {
+            "name": "data_vencimento",
+            "value": "**/**/****",
+            "score": 0.94
+          },
+          {
+            "name": "cpf_titular",
+            "value": "96700905044",
+            "score": 0.94
+          },
+          {
+            "name": "nome_titular",
+            "value": "Maria Flavia",
+            "score": 0.98
+          },
+          {
+            "name": "control_ccir",
+            "value": "28462610209",
+            "score": 0.81
+          },
+          {
+            "name": "uf_municipio_cartorio",
+            "value": "",
+            "score": 0
+          },
+          {
+            "name": "codigo_imovel_rural",
+            "value": "0000274420383",
+            "score": 0.81
+          },
+          {
+            "name": "data_processamento",
+            "value": "18/02/2020",
+            "score": 0.94
+          },
+          {
+            "name": "area_total",
+            "value": "15,3000",
+            "score": 0.69
+          }
+        ],
+        "deskewImage": "",
+        "docQualityScore": 0.72,
+        "docType": "certidao",
+        "pageIndex": 1,
+        "tags": [
+          "certidao",
+          "br-cartorio-registro-imovel-1"
+        ]
+      }
+    ],
+    "queryId": "HEADBEPTFZNKTUTCHNOTI",
+    "status": {
+      "code": 200,
+      "message": "Ok"
+    }
+  },
+  "INVALIDO": {
+    "result": [
+      {
+        "fields": [
+          {
+            "name": "denominador_imovel",
+            "value": "FAZ SUBAE",
+            "score": 0.81
+          },
+          {
+            "name": "localizador_imovel_rural",
+            "value": "EST SERRINHA AO POVOADO MATO GROSS",
+            "score": 0.95
+          },
+          {
+            "name": "matricula",
+            "value": "",
+            "score": 0
+          },
+          {
+            "name": "data_vencimento",
+            "value": "**/**/****",
+            "score": 0.94
+          },
+          {
+            "name": "cpf_titular",
+            "value": "14555077504",
+            "score": 0.94
+          },
+          {
+            "name": "nome_titular",
+            "value": "MARIA GUIOMAR QUEIROZ SILVA",
+            "score": 0.98
+          },
+          {
+            "name": "control_ccir",
+            "value": "28462610209",
+            "score": 0.81
+          },
+          {
+            "name": "uf_municipio_cartorio",
+            "value": "",
+            "score": 0
+          },
+          {
+            "name": "codigo_imovel_rural",
+            "value": "0000274420383",
+            "score": 0.81
+          },
+          {
+            "name": "data_processamento",
+            "value": "18/02/2020",
+            "score": 0.94
+          },
+          {
+            "name": "area_total",
+            "value": "15,3000",
+            "score": 0.69
+          }
+        ],
+        "deskewImage": "",
+        "docQualityScore": 0.72,
+        "docType": "certidao",
+        "pageIndex": 1,
+        "tags": [
+          "certidao",
+          "br-cartorio-registro-imovel-1"
+        ]
+      }
+    ],
+    "queryId": "HEADBEPTFZNKTUTCHNOTI",
+    "status": {
+      "code": 200,
+      "message": "Ok"
+    }
+  },
+  "VALIDO_2009": {
+    "result": [
+      {
+        "fields": [
+          {
+            "name": "matricula_imovel",
+            "value": "17.700",
+            "score": 1
+          },
+          {
+            "name": "ficha",
+            "value": "01",
+            "score": 1
+          },
+          {
+            "name": "paragrafo_imovel",
+            "value": ": - UM TERRENO destacado do lote sob n . 03 , quadra A da Vila Jardim Progresso , nesta cidade , distrito , município e comarca de RIO CLARO , estado de São Paulo , circunscrição única , situado na AVENIDA JOSÉ HORÁCIO MELLÃO , medindo 10 , 00m . ( dez metros ) de frente para a referida avenida ; 4 , 87m . ( quatro metros e oitenta e sete centímetros ) do lado direito de quem da avenida olha para o , confrontando com o lote n . 02 , 2 , 60m . ( dois metros e sessenta centímetros ) do lado esquerdo de quem da avenida olha para o , confrontando com o lote n . 04 ; c , 10 , 26m . ( dez , metros e vinte e seis centímetros ) nos fundos , confrontando com o remanescente do do qual fora destacado ( Matr . 1 878 ) , de propriedade de MARIA FLAVIA , encerrando a área total de 27 , 40 metros quadrados . - / / /",
+            "score": 0.99
+          },
+          {
+            "name": "paragrafo_proprietario",
+            "value": ": - MARIA FLAVIA , brasileiro , solteiro , maior , do comércio , inscrito no CPF / MF sob n . 967 . 009 . 050 / 44 , residente e domiciliado nesta cidade de Rio Claro , estado de São Paulo . - / / /",
+            "score": 0.99
+          },
+          {
+            "name": "paragrafo_registro_anterior",
+            "value": ": - Registro sob n . 1 / 1 . 878 , na n . 1 . 878 , livro 2 de Registro Geral , desta circunscrição imobiliária , efetuado aos 30 de novembro de 1977 . - / / / DESIGNAÇÃO CADASTRAL : - O imóvel acima matriculado encontra - se cadastrado na Prefeitura Municipal de São Manuel , sob . - / / / São Manuel , de setembro de 2009 . - O oficial O O Pedro Sacco REGISTRO N . 1 / 17 . 700 . - ( DESAPROPRIAÇÃO ) São Manuel , 01 de setembro de 2009 . - EXPROPRIADO : - Harry Potinho , retro qualificado . - EXPROPRIANTE : - MUNICÍPIO DE RIO CLARO . - TÍTULO : - Desapropriação . - FORMA DO TÍTULO : - Carta de sentença expedida aos 21 de maio de 2009 , pelo Cartório do Primeiro Ofício Judicial Cível desta comarca de São Manuel , estado de São Paulo , referente aos autos da ação de desapropriação e indenização para apossamento administrativo , processo sob n . 06 / 1988 , autos esses cuja respeitável sentença expropriatória foi proferida em 09 / 01 / 2006 , pelo MM . Juiz de Direito , Dr . Sérgio Augusto de Freitas Jorge , transitada em julgado em 23 / 02 / 2006 . - VALOR : - R $ - 4 . 075 , 00 ( quatro mil e setenta e cinco reais ) . - OBJETO DA CARTA : - A TOTALIDADE DO IMÓVEL A QUE SE REFERE A PRESENTE MATRÍCULA . - CONDIÇÕES : - Não há . - OBSERVAÇÃO : - Consta da carta de sentença objeto do presente registro que o imóvel desapropriado foi declarado de utilidade pública para construção de avenida de 17 SEJ 54 . 2009 ( continua no verso ) Tatiana B . G . L . Mastrorosa Preposta Escrevente Rua 4 de Junho , 200 - Fone / Fax : ( 14 ) 3841 - 4070 - CEP 13 . 500 - 000 - Rio Claro - SP",
+            "score": 0.93
+          },
+          {
+            "name": "paragrafo_contribuinte",
+            "value": null,
+            "score": 0
+          }
+        ],
+        "deskewImage": "",
+        "docQuality": null,
+        "docQualityScore": 0.82,
+        "docType": "certidao",
+        "pageIndex": 1,
+        "tables": [],
+        "tags": [
+          "certidao",
+          "br-cartorio-registro-imovel-1"
+        ]
+      }
+    ],
+    "requestId": "cUtkZcDBx0Gjw2IrJLW4d",
+    "elapsedMilliseconds": 11316,
+    "status": {
+      "message": "Success",
+      "code": "S100",
+      "errors": null
+    }
+  },
+  "INVALIDO_2009": {
+    "result": [
+      {
+        "fields": [
+          {
+            "name": "matricula_imovel",
+            "value": "17.700",
+            "score": 1
+          },
+          {
+            "name": "ficha",
+            "value": "01",
+            "score": 1
+          },
+          {
+            "name": "paragrafo_imovel",
+            "value": ": - UM TERRENO destacado do lote sob n . 03 , quadra A da Vila Jardim Progresso , nesta cidade , distrito , município e comarca de RIO CLARO , estado de São Paulo , circunscrição única , situado na AVENIDA JOSÉ HORÁCIO MELLÃO , medindo 10 , 00m . ( dez metros ) de frente para a referida avenida ; 4 , 87m . ( quatro metros e oitenta e sete centímetros ) do lado direito de quem da avenida olha para o , confrontando com o lote n . 02 , 2 , 60m . ( dois metros e sessenta centímetros ) do lado esquerdo de quem da avenida olha para o , confrontando com o lote n . 04 ; c , 10 , 26m . ( dez , metros e vinte e seis centímetros ) nos fundos , confrontando com o remanescente do do qual fora destacado ( Matr . 1 878 ) , de propriedade de Harry Potinho , encerrando a área total de 27 , 40 metros quadrados . - / / /",
+            "score": 0.99
+          },
+          {
+            "name": "paragrafo_proprietario",
+            "value": ": - HARRY POTINHO , brasileiro , solteiro , maior , do comércio , inscrito no CPF / MF sob n . 122 . 355 . 211 / 12 , residente e domiciliado nesta cidade de Rio Claro , estado de São Paulo . - / / /",
+            "score": 0.99
+          },
+          {
+            "name": "paragrafo_registro_anterior",
+            "value": ": - Registro sob n . 1 / 1 . 878 , na n . 1 . 878 , livro 2 de Registro Geral , desta circunscrição imobiliária , efetuado aos 30 de novembro de 1977 . - / / / DESIGNAÇÃO CADASTRAL : - O imóvel acima matriculado encontra - se cadastrado na Prefeitura Municipal de São Manuel , sob . - / / / São Manuel , de setembro de 2009 . - O oficial O O Pedro Sacco REGISTRO N . 1 / 17 . 700 . - ( DESAPROPRIAÇÃO ) São Manuel , 01 de setembro de 2009 . - EXPROPRIADO : - Harry Potinho , retro qualificado . - EXPROPRIANTE : - MUNICÍPIO DE RIO CLARO . - TÍTULO : - Desapropriação . - FORMA DO TÍTULO : - Carta de sentença expedida aos 21 de maio de 2009 , pelo Cartório do Primeiro Ofício Judicial Cível desta comarca de São Manuel , estado de São Paulo , referente aos autos da ação de desapropriação e indenização para apossamento administrativo , processo sob n . 06 / 1988 , autos esses cuja respeitável sentença expropriatória foi proferida em 09 / 01 / 2006 , pelo MM . Juiz de Direito , Dr . Sérgio Augusto de Freitas Jorge , transitada em julgado em 23 / 02 / 2006 . - VALOR : - R $ - 4 . 075 , 00 ( quatro mil e setenta e cinco reais ) . - OBJETO DA CARTA : - A TOTALIDADE DO IMÓVEL A QUE SE REFERE A PRESENTE MATRÍCULA . - CONDIÇÕES : - Não há . - OBSERVAÇÃO : - Consta da carta de sentença objeto do presente registro que o imóvel desapropriado foi declarado de utilidade pública para construção de avenida de 17 SEJ 54 . 2009 ( continua no verso ) Tatiana B . G . L . Mastrorosa Preposta Escrevente Rua 4 de Junho , 200 - Fone / Fax : ( 14 ) 3841 - 4070 - CEP 12 . 253 - 521 - Rio Claro - SP",
+            "score": 0.93
+          },
+          {
+            "name": "paragrafo_contribuinte",
+            "value": null,
+            "score": 0
+          }
+        ],
+        "deskewImage": "",
+        "docQuality": null,
+        "docQualityScore": 0.82,
+        "docType": "certidao",
+        "pageIndex": 1,
+        "tables": [],
+        "tags": [
+          "certidao",
+          "br-cartorio-registro-imovel-1"
+        ]
+      }
+    ],
+    "requestId": "cUtkZcDBx0Gjw2IrJLW4d",
+    "elapsedMilliseconds": 11316,
+    "status": {
+      "message": "Success",
+      "code": "S100",
+      "errors": null
+    }
+  }
+}

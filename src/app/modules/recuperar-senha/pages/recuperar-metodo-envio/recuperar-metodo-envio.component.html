@@ -1,0 +1,23 @@
+<p class="subtitulo mt-3 mt-5 mt-md-0">Precisamos confirmar o seu cadastro. Como você deseja receber o link para confirmação?</p>
+
+<h6 class="bold color-dark-gray my-4">POR ONDE DESEJA RECEBER O LINK DE CONFIRMAÇÃO?</h6>
+
+<form [formGroup]="formRecuperarSenha">
+    <mat-radio-group class="radio-group row" formControlName="opcaoEnvio">
+        <div class="d-inline col-12 me-3" *ngFor="let opcao of opcoesEnvio">
+            <mat-radio-button *ngIf="opcao !== null" class="format-info-radio-btn" [value]="opcao">
+                {{opcao}}
+            </mat-radio-button>
+        </div>
+    </mat-radio-group>
+
+    <div class="d-flex justify-content-between justify-content-md-start mb-5 mb-md-0">
+        <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-3">
+            <app-neo-button (callFunction)="voltar()" class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'">
+            </app-neo-button>
+
+            <app-neo-button (callFunction)="continuar()" class="me-3 m-0" classes="btn-neodarkgreen" [titleText]="'CONTINUAR'">
+            </app-neo-button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+<div class="col-xl-6 col-lg-7 col-md-12 col-12 p-0">
+    <h2 class="mb-5">Agora tire uma selfie para verificarmos que é você mesmo!</h2>
+
+    <div class="container-selfie">
+        <img *ngIf="showMask" src="assets/images/mascara_selfie.svg" alt="Posicione seu rosto na máscara." class="mascara-selfie">
+        <video autoplay id="webCamera"></video>
+    </div>
+
+    <div class="mt-3 row m-0 justify-content-sm-start justify-content-between">
+        <app-neo-button class="me-sm-3 m-0 mt-3 mt-md-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'Voltar'" (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button *ngIf="!hasSelfie"
+        class="me-sm-3 m-0 mt-3 mt-md-0" [classes]="'btn-neoprimary'" [titleText]="'Tirar Selfie'" (callFunction)="takeSelfie()">
+        </app-neo-button>
+
+        <app-neo-button *ngIf="hasSelfie"
+        class="me-sm-3 m-0 mt-3 mt-md-0" [classes]="'btn-neoprimary'" [titleText]="'Tirar Outra Selfie'" (callFunction)="takeAnotherSelfie()">
+        </app-neo-button>
+
+        <app-neo-button *ngIf="hasSelfie && !mobileXS"
+        class="me-sm-3 m-0 mt-3 mt-md-0" [classes]="'btn-neoprimary'" [titleText]="'Confirmar'" (callFunction)="confirm()">
+        </app-neo-button>
+    </div>
+
+    <div *ngIf="mobileXS" class="mt-3 row m-0 justify-content-md-start justify-content-end">
+        <app-neo-button *ngIf="hasSelfie"
+        class="memd-3 m-0 mt-3 mt-md-0" [classes]="'btn-neoprimary'" [titleText]="'Confirmar'" (callFunction)="confirm()">
+        </app-neo-button>
+    </div>
+</div>
+

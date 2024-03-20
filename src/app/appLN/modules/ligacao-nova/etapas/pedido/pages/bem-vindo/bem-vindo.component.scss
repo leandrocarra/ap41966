@@ -1,0 +1,25 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.img-boas-vindas {
+    display: flex;
+    max-width: 100%;
+    margin: auto;
+}
+
+.formatacao-botao {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 768px) and (min-width: 320px) {
+    .formatacao-botao {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 769px) {
+    .formatacao-botao {
+        width: 50%;
+    }
+}

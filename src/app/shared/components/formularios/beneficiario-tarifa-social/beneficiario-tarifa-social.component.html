@@ -1,0 +1,44 @@
+
+<form [formGroup]="formDadosBeneficiario">
+
+    <div id="black-and-white-input-1" class="row form-area-dados ">
+        
+        <div class="col-xl-3 col-md-3 col-12 p-0">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>NOME COMPLETO</mat-label>
+                <input matInput type="text" formControlName="nome" (ngModelChange)="validarForms()" maxlength="255"
+                    withoutNumber upperCase specialCharacters required />
+            </mat-form-field>
+        </div>
+
+        <div class="col-xl-3 col-md-3 col-12 p-0">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>NÚMERO DO CPF</mat-label>
+                <input matInput type="text" name="cpf" id="cpf" formControlName="cpf" (ngModelChange)="validarForms()"
+                    mask="000.000.000-00" minlength="11" onlyNumber required />
+            </mat-form-field>
+        </div>
+
+        <div class="col-xl-3 col-md-3 col-12 p-0">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>NÚMERO DO RG</mat-label>
+                <input matInput type="text" name="rg" id="rg" formControlName="rg" (ngModelChange)="validarForms()"
+                    required />
+            </mat-form-field>
+        </div>
+
+        <div class="col-xl-3 col-md-3 col-12 p-0">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>DATA DE NASCIMENTO</mat-label>
+                <input matInput [matDatepicker]="picker" name="dataNascimento" id="dataNascimento"
+                    formControlName="dataNascimento" (focus)="picker?.open()" (ngModelChange)="validarForms()"
+                    required />
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+
+    </div>
+
+</form>

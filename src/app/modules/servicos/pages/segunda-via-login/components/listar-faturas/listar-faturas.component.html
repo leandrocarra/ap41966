@@ -1,0 +1,47 @@
+<div id="listar-faturas-abertas" *ngFor="let fatura of listaDeFaturas">
+    <mat-card class="mt-3">
+        <mat-card-content class="row m-0 d-flex justify-content-between">
+            <div class="row col-12 p-0 m-0 d-flex">
+                <div class="col-12 col-lg-7 row justify-content-between">
+                    <div class="col-12 col-md-4 fatura-situacao">
+                        <span class="d-block uppercase bold color-primary fonte-info-fatura">STATUS</span>
+                        <span class="d-block fonte-info-fatura">{{ fatura.statusFatura }}</span>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <span class="d-block uppercase bold color-primary text-nowrap fonte-info-fatura">VALOR</span>
+                        <span class="d-block color-dark-gray fonte-info-fatura">R$ {{ formatarValor(fatura.valorEmissao) }}</span>
+                    </div>
+
+                    <div class="col-12 col-md-4 fatura-infos">
+                        <span class="d-block uppercase bold color-primary text-nowrap fonte-info-fatura">VENCIMENTO</span>
+                        <span class="d-block color-dark-gray fonte-info-fatura">{{ fatura.dataVencimento | date:'dd/MM/yyyy' }}</span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-5 mt-0 mt-md-3 mt-lg-0">
+                    <span class="d-block uppercase bold color-primary text-nowrap fonte-info-fatura">CÓDIGO DE BARRAS</span>
+                    <span class="d-block color-dark-gray fonte-info-fatura"> {{ fatura.codbarras ?? fatura.numeroCodigoBarras | mask: '00000.00000 00000.000000 00000.000000 0 000000000000000' }}</span>
+                </div>
+            </div>
+
+            <div class="row m-0 d-flex justify-content-between justify-content-md-start mt-4">
+                <button class="col-2" type="button" mat-raised-button color="accent" aria-label="Código de Barras"
+                    (click)="chamarAlertCodigoDeBarras(fatura)">
+                    copiar código
+                    <mat-icon>
+                        <span class="material-icons-outlined">copy_all</span>
+                    </mat-icon>
+                </button>
+
+                <button class="col-2" type="button" mat-raised-button color="accent" aria-label="Visualizar fatura"
+                    (click)="visualizarFatura(fatura)">
+                    visualizar
+                    <mat-icon>
+                        <span class="material-icons-outlined">insert_drive_file</span>
+                    </mat-icon>
+                </button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

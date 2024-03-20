@@ -1,0 +1,14 @@
+.text-attention {
+    font-weight: 500;
+    color: var(--neo-pure-red);
+}
+
+.icone-aviso {
+    width: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+:host ::ng-deep .mat-checkbox-layout {
+    white-space: normal;
+    word-wrap: break-word !important;
+}

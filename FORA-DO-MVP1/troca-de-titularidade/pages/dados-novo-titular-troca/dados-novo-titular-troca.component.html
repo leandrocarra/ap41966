@@ -1,0 +1,41 @@
+<div id="black-and-white-input-1" class="col-12 col-xl-6 col-lg-7 col-md-10 p-0">
+    <h2>Agora precisamos que valide as informações do novo titular</h2>
+
+    <form [formGroup]="dadosNovoTitularFormGroup">
+        <h6 class="subtitulo-h6 mt-4 mb-3">OS DADOS DO NOVO TITULAR CONFEREM?</h6>
+
+
+        <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 pb-0 ps-0">
+            <mat-label>NOME</mat-label>
+            <input matInput type="text" name="nome" id="nome" formControlName="nome" required/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 pb-0 ps-0">
+            <mat-label>CPF</mat-label>
+            <input matInput type="text" name="cpf" id="cpf" formControlName="cpf" required (ngModelChange)="applyMaskCpfCnpj()" [mask]="cpfCnpjmask" />
+        </mat-form-field>
+
+        <div>
+            <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 col-md-6 pb-0 ps-0">
+                <mat-label>RG</mat-label>
+                <input matInput type="text" name="rg" id="rg" formControlName="rg" required/>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 col-md-6 pb-0 ps-0">
+                <mat-label>DATA DE NASCIMENTO</mat-label>
+                <input matInput type="text" name="dataNascimento" id="dataNascimento" formControlName="dataNascimento" required />
+            </mat-form-field>
+        </div>
+
+    </form>
+
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="naoConferemTextBtn"
+            (callFunction)="dadosNaoConferem()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'" [titleText]="'PROSSEGUIR'"
+            (callFunction)="prosseguir()">
+        </app-neo-button>
+    </div>
+</div>

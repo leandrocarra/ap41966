@@ -1,0 +1,81 @@
+<div id="informar-dados-religacao">
+    <h2>Solicitar Religação</h2>
+
+    <p class="subtitulo mt-3 mb-3">
+        Informe os dados abaixo para solicitar sua Religação:
+    </p>
+
+    <div class="col-12 col-md-8 col-lg-6 p-0">
+        <p class="subtitulo mt-4 p-0"><strong>DADOS:</strong></p>
+        <form [formGroup]="formReligacao">
+            <mat-form-field [hideRequiredMarker]="true" appearance="outline" class="col-12 p-0">
+                <mat-label>TELEFONE PARA CONTATO</mat-label>
+                <input matInput #telefone formControlName="telefone" type="text" placeholder="" maxlength="16"
+                    [mask]="'(00) 0 0000-0000 || (00) 0000-0000'" required>
+
+                <mat-error *ngIf="formReligacao.controls['telefone'].hasError('required')">
+                    <div class="d-flex">
+                        <img src="assets/images/icons/atencao.svg" alt="Imagem chamando atenção" class="img-atencao">
+                        <p class="conf-text-input-mat-error my-auto">Telefone para contato deve ser preenchido.</p>
+                    </div>
+                </mat-error>
+
+                <mat-error *ngIf="formReligacao.controls['telefone'].hasError('minlength')">
+                    <div class="d-flex">
+                        <img src="assets/images/icons/atencao.svg" alt="Imagem chamando atenção" class="img-atencao">
+                        <p class="conf-text-input-mat-error my-auto">Este número não é válido, Por favor, tente novamente!</p>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field [hideRequiredMarker]="false" appearance="outline" class="col-12 p-0 mt-2">
+                <mat-label>PONTO DE REFERÊNCIA</mat-label>
+                <input matInput formControlName="referencia" type="text" placeholder="" maxlength="40" required>
+
+                <mat-error>
+                    <div class="d-flex">
+                        <img src="assets/images/icons/atencao.svg" alt="Imagem chamando atenção" class="img-atencao">
+                        <p class="conf-text-input-mat-error my-auto">Ponto de referência deve ser preenchido.</p>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+
+
+    <!-- Fluxo com débitos -->
+    <div *ngIf="possuiDebitos === 'pagamento com erro'"
+        class="alerta-debito d-flex align-items-center col-sm-12-center mt-3 mb-3">
+        <span class="material-icons-round me-2">warning_amber</span>
+        Não conseguimos confirmar seu pagamento. Por favor anexe o comprovante.
+    </div>
+
+    <div *ngIf="possuiDebitos === 'pagamento comprovante' || possuiDebitos === 'pagamento com erro'">
+        <app-anexar-comprovante (arquivosAnexados)="arquivosAnexados($event)"></app-anexar-comprovante>
+
+        <div [ngClass]="{
+            'check-group-a': grupoTensao === 'A',
+            'check-group-b': grupoTensao === 'B'
+          }">
+            <mat-checkbox [(ngModel)]="declaracaoDebitos" class="mt-2 col-lg-8 col-xl-6 ps-0">
+                <p class="subtitulo mt-3 ms-2">Declaro que paguei as faturas vencidas, estou ciente que o eletricista
+                    solicitará os comprovantes
+                    de
+                    pagamento e que em caso de visita improcedente será cobrada a taxa de visitação na próxima
+                    fatura.</p>
+            </mat-checkbox>
+        </div>
+    </div>
+
+
+    <div class="d-flex flex-wrap justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-md-3 m-0" [classes]="grupoTensao === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="'CONTINUAR'" (callFunction)="continuar()" [isDisabled]="desabilitarBtContinuar()">
+        </app-neo-button>
+    </div>
+
+</div>

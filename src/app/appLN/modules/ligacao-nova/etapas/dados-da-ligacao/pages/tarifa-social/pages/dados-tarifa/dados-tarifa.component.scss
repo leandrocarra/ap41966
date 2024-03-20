@@ -1,0 +1,7 @@
+@media only screen and (max-width: 425px) {
+    .formArea {
+        div > mat-form-field {
+            padding: 0;
+        }
+    }
+}

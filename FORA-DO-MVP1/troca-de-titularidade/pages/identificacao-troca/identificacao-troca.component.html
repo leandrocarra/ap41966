@@ -1,0 +1,66 @@
+<div class="col-12 col-xl-6 col-lg-7 col-md-10 p-0">
+
+
+    <h2>Troca de titularidade</h2>
+    <h6 class="subtitulo-h6 mt-4 mb-3">IDENTIFICAÇÃO</h6>
+
+    <form [formGroup]="dadosInformadosFormGroup">
+
+
+        <div id="black-and-white-input-1">
+            <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 pb-0 ps-0 pe-0">
+                <mat-label>DIGITE AQUI SEU CPF OU CNPJ</mat-label>
+                <input matInput type="text" id="cpfCnpj" name="cpfCnpj" formControlName="cpfCnpj" required maxlength="18"
+                [mask]="cpfCnpjmask" (ngModelChange)="verificarBotao(); applyMaskCpfCnpj()" />
+            </mat-form-field>
+        </div>
+
+        <div id="black-and-white-input-2">
+            <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-3 col-12 pb-0 ps-0 pe-0">
+                <mat-label>DIGITE AQUI SEU E-MAIL</mat-label>
+                <input class="input-field" matInput type="text" name="email" id="email" formControlName="email"
+                    maxlength="250" required (ngModelChange)="verificarBotao()" />
+                <mat-error>
+                    <div class="row">
+                        <span class="material-icons-round ps-0 pe-1">warning_amber</span>
+                        <div class="row ps-3 mt-1 conf-text-input-mat-error">E-mail inválido</div>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+        </div>
+
+        <div id="black-and-white-input-3">
+            <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-3 col-12 pb-0 ps-0 pe-0">
+                <mat-label>CONFIRME SEU E-MAIL</mat-label>
+                <input class="input-field" matInput type="text" name="confirmarEmail" id="confirmarEmail" blockPaste
+                    formControlName="confirmarEmail" maxlength="250" required (ngModelChange)="verificarBotao()">
+                <mat-error>
+                    <div class="row">
+                        <span class="material-icons-round ps-0 pe-1">warning_amber</span>
+                        <div class="row ps-3 mt-1 conf-text-input-mat-error">E-mail inválido</div>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+
+    <div class="box-color col-12">
+        <p class="p-0 mt-2 mb-2">
+            Ao cadastrar-se, você aceita nossos
+            <a class="a-link" href="https://www.neoenergiaelektro.com.br/sobre-a-elektro/aviso-de-privacidade-clientes"
+                target="_blank" rel="noopener">Termos de uso</a> e
+            <a class="a-link" href="https://www.neoenergiaelektro.com.br/sobre-a-elektro/aviso-de-privacidade-clientes"
+                target="_blank" rel="noopener">Política de Privacidade</a>
+        </p>
+    </div>
+
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+            [titleText]="'CONTINUAR'" (callFunction)="continuar()" [isDisabled]="isDisabled">
+        </app-neo-button>
+    </div>
+</div>

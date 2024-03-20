@@ -1,0 +1,24 @@
+<section class="mt-3 col-12 col-xl-6 col-lg-7 col-md-10 col-sm-12 p-0" id="debito-automatico-infos">
+    <h6 class="my-4 subtitulo-h6">FORMA DE PAGAMENTO PARA ESTA UNIDADE CONSUMIDORA:</h6>
+
+    <app-tabela-debito-automatico [conta]="conta" [banco]="banco" [agencia]="agencia"></app-tabela-debito-automatico>
+
+    <div class="d-flex justify-content-between justify-content-md-start flex-wrap mt-5">
+        <app-neo-button class="mt-2 mt-sm-0 me-sm-1 me-md-3" [classes]="'btn-neo-outline-secondary'"
+                        [titleText]="'VOLTAR'"
+                        (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="mt-2 mt-sm-0 me-sm-1 me-md-3"
+                        [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                        [titleText]="'ALTERAR'"
+                        (callFunction)="alterar()">
+        </app-neo-button>
+
+        <app-neo-button class="mt-2 mt-sm-0 me-sm-1 me-md-3"
+                        [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                        [titleText]="'DESCADASTRAR'"
+                        (callFunction)="descadastrar()">
+        </app-neo-button>
+    </div>
+</section>

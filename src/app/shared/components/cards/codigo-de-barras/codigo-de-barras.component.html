@@ -1,0 +1,15 @@
+<div class="pt-3 pb-4 px-1 my-auto text-center">
+    <div>
+        <mat-icon class="mx-auto">
+            <span class="material-icons-outlined icone" [class]="grupoDoUsuario === 'A' ? 'dark-green' : 'light-green'">check_circle</span>
+        </mat-icon>
+    </div>
+    <h4 class="titulo col-12 col-md-8 mt-3">Pagamento por Código</h4>
+    <p class="subtitulo col-12 col-md-8">Acesse o internet banking e cole o código no campo indicado no site.</p>
+    <div class="codigo-de-barras-container col-11 mx-auto" [class]="grupoDoUsuario === 'A' ? 'dark-green-border' : 'light-green-border'">
+        <p class="codigo-de-barras">{{ codigoDeBarras }}</p>
+    </div>
+    <button type="button" class="botao-copiar col-6 col-md-4 btn" [class]="grupoDoUsuario === 'A' ? 'dark-green-bkg' : 'light-green-bkg'" (click)="copiarCodigoDeBarras()">COPIAR CÓDIGO</button>
+    <p class="aviso col-12 col-md-8">O pedido será cancelado caso o boleto não seja pago até o vencimento.</p>
+    <button type="button" mat-stroked-button color="accent" class="botao-fechar mt-4 mb-2" [class]="grupoDoUsuario === 'A' ? 'dark-green' : 'light-green'" (click)="fechar()">FECHAR</button>
+</div>

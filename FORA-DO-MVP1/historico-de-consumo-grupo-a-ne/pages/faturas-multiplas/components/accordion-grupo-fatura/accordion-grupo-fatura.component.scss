@@ -1,0 +1,132 @@
+::ng-deep {
+    mat-expansion-panel {
+      mat-expansion-panel-header {
+        height: auto!important;
+        padding: 1.5rem !important;
+      }
+    }
+
+    .mat-radio-label {
+      margin-bottom: 0.3rem !important;
+    }
+
+    .mat-expansion-panel-body {
+      padding: 16px 24px 16px 24px !important;
+    }
+
+    .mat-content {
+        display: block !important;
+    }
+
+    .mat-expansion-indicator::after {
+      border-width: 0 3px 3px 0 !important;
+      border-radius: 3px;
+    }
+
+    .mat-expansion-panel-header-description,
+    .mat-expansion-indicator::after {
+      height: 12px;
+      width: 12px;
+    }
+
+    .mat-expansion-panel-header {
+      min-height: 85px !important;
+      padding: 1rem;
+    }
+
+    .mat-accordion {
+      position: relative !important;
+
+      .mat-checkbox {
+        label {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+
+    .mat-accordion .mat-expansion-panel:first-of-type {
+      border-top-right-radius: 10px !important;
+      border-top-left-radius: 10px !important;
+    }
+
+    .mat-accordion .mat-expansion-panel:last-of-type {
+      border-bottom-right-radius: 10px !important;
+      border-bottom-left-radius: 10px !important;
+    }
+
+    .mat-expansion-panel {
+      margin-bottom: 15px !important;
+      box-shadow: var(--shadow) !important;
+    }
+
+    @media only screen and (max-width: 767px) {
+      .mat-expansion-panel-header {
+        min-height: 10rem !important;
+
+      }
+    }
+  }
+  // ------ end mat-accordin ------
+
+  a {
+      color: var(--neo-light-blue);
+      text-decoration: none;
+  }
+
+  a:hover {
+      color: var(--neo-light-blue);
+      text-decoration: underline;
+  }
+
+  .title-accordion {
+      display: block;
+      color: var(--neo-dark-gray);
+      white-space: nowrap;
+  }
+
+  .group-color {
+      color: var(--neo-dark-green);
+  }
+
+  .accordion-content {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    flex-wrap: wrap;
+
+    div {
+      display: inline;
+      padding: 24px 0px;
+      color: var(--neo-dark-gray);
+      align-items: center;
+    }
+  }
+
+  .expansion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .expansion-header {
+      align-items: start;
+
+      div {
+        margin-top: 0.875rem;
+      }
+    }
+
+    .accordion-content {
+      div {
+        padding: 0.475rem 0px;
+      }
+
+      div:last-child {
+        padding: 00.875rem 0px;
+      }
+
+    }
+
+  }

@@ -1,0 +1,32 @@
+<h2>Cadastrar sua fatura digital</h2>
+
+<p class="subtitulo col-12 mt-3 p-0 quebra-linha">
+    Com o serviço de fatura digital, agora você pode receber a sua fatura por e-mail, sendo muito mais rápido, prático e sustentável. Cadastre-se hoje mesmo!
+</p>
+
+<div id="black-and-white-input-1" class="col-12 col-xl-6 col-lg-7 col-md-10 p-0">
+    <form [formGroup]="cadFatDigitalFormGroup">
+        <h6 class="subtitulo-h6 mb-3">DESEJA CADASTRAR ESSE E-MAIL?</h6>
+        <mat-form-field appearance="outline" [hideRequiredMarker]="true" class="mb-1 col-12 pb-0 ps-0">
+            <mat-label>E-MAIL PARA CONTATO</mat-label>
+            <input matInput type="text" name="email" id="email" formControlName="email"
+                maxlength="250" required />
+            <mat-error>
+                <div class="row">
+                    <span class="material-icons-round ps-0 pe-1">warning_amber</span>
+                    <div class="row ps-3 mt-1 conf-text-input-mat-error">E-mail inválido</div>
+                </div>
+            </mat-error>
+        </mat-form-field>
+    </form>
+
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'NÃO QUERO'"
+            (callFunction)="segueFluxo('whatsapp')">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="cadFaturaButton"
+            (callFunction)="segueFluxo('email')" [isDisabled]="cadFatDigitalFormGroup.invalid">
+        </app-neo-button>
+    </div>
+</div>

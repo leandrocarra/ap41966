@@ -1,0 +1,170 @@
+$assets-fonts-path: '^assets/fonts/';
+
+:root {
+    --heigth-footer-xs: 18rem;
+
+    //border-radius
+    --radius-rounded-none: none;
+    --radius-rounded-sm: 0.125rem;
+    --radius-rounded: 0.25rem;
+    --radius-rounded-md: 0.375rem;
+    --radius-rounded-lg: 0.5rem;
+    --radius-rounded-full: 9999px;
+
+    //shadow
+    --shadow-xs: 0 0 0 1px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0px 2px 4px rgb(96 97 112 / 16%); //cards
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(99, 78, 78, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-header: 0 0 1rem rgb(15, 33, 89, 16%);
+
+    //letter-spacing
+    --letter-tracking-normal: normal;
+    --letter-tracking-tight: -0.025em;
+    --letter-tracking-wide: 0.025em;
+    --letter-tracking-wider: 0.054rem;
+
+    //escala de verdes
+    --neo-green-100: #5BD38C;
+    --neo-green-200: #26BF64;
+    --neo-light-green: #00A443;
+    --neo-green-400: #008C39;
+    --neo-dark-green: #007F33;
+
+    //escala de verde musgo
+    --neo-moss-green-100: #DCEBE1;
+    --neo-moss-green-200: #A2BCB1;
+    --neo-moss-green-300: #699282;
+    --neo-moss-green-400: #2f6852;
+    --neo-moss-green-500: #00402A;
+    --neo-moss-green-600: #003020;
+    --neo-moss-green-700: #002015;
+    --neo-moss-green-800: #00100B;
+
+    //escala de azuis
+    --neo-blue-100: #6BDAFF;
+    --neo-blue-200: #3CC2FF;
+    --neo-light-blue: #0DA9FF;
+    --neo-blue-400: #0792E5;
+    --neo-dark-blue: #007ACB;
+
+    //escala de laranja
+    --neo-orange-100: #FFCD52;
+    --neo-orange-200: #FFB536;
+    --neo-yellow: #FF9C1A;
+    --neo-orange-400: #E3850D;
+    --neo-orange-500: #C66D00;
+
+    //escala de branco
+    --neo-white: #ffffff;
+    --neo-white-2: #FFFAF6;
+    --neo-white-300: #FFF5EC;
+    --neo-white-400: #D8CFC7;
+    --neo-white-500: #B0A9A3;
+    --neo-white-600: #89837E;
+    --neo-dark-gray: #615D5A;
+    --neo-dark-gray-2: #3A3735;
+
+    //escala de vermelho
+    --neo-pure-red: #D60E00;
+    --neo-pure-red-200: #BD0C00;
+    --neo-pure-red-300: #A30B00;
+    --neo-pure-red-400: #8A0900;
+    --neo-pure-red-500: #700700;
+
+    --neo-light-gray: #b5b5b5;
+    --box-shadow: #60617029;
+    --background-color: #f7f7f7;
+    --neo-on-hover: #fcfcfc;
+    --header-text: var(--neo-dark-gray);
+    --bs-link-color: var(--neo-dark-blue);
+    --bs-font-sans-serif: system-ui, -apple-system,"Segoe UI",IberPangea,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+    // bandeiras tarifárias
+    --neo-bandeira-preta: #1A171B;
+    --neo-bandeira-vermelha2: #FE0707;
+    --neo-bandeira-vermelha1: #FE8080;
+    --neo-bandeira-amarela: #FBE200;
+    --neo-bandeira-verde: #A4BA08;
+}
+
+body {
+    font-family: 'IberPangea Text', Verdana, Geneva, Tahoma, sans-serif !important;
+    font-weight: normal;
+    background-color: var(--neo-white) !important;
+}
+
+@font-face {
+    font-family: 'IberPangea Text';
+    src: url('#{$assets-fonts-path}/IberPangea/IberPangeaText-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IberPangea Text';
+    src: url('#{$assets-fonts-path}/IberPangea/IberPangeaText-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'IberPangea Text';
+    src: url('#{$assets-fonts-path}/IberPangea/IberPangeaText-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IberPangea Text';
+    src: url('#{$assets-fonts-path}/IberPangea/IberPangeaText-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'IberPangea Text';
+    src: url('#{$assets-fonts-path}/IberPangea/IberPangeaText-SmBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IberPangea Text';
+    src: url('#{$assets-fonts-path}/IberPangea/IberPangeaText-SmBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'IberPangea Text';
+    src: url('#{$assets-fonts-path}/IberPangea/IberPangeaText-Light.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IberPangea Text';
+    src: url('#{$assets-fonts-path}/IberPangea/IberPangeaText-LightItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'IberPangea Text';
+    src: url('#{$assets-fonts-path}/IberPangea/IberPangeaText-Medium.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IberPangea Text';
+    src: url('#{$assets-fonts-path}/IberPangea/IberPangeaText-MediumItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}

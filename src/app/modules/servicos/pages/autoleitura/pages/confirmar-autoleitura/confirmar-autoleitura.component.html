@@ -1,0 +1,59 @@
+<h2>{{ fluxo === 'leitura' ? 'Autoleitura' : 'Simular Autoleitura' }}</h2>
+
+<p class="subtitulo mt-3 mb-4">Confira os dados da unidade consumidora e código do medidor para realizar a Autoleitura:
+</p>
+
+<!-- DADOS DA UC -->
+<app-dados-imovel-ligacao [codigoMedidor]="medidor"></app-dados-imovel-ligacao>
+
+<!-- GRÁFICO -->
+<div *ngIf="regiao === sudeste" id="container-grafico-autoleitura" class="mb-5 col-12 col-sm-10 col-lg-7 col-xl-6 mt-5">
+    <p id="titulo-grafico-autoleitura" class="mt-2">HISTÓRICO DE CONSUMO (kWh)</p>
+    <mat-divider id="divider"></mat-divider>
+    <app-grafico-autoleitura [consumos]="dadosDoGrafico" [diferenciarUltimaBarra]="true"
+        [statusMedia]="statusMediaDasLeituras"></app-grafico-autoleitura>
+</div>
+
+<!-- DADOS DA AUTOLEITURA -->
+<div *ngFor="let leitura of leiturasDestePeriodo" id="lista-autoleituras">
+    <div class="col-12 col-md-10 col-lg-7 col-xl-6 p-0">
+        <div class="my-2 dados">
+            <p class="confirma-leitura">TIPO DE REGISTRADOR</p>
+            <div class="col-7 pe-0">
+                <p class="confirma-leitura text-distance-title">{{ leitura.tipoRegistrador }}</p>
+            </div>
+        </div>
+        <mat-divider class="col-12"></mat-divider>
+        <div class="align-middle my-2 dados">
+            <p class="confirma-leitura">LEITURA</p>
+            <div class="col-7 pe-0">
+                <p class="text-distance">{{ leitura.valor }}</p>
+                <p class="text-distance corrigir-autoleitura" (click)="voltar()">Alterar</p>
+            </div>
+        </div>
+        <mat-divider class="col-12"></mat-divider>
+        <div class="my-2 dados">
+            <p class="confirma-leitura">CONSUMO</p>
+            <p class="text-distance col-7 pe-0">{{ leitura.consumo }}kWh</p>
+        </div>
+        <mat-divider class="col-12"></mat-divider>
+        <div class="my-2 dados">
+            <app-aviso-media-autoleitura [leituraDentroDaMedia]="leitura.statusMedia"></app-aviso-media-autoleitura>
+        </div>
+    </div>
+</div>
+
+<!-- DICAS DE CONSUMO CONSCIENTE -->
+<a class="mb-3 text-link text-consumo-consciente"[href]="linkParaConsumoConsciente" target="_blank" rel="noopener">Confira aqui dicas de consumo consciente.</a>
+
+<!-- BOTÕES -->
+<div class="d-flex justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'"
+        [titleText]="selecionarTextoDoBotao()"
+        (callFunction)="confirmarAutoleitura()">
+    </app-neo-button>
+</div>

@@ -1,0 +1,75 @@
+#footer {
+    background-color: var(--neo-white);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+
+    .links-rapidos {
+        height: 2.8rem;
+
+        .texto-footer {
+            color: var(--neo-white);
+        }
+    }
+
+    .institucional {
+        padding: 1rem 0;
+        color: var(--neo-dark-green);
+    }
+
+    a,
+    a:hover {
+        transition: ease 0.5ms all;
+    }
+
+    .footer-copyright {
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+
+    .texto-footer {
+        font-weight: 500;
+    }
+
+    .texto-endereco {
+        font-size: 0.938rem;
+        display: grid;
+        align-items: center;
+        font-weight: 400;
+        padding: 0 1rem;
+    }
+
+
+    #logo-footer {
+        height: 2.9rem
+    }
+}
+
+// Caso vá alterar o nome da classe, altere o enum EnumEstiloDoFooter
+.footer-light {
+    border-top: 0.313rem solid var(--neo-light-green);
+
+    .links-rapidos {
+        background-color: var(--neo-dark-green);
+    }
+}
+
+// Caso vá alterar o nome da classe, altere o enum EnumEstiloDoFooter
+.footer-dark {
+    border-top: 0.313rem solid var(--neo-dark-green);
+
+    .links-rapidos {
+        background-color: var(--neo-light-green);
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    #footer {
+        height: var(--heigth-footer-xs);
+
+        .institucional {
+            padding: 2rem 0;
+        }
+    }
+}

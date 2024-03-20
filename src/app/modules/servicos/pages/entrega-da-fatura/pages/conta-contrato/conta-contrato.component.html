@@ -1,0 +1,54 @@
+<h2 class="mb-3">Código do Cliente</h2>
+<p class="subtitulo">Digite o número do seu Código do Cliente.</p>
+
+<form [formGroup]="contaContratoForm">
+    <mat-form-field appearance="outline" class="col-12 col-md-6 col-lg-4 p-0">
+        <mat-label>Código do Cliente</mat-label>
+        <input
+            matInput
+            onlyNumber
+            formControlName="contaContrato"
+            type="text"
+            id="contaContrato"
+            required
+            minLength="3"
+            maxLength="12"
+        />
+        <mat-error>
+            <app-custom-mat-error *ngIf="msgAviso"
+            [mensagem]="msgAviso"></app-custom-mat-error>
+        </mat-error>
+        <mat-error >
+            <app-custom-mat-error 
+            *ngIf="contaContratoForm?.controls?.contaContrato?.value  && (contaContratoForm?.controls?.contaContrato?.errors?.ucSomenteDeZeros || contaContratoForm?.controls?.contaContrato?.errors?.conta)"
+            [mensagem]="msgAvisoPadrao[1]"></app-custom-mat-error>
+        </mat-error>
+        <mat-error >
+            <app-custom-mat-error 
+            *ngIf="contaContratoForm?.controls?.contaContrato?.errors?.required && contaContratoForm.controls['contaContrato'].touched"
+            [mensagem]="msgAvisoPadrao[2]"></app-custom-mat-error>
+        </mat-error>
+        <mat-error >
+            <app-custom-mat-error *ngIf="contaContratoForm?.controls?.contaContrato?.value  && contaContratoForm?.controls?.contaContrato?.errors?.minlength"
+            [mensagem]="msgAvisoPadrao[3]"></app-custom-mat-error>
+        </mat-error>
+    </mat-form-field>
+</form>
+
+<div class="d-flex justify-content-between justify-content-md-start">
+    <app-neo-button
+        class="me-3 me-0"
+        [classes]="'btn-neo-outline-secondary'"
+        [titleText]="'VOLTAR'"
+        (callFunction)="voltar()"
+    ></app-neo-button>
+
+    <app-neo-button
+        class="me-3 me-0"
+        [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="'CONTINUAR'"
+        [isDisabled]="contaContratoForm.invalid"
+        (callFunction)="continuar()"
+    >
+    </app-neo-button>
+</div>

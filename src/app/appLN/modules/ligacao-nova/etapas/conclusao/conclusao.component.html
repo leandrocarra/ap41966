@@ -1,0 +1,140 @@
+<div class="row">
+    <div class="col-12">
+        <h3 tabindex="0" autofocus class="outlineNone titulo">Finalizamos a sua solicitação, seja bem-vindo à Elektro!
+        </h3>
+    </div>
+</div>
+
+<div class="row col-12 mt-3 p-0 pt-4 pb-3 mx-auto formArea">
+    <div class="col-xl-4 col-lg-4 col-sm-4 col-4 mb-3">
+        <div class="row">
+            <img src="../../../../../../assets/assetsLN/images/ico_pedido_on.svg" alt="ícone do pedido" [class.imgAcompanhamentoMobile]="mobile"
+                 class="imgAcompanhamento imgMobile mx-auto" />
+        </div>
+
+        <div class="row">
+            <p class="m-0 mt-2 mx-auto textoMobile text-center titulo"><strong>PEDIDO</strong></p>
+        </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-sm-4 col-4 mb-3">
+        <div class="row">
+            <img src="../../../../../../assets/assetsLN/images/ico_protoc_on.svg" alt="ícone do protoloco" [class.imgAcompanhamentoMobile]="mobile"
+                 class="imgAcompanhamento imgMobile mx-auto" />
+        </div>
+        <div class="row">
+            <p class="col-xl-7 col-12 mt-2 mb-0 offset-0 mx-auto textoMobile text-center titulo">
+                <strong>PROTOCOLO</strong>
+            </p>
+        </div>
+        <div class="row">
+            <p class="col-xl-6 col-12 offset-0 mb-0 mx-auto textoMobile text-center titulo">
+                <strong>{{protocolo}}</strong>
+            </p>
+        </div>
+    </div>
+
+    <div class="col-xl-4 col-lg-4 col-sm-4 col-4">
+        <div class="row">
+            <img src="../../../../../../assets/assetsLN/images/ico_pedido_off.svg" alt="ícone link acompanhar solicitação"
+                 [class.imgAcompanhamentoMobile]="mobile" class="imgAcompanhamento imgMobile mx-auto" />
+        </div>
+        <div class="row">
+            <p class="col-xl-7 col-12 offset-0 p-0 mb-0 mt-2 mx-auto textoMobile text-center titulo">
+                <strong>ACOMPANHAR</strong>
+            </p>
+        </div>
+        <div class="row">
+            <a rel="noopener" href="https://agencia.neoenergiaelektro.com.br/" target="_blank"
+                class="col-xl-4 col-12 offset-0 p-0 mx-auto textoMobile text-center texto-link">CLIQUE AQUI</a>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-between col-12 mt-2 mx-auto formArea">
+    <div class="col-xl-6 col-md-6 col-12">
+        <h4 class="titulo">AGORA VOCÊ É UM CLIENTE ELEKTRO</h4>
+
+        <div *ngIf="gostariaReceberEmail === true" class="col-xl-8 p-0 texto-conclusao">
+            <p>
+                Para nós, é uma alegria ter você aqui!
+            </p>
+
+            <p>
+                Você optou por receber a fatura digital. Além de contribuir com o meio ambiente,
+                reduzindo o acúmulo de papel, sua conta será entregue com segurança, de forma rápida e prática,
+                e você ainda pode acessar a fatura quando quiser e onde estiver.
+            </p>
+
+            <p>
+                Você recebera sua primeira fatura com data de vencimento definida. Caso não tenha definido uma
+                data, o vencimento será a partir de <strong>5 dias úteis</strong> da leitura do consumo.
+            </p>
+        </div>
+
+        <div *ngIf="gostariaReceberEmail === false" class="col-xl-8 texto-conclusao">
+            <p>
+                Para nós, é uma alegria ter você aqui!
+            </p>
+
+            <p>
+                Você optou por receber a fatura física. Lembre-se que você pode aderir à fatura digital a qualquer
+                momento. Além de contribuir com o meio ambiente, reduzindo o acúmulo de papel, sua conta será entregue
+                com segurança, de forma rápida e prática, e você ainda pode acessar a fatura quando quiser e onde
+                estiver.
+            </p>
+
+            <p>
+                Você receberá a sua primeira fatura com a data de vencimento definida. Caso não tenha definido uma data,
+                o vencimento será a partir de <strong>5 dias úteis</strong> da leitura do consumo.
+            </p>
+        </div>
+
+        <div class="col-xl-12 col-md-12 col-12 offset-lg-0 offset-xl-0 offset-0 mb-3 mx-auto p-0"
+            [class.text-center]="mobile">
+            <p class="texto mt-3" *ngIf="!checkUE"><strong>O contrato ficará disponível após aprovação da sua
+                    solicitação.</strong></p>
+            <button mat-button (click)="preencherPDF()" [disabled]="!checkUE"
+                class="btn btn-primary-green buttonWithTextWrap">
+                BAIXAR CONTRATO
+            </button>
+        </div>
+    </div>
+
+    <div class="col-xl-6 col-md-6 col-12">
+        <div class="row">
+            <div class="col-1 p-0 pt-lg-2 pt-xl-0" *ngIf="!mobile">
+                <img src="../../../../../../assets/assetsLN/images/iconeWpp.svg" alt="ícone WhatsApp" class="imgWpp" />
+            </div>
+
+            <div [class.col-12]="mobile" class="col-xl-11 col-lg-11 col-12 text-center">
+                <h6 class="mt-2 titulo">TENHA NOSSO NÚMERO DE ATENDIMENTO EM MÃOS</h6>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-8 offset-xl-2 col-12 p-0 text-center">
+                <p *ngIf="!mobile" class="texto">
+                    Você pode acionar nossa equipe de atendimento no WhatsApp pelo número ou pelo QR Code.
+                </p>
+                <p *ngIf="mobile" class="texto">
+                    Você pode acionar nossa equipe de atendimento no WhatsApp pelo número ou clicando no ícone.
+                </p>
+            </div>
+            <div class="col-12 text-center">
+                <h5 class="titulo">(19) 2122-1696</h5>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center" *ngIf="!mobile">
+                <img src="../../../../../../assets/assetsLN/images/qrCodeElektro.jpg" alt="ícone qrCode">
+            </div>
+
+            <div class="col-6 offset-3 text-center" *ngIf="mobile">
+                <a rel="noopener" href="https://wa.me/551921221696" target="_blank">
+                <img src="../../../../../../assets/assetsLN/images/iconeWpp.svg" class="imgWpp" alt="ícone Whatsapp"></a>
+            </div>
+        </div>
+    </div>
+</div>

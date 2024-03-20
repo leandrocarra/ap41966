@@ -1,0 +1,27 @@
+{
+    "result": [
+        {
+            "fields": [
+                {
+                    "name": "nome_beneficiario",
+                    "value": "111111111",
+                    "score": 0.91
+                },
+                {
+                    "name": "cpf",
+                    "value": "111111111",
+                    "score": 0.91
+                },
+                {
+                    "name": "numero_beneficio",
+                    "value": "111111111",
+                    "score": 0.91
+                }
+            ],
+            "tags": [
+                "br-previdencia-historico-de-creditos-1",
+                "br-previdencia-historico-de-creditos-1"
+            ]
+        }
+    ]
+}

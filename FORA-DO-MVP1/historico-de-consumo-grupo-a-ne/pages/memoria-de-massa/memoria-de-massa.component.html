@@ -1,0 +1,92 @@
+<div *ngIf="!telaAlterarEmail">
+
+    <div>
+        <h2>Solicitar memória de massa</h2>
+        <p class="subtitulo mt-3 mb-3">Confira as informações abaixo antes de solicitar a memória de massa.</p>
+        <app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+    </div>
+
+    <!-- Data da taxa -->
+    <div class="mt-4">
+        <h6 class="subtitulo-h6">PERÍODO DA SOLICITAÇÃO</h6>
+        <div id="black-and-white-input-1">
+            <mat-form-field appearance="outline" class="col-md-3 pe-md-2 p-0 mt-2" [hideRequiredMarker]="true">
+                <mat-label>DATA INÍCIO</mat-label>
+                <input matInput [(ngModel)]="dtInicio" [matDatepicker]="picker1" style="cursor: pointer" (ngModelChange)="compareDates()"
+                    (focus)="picker1?.open()" readonly required>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="col-md-3 ps-md-2 p-0 mt-2" [hideRequiredMarker]="true">
+                <mat-label>DATA FINAL</mat-label>
+                <input matInput [(ngModel)]="dtFim" [matDatepicker]="picker2" style="cursor: pointer" (ngModelChange)="compareDates()"
+                    (focus)="picker2?.open()" readonly required>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <!-- Intervalo de tempo para leitura -->
+    <div class="col-md-12 p-0 mt-3">
+        <h6 class="subtitulo-h6">INTERVALO DA LEITURA</h6>
+        <p class="info_input">Informe o intervalo (em minutos) que se deseja realizar a leitura</p>
+        <div id="black-and-white-input-1">
+            <mat-form-field appearance="outline" class="col-md-2 p-0 mt-2">
+                <mat-label>MINUTOS</mat-label>
+                <mat-select (selectionChange)="onChooseMinutes($event)">
+                    <mat-option class="option" *ngFor="let escolha of minutos" [value]="escolha">
+                        {{escolha}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <!-- Valor da taxa -->
+    <div class="col-md-12 p-0 mt-3">
+        <h6 class="subtitulo-h6">VALOR DA SOLICITAÇÃO</h6>
+        <p class="info_input">Para solicitar a memória de massa será cobrada uma taxa na próxima fatura</p>
+        <div id="black-and-white-input-1">
+            <mat-form-field appearance="outline" class="col-md-2 p-0 mt-2">
+                <mat-label>VALOR DA TAXA</mat-label>
+                <input matInput type="text" [value]=valorTaxa disabled=true>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <!-- E-mail de recebimento -->
+    <div class="mt-3">
+        <h6 class="subtitulo-h6 mb-0">E-MAIL PARA RECEBIMENTO</h6>
+        <div class="configuracao-input col-md-8 col-lg-6 ps-0 pe-0">
+            <div class="row ps-3">
+                <span class="input-fatura col-md-8 ps-0 pe-0 pe-md-0">
+                    {{ entregaFatura }}
+                </span>
+                <p class="col-2 m-0 alterar-email" (click)="alterarCadastro('email')">Alterar</p>
+            </div>
+        </div>
+        <div class="col-12 ps-0 mt-2">
+            <p>{{ formaRecebimentoFatura }}</p>
+        </div>
+    </div>
+
+    <!-- Botões -->
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neodarkgreen'" [titleText]="'CONFIRMAR'"
+            [isDisabled]=checkBtn() (callFunction)="continuar()">
+        </app-neo-button>
+    </div>
+
+</div>
+
+<!-- Tela Alterar Email -->
+<div *ngIf="telaAlterarEmail">
+    <app-email-recebimento [servico]="'Solicitar memória de massa'" (eventoEmail)="eventoEmail($event)">
+    </app-email-recebimento>
+</div>

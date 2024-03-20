@@ -1,0 +1,17 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.area video{
+	width: 100%;
+	height: auto;
+	border-radius: 5px;
+	background-color: whitesmoke;
+}
+
+.area {
+	padding: 1.5rem;
+}
+
+.btn-dialog-tirar-foto {
+    width: 100%;
+    background-color: var(--neo-light-green)
+}

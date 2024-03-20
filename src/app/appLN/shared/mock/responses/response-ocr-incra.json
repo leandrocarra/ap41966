@@ -1,0 +1,134 @@
+{
+    "VALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "nome",
+                        "value": "MARIA FLAVIA",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "cpf",
+                        "value": "96700905044",
+                        "score": 0.95
+                    },
+                    {
+                        "name": "projeto",
+                        "value": "PROJETO DE ASSENTAMENTO",
+                        "score": 0.67
+                    },
+                    {
+                        "name": "codigo",
+                        "value": "AA111111111111",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "atividade",
+                        "value": "ATIVIDADES RURAIS EM REGIME DE ECONOMIA FAMILIAR",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "processo_adm_incra",
+                        "value": "11111111111222222",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "cidade",
+                        "value": "RIO CLARO",
+                        "score": 0.96
+                    },
+                    {
+                        "name": "uf",
+                        "value": "SP",
+                        "score": 0.96
+                    },
+                    {
+                        "name": "data_assinatura",
+                        "value": "12/08/2030",
+                        "score": 0.33
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.79,
+                "docType": "declaracao",
+                "pageIndex": 1,
+                "tags": [
+                    "declaracao",
+                    "br-incra-1"
+                ]
+            }
+        ],
+        "queryId": "AYECCQDSNCNHUXYJWQLCQ",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "INVALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "nome",
+                        "value": "RONY WEASLEY",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "cpf",
+                        "value": "11223344559",
+                        "score": 0.95
+                    },
+                    {
+                        "name": "projeto",
+                        "value": "PROJETO DE ASSENTAMENTO",
+                        "score": 0.67
+                    },
+                    {
+                        "name": "codigo",
+                        "value": "BA028600000020",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "atividade",
+                        "value": "ATIVIDADES RURAIS EM REGIME DE ECONOMIA FAMILIAR",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "processo_adm_incra",
+                        "value": "11111111111222222",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "cidade",
+                        "value": "BOA VISTA",
+                        "score": 0.96
+                    },
+                    {
+                        "name": "uf",
+                        "value": "RR",
+                        "score": 0.96
+                    },
+                    {
+                        "name": "data_assinatura",
+                        "value": "12/11/2013",
+                        "score": 0.33
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.79,
+                "docType": "declaracao",
+                "pageIndex": 1,
+                "tags": [
+                    "declaracao",
+                    "br-incra-1"
+                ]
+            }
+        ],
+        "queryId": "AYECCQDSNCNHUXYJWQLCQ",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

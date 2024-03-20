@@ -1,0 +1,43 @@
+<h2>Qual o motivo da troca?</h2>
+
+<h6 class="subtitulo-h6 mt-4 mb-3">SELECIONE O MOTIVO:</h6>
+
+<mat-radio-group class="radio-group" [(ngModel)]="motivoTroca" (change)="onChange()">
+
+    <div class="d-inline p-0 mt-md-4 mb-18 me-3">
+        <mat-radio-button class="format-info-radio-btn" value="aluguel">
+            Aluguel</mat-radio-button>
+    </div>
+
+    <div class="d-inline p-0 mb-18">
+        <mat-radio-button class="format-info-radio-btn" value="compra">Compra do imóvel
+        </mat-radio-button>
+    </div>
+</mat-radio-group>
+
+<div *ngIf="motivoTroca != null || motivoTroca != undefined">
+    <h6 class="subtitulo-h6 mt-4 mb-3">DOCUMENTOS NECESSÁRIOS</h6>
+
+    <p class="subtitulo mt-3 mb-3"> {{subtitulo}} o documento deve estar no formato .PDF, .JPG, .JPEG ou .PNG.</p>
+
+    <div [class.flex]="!mobileLarge">
+        <app-box-file class="me-md-3 m-0"
+            [documentoLabel]="'DOCUMENTO DE COMPROVANTE DE POSSE'" [infoDoc]="infoDoc"
+            (arquivoAnexado)="recebeAnexos($event)" (arquivoRemovido)="removeAnexo($event)">
+        </app-box-file>
+
+        <app-box-file *ngIf="motivoTroca === 'aluguel'" class="mt-md-0 mt-4" [documentoLabel]="'DOCUMENTO DE PROPRIEDADE'"
+            (arquivoAnexado)="recebeAnexos($event)" (arquivoRemovido)="removeAnexo($event)">
+        </app-box-file>
+    </div>
+</div>
+
+<div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-md-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'CONTINUAR'"
+        (callFunction)="continuar()" [isDisabled]="isDisabled">
+    </app-neo-button>
+</div>

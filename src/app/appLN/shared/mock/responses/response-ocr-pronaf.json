@@ -1,0 +1,190 @@
+{
+    "VALIDO": {
+        "result": [
+            {
+                "tables": [],
+                "fields": [
+                    {
+                        "name": "titular_1_nome",
+                        "value": "MARIA FLAVIA",
+                        "score": 1
+                    },
+                    {
+                        "name": "titular_1_cpf",
+                        "value": "96700905044",
+                        "score": 1
+                    },
+                    {
+                        "name": "titular_2_nome",
+                        "value": "MARGE SIMPSON",
+                        "score": 1
+                    },
+                    {
+                        "name": "titular_2_cpf",
+                        "value": "37803952070",
+                        "score": 0.74
+                    },
+                    {
+                        "name": "endereco",
+                        "value": "ROXO AZUL",
+                        "score": 0.99
+                    },
+                    {
+                        "name": "municipio",
+                        "value": "PARAISO",
+                        "score": 1
+                    },
+                    {
+                        "name": "numero",
+                        "value": "",
+                        "score": 0.92
+                    },
+                    {
+                        "name": "bairro",
+                        "value": "ZONA RURAL",
+                        "score": 0.99
+                    },
+                    {
+                        "name": "cep",
+                        "value": "13507110",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep_logradouro",
+                        "value": null,
+                        "score": null
+                    },
+                    {
+                        "name": "cep_tipo_logradouro",
+                        "value": null,
+                        "score": null
+                    },
+                    {
+                        "name": "cep_bairro",
+                        "value": null,
+                        "score": null
+                    },
+                    {
+                        "name": "cep_cidade",
+                        "value": null,
+                        "score": null
+                    },
+                    {
+                        "name": "cep_uf",
+                        "value": null,
+                        "score": null
+                    }
+                ],
+                "deskewImage": null,
+                "docQuality": null,
+                "docQualityScore": 0.83,
+                "docType": "declaracao",
+                "pageIndex": 1,
+                "tags": [
+                    "declaracao",
+                    "br-dapweb-1"
+                ]
+            }
+        ],
+        "queryId": "VhIDtyN9IEW0j71jzmUxr",
+        "elapsedMilliseconds": 6416,
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "INVALIDO": {
+        "result": [
+            {
+                "tables": [],
+                "fields": [
+                    {
+                        "name": "nome_titular_1",
+                        "value": "LIZA SIMPSON",
+                        "score": 1
+                    },
+                    {
+                        "name": "cpf_titular_1",
+                        "value": "37803952070",
+                        "score": 1
+                    },
+                    {
+                        "name": "nome_titular_2",
+                        "value": "MARGE SIMPSON",
+                        "score": 1
+                    },
+                    {
+                        "name": "cpf_titular_2",
+                        "value": "93931649083",
+                        "score": 0.74
+                    },
+                    {
+                        "name": "endereco",
+                        "value": "ROXO AZUL",
+                        "score": 0.99
+                    },
+                    {
+                        "name": "municipio",
+                        "value": "PARAISO",
+                        "score": 1
+                    },
+                    {
+                        "name": "numero",
+                        "value": "",
+                        "score": 0.92
+                    },
+                    {
+                        "name": "bairro",
+                        "value": "ZONA RURAL",
+                        "score": 0.99
+                    },
+                    {
+                        "name": "cep",
+                        "value": "13507110",
+                        "score": 1
+                    },
+                    {
+                        "name": "cep_logradouro",
+                        "value": null,
+                        "score": null
+                    },
+                    {
+                        "name": "cep_tipo_logradouro",
+                        "value": null,
+                        "score": null
+                    },
+                    {
+                        "name": "cep_bairro",
+                        "value": null,
+                        "score": null
+                    },
+                    {
+                        "name": "cep_cidade",
+                        "value": null,
+                        "score": null
+                    },
+                    {
+                        "name": "cep_uf",
+                        "value": null,
+                        "score": null
+                    }
+                ],
+                "deskewImage": null,
+                "docQuality": null,
+                "docQualityScore": 0.83,
+                "docType": "declaracao",
+                "pageIndex": 1,
+                "tags": [
+                    "declaracao",
+                    "br-dapweb-1"
+                ]
+            }
+        ],
+        "queryId": "VhIDtyN9IEW0j71jzmUxr",
+        "elapsedMilliseconds": 6416,
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

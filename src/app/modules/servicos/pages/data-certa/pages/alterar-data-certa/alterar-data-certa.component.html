@@ -1,0 +1,43 @@
+<h2>Data de Vencimento da Fatura</h2>
+
+<p class="subtitulo mt-3 mb-3">Suas informações referentes à data de vencimento das faturas:</p>
+
+<app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+<div class="row no-gutters mt-3 mb-3">
+    <p class="subtitulo col-12 col-xl-6 col-lg-7 col-md-10 col-sm-12"><strong>Sem data fixa:</strong> data de vencimento
+        contada a partir da data de entrega da fatura, conforme Art. 337 da Res 1000/22.</p>
+</div>
+
+<h6 class="subtitulo-h6 mt-3 mb-3">selecione sua nova data de vencimento</h6>
+
+<div class="col-12 col-xl-3 col-lg-4 col-md-6 p-0">
+    <mat-form-field appearance="outline" class="mat-select-data">
+        <mat-label>Data de Vencimento</mat-label>
+        <mat-select placeholder="Data de Vencimento" [(ngModel)]="novaDataCerta" (selectionChange)="desbloquearBotao()">
+            <mat-option class="option" *ngFor="let data of datasPossiveis" [value]="data">{{ data }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+<div class="col-12 col-xl-6 col-lg-7 col-md-12 p-0 d-flex align-items-center" [ngClass]="{
+    'data-group-a': grupoDoUsuario === 'A',
+    'data-group-b': grupoDoUsuario === 'B',
+    'checkdata-group-b': grupoDoUsuario === 'B',
+    'checkdata-group-a': grupoDoUsuario === 'A'
+  }">
+    <mat-checkbox class="text-wrap me-2" [(ngModel)]="checkDeclaracao" (change)="desbloquearBotao();"></mat-checkbox>
+    <div>
+        Declaro que li e estou ciente que a data de vencimento da fatura somente poderá ser modificada em um intervalo maior ou igual a 12 meses.
+    </div>
+</div>
+
+<div class="row justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="col-auto" [classes]="'btn-neo-outline-secondary'" [titleText]="'voltar'"
+                    (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="col-auto" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+                    [titleText]="'salvar alteração'" (callFunction)="continuar()" [isDisabled]="isDisabled">
+    </app-neo-button>
+</div>

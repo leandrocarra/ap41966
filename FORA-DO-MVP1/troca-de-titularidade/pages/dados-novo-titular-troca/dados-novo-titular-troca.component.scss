@@ -1,0 +1,23 @@
+.mat-option:hover:not(.mat-option-disabled) {
+    background-color: var(--neo-light-green) !important;
+    color: var(--neo-white);
+    font-weight: bolder;
+}
+  
+.option[aria-selected="true"] {
+    color: var(--neo-dark-green) !important;
+    font-weight: bolder;
+}
+  
+.mat-select-data {
+    width: 100%;
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: var(--neo-light-green) ;
+}
+
+:host ::ng-deep .mat-checkbox-layout {
+    white-space: normal;
+    word-wrap: break-word !important;
+}

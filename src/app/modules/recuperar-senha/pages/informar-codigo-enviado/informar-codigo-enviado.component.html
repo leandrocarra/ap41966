@@ -1,0 +1,54 @@
+<p class="subtitulo mt-5 mt-md-0 mb-0">Quase lá! Precisamos confirmar a sua solicitação para criar uma nova senha.</p>
+
+<h6  class="bold color-dark-gray my-4">POR FAVOR, DIGITE O CÓDIGO QUE ENVIAMOS</h6>
+
+<form id="form-preencher-codigo" [formGroup]="formPreencherCodigo">
+    <div class="row">
+        <mat-form-field class="col-1" color="primary" appearance="outline">
+            <input matInput type="text" class="digito" formControlName="digitoUm">
+        </mat-form-field>
+        <mat-form-field class="col-1" color="primary" appearance="outline">
+            <input matInput type="text" class="digito" formControlName="digitoDois">
+        </mat-form-field>
+        <mat-form-field class="col-1" color="primary" appearance="outline">
+            <input matInput type="text" class="digito" formControlName="digitoTres">
+        </mat-form-field>
+        <mat-form-field class="col-1" color="primary" appearance="outline">
+            <input matInput type="text" class="digito" formControlName="digitoQuatro">
+        </mat-form-field>
+        <mat-form-field class="col-1" color="primary" appearance="outline">
+            <input matInput type="text" class="digito" formControlName="digitoCinco">
+        </mat-form-field>
+        <mat-form-field class="col-1" color="primary" appearance="outline">
+            <input matInput type="text" class="digito" formControlName="digitoSeis">
+        </mat-form-field>
+    </div>
+</form>
+
+<app-custom-mat-error id="error" *ngIf="!codigoValido" [mensagem]="matErrorCodigo"></app-custom-mat-error>
+
+<div class="mt-5 mb-4">
+    <app-neo-button class="m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'LIMPAR DADOS'" (callFunction)="limparDados()">
+    </app-neo-button>
+</div>
+
+<p class="subtitulo mt-5 mt-md-0 mb-0">Uma mensagem de texto com um código de verificação acabou de ser enviada para:</p>
+<p class="subtitulo mt-1">{{ opcaoEnvio }}</p>
+
+<div class="mt-5 mb-4">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'"
+    [titleText]="podeReenviarCodigo ? 'NÃO RECEBEU O CÓDIGO?' : 'REENVIO DE CÓDIGO EM 00:' + (contador >= 10 ? contador : '0' + contador)"
+    [isDisabled]="podeReenviarCodigo === false" (callFunction)="reenviarCodigoValido()">
+    </app-neo-button>
+</div>
+
+<div class="d-flex justify-content-between justify-content-md-start mb-5 mb-md-0">
+    <div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-3">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'" (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="'CONTINUAR'" (callFunction)="continuar()">
+        </app-neo-button>
+    </div>
+</div>

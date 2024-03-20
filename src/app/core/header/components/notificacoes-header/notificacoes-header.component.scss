@@ -1,0 +1,37 @@
+.notificacoes-header {
+    padding: 1rem 1.5rem;
+    width: 25rem;
+}
+
+#notificacoes ul {
+    padding-inline-start: 20px;
+}
+
+#notificacoes li:before {
+    display: block;
+    float: left;
+    width: 1.2em;
+    color: var(--neo-pure-red);
+}
+
+#data-notificacao {
+    font-size: smaller;
+}
+
+.notificacao-interna {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.notificacao:first-child {
+    .notificacao-interna {
+        padding: 0 0 1rem 0;
+    }
+}
+
+#notificacoes .nova {
+    color: var(--neo-light-green);
+    font-size: 40px;
+}
+

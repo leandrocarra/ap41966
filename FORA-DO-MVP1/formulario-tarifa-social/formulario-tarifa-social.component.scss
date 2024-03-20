@@ -1,0 +1,21 @@
+.form-area-dados{
+    backgroundvar(--neo-white)
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 25px;
+}
+
+.informacao-documentos{
+color: var(--neo-dark-green);
+
+}
+
+::ng-deep {
+
+  .mat-radio-label {
+
+    white-space: pre-line !important;
+
+  }
+
+}

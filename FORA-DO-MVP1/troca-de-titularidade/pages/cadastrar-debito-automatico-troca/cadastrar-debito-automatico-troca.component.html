@@ -1,0 +1,27 @@
+<h2>Deseja cadastrar o débito automático?</h2>
+
+<p class="subtitulo mt-3 mb-3">Suas informações de pagamento do imóvel:</p>
+
+<app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+<h6 class="mt-4 subtitulo-h6">Suas forma de pagamento para esse imóvel é:</h6>
+
+<div class="configuracao-input col-md-8 col-lg-6 ps-0 pe-0" style="margin-top: 16px;">
+	<div class="row ps-3">
+		<span class="input-fatura col-md-8 ps-0 pe-0 pe-md-0">{{ formaPagamento }}</span>
+	</div>
+</div>
+
+<h6 class="mt-4 subtitulo-h6">Cadastre suas faturas no débito automático</h6>
+
+<p class="subtitulo mt-3 mb-3">Facilite seu dia a dia e evite esquecimentos com o débito automático.</p>
+
+<div class="row gy-4 justify-content-between justify-content-md-start mt-3">
+	<app-neo-button class="col-auto" [classes]="'btn-neo-outline-secondary'" [titleText]="'NÃO QUERO'"
+		(callFunction)="declinarDebAutomatico()">
+	</app-neo-button>
+
+	<app-neo-button class="col-auto" [classes]="group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+		[titleText]="cadDebAutomaticoButton" (callFunction)="cadDebAutomatico()">
+	</app-neo-button>
+</div>

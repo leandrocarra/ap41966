@@ -1,0 +1,43 @@
+<form [formGroup]="formaRecebimentoFormGroup" id="black-and-white-input-1">
+    <div class="row mt-3 m-0 form-area">
+        <div class="row mb-3 col-12">
+            <h6 class="subtitulo">Informações</h6>
+        </div>
+
+        <div class="row col-12">
+            <div class="col-xl-3 col-md-3 col-12 pe-md-2">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>CAIXA POSTAL</mat-label>
+                    <input matInput type="text" formControlName="caixaPostal" placeholder="CAIXA POSTAL" specialCharacters upperCase required (ngModelChange)="formToModel()"
+                    maxlength="100">
+                </mat-form-field>
+            </div>
+
+            <div class="col-xl-3 col-md-3 col-12 pe-md-2">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>CIDADE</mat-label>
+                    <input matInput type="text" formControlName="cidade" placeholder="CIDADE*" required upperCase specialCharacters withoutNumber (ngModelChange)="formToModel()"
+                     maxlength="100">
+                </mat-form-field>
+            </div>
+
+            <div class="col-xl-3 col-md-3 col-12 pe-md-2">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>ESTADO</mat-label>
+                    <mat-select formControlName="estado" required (ngModelChange)="formToModel()">
+                        <mat-option *ngFor="let estado of estados" [value]="estado.key">
+                            {{estado.key}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="col-xl-3 col-md-3 col-12 pe-md-2">
+                <mat-form-field appearance="outline" class="col-12">
+                    <mat-label>CEP</mat-label>
+                    <input matInput placeholder="CEP*" type="text" formControlName="cep" mask="00000-000" required onlyNumber (ngModelChange)="formToModel()">
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</form>

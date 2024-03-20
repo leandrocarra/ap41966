@@ -1,0 +1,22 @@
+.tomadaApartamento {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 46%;
+    height: 65%;
+}
+
+.background-tomada {
+    position: absolute;
+    bottom: 0;
+    right: -3rem;
+    height: 60vh;
+    width: auto;
+    z-index: -1;
+}
+
+@media only screen and (max-width: 768px) {
+    .background-tomada {
+        display: none;
+    }
+}

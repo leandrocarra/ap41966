@@ -1,0 +1,55 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+.form-neo{
+    margin-bottom: 2rem !important;
+}
+
+.not-according-criteria {
+    color: #FF0000 ;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-self: center;
+}
+
+.according-criteria {
+    color: #32CD32;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-self: center;
+}
+
+.criticas {
+    margin-top: -20px;
+}
+
+.eyeSpan{
+    position: absolute;
+    right: 20px;
+    top: 69%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+.eye{
+    background-color: white;
+    display: block;
+    padding: .2em;
+    width: 1.7em;
+    height: 1.8em;
+}
+
+.visibillity-eye {
+    position: absolute;
+    top: 40px;
+    right: 22px;
+    color: #828282;
+    cursor: pointer;
+}
+
+::-ms-reveal {
+    display: none;
+}
+
+

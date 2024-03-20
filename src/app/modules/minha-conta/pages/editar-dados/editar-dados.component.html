@@ -1,0 +1,128 @@
+<section class="col-lg-7 col-md-12 p-0" id="editar-dados-minha-conta">
+    <div class="d-flex justify-content-between">
+        <h6 class="d-inline color-dark-gray">MEUS DADOS</h6>
+        <p *ngIf="dataUltimaAtualizacao" class="d-inline last-update">Última atualização: {{ dataUltimaAtualizacao }}</p>
+    </div>
+
+    <ng-container *ngIf="contaFormGroup">
+        <form [formGroup]="contaFormGroup" class="row">
+            <mat-form-field id="nomeTitular" color="primary" class="col-12" *ngIf="tipoPessoa === 'FISICA'"
+                            appearance="outline" calss="" [hideRequiredMarker]="true">
+                <mat-label>NOME DO TITULAR</mat-label>
+                <input matInput type="text" maxlength="100" formControlName="nomeTitular">
+            </mat-form-field>
+
+            <mat-form-field id="razaoSocial" class="col-12" *ngIf="tipoPessoa === 'JURIDICA'" appearance="outline"
+                            [hideRequiredMarker]="true">
+                <mat-label>RAZÃO SOCIAL</mat-label>
+                <input matInput type="text" maxlength="100" formControlName="razaoSocial">
+            </mat-form-field>
+
+            <mat-form-field id="CPF" class="col-12" *ngIf="tipoPessoa === 'FISICA'" appearance="outline"
+                            [hideRequiredMarker]="true">
+                <mat-label>CPF</mat-label>
+                <input matInput type="text" maxlength="14" mask="000.000.000-00" formControlName="documento" onlyNumber>
+            </mat-form-field>
+
+            <mat-form-field id="CNPJ" class="col-12" *ngIf="tipoPessoa === 'JURIDICA'" appearance="outline"
+                            [hideRequiredMarker]="true">
+                <mat-label>CNPJ</mat-label>
+                <input matInput type="text" maxlength="18" mask="00.000.000/0000-00" formControlName="documento" onlyNumber>
+            </mat-form-field>
+
+            <mat-form-field *ngIf="tipoPessoa === 'FISICA'" appearance="outline" class="col-12 col-md-6"
+                            [hideRequiredMarker]="true">
+                <mat-label>Documento secundário</mat-label>
+                <input matInput type="text" maxlength="20" formControlName="documentoSecundario">
+            </mat-form-field>
+
+            <mat-form-field *ngIf="tipoPessoa === 'FISICA'" appearance="outline" class="col-12 col-md-6" [hideRequiredMarker]="true">
+                <mat-label>DATA DE NASCIMENTO</mat-label>
+                <input matInput name="dataNascimento" formControlName="dtNascimento" type="text" maxLength="10" mask="00/00/0000" required>
+            </mat-form-field>
+
+            <mat-form-field id="emailCadastro" class="col-md-12" appearance="outline" [hideRequiredMarker]="true">
+                <mat-label>E-MAIL DO CADASTRO</mat-label>
+                <input matInput type="text" formControlName="emailCadastro">
+                <mat-error>
+                    <div class="d-flex align-items-center">
+                        <app-custom-mat-error *ngIf="!mobile" [mensagem]="'Este e-mail não é válido! Por favor, tente novamente.'"></app-custom-mat-error>
+                        <app-custom-mat-error *ngIf="mobile" [mensagem]="'Este e-mail não é válido.'"></app-custom-mat-error>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="col-12 col-md-6" [hideRequiredMarker]="true">
+                <mat-label>TELEFONE DO CADASTRO</mat-label>
+                <input matInput type="text" [mask]="maskTelefoneContato" (ngModelChange)="aoModificarTelefone('Contato')" (keyup)="getTelMask()" onlyNumber formControlName="telefoneContato">
+                <mat-error>
+                    <div class="d-flex align-items-start">
+                        <app-custom-mat-error [mensagem]="'Este número não é válido! Por favor, tente novamente.'"></app-custom-mat-error>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="col-12 col-md-6" [hideRequiredMarker]="true">
+                <mat-label>TELEFONE DA ÁREA LOGADA</mat-label>
+                <input matInput type="text" [mask]="maskTelefoneAcesso" (ngModelChange)="aoModificarTelefone('Acesso')" onlyNumber formControlName="telefone">
+                <mat-error>
+                    <div class="d-flex align-items-start">
+                        <app-custom-mat-error [mensagem]="'Este número não é válido! Por favor, tente novamente.'"></app-custom-mat-error>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field id="usuarioAcesso" appearance="outline" class="col-12" [hideRequiredMarker]="true">
+                <mat-label>COMO GOSTARIA DE SER CHAMADO(A)?</mat-label>
+                <input matInput type="text" maxlength="100" required withoutNumber (keypress)="removerCaracterEspecial($event)" formControlName="usuarioAcesso">
+                <mat-error>
+                    <div class="d-flex align-items-start">
+                        <app-custom-mat-error *ngIf="!mobile" [mensagem]="'Verifique o preenchimento. Tente novamente.'"></app-custom-mat-error>
+                        <app-custom-mat-error *ngIf="mobile" [mensagem]="'Verifique o preenchimento.'"></app-custom-mat-error>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field id="emailAcesso" appearance="outline" class="col-12" [hideRequiredMarker]="true">
+                <mat-label>E-MAIL DA ÁREA LOGADA</mat-label>
+                <input matInput type="text" formControlName="emailAcesso">
+                <mat-error>
+                    <div class="d-flex align-items-center">
+                        <app-custom-mat-error *ngIf="!mobile" [mensagem]="'Este e-mail não é válido! Por favor, tente novamente.'"></app-custom-mat-error>
+                        <app-custom-mat-error *ngIf="mobile" [mensagem]="'Este e-mail não é válido.'"></app-custom-mat-error>
+                    </div>
+                </mat-error>
+            </mat-form-field>
+
+            <div id="termo" class="mt-2 col-md-12" *ngIf="fluxoDeAlterarDados">
+                <mat-checkbox formControlName="termosUso">
+                    <p class="d-inline mb-1 termo">Ao utilizar os serviços, você aceita nossos </p>
+                    <p class="d-inline termo">
+                        <a class="text-link" [href]="linkDePrivacidade" target="_blank" rel="noopener">Termos de uso e Política de Privacidade</a>.
+                    </p>
+                </mat-checkbox>
+            </div>
+        </form>
+    </ng-container>
+
+
+    <div id="button-area-1" *ngIf="!fluxoDeAlterarDados" class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'EDITAR DADOS'"
+            (callFunction)="editarDados()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'ALTERAR SENHA'"
+            (callFunction)="alterarSenha()">
+        </app-neo-button>
+    </div>
+
+    <div id="button-area-2" *ngIf="fluxoDeAlterarDados" class="d-flex justify-content-between justify-content-md-start mt-5">
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+            (callFunction)="voltar()">
+        </app-neo-button>
+
+        <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'SALVAR ALTERAÇÕES'"
+            (callFunction)="salvarAlteracoes()" [isDisabled]="contaFormGroup.invalid">
+        </app-neo-button>
+    </div>
+</section>

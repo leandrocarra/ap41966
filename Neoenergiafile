@@ -1,0 +1,22 @@
+pipeline:
+  agent: angular
+  version: {}
+  project: "agenciavirtual"
+  namespace: devops
+  ambiente: desenvolvimento
+  app-version: x.x.x
+  dast: true
+  ingress: agenciavirtualhml.neoenergia.net
+  test: false
+  slack: "#alertas-teste-jenkins"
+
+build:
+  command: 
+
+manifest:
+  - name: aksRegistry
+    registry: acrneononprod.azurecr.io
+  - name: nexusRegistry
+    registry: images.neoenergia.net
+
+deploy: {}

@@ -1,0 +1,36 @@
+<form [formGroup]="formTitularTarifaSocial">
+    <div id="black-and-white-input-1" class="row">
+        <div class="col-xl-3 col-md-6 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>NOME COMPLETO</mat-label>
+                <input matInput type="text" formControlName="nome" (ngModelChange)="validarForms()"
+                    [attr.disabled]="disabledForm" maxlength="255" withoutNumber upperCase specialCharacters required />
+            </mat-form-field>
+        </div>
+
+        <div class="col-xl-3 col-md-6 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>DATA DE NASCIMENTO</mat-label>
+                <input matInput type="text" name="dataNascimento" id="dataNascimento" formControlName="dataNascimento"
+                    (ngModelChange)="validarForms()" [attr.disabled]="disabledForm" maxlength="10" mask="00/00/0000"
+                    onlyNumber required />
+            </mat-form-field>
+        </div>
+
+        <div class="col-xl-3 col-md-6 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>NÚMERO DO CPF</mat-label>
+                <input matInput type="text" name="cpf" id="cpf" formControlName="cpf" (ngModelChange)="validarForms()"
+                    [attr.disabled]="disabledForm" mask="000.000.000-00" minlength="11" onlyNumber required />
+            </mat-form-field>
+        </div>
+
+        <div class="col-xl-3 col-md-6 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>NÚMERO DO RG</mat-label>
+                <input matInput type="text" name="cpf" id="cpf" formControlName="rg" (ngModelChange)="validarForms()"
+                    [attr.disabled]="disabledForm" required />
+            </mat-form-field>
+        </div>
+    </div>
+</form>

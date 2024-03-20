@@ -1,0 +1,48 @@
+<div>
+    <table>
+        <caption></caption>
+        <thead>
+            <tr>
+                <th id="unidade-consumidora"></th>
+                <th id="endereco-unidade-consumidora"></th>
+                <th id="botao-status-unidade-consumidora"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let imovel of listaDeImoveis">
+                <td>
+                    <div class="col-12 box-imoveis text-left">
+                        <div class="row d-flex justify-content-between cursor-pointer container-rows" (click)="redirecionar(imovel)">
+                            <div class="col-11 d-flex flex-wrap">
+                                <div class="col-12 col-md-4 col-lg-4 pb-md-0 pb-2">
+                                    <div class="unidade-consumidora-title pb-2">
+                                        UNIDADE CONSUMIDORA
+                                    </div>
+                                    <div class="unidade-consumidora-value">
+                                        {{ imovel.numeroUc }}
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-md-4 col-lg-4 pb-md-0 pb-2">
+                                    <div class="unidade-consumidora-title pb-2">
+                                        ENDEREÇO
+                                    </div>
+                                    <div class="endereco">
+                                       {{ imovel.endereco }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-1">
+                                <mat-icon>
+                                    <span class="material-icons-outlined">expand_more</span>
+                                </mat-icon>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

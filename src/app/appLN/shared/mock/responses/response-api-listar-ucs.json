@@ -1,0 +1,66 @@
+[
+    {
+        "uc": "17449251",
+        "numeroCliente": "925583",
+        "documento": "06763573855",
+        "complemento": "",
+        "fase": "MO",
+        "situacao": "LG"
+    },
+    {
+        "uc": "44380380",
+        "numeroCliente": "59958801",
+        "documento": "",
+        "complemento": "",
+        "fase": "TR",
+        "situacao": "PT"
+    },
+    {
+        "uc": "44191448",
+        "numeroCliente": "59571486",
+        "documento": "",
+        "complemento": "",
+        "fase": "TR",
+        "situacao": "PT"
+    },
+    {
+        "uc": "44191464",
+        "numeroCliente": "59571508",
+        "documento": "98083941913",
+        "complemento": "",
+        "fase": "TR",
+        "situacao": "PT"
+    },
+    {
+        "uc": "44191430",
+        "numeroCliente": "59961225",
+        "documento": "",
+        "complemento": "",
+        "fase": "TR",
+        "situacao": "PT"
+    },
+    {
+        "uc": "44191383",
+        "numeroCliente": "59571451",
+        "documento": "",
+        "complemento": "",
+        "fase": "TR",
+        "situacao": "PT"
+    },
+    {
+        "uc": "44191391",
+        "numeroCliente": "59571451",
+        "documento": "",
+        "complemento": "",
+        "fase": "TR",
+        "situacao": "PT"
+    },
+    {
+        "uc": "44100728",
+        "numeroCliente": "59363212",
+        "documento": "",
+        "complemento": "",
+        "fase": "TR",
+        "situacao": "PT"
+    }
+]

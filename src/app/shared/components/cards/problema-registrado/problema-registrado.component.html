@@ -1,0 +1,32 @@
+<h2 class="{{groupColor}}">{{titulo}}</h2>
+
+<div class="dados-problema">
+    <div class="tipo-problema flex justify-content-sb">
+        <h3>DADOS</h3>
+        <span class="subtitle flex">
+            {{tipo}}
+        </span>
+    </div>
+    <div class="detalhamento-problema">
+        <div class="flex justify-content-sb protocoloStyle">
+            <span>PROTOCOLO</span><span>{{protocolo}}</span>
+        </div>
+        <div *ngFor="let content of dados" class="flex justify-content-sb">
+            <span class="subtitle">{{content.label}}</span>
+            <span style="word-break: break-all;">{{content.data}}</span>
+        </div>
+    </div>
+
+    <div *ngIf="showAtencao === true" class="mt-3">
+        <div [ngClass]="'not-according-criteria'" class="pe-3 ps-3 row">
+            <div class="material-icons-outlined pe-2">report_problem</div>
+            <div class="m-custom1">Atenção</div>
+        </div>
+
+        <div class="pe-3 ps-3 row">
+            <p class="texto-atencao m-1">O débito automático vai ocorrer a partir da próxima fatura deste imóvel</p>
+            <p class="texto-atencao">As faturas já emitidas <strong>devem ser pagas por boleto bancário ou código de
+                    barras</strong></p>
+        </div>
+    </div>
+</div>

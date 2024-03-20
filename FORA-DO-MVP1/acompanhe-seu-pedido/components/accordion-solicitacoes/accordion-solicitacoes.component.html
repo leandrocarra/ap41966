@@ -1,0 +1,61 @@
+<div *ngIf="solicitacoes">
+    <mat-accordion class="accordion-solicitacoes" *ngFor="let item of itens">
+        <mat-expansion-panel class="panel-acompanhe-solicitacoes" #expansionPanel>
+            <mat-expansion-panel-header class="ps-1" (click)="expandPanel(expansionPanel, $event)">
+                <mat-panel-title class="col-12 col-md-3 d-flex">
+                    <div class="centralizar-icon">
+                        <span class="{{(distribuidoraUF === 'SE' ? item.situacao : item.detalhes.acompanhamentoDetalhado.statusFluxo) | lowercase}} material-icons-outlined me-3">
+                            {{ distribuidoraUF === "SE" ? iconesObj[item.situacao] : iconesObj[item.detalhes.acompanhamentoDetalhado.statusFluxo]}}
+                        </span>
+                    </div>
+
+                    <div class="d-none d-md-block">
+                        <div class="solicitacao-titulo">PROTOCOLO </div>
+                        <div class="solicitacao-valores">{{ distribuidoraUF === "SE" ? item.protocolo : item.header.numProtocolo }}</div>
+                    </div>
+
+
+                    <div class="d-block d-md-none">
+                        <div class="solicitacao-valores solicitacao-titulo">{{distribuidoraUF === "SE" ? item.protocolo : item.header.numProtocolo}}</div>
+                        <div class="solicitacao-valores">{{distribuidoraUF === "SE" ? item.descricao : item.header.tipoSolicitacao}}</div>
+                        <div class="solicitacao-valores">em {{distribuidoraUF === "SE" ? item.dataSolicitacao : item.header.dataSolicitacao}}</div>
+                        <div class="{{(distribuidoraUF === 'SE' ? item.situacao : item.detalhes.acompanhamentoDetalhado.statusFluxo) | lowercase}}">{{distribuidoraUF === "SE" ? item.situacao : item.header.statusSolicitacao}}</div>
+                    </div>
+                </mat-panel-title>
+
+
+                <mat-panel-description class="col-12 col-md-3  d-none d-md-block margin-value">
+                    <div class="solicitacao-titulo">DESCRIÇÃO </div>
+                    <div class="solicitacao-valores">{{ distribuidoraUF === "SE" ? item.descricao : item.header.tipoSolicitacao }}</div>
+                </mat-panel-description>
+
+                <mat-panel-description class="col-12 col-md-3  d-none d-md-block margin-value">
+                    <div class="solicitacao-titulo">DATA DA SOLICITAÇÃO </div>
+                    <div class="solicitacao-valores">
+                        em {{distribuidoraUF === "SE" ? item.dataSolicitacao : (item.header.dataSolicitacao + ' às ' + item.detalhes.acompanhamentoDetalhado.horaFluxo ) }}
+                    </div>
+                </mat-panel-description>
+
+                <mat-panel-description class="col-12 col-md-3  d-none d-md-block margin-value">
+                    <div class="solicitacao-titulo">SITUAÇÃO </div>
+                    <div class="{{(distribuidoraUF === 'SE' ? item.situacao : item.detalhes.acompanhamentoDetalhado.statusFluxo) | lowercase}} ">
+                        {{ distribuidoraUF === "SE" ? item.situacao : item.header.statusSolicitacao }}
+                    </div>
+                </mat-panel-description>
+
+            </mat-expansion-panel-header>
+
+            <div class="d-md-flex">
+                <div class="col-12 col-md-6">
+                   <app-detalhes-solicitacao-se *ngIf="distribuidoraUF === 'SE'" [solicitacao]="item" [etapas]="etapas"></app-detalhes-solicitacao-se>
+                   <app-detalhes-solicitacao-ne *ngIf="distribuidoraUF === 'NE'" [solicitacao]="item" [etapas]="etapas"></app-detalhes-solicitacao-ne>
+                </div>
+                <div class="col-12 col-md-6" [class.custom-mat-card-space]="mobileXS">
+                    <app-stepper-status-solicitacoes class="w-100" [solicitacao]="item"></app-stepper-status-solicitacoes>
+                </div>
+            </div>
+
+
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

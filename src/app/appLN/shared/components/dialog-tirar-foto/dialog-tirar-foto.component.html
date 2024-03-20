@@ -1,0 +1,13 @@
+<div class="area">
+    <video width="640" height="480" autoplay id="webCamera"></video>
+
+    <button type="button" class="btn btn-dialog-tirar-foto" (click)="takeSnapShot()" >
+        <span class="material-icons mt-1 text-white">photo_camera</span>
+    </button>
+
+    <div class="btn-toolbar justify-content-between" style="margin-top: 1vh; padding-bottom: 1vh">
+        <button class="btn btn-primary-grey" (click)="close()" title="Fechar">Cancelar</button>
+        <button class="btn btn-primary-green" [class.disabled]="!fileConfirm" [disabled]="!fileConfirm" (click)="confirm()">Confirmar</button>
+      </div>
+
+</div>

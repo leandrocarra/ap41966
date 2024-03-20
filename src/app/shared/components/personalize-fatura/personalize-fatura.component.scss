@@ -1,0 +1,71 @@
+#card-personalizar-fatura {
+	padding: 0;
+
+	mat-card-title {
+		padding: 1rem 1.5rem 0.85rem 1.5rem;
+        margin: 0;
+        span {
+            color: var(--neo-dark-green);
+            font-size: 1.563rem;
+            font-weight: bold;
+        }
+	}
+
+	.mat-list-text {
+		padding: 0;
+	}
+
+	a {
+		text-align: right;
+	}
+    .mat-list-base .mat-list-item .mat-list-item-content-reverse, .mat-list-base .mat-list-option .mat-list-item-content-reverse {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+#card-personalizar-fatura .mat-list-item{
+	height: fit-content;
+}
+
+#card-personalizar-fatura .mat-list-base {
+	padding: 0;
+}
+
+#card-personalizar-fatura .opcao-personalizacao {
+	display: flex;
+	justify-content: space-between;
+
+	.opcao-display {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.888rem 0;
+	}
+
+	mat-icon {
+		transform: rotate(270deg);
+		color: var(--neo-dark-gray);
+	}
+}
+
+#card-personalizar-fatura .mat-list-item-content.mat-list-item-content-reverse {
+	width: 100%;
+}
+
+#card-personalizar-fatura .endereco {
+	text-align: right;
+	margin-right: 12px;
+    color: var(--header-text);
+}
+
+.personalize-label {
+    width: max-content;
+}
+
+.pe-none {
+	pointer-events: none;
+}
+
+.row .mat-list-base .mat-list-item .mat-list-text>*, .mat-list-base .mat-list-option .mat-list-text>* {
+    margin: unset;
+}

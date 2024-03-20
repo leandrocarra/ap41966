@@ -1,0 +1,68 @@
+{
+    "VALIDO": {
+        "result": [
+            {
+                "fields": [
+                    {
+                        "name": "ra",
+                        "value": "21039",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "data_nascimento",
+                        "value": "04/07/1990",
+                        "score": 0.95
+                    },
+                    {
+                        "name": "naturalidade",
+                        "value": "FEIRA NOVA-PE",
+                        "score": 0.82
+                    },
+                    {
+                        "name": "data_expedicao",
+                        "value": "30/12/2008",
+                        "score": 0.95
+                    },
+                    {
+                        "name": "nome",
+                        "value": "Maria Flavia",
+                        "score": 0.82
+                    }
+                ],
+                "deskewImage": "",
+                "docQualityScore": 0.87,
+                "docType": "documento_identificacao",
+                "pageIndex": 1,
+                "tags": [
+                    "documento_identificacao",
+                    "br-reservista-1"
+                ]
+            }
+        ],
+        "queryId": "HLBMCFNVBKREMHQLNHITQ",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    },
+    "NULO": {
+        "result": [
+            {
+                "fields": null,
+                "deskewImage": "",
+                "docQualityScore": 0.87,
+                "docType": "documento_identificacao",
+                "pageIndex": 1,
+                "tags": [
+                    "documento_identificacao",
+                    "br-reservista-1"
+                ]
+            }
+        ],
+        "queryId": "HLBMCFNVBKREMHQLNHITQ",
+        "status": {
+            "code": 200,
+            "message": "Ok"
+        }
+    }
+}

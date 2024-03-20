@@ -1,0 +1,80 @@
+<div id="dialog-internet-banking" class="box-content">
+
+    <img alt="Alerta" class="mx-auto d-block mb-2" [src]="linkAviso" />
+
+    <p class=" texto-codigo-barras" *ngIf="fatura === undefined">Código de barras copiado para a área de transferência.</p>
+
+    <div *ngIf="fatura !== undefined" class="mt-3">
+
+        <h4 class="title-alert titulo-fatura">Informações da fatura</h4>
+
+        <div class="margem-fatura mb-3">
+            <span class="dados-endereco valor-fatura">R$ {{ formatarValor(fatura.valorEmissao) }}</span>
+        </div>
+
+        <div class="margem-fatura">
+            <span class="dados-endereco text-nowrap">Código do cliente: </span>
+            <span class="dados-endereco">{{ fatura.uc }}</span>
+        </div>
+
+        <div class="margem-fatura">
+            <span class="dados-endereco text-nowrap">Endereço: </span>
+            <span class="dados-endereco">{{ endereco }}</span>
+        </div>
+
+        <div>
+            <span class="dados-endereco text-nowrap">Vencimento: </span>
+            <span class="dados-endereco">{{ fatura.dataVencimento | date: 'dd/MM/yyyy' }}</span>
+        </div>
+
+        <div>
+            <span class="dados-endereco text-nowrap">Status: </span>
+            <span class="dados-endereco">{{ fatura.statusFatura }}</span>
+        </div>
+
+        <div class="caixa-qrcode mt-4 col-10 col-lg-6">
+            <p class="m-0 d-flex p-0 codigo-de-barras justify-content-center">{{ codigoDeBarras | mask: '00000.00000 00000.000000 00000.000000 0 00000000000000' }}</p>
+        </div>
+
+        <div class="row m-0 d-flex justify-content-center mt-4 mb-4">
+            <app-neo-button [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen pe-5 ps-5 mt-2' :
+            'btn-neoprimary mt-2'" [titleText]="'COPIAR CÓDIGO'" (callFunction)="copiarCodigoDeBarras()">
+            </app-neo-button>
+        </div>
+
+    </div>
+
+
+    <h4 class="title-alert">Pague com internet banking</h4>
+
+    <p class="col-12 col-md-8 subtitulo">Nos aplicativos, internet banking ou caixas eletrônicos dos bancos conveniados.</p>
+
+    <p class="col-12 col-md-8 descricao-selecionar-banco">Selecione um dos bancos abaixo ou procure um de sua preferência:</p>
+
+    <div>
+        <div class="col-8 divisao-bancos">
+            <div *ngFor="let banco of bancos">
+
+                <a [href]="banco.linkRedirecionamento" target="_blank" class="estilo-direcionamento">
+                    <img [alt]="banco.nomeDoBanco" class="imagem-banco" [src]="banco.imagemBanco" />
+                    <span class="span-banco">{{ banco.nomeDoBanco }}</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-10 text-left">
+            <ul>
+                <li *ngFor="let recomendacao of recomendacoes">
+                    <p class="formatacao-recomendacao">{{ recomendacao }}</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w-100 d-flex justify-content-center mt-3">
+            <app-neo-button [classes]="grupoDoUsuario === 'A' ? 'btn-neodarkgreen pe-5 ps-5 mt-2' :
+        'btn-neoprimary pe-5 ps-5 mt-2'" [titleText]="'FECHAR'" (callFunction)="fecharAlerta()">
+            </app-neo-button>
+        </div>
+
+    </div>
+</div>

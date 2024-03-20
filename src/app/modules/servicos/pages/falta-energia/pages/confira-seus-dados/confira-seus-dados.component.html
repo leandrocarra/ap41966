@@ -1,0 +1,63 @@
+<div *ngIf="!dadosValidados">
+  <h2>Confira os dados cadastrados</h2>
+
+  <p class="subtitulo mt-3 mb-3">
+    A solicitação de {{ tipoDeFaltaDeEnergia }} está cadastrada conforme os
+    dados abaixo:
+  </p>
+
+  <app-dados-imovel-ligacao></app-dados-imovel-ligacao>
+
+  <div class="col-12 col-md-10 col-lg-7 col-xl-6 p-0 mt-3">
+    <p class="subtitulo mt-5">DADOS CADASTRADOS</p>
+    <div class="items dados-cadastrados">
+
+      <div class="item-dado-cadastrado d-flex tipo-solicitacao">
+        <span class="item-titulo">Tipo solicitação</span>
+        <span>{{ tipoDeFaltaDeEnergia }}</span>
+      </div>
+
+      <div class="item-dado-cadastrado d-flex">
+        <span class="item-titulo-local">Onde</span>
+        <span class="info-btn-edit d-flex">
+          <div class="dados-ocorrencia">{{ fluxoFaltaDeEnergia.ondeFaltaEnergia.value }}</div>
+          <div><a (click)="alterarOnde()">Alterar</a></div>
+        </span>
+      </div>
+
+      <div class="item-dado-cadastrado d-flex">
+        <span class="item-titulo">Descrição</span>
+        <span class="info-btn-edit d-flex">
+          <div class="dados-ocorrencia">{{ fluxoFaltaDeEnergia.problemaEscolhido.value }}</div>
+          <div><a (click)="alterarDescricao()">Alterar</a></div>
+        </span>
+      </div>
+
+      <div class="item-dado-cadastrado d-flex">
+        <span class="item-titulo">Telefone de contato</span>
+        <span class="info-btn-edit d-flex">
+          <div class="dados-ocorrencia">{{ fluxoFaltaDeEnergia.telefone |  mask: '(00) 0 0000-0000' }}</div>
+          <div><a (click)="alterarReferenciaCelular()">Alterar</a></div>
+        </span>
+      </div>
+
+      <div class="item-dado-cadastrado d-flex">
+        <span class="item-titulo">Ponto de referência</span>
+        <span class="info-btn-edit d-flex">
+          <div class="dados-ocorrencia">{{ fluxoFaltaDeEnergia.referencia }}</div>
+          <div><a (click)="alterarReferenciaCelular()">Alterar</a></div>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="me-md-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+      (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-md-3 m-0" [classes]="groupColor === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+      [titleText]="'CONFIRMAR'" (callFunction)="continuar()" [isDisabled]="isDisabled">
+    </app-neo-button>
+  </div>
+</div>

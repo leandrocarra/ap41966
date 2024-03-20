@@ -1,0 +1,42 @@
+[
+    {
+        "key": "7500BTU",
+        "value": 900,
+        "codigoAparelho": "1",
+        "codigoSubTipoAparelho": "25",
+        "codigoTipoAparelho": "1",
+        "descricaoSubTipoAparelho": "AR CONDICIONADO 7.500 BTU"
+    },
+    {
+        "key": "10000BTU",
+        "value": 1400,
+        "codigoAparelho": "1",
+        "codigoSubTipoAparelho": "27",
+        "codigoTipoAparelho": "1",
+        "descricaoSubTipoAparelho": "AR CONDICIONADO 10.000 BTU"
+    },
+    {
+        "key": "12000BTU",
+        "value": 1600,
+        "codigoAparelho": "1",
+        "codigoSubTipoAparelho": "28",
+        "codigoTipoAparelho": "1",
+        "descricaoSubTipoAparelho": "AR CONDICIONADO 12.000 BTU"
+    },
+    {
+        "key": "15000BTU",
+        "value": 1900,
+        "codigoAparelho": "1",
+        "codigoSubTipoAparelho": "88",
+        "codigoTipoAparelho": "1",
+        "descricaoSubTipoAparelho": "AR CONDICIONADO 15.000 BTU"
+    },
+    {
+        "key": "18000BTU",
+        "value": 2600,
+        "codigoAparelho": "1",
+        "codigoSubTipoAparelho": "30",
+        "codigoTipoAparelho": "1",
+        "descricaoSubTipoAparelho": "AR CONDICIONADO 18.000 BTU"
+    }
+]

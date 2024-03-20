@@ -1,0 +1,16 @@
+<svg id="help_outline_black_24dp" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <path id="Caminho_14116" data-name="Caminho 14116" d="M0,0H28V28H0Z" fill="none"/>
+  <g id="Grupo_39569" data-name="Grupo 39569" transform="translate(16359 9894)">
+    <g id="bolt-24px" transform="translate(-16357 -9892)">
+      <g id="Grupo_14576" data-name="Grupo 14576">
+        <rect id="Retângulo_18681" data-name="Retângulo 18681" width="24" height="24" fill="none"/>
+      </g>
+    </g>
+    <g id="zap-off" transform="translate(-16357 -9892)">
+      <path id="Caminho_13327" data-name="Caminho 13327" d="M12.41,6.75,13,2,10.57,4.92" fill="none" stroke="#D60E00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/>
+      <path id="Caminho_13328" data-name="Caminho 13328" d="M18.57,12.91,21,10H15.66" fill="none" stroke="#D60E00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/>
+      <path id="Caminho_13329" data-name="Caminho 13329" d="M8,8,3,14h9l-1,8,5-6" fill="none" stroke="#D60E00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/>
+      <line id="Linha_1" data-name="Linha 1" x2="22" y2="22" transform="translate(1 1)" fill="none" stroke="#D60E00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/>
+    </g>
+  </g>
+</svg>

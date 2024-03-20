@@ -1,0 +1,59 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: agenciavirtual
+  name: agenciavirtual
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2        # how many pods we can add at a time
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: agenciavirtual
+  template:
+    metadata:
+      labels:
+        app: agenciavirtual
+    spec:
+      containers:
+        - name: agenciavirtual
+          image: acrneononprod.azurecr.io/agenciavirtualhml:BUILD_ID
+          imagePullPolicy: Always
+          resources:
+            requests:
+              memory: "1200Mi"
+              cpu: .10
+            limits:
+              memory: "2500Mi"
+              cpu: .50
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              valueFrom:
+                configMapKeyRef:
+                  name: config-env-agenciavirtual
+                  key: SPRING_PROFILES_ACTIVE
+            - name: ELASTIC_APM_SERVER_URLS
+              valueFrom:
+                configMapKeyRef:
+                  name: config-env-agenciavirtual
+                  key: ELASTIC_APM_SERVER_URLS
+            - name: ELASTIC_APM_SECRET_TOKEN
+              valueFrom:
+                configMapKeyRef:
+                  name: config-env-agenciavirtual
+                  key: ELASTIC_APM_SECRET_TOKEN
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: config-env-agenciavirtual
+                  key: SPRING_DATASOURCE_PASSWORD
+            - name: "JAVA_OPTIONS"
+              value: "-XX:+PrintFlagsFinal -Djava.security.egd=file:/dev/./urandom -javaagent:/opt/agenciavirtual/elastic-apm-agent-1.19.0.jar -Dlogging.path=/opt/agenciavirtual/logs -Dspring.jpa.hibernate.ddl-auto=update  -Delastic.apm.service_name=agenciavirtual -Delastic.apm.application_packages=com.ey -Dspring.jpa.show_sql=false -Dspring.datasource.driverClassName=org.postgresql.Driver -Dspring.datasource.username=agenciavirtual@dbinfra01 -Dspring.datasource.url=jdbc:postgresql://agenciavirtualdb:5432/neo_agenciavirtual_db?&sslmode=require&gssEncMode=disable"  #Put your db username
+          ports:
+          - containerPort: 8080
+            protocol: TCP

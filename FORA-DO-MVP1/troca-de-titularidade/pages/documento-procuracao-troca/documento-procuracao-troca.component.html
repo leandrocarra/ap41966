@@ -1,0 +1,25 @@
+<h2>Nos envie um documento de procuração</h2>
+<p class="subtitulo mt-3 mb-3"> {{subtitulo }} o documento deve estar no formato .PDF, .JPG, .JPEG ou
+    .PNG.
+</p>
+
+<h6 class="subtitulo-h6 mt-4 mb-3">DOCUMENTOS NECESSÁRIOS</h6>
+
+<p class="subtitulo mt-3 mb-3">
+    Ao solicitar a troca de titularidade para uma terceira pessoa, vamos precisar que tenha em mãos uma procuração.
+</p>
+
+<app-box-file [documentoLabel]="'DOCUMENTO DE PROCURAÇÃO'" (arquivoAnexado)="recebeAnexos($event)"
+    (arquivoRemovido)="removeAnexo($event)">
+</app-box-file>
+
+
+<div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-4">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="user.group === 'A' ? 'btn-neodarkgreen' : 'btn-neoprimary'"
+        [titleText]="'CONTINUAR'" (callFunction)="continuar()" [isDisabled]="anexoInvalid">
+    </app-neo-button>
+</div>

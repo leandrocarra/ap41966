@@ -1,0 +1,73 @@
+#card-pix {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    width: 75%;
+}
+
+#card-dados-pix {
+    padding: 1rem;
+    border-radius: 10px 10px 0 0;
+    box-shadow: var(--shadow);
+}
+
+.titulo-card {
+    text-transform: uppercase;
+}
+
+.titulo {
+    color: var(--neo-dark-green);
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.valor {
+    text-align: center;
+    color: var(--neo-dark-gray);
+}
+
+.chave-aleatoria {
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.contorno-qrcode {
+    word-break: break-all;
+    height: 200px;
+    width: 200px;
+}
+
+.contorno {
+    background-color: var(--neo-white);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid var(--neo-light-green);
+}
+
+.container-dados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background-group-a {
+    @extend .gradient;
+}
+
+.gradient {
+    background: rgb(66, 115, 20);
+    background: -moz-linear-gradient(90deg,
+            rgba(66, 115, 20, 1) 0%,
+            rgba(66, 115, 20, 1) 60%,
+            rgba(105, 143, 15, 1) 80%,
+            rgba(164, 186, 8, 1) 100%);
+    background: -webkit-linear-gradient(90deg,
+            rgba(66, 115, 20, 1) 0%,
+            rgba(66, 115, 20, 1) 60%,
+            rgba(105, 143, 15, 1) 80%,
+            rgba(164, 186, 8, 1) 100%);
+    background: linear-gradient(90deg,
+            rgba(66, 115, 20, 1) 0%,
+            rgba(66, 115, 20, 1) 60%,
+            rgba(105, 143, 15, 1) 80%,
+            rgba(164, 186, 8, 1) 100%);
+}

@@ -1,0 +1,42 @@
+.m-divider {
+  margin-top: 26px;
+  padding-left: 0px;
+}
+
+.t-onde-falta-energia {
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.radio-button-energia {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+// .container-button {
+//   margin-top: 22px;
+//   padding-left: 0px;
+//   margin-bottom: 22px;
+// }
+
+// .space-between-btn {
+//   padding-right: 18px;
+// }
+
+// .btn-primary-p-light-green:disabled {
+//   background-color: var(--neo-white-400) !important;
+//   border-color: var(--neo-white-400) !important;
+//   color: var(--neo-dark-gray) !important;
+// }
+
+// .btn-outline-secondary:disabled {
+//   background-color: var(--neo-white-400) !important;
+//   border-color: var(--neo-white-400) !important;
+//   color: var(--neo-dark-gray) !important;
+// }
+
+:host ::ng-deep mat-radio-button {
+  padding-left: 0px !important;
+  padding-bottom: 15px;
+}

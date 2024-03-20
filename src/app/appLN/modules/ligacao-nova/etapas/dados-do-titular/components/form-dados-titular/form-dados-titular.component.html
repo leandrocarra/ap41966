@@ -1,0 +1,103 @@
+<form [formGroup]="formDadosTitular" class="formArea mt-3">
+    <h6 class="subtitulo" id="topoTitular">Dados do Titular</h6><br />
+    <div id="black-and-white-input-1" class="row">
+
+        <div class="form-neo col-md-6 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>NOME COMPLETO</mat-label>
+                <input *ngIf="isCPF" matInput type="text" formControlName="nome" maxlength="255" withoutNumber
+                    upperCase specialCharacters readonly required />
+                <input *ngIf="!isCPF" matInput type="text" formControlName="nome" maxlength="255" withoutNumber upperCase
+                    specialCharacters required (ngModelChange)="validarForms()"/>
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-3 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>DATA DE NASCIMENTO</mat-label>
+                <input matInput type="text" name="dataNascimento" formControlName="dataNascimento"
+                    (ngModelChange)="validarDtNascimento();validarForms()" maxlength="10" mask="00/00/0000" onlyNumber
+                    required />
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-3 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>CPF</mat-label>
+                <input *ngIf="isCPF" matInput type="text" name="cpf" id="cpf" formControlName="cpf"
+                    mask="000.000.000-00" minlength="11" onlyNumber readonly required />
+                <input *ngIf="!isCPF" matInput type="text" name="cpf" id="cpf" formControlName="cpf"
+                    mask="000.000.000-00" minlength="11" onlyNumber required (ngModelChange)="validarForms()"/>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div id="black-and-white-input-1" class="row">
+        <div class="form-neo col-md-3 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>RG</mat-label>
+                <input matInput type="text" name="rg" id="rg" formControlName="rg" maxlength="15"
+                    (ngModelChange)="validarForms()" specialCharacters upperCase required />
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-3 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>ÓRGÃO EMISSOR</mat-label>
+                <mat-select focus name="orgaoEmissor" id="orgaoEmissor" formControlName="orgaoEmissor"
+                    (ngModelChange)="validarForms()" required>
+                    <mat-option *ngFor="let orgaoEmissor of POSSIVEIS_ORGAOS_EMISSORES" [value]="orgaoEmissor.key">
+                        {{ orgaoEmissor.key }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-3 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>DATA DE EMISSÃO</mat-label>
+                <input matInput type="text" name="dataEmissao" id="dataEmissao" formControlName="dataEmissao"
+                    (ngModelChange)="validarDtEmissao();validarForms()" maxlength="10" mask="00/00/0000" onlyNumber
+                    required />
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-3 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>ESTADO</mat-label>
+                <mat-select focus name="estado" id="estado" formControlName="estado" (ngModelChange)="validarForms()"
+                    required>
+                    <mat-option *ngFor="let estado of utilsService.ESTADOS" [value]="estado.key">
+                        {{ estado.key }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div id="black-and-white-input-1" class="row">
+        <div class="form-neo col-md-6 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>E-MAIL</mat-label>
+                <input matInput type="text" name="email" id="email" formControlName="email"
+                    (ngModelChange)="validarForms();" upperCase required />
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-3 col-12 pe-md-4">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>TELEFONE</mat-label>
+                <input matInput type="text" name="telefone" id="telefone" formControlName="telefone" maxlength="14"
+                    mask="(00) 0000-0000" onlyNumber />
+            </mat-form-field>
+        </div>
+
+        <div class="form-neo col-md-3 col-12">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>CELULAR</mat-label>
+                <input matInput type="text" name="celular" id="celular" formControlName="celular" maxlength="16"
+                    mask="(00) 0 0000-0000" (ngModelChange)="validarForms()" onlyNumber required />
+            </mat-form-field>
+        </div>
+    </div>
+</form>

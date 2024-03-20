@@ -1,0 +1,29 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+a {
+  color: var(--neo-light-green) !important;
+  text-decoration: none;
+  font-weight: normal !important;
+  cursor: pointer;
+}
+
+.a:link {
+  color: var(--neo-light-green) !important;
+  text-decoration: none;
+  font-weight: normal !important;
+}
+
+@media only screen and (min-width: 991px) {
+    .tela-posse {
+      background-image: url("^assets/assetsLN/images/ilust_doc_posse.svg");
+      background-repeat: no-repeat;
+      background-position: right center;
+      max-height: 450px;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .tela-posse {
+      background-image: none !important;
+    }
+}

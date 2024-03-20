@@ -1,0 +1,39 @@
+<div class="width-agencia mt-padrao" id="home">
+    <div class="row align-items-end justify-content-between mb-3">
+        <div class="col-12">
+            <h6 class="primary-color">SERVIÇOS MAIS UTILIZADOS</h6>
+        </div>
+        <div class="col-12 col-md-5 home-car">
+            <app-servicos-mais-utilizados class="w-100" [grupoTensao]="grupoTensao"></app-servicos-mais-utilizados>
+        </div>
+        <div class="col-12 col-md-7">
+            <app-home-uc-info [grupoTensao]="grupoTensao"></app-home-uc-info>
+        </div>
+    </div>
+
+    <div class="row">
+        <div *ngIf="grupoTensao === 'A'" class="col-12 mb-3 mt-3 ng-star-inserted">
+			<app-fatura-info></app-fatura-info>
+		</div>
+        <app-home-avisos class="col-12" style="display:grid;"></app-home-avisos>
+    </div>
+
+    <div class="conitaner-grid">
+        <div class="mt-3 mb-3 item-1">
+            <app-card-ultima-fatura></app-card-ultima-fatura>
+        </div>
+        <div class="mt-3 mb-3 item-2">
+            <app-personalize-fatura></app-personalize-fatura>
+        </div>
+        <ng-container *ngIf="grupoTensao === 'A'; else groupB"></ng-container>
+        <ng-template #groupB>
+            <div class="mt-3 mb-3 item-3">
+                <mat-card id="historico-de-consumo">
+                    <app-grafico-consumo-home></app-grafico-consumo-home>
+                    <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'SAIBA MAIS'" (callFunction)="navigateToHistConsumos()"></app-neo-button>
+                </mat-card>
+            </div>
+        </ng-template>
+        <app-home-banner [grupoTensao]="grupoTensao" class="mt-3 mb-3 item-4"></app-home-banner>
+    </div>
+</div>

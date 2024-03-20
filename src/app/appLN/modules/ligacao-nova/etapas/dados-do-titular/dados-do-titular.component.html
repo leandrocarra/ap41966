@@ -1,0 +1,20 @@
+<h2 class="titulo" id="topoTitular">Agora precisamos que nos informe os seus dados pessoais:</h2>
+<p class="subtitulo">Confira com atenção se todos os seus dados estão corretos!</p>
+
+<neo-form-dados-cnpj *ngIf="!isCPF" (formCNPJValidado)="formCNPJValidado($event)"></neo-form-dados-cnpj>
+<neo-form-dados-titular (formTitularValidado)="formTitularValidado($event)"></neo-form-dados-titular>
+
+<div class="row texto">
+    <span>* Campos obrigatórios</span>
+</div>
+
+<!-- Botões -->
+<div
+    class="row mb-5 me-xl-5 me-lg-5 me-md-4 ms-3 me-3 d-flex justify-content-between justify-content-md-end text-center mt-4">
+    <div class="col-auto">
+        <button type="button" class="btn btn-outline-secondary" title="voltar" (click)="voltar()">VOLTAR</button>
+    </div>
+    <div class="col-auto">
+        <button type="button" class="btn btn-primary-green" title="Avançar" (click)="continuar()" [disabled]="isDisabled()">CONTINUAR</button>
+    </div>
+</div>

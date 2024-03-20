@@ -1,0 +1,30 @@
+<h2>Confirme as informações da solicitação</h2>
+
+<p class="subtitulo">Para concluir a solicitação, confirme as informações abaixo:</p>
+
+<app-dados-cliente-ligacao *ngIf="this.navExtra.state!.fluxo === 'euMesmo'" [valores]="dadosCliente"></app-dados-cliente-ligacao>
+<app-dados-imovel-ligacao *ngIf="this.navExtra.state!.fluxo === 'outro'"></app-dados-imovel-ligacao>
+<app-dados-solicitacao-troca [dados]="this.navExtra.state!.dadosConfirmar" [anexos]="anexos"></app-dados-solicitacao-troca>
+
+
+<div id="termo" class="col-12 col-xl-6 col-lg-7 col-md-12 p-0 d-flex mt-3 align-items-center">
+    <div [ngClass]="{
+        'check-group-a': grupoCliente === 'A',
+        'check-group-b': grupoCliente === 'B'
+      }">
+        <mat-checkbox [(ngModel)]="checkTermo" class="mt-2"></mat-checkbox>
+    </div>
+    <p class="text-wrap ms-2 mt-3">
+        Declaro que li e estou ciente que os benefícios atuais do imóvel não serão transferidos para mim.
+    </p>
+</div>
+
+<div id="buttonArea" class="d-flex justify-content-between justify-content-md-start mt-5">
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neo-outline-secondary'" [titleText]="'VOLTAR'"
+        (callFunction)="voltar()">
+    </app-neo-button>
+
+    <app-neo-button class="me-3 m-0" [classes]="'btn-neoprimary'" [titleText]="'CONCLUIR'" (callFunction)="concluir()"
+        [isDisabled]="!checkTermo">
+    </app-neo-button>
+</div>

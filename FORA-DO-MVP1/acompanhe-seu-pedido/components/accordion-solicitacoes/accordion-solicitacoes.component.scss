@@ -1,0 +1,71 @@
+.mat-expansion-panel-header {
+    min-height: 80px;
+    height: auto !important;
+    padding: 16px 24px;
+}
+
+.accordion-solicitacoes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.panel-acompanhe-solicitacoes {
+    width: 100%;
+}
+
+.centralizar-icon {
+    align-items: center;
+    display: flex;
+}
+
+.solicitacao-titulo {
+    text-transform: uppercase;
+    font-weight: bold;
+    white-space: nowrap;
+    color: var(--neo-dark-green);
+}
+
+.solicitacao-valores {
+    font-size: 16px;
+    color: var(--neo-dark-gray);
+}
+
+@media screen and (max-width: 576px) { // Extra Small
+    .margin-value {
+        margin-left: 40px;
+    }
+}
+
+.mat-content {
+    flex-wrap:wrap;
+}
+
+// ------ end mat-accordin ------
+
+
+.concluida, .realizada {
+    span {
+        font-size: 25px;
+    }
+    color: var(--neo-light-green);
+}
+
+.em.andamento {
+    span {
+        font-size: 25px;
+    }
+    color: var(--neo-light-blue);
+}
+
+.cancelada, .finalizada, .rejeitada{
+    span {
+        font-size: 25px;
+    }
+    color: var(--neo-pure-red);
+}
+
+.custom-mat-card-space {
+    display: flex;
+    justify-content: center;
+}

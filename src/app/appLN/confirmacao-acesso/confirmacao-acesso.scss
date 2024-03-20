@@ -1,0 +1,37 @@
+@import '/src/assets/assetsLN/scss/globalLN.scss';
+
+/* wait autoprefixer update to allow simple generation of high pixel density media query */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+
+    .content-confirmacao-acesso {
+       margin: 3vh !important;
+
+    }
+
+}
+
+.content-confirmacao-acesso {
+    margin: 5vh !important;
+
+ }
+
+.confirmacao-acesso-container {
+    height: 50vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+.confirmacao-acesso-card {
+    // width: 400px;
+    // height: 320px;
+    width: 70vh;
+    background-color: #FFFFFF;
+    border-radius: .5vh;
+    margin-top: 5vh ;
+  }

@@ -1,0 +1,50 @@
+<h4 tabindex="0" class="mb-2 titulo">Selecione o combo mais adequado para o seu imóvel</h4>
+
+<div class="col-xl-10 p-0 texto">
+    Para dimensionar a energia adequada para sustentar a ligação do seu imóvel, <strong>escolha o combo que mais se
+        aproxime da quantidade de equipamentos que você pretende utilizar ao mesmo tempo.</strong>
+</div>
+
+<div class="">
+    <div
+        class="row d-flex align-items-center flex-column flex-md-row justify-content-md-start justify-content-center ps-md-2 mt-5 col-12">
+
+        <div *ngIf="!possui220" class="me-xl-3 me-lg-1 me-md-3 mb-4 imgComboSize" (click)="setCombo(0)"
+        [class.equipamentos-combo-I]="combo.combo != '0'"
+        [class.combo-residencial-I]="combo.combo === '0'"  >
+        </div>
+
+        <div class="me-xl-3 me-lg-1 me-md-3 mb-4 imgComboSize" (click)="setCombo(1)"
+            [class.equipamentos-combo-II]="combo.combo  != '1'"
+            [class.combo-residencial-II]="combo.combo  === '1'"
+            >
+        </div>
+
+        <div class="me-xl-3 me-lg-1 me-md-3 mb-4 imgComboSize" (click)="setCombo(2)"
+            [class.equipamentos-combo-III]="combo.combo != '2'"
+            [class.combo-residencial-III]="combo.combo  === '2'" >
+        </div>
+
+        <div class="me-xl-3 me-lg-1 me-md-3 mb-4 imgComboSize" (click)="setCombo(3)"
+            [class.equipamentos-combo-IV]="combo.combo  != '3'"
+            [class.combo-residencial-IV]="combo.combo  === '3'">
+        </div>
+
+        <div class="mb-4 imgComboCalculadora imgComboSize" (click)="calculadora()">
+        </div>
+    </div>
+</div>
+
+
+<div class="p-3" style="color: var(--neo-orange-100); font-size: 11px; font-weight: bold;">
+    * Itens que mais diferenciam a demanda de energia no combo
+</div>
+
+<div class="row mt-5 justify-content-between justify-content-md-end">
+    <div class="me-3 col-auto">
+        <button type="button" class="btn btn-outline-secondary mx-auto" title="voltar"
+            (click)="voltar()">VOLTAR</button>
+    </div>
+    <button type="button" class="btn btn-primary-green col-auto" title="Avançar" (click)="continuar()"
+        [disabled]="disable()">CONTINUAR</button>
+</div>

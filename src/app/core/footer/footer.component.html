@@ -1,0 +1,62 @@
+<footer id="footer" class="{{footerClass}}">
+    <div class="width-agencia">
+        <app-protocolo-informativo></app-protocolo-informativo>
+    </div>
+    <div class="width-agencia institucional">
+        <div class="row justify-content-center justify-content-md-between">
+            <div class="col-auto">
+                <div class="texto-footer">
+                    Nos Acompanhe
+                </div>
+                <div class="my-2 d-flex justify-content-between">
+                    <a href="{{ facebookURL }}" target="_blank" rel="noopener">
+                        <img src="assets/images/icons/facebook_silver.svg" alt="Facebook" />
+                    </a>
+                    <a href="{{ youtubeURL }}" target="_blank" rel="noopener">
+                        <img src="assets/images/icons/youtube_silver.svg" alt="Youtube" />
+                    </a>
+                    <a href="{{ instagramURL }}" target="_blank" rel="noopener">
+                        <img src="assets/images/icons/instagram_silver.svg" alt="Instagram" />
+                    </a>
+                    <a href="{{ twitterURL }}" target="_blank" rel="noopener">
+                        <img src="assets/images/icons/twitter_silver.svg" alt="Twitter" />
+                    </a>
+                </div>
+                <div class="footer-copyright">
+                    © {{ ano }} {{ distribuidora }}.<br />
+                    Todos os direitos reservados.
+                </div>
+            </div>
+
+            <div class="col col-lg-auto texto-endereco">
+                <p [innerHTML]="enderecoDistribuidora"></p>
+            </div>
+
+            <img class="col-auto" id="logo-footer" src="{{logoGrupoB}}"
+                alt="logo da distribuidora" />
+        </div>
+    </div>
+
+    <!-- Links rápidos -->
+    <div class="d-none d-lg-flex links-rapidos">
+        <div class="width-agencia">
+            <div class="d-flex justify-content-around">
+                <div class="texto-footer">
+                    Ajuda
+                </div>
+                <div class="texto-footer">
+                    Contato
+                </div>
+                <div class="texto-footer">
+                    FAQ
+                </div>
+                <a class="a-link texto-footer" [href]="linkDePrivacidade" target="_blank" rel="noopener">
+                    Política de Privacidade
+                </a>
+                <div class="texto-footer">
+                    Termos e Condições
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

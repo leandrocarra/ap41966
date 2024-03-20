@@ -1,0 +1,9 @@
+<button type="button" (click)="addFiles($event)" class="btn btn-md" for="loadFile" title="Upload" [class.btn-primary]="multipleFiles">
+  <span class="material-icons-outlined">file_upload</span>
+  <input type="file" #fileLoader (click)="fileLoader.value = null"  (change)="uploadFile($event)" name="loadFile" id="loadFile"
+    style="display: none" [multiple]="multipleFiles" accept=".xls,.xlsx, .csv"/>
+   {{buttonTitle}}
+</button>
+<!-- <label  style="margin-left: 10px">
+  <p *ngIf="file && file.name">{{file.name}}</p>
+</label> -->

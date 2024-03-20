@@ -1,0 +1,126 @@
+.texto-declaracao {
+    color: var(--neo-dark-gray);
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.text-wrap{
+    transform: scale(0.8);
+  }
+
+.top-content-acesso-compartilhado {
+    margin-bottom: 1.875rem;
+
+    p {
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        color: var(--header-text);
+    }
+}
+
+.container-padding {
+    margin-bottom: 1.875rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.cont-padding {
+    border-radius: 0.5rem 0.5rem 0 0;
+    margin-bottom: 0.938rem;
+
+    .pad-h {
+        height: 65px;
+    }
+}
+
+.content-acesso-compartilhado {
+    background-color: var(--neo-white);
+
+    .header-acesso {
+        background-color: var(--neo-light-green);
+        box-shadow: 0 0.125rem 0.25rem #60617029;
+
+        h4 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            color: var(--neo-white);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .pad-h {
+            padding: 0.75rem 1.75rem 0.75rem 0.75rem;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+    }
+
+    .form-pesquisar-acesso {
+        padding: 1.25rem;
+
+        .posicao-tooltip {
+            top: 2.5rem;
+        }
+    }
+}
+
+.classes-ng-deep-encapsuladas {
+    .mat-form-field-appearance-outline .mat-form-field-wrapper {
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 100%;
+        width: 100%;
+        background-color: var(--neo-white);
+    }
+
+    .mat-select-arrow {
+        border: none;
+        position: relative;
+        margin: 0.688rem 0.25rem;
+
+        &:after {
+            content: "";
+            border-style: solid;
+            border-width: 0 0.125rem 0.125rem 0;
+            border-color: var(--neo-light-gray);
+            display: inline-block;
+            padding: 0.188rem;
+            transform: rotate(45deg);
+            vertical-align: middle;
+            position: absolute;
+            top: -0.313rem;
+        }
+    }
+
+    .mat-expansion-panel {
+        overflow: inherit;
+    }
+
+    .mat-expansion-panel-body {
+        padding-top: 1.25rem;
+        background-color: var(--neo-white);
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+}
+
+#filtro-perfis {
+    .mat-select-value {
+        margin-top: 0.375rem;
+    }
+
+    .mat-form-field-wrapper {
+        margin-top: -15px;
+    }
+}
+
+.custom-filtro-perfis {
+    background-color: var(--neo-white);
+    border-radius: 0.313rem;
+    padding: 0 1rem 0 1rem;
+    max-height: 2.25rem;
+    width: inherit;
+}
+

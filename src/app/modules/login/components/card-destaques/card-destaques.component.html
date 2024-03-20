@@ -1,0 +1,8 @@
+<mat-card class="card-destaque">
+	<div class="img-destaque" [ngStyle]="{'background-image': 'url(' + card.img + ')'}" mat-card-image></div>
+	<mat-card-content>
+		<h5 class="color-secondary" [innerHTML]="card.titulo"></h5>
+		<p [innerHTML]="card.texto"></p>
+	</mat-card-content>
+		<small class="card-atualizacao color-secondary" [innerHTML]="card.atualizacao"></small>
+</mat-card>

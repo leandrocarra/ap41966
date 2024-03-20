@@ -1,0 +1,20 @@
+.card-acesso-rapido {
+    @extend %transition !optional;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    padding: 1.5rem 0.7rem 0.5rem 0.7rem;
+    height: 100%;
+    cursor: pointer;
+    p {
+        font-size: 0.875rem;
+    }
+
+    &:hover {
+        border-color: var(--neo-light-green) !important;
+    }
+}
+
+.icone-acesso-rapido {
+    width: 1.4rem;
+}
